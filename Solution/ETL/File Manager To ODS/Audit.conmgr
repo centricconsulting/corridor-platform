@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="audit"
+  DTS:DTSID="{95A6DA94-E353-45B0-A474-E5578DF6CE06}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::AuditConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SFDATASQL;Initial Catalog=audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

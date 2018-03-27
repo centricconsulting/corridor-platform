@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="corridor_file_manager"
+  DTS:DTSID="{BCCC69F7-9246-4FF6-8C73-70803CE6E178}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::CorridorFileManagerConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SFDATASQL;Initial Catalog=corridor_file_manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

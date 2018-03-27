@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Corridor File Manager"
+  DTS:DTSID="{FF589051-542E-4A55-B827-62B6F965763E}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=SFDATASQL;Initial Catalog=corridor_file_manager;Integrated Security=True;Connect Timeout=60;Application Name=SSIS-FileLoad_File_Manager-{FF589051-542E-4A55-B827-62B6F965763E}SFDATASQL.corridor_file_manager1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
