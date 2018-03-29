@@ -3,7 +3,6 @@ BEGIN
 
 INSERT INTO [dbo].[file_format] (
  [file_format_code]
-,[file_format_version]
 ,[file_format_desc]
 ,[file_format_comment]
 ,[create_timestamp]
@@ -11,9 +10,9 @@ INSERT INTO [dbo].[file_format] (
 ,[process_batch_key]
 )
 VALUES 
-  (N'HCHB Spec 1', 1, N'version 1', 'Initial version HCHB specifications', GETDATE(), GETDATE(), 0)
-, (N'HCHB Spec 0', 0, N'Test version', 'Test version HCHB specifications', GETDATE(), GETDATE(), 0)
-, (N'Demo Spec 1', 1, N'version 1;','Initial version Demographic specifications', GETDATE(), GETDATE(), 0)
+  (N'HCHB.1.0', 'HCHB File Format Specification 1.0', NULL, GETDATE(), GETDATE(), 0)
+, (N'HCHB.2.0', 'HCHB File Format Specification 2.0', NULL, GETDATE(), GETDATE(), 0)
+, (N'KINDRED.1.0', 'Kindred File Format Specification 1.0', NULL, GETDATE(), GETDATE(), 0)
 ;
 
 END

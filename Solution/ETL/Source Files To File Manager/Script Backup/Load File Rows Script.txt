@@ -159,7 +159,7 @@ namespace ST_72b17f2e052b49cfaf9c51dba099cf86
 
       // start on 2nd row because first row is 
       // assumed to be the the header
-      int RowNum = 2;
+      int RowNum = 1;
 
       while (RowNum <= RowCount)
       {
@@ -171,7 +171,6 @@ namespace ST_72b17f2e052b49cfaf9c51dba099cf86
         {
           // assign the correct column
           AssignDataRowColumn(dr, ColNum,
-            CellValues[0, ColNum - 1],
             CellValues[RowNum - 1, ColNum - 1]);
 
         }
@@ -206,20 +205,14 @@ namespace ST_72b17f2e052b49cfaf9c51dba099cf86
       return CellValues;
     }
 
-    public void AssignDataRowColumn(DataRow dr, int CurrentColumn, string Label, string Value)
+    public void AssignDataRowColumn(DataRow dr, int CurrentColumn, string Value)
     {
-      string ColumnNumberText = CurrentColumn.ToString("00");
-      string ValueColumn = string.Format("column{0}_value", ColumnNumberText);
-      string LabelColumn = string.Format("column{0}_label", ColumnNumberText);
-
-      dr[LabelColumn] = Label;
-
       // only populate the value is not blank or whitespace
       if (!string.IsNullOrWhiteSpace(Value))
       {
+        string ValueColumn = string.Format("column{0}", CurrentColumn.ToString("00"));
         dr[ValueColumn] = Value.Trim();
-      }
-
+      }      
     }
 
     public void PrepareDataRow(DataRow dr, int CurrentRow)
@@ -227,13 +220,15 @@ namespace ST_72b17f2e052b49cfaf9c51dba099cf86
       DateTime CurrentTime = DateTime.Now;
 
       dr["agency_file_key"] = this.AgencyFileKey;
+
+      dr["row_index"] = (CurrentRow);
+      dr["column_header_ind"] = (CurrentRow == 1) ? 1 : 0;
+
       dr["process_batch_key"] = this.ProcessBatchKey;
       dr["process_dtm"] = CurrentTime;
       dr["create_timestamp"] = CurrentTime;
       dr["modify_timestamp"] = CurrentTime;
 
-      // subtract one row to account for the header
-      dr["row_index"] = (CurrentRow - 1);
 
     }
 

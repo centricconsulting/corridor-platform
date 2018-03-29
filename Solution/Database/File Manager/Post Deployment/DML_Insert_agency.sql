@@ -16,9 +16,9 @@ INSERT INTO dbo.agency (
 ,[process_batch_key]
 )
 VALUES
-  (N'Kindred', N'Demo Spec 1', N'Kindred', @emails, 1, 1, GETDATE(), GETDATE(), 0)
-, (N'Trinity', N'HCHB Spec 1', N'Trinity', @emails, 1, 1, GETDATE(), GETDATE(), 0)
-, (N'Medstar', N'HCHB Spec 1', N'Medstar', @emails, 1, 1, GETDATE(), GETDATE(), 0)
+  (N'Kindred', N'KINDRED.1.0', N'Kindred', @emails, 1, 1, GETDATE(), GETDATE(), 0)
+, (N'Trinity', N'HCHB.1.0', N'Trinity', @emails, 1, 1, GETDATE(), GETDATE(), 0)
+, (N'Medstar', N'HCHB.1.0', N'Medstar', @emails, 1, 1, GETDATE(), GETDATE(), 0)
 ;
 
 END
