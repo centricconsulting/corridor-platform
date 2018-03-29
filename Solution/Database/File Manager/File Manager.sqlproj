@@ -64,14 +64,12 @@
     <Folder Include="Post Deployment" />
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="dbo\Views" />
-    <Folder Include="dbo\Tables\Indexes" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\agency_file.sql" />
     <Build Include="dbo\Tables\agency.sql" />
-    <Build Include="dbo\Stored Procedures\file_status_send_email_notification.sql" />
-    <Build Include="dbo\Stored Procedures\get_file_status.sql" />
-    <Build Include="dbo\Stored Procedures\TruncateFileStaging.sql" />
+    <None Include="dbo\Stored Procedures\file_status_send_email_notification.sql" />
+    <None Include="dbo\Stored Procedures\get_file_status.sql" />
     <Build Include="dbo\Views\MessageBody.sql" />
     <Build Include="dbo\Views\MessageHeader.sql" />
     <Build Include="dbo\Tables\agency_file_row.sql" />
@@ -83,45 +81,28 @@
     <Build Include="dbo\Tables\file_format_rule_filter.sql" />
     <Build Include="dbo\Tables\attribute.sql" />
     <Build Include="dbo\Tables\config.sql" />
-    <Build Include="dbo\Tables\Indexes\dbo_agency_u1.sql" />
-    <Build Include="dbo\Tables\Indexes\dbo_agency_u2.sql" />
-    <Build Include="dbo\Tables\Indexes\dbo_attribute_u1.sql" />
-    <Build Include="dbo\Tables\Indexes\dbo_file_format_u1.sql" />
-    <Build Include="dbo\Tables\Indexes\dbo_file_format_attribute_u1.sql" />
-    <Build Include="dbo\Tables\Indexes\dbo_file_format_rule_filter_u1.sql" />
-    <Build Include="dbo\Tables\Indexes\dbo_file_format_rule_translate_u1.sql" />
     <None Include="Post Deployment\DML_Insert_attribute.sql" />
     <None Include="Post Deployment\DML_Insert_file_format_rule_translate.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Publish\corridor_file_manager_SFDATASQL.publish.xml" />
     <None Include="Post Deployment\DML_Insert_agency.sql" />
-    <None Include="Post Deployment\seed_config.sql" />
+    <None Include="Post Deployment\DML_Insert_config.sql" />
+    <None Include="Publish\File Manager.publish.xml" />
+    <None Include="Publish\FileManager.Compare.scmp" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Post Deployment\Script.PostDeployment.sql" />
   </ItemGroup>
   <ItemGroup>
-    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac">
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SQLSchemas\master.dacpac">
       <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\master.dacpac</HintPath>
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>master</DatabaseVariableLiteralValue>
     </ArtifactReference>
-    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\msdb.dacpac">
+    <ArtifactReference Include="C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SQLSchemas\msdb.dacpac">
       <HintPath>$(DacPacRootPath)\Extensions\Microsoft\SQLDB\Extensions\SqlServer\130\SqlSchemas\msdb.dacpac</HintPath>
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
     </ArtifactReference>
-  </ItemGroup>
-  <ItemGroup>
-    <SqlCmdVariable Include="DBMailProfile_Name">
-      <DefaultValue>
-      </DefaultValue>
-      <Value>$(SqlCmdVar__1)</Value>
-    </SqlCmdVariable>
-    <SqlCmdVariable Include="FileManagementDB_Name">
-      <DefaultValue>corridor_file_manager</DefaultValue>
-      <Value>$(SqlCmdVar__2)</Value>
-    </SqlCmdVariable>
   </ItemGroup>
 </Project>

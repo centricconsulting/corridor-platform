@@ -6,16 +6,16 @@
 	[team]						VARCHAR(20)		NULL,		 
 	[patient_lastname]			VARCHAR(50)		NULL,		
 	[patient_firstname]			VARCHAR(50)		NULL,
-	[MRN]						VARCHAR(50)		NULL,		
+	[mrn]						VARCHAR(50)		NULL,		
 	[oasis_visit_type]			VARCHAR(50)		NULL,		
 	[visit_type]				VARCHAR(50)		NULL,		 
 	[assessment_dt]				DATE			NULL,		--visit_dt
 	[responsible_position]		VARCHAR(50)		NULL,
 	[arrival_dt]				DATE			NULL,		 
-	[SOE_dt]					DATE			NULL,		
-	[SOC_dt]					DATE			NULL,		 
-	[REC_dt]					DATE			NULL,		 
-	[ROC_dt]					DATE			NULL,		
+	[soe_dt]					DATE			NULL,		
+	[soc_dt]					DATE			NULL,		 
+	[rec_dt]					DATE			NULL,		 
+	[roc_dt]					DATE			NULL,		
 	[hospice_dt]				DATE			NULL,		
 	[discharge_dt]				DATE			NULL,		 
 	[payor_type]				VARCHAR(50)		NULL,		
@@ -27,14 +27,10 @@
 	[event]						VARCHAR(50)		NULL,		
 	[stage]						VARCHAR(50)		NULL,		
 	[task]						VARCHAR(50)		NULL,
-
 	[status]					VARCHAR(50)		NULL,	
 	[prepared_for_coding_dt]	DATE			NULL,
-
-	[file_format_code]			VARCHAR(20)		NULL,
-	[file_key]					VARCHAR(100)	NULL,
-	[file_row_key]				VARCHAR(100)	NULL,
+	[agency_file_row_key] INT NOT NULL,
 	[create_timestamp]			DATETIME		NOT NULL,
-    [batch_key]					INT             NOT NULL,
+  [process_batch_key]					INT             NOT NULL,
 
 )

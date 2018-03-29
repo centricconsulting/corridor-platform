@@ -67,21 +67,18 @@
     <Folder Include="dbo\Indexes" />
     <Folder Include="sf" />
     <Folder Include="sf\Tables" />
-    <Folder Include="sf\Indexes" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\patient_demographic.sql" />
     <Build Include="Security\sf.sql" />
-    <Build Include="sf\Tables\product_rate.sql" />
-    <Build Include="sf\Tables\agency_location.sql" />
-    <Build Include="sf\Indexes\sf_agency_location_u1.sql" />
-    <Build Include="sf\Indexes\sf_product_rate_u1.sql" />
     <Build Include="dbo\Tables\DM_Submission__c_Result.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Publish\corridor_ods_SFDATASQL.publish.xml" />
+    <Build Include="sf\Tables\agency_location.sql" />
+    <Build Include="sf\Tables\product_rate.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Post Deployment\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Publish\ODS.publish.xml" />
   </ItemGroup>
 </Project>

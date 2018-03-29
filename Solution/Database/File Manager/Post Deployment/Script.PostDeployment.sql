@@ -10,7 +10,6 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-
 :r .\DML_Insert_agency.sql
 
 :r .\DML_Insert_file_format_rule_translate.sql
@@ -21,7 +20,7 @@ Post-Deployment Script Template
 
 :r .\DML_Insert_file_format_attribute.sql
 
-:r .\seed_config.sql
+:r .\DML_Insert_config.sql
 
 
 
