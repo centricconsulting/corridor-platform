@@ -1,9 +1,4 @@
-﻿TRUNCATE TABLE dbo.config
-
-SET IDENTITY_INSERT dbo.config ON
-GO
-
-IF NOT EXISTS (SELECT 1 FROM dbo.config WHERE config_key = 0)
+﻿IF NOT EXISTS (SELECT 1 FROM dbo.config WHERE config_key = 0)
 BEGIN
 
 INSERT INTO dbo.config (

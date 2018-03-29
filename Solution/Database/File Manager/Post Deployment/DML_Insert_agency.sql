@@ -7,7 +7,7 @@ DECLARE @emails VARCHAR(1000) = 'russ.dixon@centricconsulting.com;demily@corrido
 INSERT INTO dbo.agency (
  [agency_name]
 ,[default_file_format_code]
-,[folder_branch_name]
+,[folder_branch]
 ,[notify_email_address_list]
 ,[notify_on_rejected_ind]
 ,[notify_on_accepted_ind]

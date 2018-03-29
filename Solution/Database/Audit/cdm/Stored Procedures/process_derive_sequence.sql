@@ -2,7 +2,7 @@
 
 /* ################################################################################
 
-OBJECT: cdm.derive_sequence
+OBJECT: cdm.process_derive_sequence
 
 DESCRIPTION: Given a Data Management Process UID this procedure determines the 
   next Start and End Sequence Keys (or Datetimes) needed to bound incremental
@@ -12,13 +12,17 @@ PARAMETERS:
 
   @process_uid VARCHAR(50) = Text that uniquely identifies the Data Management process.
 
+  @channel_uid = Text that uniquely identifies a tranche of data handled by the process.
+
+  @scope = Text that may be used for analysis of process data, often used to group processes.
+
   @limit_process_uid VARCHAR(50) Optional = Text that uniquely identifies the Data Management process 
     whose last Completed Sequence Key limits the derived End Sequence Key.
  
   @increment_sequence_ind BIT Optional = Flag that indicates whether the Start Sequence Key is 
     incremented by one (1) over the previous End Sequence Key. 
   
-  @current_sequence_key BIGINT Optional = Integer value representing the current value (typically a maximum) 
+  @current_sequence_val BIGINT Optional = Integer value representing the current value (typically a maximum) 
     of the sequence key referenced by the source table.
   
   @current_sequence_dtm DATETIME Optional = Datetime value representing the current value
@@ -26,11 +30,11 @@ PARAMETERS:
   
 OUTPUT PARAMETERS:
 
-  @prior_batch_key INT OUTPUT
-  @limit_batch_key INT OUTPUT
-  @start_sequence_key BIGINT OUTPUT
-  @start_sequence_dtm DATETIME OUTPUT
-  @end_sequence_key BIGINT OUTPUT
+  @prior_process_batch_key INT OUTPUT
+  @limit_process_batch_key INT OUTPUT
+  @begin_sequence_val BIGINT OUTPUT
+  @begin_sequence_dtm DATETIME OUTPUT
+  @end_sequence_val BIGINT OUTPUT
   @end_sequence_dtm DATETIME OUTPUT
   
 RETURN VALUE: None.
@@ -45,60 +49,51 @@ HISTORY:
 
 ################################################################################ */
 
-CREATE PROCEDURE [cdm].[derive_sequence] 
+CREATE PROCEDURE [cdm].[process_derive_sequence] 
 
-  @process_uid VARCHAR(100)
-, @limit_process_uid VARCHAR(100) = NULL
+  @process_uid VARCHAR(200)
+, @channel_uid VARCHAR(200) = NULL
+, @limit_process_uid VARCHAR(200) = NULL
+, @limit_channel_uid VARCHAR(200) = NULL
 , @increment_sequence_ind INTEGER = 1  
-, @current_sequence_key BIGINT = NULL
+, @current_sequence_val BIGINT = NULL
 , @current_sequence_dtm DATETIME = NULL
 
   -- output variables
-, @prior_batch_key INT OUTPUT
-, @limit_batch_key INT OUTPUT
-, @start_sequence_key BIGINT OUTPUT
-, @start_sequence_dtm DATETIME OUTPUT
-, @end_sequence_key BIGINT OUTPUT
+, @prior_process_batch_key INT OUTPUT
+, @limit_process_batch_key INT OUTPUT
+, @begin_sequence_val BIGINT OUTPUT
+, @begin_sequence_dtm DATETIME OUTPUT
+, @end_sequence_val BIGINT OUTPUT
 , @end_sequence_dtm DATETIME OUTPUT
   
 AS
 BEGIN
 
+  -- NOTE: Channel UIDs are not defaulted in this proc
+  /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
   DECLARE
-    @default_sequence_key INTEGER
+    @default_sequence_val BIGINT
   , @default_sequence_dtm DATETIME
 
-  SET @default_sequence_key = 0
+  SET @default_sequence_val = 0
   SET @default_sequence_dtm = CONVERT(datetime,'1900-01-01')
-  
-  -- ensures that the process and limit process
-  -- exist in the master table
-  /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-    
-  EXEC cdm.register
-    @process_uid
-    
-  IF @limit_process_uid IS NOT NULL
-  BEGIN  
-    EXEC cdm.register
-      @limit_process_uid
-  END
-  
-  
+ 
   -- start sequence values inerherited from the
   -- sequence last complete process
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */  
   
   SELECT
-    @prior_batch_key = cdm.completed_batch_key
-  , @start_sequence_key = cdm.completed_sequence_key
-  , @start_sequence_dtm = cdm.completed_sequence_dtm
+    @prior_process_batch_key = p.completed_process_batch_key
+  , @begin_sequence_val = p.completed_sequence_val
+  , @begin_sequence_dtm = p.completed_sequence_dtm
   FROM
-  cdm.process cdm
+  cdm.process p
   WHERE
-  cdm.process_uid = @process_uid;
-  
-  
+  p.process_uid = @process_uid
+  AND p.channel_uid = @channel_uid;
+    
   -- increment the start sequence key according to flag
   -- this is typically used in cases where the sequences are external,
   -- but it also is applicable (though not required) for internal sequences.
@@ -106,54 +101,55 @@ BEGIN
   
   IF @increment_sequence_ind = 1
   BEGIN
-   SET @start_sequence_key = @start_sequence_key + 1;
+   SET @begin_sequence_val = @begin_sequence_val + 1;
   END
      
-
   -- default start values only if they are missing.  this can
   -- occur on the first batch of a process.  
   -- in order to prevent generation of invalid data, the corresponding
   -- current sequence value must be non-null
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
   
-  IF @start_sequence_key IS NULL AND @current_sequence_key IS NOT NULL
+  IF @begin_sequence_val IS NULL AND @current_sequence_val IS NOT NULL
   BEGIN
-    SET @start_sequence_key = @default_sequence_key;
+    SET @begin_sequence_val = @default_sequence_val;
   END;
   
-  IF @start_sequence_dtm IS NULL AND @current_sequence_dtm IS NOT NULL
+  IF @begin_sequence_dtm IS NULL AND @current_sequence_dtm IS NOT NULL
   BEGIN
-    SET @start_sequence_dtm = @default_sequence_dtm;
+    SET @begin_sequence_dtm = @default_sequence_dtm;
   END;
-
 
   -- determine the end sequences from the limit
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
   
-  IF @limit_process_uid IS NOT NULL
+  IF @limit_process_uid IS NOT NULL AND @limit_channel_uid IS NOT NULL
   BEGIN
 
-    -- inherit the limit from a prior completed process
-    SELECT
-      @limit_batch_key = cdm.completed_batch_key
-    , @end_sequence_key = cdm.completed_sequence_key
-    , @end_sequence_dtm = cdm.completed_sequence_dtm
-    FROM
-    cdm.process cdm
-    WHERE
-    cdm.process_uid = @limit_process_uid;
-    
+	-- inherit the limit from a prior completed process
+	-- NOTE: it is conceivable that the limit process and channel do not exist
+	--  which will results in a NULL End Sequence values
+	SELECT
+	  @limit_process_batch_key = p.completed_process_batch_key
+	, @end_sequence_val = p.completed_sequence_val
+	, @end_sequence_dtm = p.completed_sequence_dtm
+	FROM
+	cdm.process p
+	WHERE
+	p.process_uid = @limit_process_uid
+	AND p.channel_uid = @limit_channel_uid;
+
   END;
   
   -- default end sequence values.
   -- if the end sequence key is not already assigned...
-  -- or the end sequence key is greater than the current sequence key (except for text), ...
-  -- set it to the current sequence key.
+  -- or the end sequence key is greater than the current sequence key (except for text)...
+  -- set it to the current sequence value.
   /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-  IF @end_sequence_key IS NULL OR @end_sequence_key > @current_sequence_key
+  IF @end_sequence_val IS NULL OR @end_sequence_val > @current_sequence_val
   BEGIN
-    SET @end_sequence_key = @current_sequence_key;
+    SET @end_sequence_val = @current_sequence_val;
   END;
   
   IF @end_sequence_dtm IS NULL OR @end_sequence_dtm > @current_sequence_dtm
