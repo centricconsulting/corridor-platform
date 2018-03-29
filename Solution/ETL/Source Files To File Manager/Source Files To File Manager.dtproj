@@ -29,16 +29,18 @@
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="FileLoad_File_Manager.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="FileLoad_File_Manager_Controller.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Manage Source Files.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Controller.Main.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Process File.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Send Notifications.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
-          <SSIS:ConnectionManager SSIS:Name="corridor_file_manager.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="Corridor File Manager.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="Audit.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="File Manager.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
-            <SSIS:Parameter SSIS:Name="CM.corridor_file_manager.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.Audit.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -49,11 +51,11 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">corridor_file_manager</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Audit</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.corridor_file_manager.Password">
+            <SSIS:Parameter SSIS:Name="CM.Audit.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -67,7 +69,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.corridor_file_manager.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.Audit.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -82,7 +84,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.corridor_file_manager.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.Audit.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -93,11 +95,11 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">SFDATASQL</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">localhost</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.corridor_file_manager.UserName">
+            <SSIS:Parameter SSIS:Name="CM.Audit.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -111,22 +113,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Corridor File Manager.ConnectionString">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="CreationName">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=SFDATASQL;Initial Catalog=corridor_file_manager;Integrated Security=True;Connect Timeout=60;Application Name=SSIS-FileLoad_File_Manager-{FF589051-542E-4A55-B827-62B6F965763E}SFDATASQL.corridor_file_manager1;</SSIS:Property>
-                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-              </SSIS:Properties>
-            </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Corridor File Manager.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.File Manager.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -141,7 +128,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Corridor File Manager.Password">
+            <SSIS:Parameter SSIS:Name="CM.File Manager.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -155,7 +142,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Corridor File Manager.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.File Manager.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -170,7 +157,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Corridor File Manager.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.File Manager.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -181,11 +168,11 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">SFDATASQL</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">localhost</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.Corridor File Manager.UserName">
+            <SSIS:Parameter SSIS:Name="CM.File Manager.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -201,16 +188,16 @@
             </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="FileLoad_File_Manager.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Manage Source Files.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{37D43593-7B34-4707-8E3F-A14FFBAF9214}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">FileLoad_File_Manager</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{AC914BB2-A4D8-47F3-A651-2282E3CF193C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Manage Source Files</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">366</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">394</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8DAF4694-C249-4ADA-8933-8FCE0655EB13}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FF6B435D-DE4F-426D-AB1A-F9C0DADF34FC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -218,16 +205,50 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="FileLoad_File_Manager_Controller.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Controller.Main.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{2F496B8E-F751-442B-84AF-376D9A65A342}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">FileLoad_File_Manager_Controller</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{56894B82-8B2D-4719-877F-4F7EC61D087F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Controller Main</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">381</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8E342789-5B24-4B7D-9D04-0FFCC76BF7D4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DA20E66B-7B87-4D49-BB85-E0F28DC8904B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Process File.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{67F2A410-9FAC-46E7-8075-45895861A0EB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Process File</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">397</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{01D70BC6-5E27-4B94-B628-DAFA85B98CFE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Send Notifications.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{817A54DD-2661-4C08-84EB-A80A2AFAAA2F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Send Notifications</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">381</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{53BEE95D-EE9B-42F0-A2F5-92D11EBFFEF0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

@@ -16,13 +16,13 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=SFDATASQL;Initial Catalog=audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=Audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="CorridorFileManagerConnectionString">
+    SSIS:Name="FileManagerConnectionString">
     <SSIS:Properties>
       <SSIS:Property
         SSIS:Name="ID">{bf775bc8-9bf0-4e52-8f28-f6c5e9da0a38}</SSIS:Property>
@@ -37,28 +37,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=SFDATASQL;Initial Catalog=corridor_file_manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;multipleactiveresultsets=True;</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
-    SSIS:Name="CacheFolderPath">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{d06f6f0b-a5d8-4c09-9efb-e3ddfccf39ff}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">F:\Temp</SSIS:Property>
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=corridor_file_manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;multipleactiveresultsets=True;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

@@ -1,12 +1,12 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="xudit"
-  DTS:DTSID="{F88B6351-8F55-462E-8386-5BDC26D924CE}"
+  DTS:ObjectName="Audit"
+  DTS:DTSID="{5BE61CE8-DD91-4404-B6D0-31FDFE93C3B4}"
   DTS:CreationName="OLEDB">
   <DTS:PropertyExpression
     DTS:Name="ConnectionString">@[$Project::AuditConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=SFDATASQL;Initial Catalog=audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=Audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
