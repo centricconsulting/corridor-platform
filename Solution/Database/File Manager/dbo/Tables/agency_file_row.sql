@@ -86,8 +86,10 @@
 	[column40_label]		VARCHAR(200)		NULL,	
 	[column40_value]		VARCHAR(200)		NULL,
 
-	[process_success_ind] BIT					NULL,
-	[process_dtm]			DATETIME			NULL,
+  -- PROCESS = loading ODS visit table
+  [process_dtm]				DATETIME		NULL,
+  [process_success_ind]  BIT NULL,
+  [process_error_message] VARCHAR(100) NULL,
 
 	[create_timestamp]		DATETIME			NULL,
 	[modify_timestamp]		DATETIME			NULL,

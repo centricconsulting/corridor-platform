@@ -10,11 +10,15 @@
   [file_hash]					VARCHAR(50)		NOT NULL,
 	[file_created_dtm]			DATETIME		NOT NULL,
 	[file_modified_dtm]			DATETIME		NOT NULL,
-	[process_dtm]				DATETIME		NULL,
 	[archive_folder_path]		VARCHAR(1000)	NULL,
 	[archive_file_name]			VARCHAR(200)	NULL,
+
+  -- PROCESS = loading of file row
+  [process_dtm]				DATETIME		NULL,
   [process_success_ind]  BIT NULL,
-	[notification_sent_ind]		BIT				NULL,	
+  [process_error_message] VARCHAR(100) NULL,
+	
+  [notification_sent_ind]		BIT				NULL,	
 	[create_timestamp]			DATETIME		NOT NULL,
 	[modify_timestamp]			DATETIME		NOT NULL,
 	[process_batch_key]					INT				NOT NULL,

@@ -30,7 +30,6 @@
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Manage Source Files.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Controller.Main.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Audit.conmgr" />
@@ -192,27 +191,10 @@
                 <SSIS:Property SSIS:Name="Name">Manage Source Files</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">435</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">465</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{ED0DDA25-E170-41B9-A1CE-64A22D200E8E}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Controller.Main.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{56894B82-8B2D-4719-877F-4F7EC61D087F}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Controller Main</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">382</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AD0923E9-DE44-4416-A036-2866ACC86C64}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{232FD9B3-B988-405F-92BC-703DE2B337AE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
