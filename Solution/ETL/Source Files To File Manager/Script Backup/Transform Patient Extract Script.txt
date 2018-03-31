@@ -45,19 +45,37 @@ public class ScriptMain : UserComponent
 
         // get the raw value based on column position
         string ColumnValue = GetColumnValue(Row, attribute, errors);
+        ColumnValue = string.IsNullOrWhiteSpace(ColumnValue) ? null : ColumnValue.Trim();
 
-        // setup a working value for future analysis
-        string WorkingValue = (ColumnValue == null) ? null : ColumnValue.Trim();
+        // assign a working value for transformation purposes
+        string WorkingValue = ColumnValue;
 
-        // apply regex if applicable
-        if (!string.IsNullOrWhiteSpace(attribute.ExtractRegex))
+        // work through transformation logic
+        // only if the column value is not null
+        if (WorkingValue != null)
         {
-          WorkingValue = ExtractText(WorkingValue, attribute, errors);
-        }
 
-        // assign translated value if applicable
-        string TranslatedValue = GetTranslatedValue(WorkingValue, attribute, errors);
-        if (TranslatedValue != null) WorkingValue = TranslatedValue;
+          // apply regex if applicable
+          if (!string.IsNullOrWhiteSpace(attribute.ExtractRegex))
+          {
+            WorkingValue = ExtractText(WorkingValue, attribute, errors);
+          }
+
+          // assign translated value if applicable
+          string TranslatedValue = GetTranslatedValue(WorkingValue, attribute, errors);
+          if (!string.IsNullOrWhiteSpace(TranslatedValue)) WorkingValue = TranslatedValue;
+
+          // if after all the transformation, the final working value is null
+          // use the original value providing transform default = true
+          if(string.IsNullOrWhiteSpace(WorkingValue) 
+            && attribute.TransformDefaultFlag 
+            && !string.IsNullOrWhiteSpace(ColumnValue))
+          {
+            // reassign the working value to the original value
+            WorkingValue = ColumnValue;
+          }
+
+        }
 
         // turn on the critical flag if a required value is not present
         if (attribute.RequiredFlag && string.IsNullOrWhiteSpace(WorkingValue))
@@ -66,12 +84,18 @@ public class ScriptMain : UserComponent
         }
 
         // assign values to individual output elements
-        AssignOutputValue(Row, WorkingValue, attribute, errors);
+        // only necessary if value is null
+        if(WorkingValue != null)
+        {
+          AssignOutputValue(Row, WorkingValue, attribute, errors);
+        }
 
       }
       catch(Exception e)
       {
-        string ErrorMessage = e.Message + ((e.InnerException != null) ? e.InnerException.Message : String.Empty);
+        string ErrorMessage = "Code Error: " + e.Message + 
+          ((e.InnerException != null) ? e.InnerException.Message : String.Empty);
+
         errors.Add(attribute.AttributeName, ErrorMessage, true);
       }      
     }
@@ -111,27 +135,27 @@ public class ScriptMain : UserComponent
     {
       case "AGENCY LOCATION": Row.agencylocation = (string)ConvertToDataType(Value, attribute, errors); break;
       case "AGENCY LOCATION ALIAS": Row.agencylocationalias = (string)ConvertToDataType(Value, attribute, errors); break;
-      case "ARRIVAL DATE": Row.arrivaldate = (DateTime)ConvertToDataType(Value, attribute, errors); break;
-      case "ASSESSMENT DATE": Row.assessmentdate = (DateTime)ConvertToDataType(Value, attribute, errors); break;
+      case "ARRIVAL DATE": Row.arrivaldate = (string)ConvertToDataType(Value, attribute, errors); break;
+      case "ASSESSMENT DATE": Row.assessmentdate = (string)ConvertToDataType(Value, attribute, errors); break;
       case "CLINICIAN FIRST NAME": Row.clinicianfirstname = (string)ConvertToDataType(Value, attribute, errors); break;
       case "CLINICIAN LAST NAME": Row.clinicianlastname = (string)ConvertToDataType(Value, attribute, errors); break;
-      case "DISCHARGE DATE": Row.dischargedate = (DateTime)ConvertToDataType(Value, attribute, errors); break;
+      case "DISCHARGE DATE": Row.dischargedate = (string)ConvertToDataType(Value, attribute, errors); break;
       case "EVENT": Row.eventdesc = (string) ConvertToDataType(Value, attribute, errors); break;
-      case "HOSPICE DATE": Row.hospicedate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "HOSPICE DATE": Row.hospicedate = (string) ConvertToDataType(Value, attribute, errors); break;
       case "MEDICAL RECORD NUMBER": Row.medicalrecordnumber = (string) ConvertToDataType(Value, attribute, errors); break;
       case "OASIS VISIT TYPE": Row.oasisvisittype = (string) ConvertToDataType(Value, attribute, errors); break;
       case "PATIENT FIRST NAME": Row.patientfirstname = (string) ConvertToDataType(Value, attribute, errors); break;
       case "PATIENT LAST NAME": Row.patientlastname = (string) ConvertToDataType(Value, attribute, errors); break;
       case "PAYOR SOURCE": Row.payorsource = (string) ConvertToDataType(Value, attribute, errors); break;
       case "PAYOR TYPE": Row.payortype = (string) ConvertToDataType(Value, attribute, errors); break;
-      case "RECERTIFICATION DATE": Row.recertificationdate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "RECERTIFICATION DATE": Row.recertificationdate = (string) ConvertToDataType(Value, attribute, errors); break;
       case "RESPONSIBLE POSITION": Row.responsibleposition = (string) ConvertToDataType(Value, attribute, errors); break;
-      case "RESUMPTION OF CARE DATE": Row.resumptionofcaredate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "RESUMPTION OF CARE DATE": Row.resumptionofcaredate = (string) ConvertToDataType(Value, attribute, errors); break;
       case "SECONDARY PAYOR SOURCE": Row.secondarypayorsource = (string) ConvertToDataType(Value, attribute, errors); break;
       case "SECONDARY PAYOR TYPE": Row.secondarypayortype = (string) ConvertToDataType(Value, attribute, errors); break;
       case "STAGE": Row.stage = (string) ConvertToDataType(Value, attribute, errors); break;
-      case "START OF CARE DATE": Row.startofcaredate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
-      case "START OF EPISODE DATE": Row.startofepisodedate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "START OF CARE DATE": Row.startofcaredate = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "START OF EPISODE DATE": Row.startofepisodedate = (string) ConvertToDataType(Value, attribute, errors); break;
       case "TASK": Row.task = (string) ConvertToDataType(Value, attribute, errors); break;
       case "TEAM": Row.team = (string) ConvertToDataType(Value, attribute, errors); break;
       case "VISIT TYPE": Row.visittype = (string) ConvertToDataType(Value, attribute, errors); break;
@@ -169,7 +193,7 @@ public class ScriptMain : UserComponent
         DateTime retval;
         if(DateTime.TryParse(Value, out retval))
         {
-          return retval;
+          return retval.ToString("yyyy-MM-dd hh:mm:ss tt");
         }
         else
         {
@@ -195,6 +219,39 @@ public class ScriptMain : UserComponent
 
           return null;
         }
+
+      case "integer":
+
+        int retval3;
+        if (int.TryParse(Value, out retval3))
+        {
+          return retval3;
+        }
+        else
+        {
+          errors.Add(attribute.AttributeName, string.Format(
+            "The value provide \"{0}\" does not match the expected '{1}' format.",
+            Value, attribute.AttributeDataType.ToLower()));
+
+          return null;
+        }
+
+      case "boolean":
+
+        bool retval4;
+        if (bool.TryParse(Value, out retval4))
+        {
+          return retval4;
+        }
+        else
+        {
+          errors.Add(attribute.AttributeName, string.Format(
+            "The value provide \"{0}\" does not match the expected '{1}' format.",
+            Value, attribute.AttributeDataType.ToLower()));
+
+          return null;
+        }
+
       default:
 
         errors.Add(attribute.AttributeName, string.Format(
@@ -392,10 +449,13 @@ public class ProcessErrors
     this.ErrorCount++;
     if (Critical) CriticalErrorCount++;
 
+    // insert a carriage return
+    if (this.ErrorCount > 0) this._ErrorMessages.Append("\r\n");
+
     string Message = null;
     if (Critical)
     {
-      Message = string.Format("CRITICAL > {0}: {1}", AttributeName, ErrorMessage);
+      Message = string.Format("CRITICAL!! {0}: {1}", AttributeName, ErrorMessage);
     }
     else
     {
@@ -411,7 +471,7 @@ public class ProcessErrors
     
     if (this.ErrorCount == 0) return null;
 
-    string Declaration = string.Format("Encountered {0} critical and {1} non-critical error(s).",
+    string Declaration = string.Format("Encountered {0} critical and {1} non-critical error(s).\r\n",
       this.CriticalErrorCount.ToString(), (this.ErrorCount - this.CriticalErrorCount).ToString());
 
     return new StringBuilder(Declaration).AppendLine(this._ErrorMessages.ToString()).ToString();

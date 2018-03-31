@@ -192,10 +192,10 @@
                 <SSIS:Property SSIS:Name="Name">Process Agency Medical Records</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">564</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">596</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{44662D65-9B8D-4D5A-ACDF-3D188E818BAD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BE30CCF5-F007-4C51-854E-1B56A82C2C39}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -236,7 +236,7 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
-        <TargetServerVersion>SQLServer2016</TargetServerVersion>
+        <TargetServerVersion>SQLServer2014</TargetServerVersion>
         <ParameterConfigurationValues>
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>
