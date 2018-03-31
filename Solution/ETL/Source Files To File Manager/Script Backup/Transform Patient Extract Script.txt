@@ -1,0 +1,438 @@
+using System;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Data.Linq;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+
+  // create the class level lists
+  public List<FileFormatAttribute> AttributeList = new List<FileFormatAttribute>();
+  public List<FileFormatTranslate> TranslateList = new List<FileFormatTranslate>();
+
+  public override void PreExecute()
+  {
+    base.PreExecute();
+
+    // populate the lists needed for transformation
+    LoadAttributeList();
+    LoadTranslateList();
+
+  }
+
+  public override void PostExecute()
+  {
+    base.PostExecute();
+  }
+
+
+  public override void Input0_ProcessInputRow(Input0Buffer Row)
+  {
+    ProcessErrors errors = new ProcessErrors();
+
+    foreach (FileFormatAttribute attribute in this.AttributeList)
+    {
+
+      try
+      {
+
+        // get the raw value based on column position
+        string ColumnValue = GetColumnValue(Row, attribute, errors);
+
+        // setup a working value for future analysis
+        string WorkingValue = (ColumnValue == null) ? null : ColumnValue.Trim();
+
+        // apply regex if applicable
+        if (!string.IsNullOrWhiteSpace(attribute.ExtractRegex))
+        {
+          WorkingValue = ExtractText(WorkingValue, attribute, errors);
+        }
+
+        // assign translated value if applicable
+        string TranslatedValue = GetTranslatedValue(WorkingValue, attribute, errors);
+        if (TranslatedValue != null) WorkingValue = TranslatedValue;
+
+        // turn on the critical flag if a required value is not present
+        if (attribute.RequiredFlag && string.IsNullOrWhiteSpace(WorkingValue))
+        {
+          errors.Add(attribute.AttributeName, "The attribute is missing but is required.", true);
+        }
+
+        // assign values to individual output elements
+        AssignOutputValue(Row, WorkingValue, attribute, errors);
+
+      }
+      catch(Exception e)
+      {
+        string ErrorMessage = e.Message + ((e.InnerException != null) ? e.InnerException.Message : String.Empty);
+        errors.Add(attribute.AttributeName, ErrorMessage, true);
+      }      
+    }
+
+    // write the results of processing
+    Row.processsuccessind = (errors.CriticalErrorCount == 0);
+    Row.processdtm = DateTime.Now;
+
+    int ErrorLength = errors.Length;
+
+    if (ErrorLength > 2000)
+    {
+      Row.processerrormessage = errors.ToString().Substring(0, 2000);
+    }
+    else
+    {
+      Row.processerrormessage = (ErrorLength == 0) ? null : errors.ToString();
+    }
+
+  }
+
+  public string GetTranslatedValue(string Value, FileFormatAttribute attribute, ProcessErrors errors)
+  {
+
+    // get a matching translate object
+    FileFormatTranslate t = TranslateList.Find(x =>
+      x.AttributeName.Equals(attribute.AttributeName, StringComparison.CurrentCultureIgnoreCase)
+      && x.AttributeValue.Equals(Value, StringComparison.CurrentCultureIgnoreCase));
+
+    return (t != null) ? t.TranslateValue : null;
+
+  }
+
+  public void AssignOutputValue(Input0Buffer Row, string Value, FileFormatAttribute attribute, ProcessErrors errors)
+  {
+    switch (attribute.AttributeName.ToUpper())
+    {
+      case "AGENCY LOCATION": Row.agencylocation = (string)ConvertToDataType(Value, attribute, errors); break;
+      case "AGENCY LOCATION ALIAS": Row.agencylocationalias = (string)ConvertToDataType(Value, attribute, errors); break;
+      case "ARRIVAL DATE": Row.arrivaldate = (DateTime)ConvertToDataType(Value, attribute, errors); break;
+      case "ASSESSMENT DATE": Row.assessmentdate = (DateTime)ConvertToDataType(Value, attribute, errors); break;
+      case "CLINICIAN FIRST NAME": Row.clinicianfirstname = (string)ConvertToDataType(Value, attribute, errors); break;
+      case "CLINICIAN LAST NAME": Row.clinicianlastname = (string)ConvertToDataType(Value, attribute, errors); break;
+      case "DISCHARGE DATE": Row.dischargedate = (DateTime)ConvertToDataType(Value, attribute, errors); break;
+      case "EVENT": Row.eventdesc = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "HOSPICE DATE": Row.hospicedate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "MEDICAL RECORD NUMBER": Row.medicalrecordnumber = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "OASIS VISIT TYPE": Row.oasisvisittype = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "PATIENT FIRST NAME": Row.patientfirstname = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "PATIENT LAST NAME": Row.patientlastname = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "PAYOR SOURCE": Row.payorsource = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "PAYOR TYPE": Row.payortype = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "RECERTIFICATION DATE": Row.recertificationdate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "RESPONSIBLE POSITION": Row.responsibleposition = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "RESUMPTION OF CARE DATE": Row.resumptionofcaredate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "SECONDARY PAYOR SOURCE": Row.secondarypayorsource = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "SECONDARY PAYOR TYPE": Row.secondarypayortype = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "STAGE": Row.stage = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "START OF CARE DATE": Row.startofcaredate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "START OF EPISODE DATE": Row.startofepisodedate = (DateTime) ConvertToDataType(Value, attribute, errors); break;
+      case "TASK": Row.task = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "TEAM": Row.team = (string) ConvertToDataType(Value, attribute, errors); break;
+      case "VISIT TYPE": Row.visittype = (string) ConvertToDataType(Value, attribute, errors); break;
+      default:
+
+        errors.Add(attribute.AttributeName, "Attribute is not configured in the processing code.", true);
+        break;
+    }
+   }
+
+  public object ConvertToDataType(string Value, FileFormatAttribute attribute, ProcessErrors errors)
+  {
+
+    // first handle empty or null values
+    if (string.IsNullOrWhiteSpace(Value)) return null;
+
+    // consider typed values
+    switch (attribute.AttributeDataType.ToLower())
+    {
+
+      case "text":
+
+        if(attribute.AttributeMaxLength != null && Value.Length > (int)attribute.AttributeMaxLength)
+        {
+          return Value.Substring(0, (int)attribute.AttributeMaxLength);
+        }
+        else
+        {
+          return Value;
+        }
+        
+      case "timestamp":
+
+          
+        DateTime retval;
+        if(DateTime.TryParse(Value, out retval))
+        {
+          return retval;
+        }
+        else
+        {
+          errors.Add(attribute.AttributeName, string.Format(
+            "The value provide \"{0}\" does not match the expected '{1}' format.",
+            Value, attribute.AttributeDataType.ToLower()));
+
+          return null;
+        }
+
+      case "number":
+
+        Decimal retval2;
+        if (Decimal.TryParse(Value, out retval2))
+        {
+          return retval2;
+        }
+        else
+        {
+          errors.Add(attribute.AttributeName, string.Format(
+            "The value provide \"{0}\" does not match the expected '{1}' format.",
+            Value, attribute.AttributeDataType.ToLower()));
+
+          return null;
+        }
+      default:
+
+        errors.Add(attribute.AttributeName, string.Format(
+          "The attribute format '{0}' is invalid.",
+          attribute.AttributeDataType.ToLower()));
+          
+        return null;
+
+    }
+  }
+
+  public string GetColumnValue(Input0Buffer Row, FileFormatAttribute attribute, ProcessErrors errors)
+  {
+    switch(attribute.ColumnIndex)
+    {
+      case 1: return Row.column01;
+      case 2: return Row.column02;
+      case 3: return Row.column03;
+      case 4: return Row.column04;
+      case 5: return Row.column05;
+      case 6: return Row.column06;
+      case 7: return Row.column07;
+      case 8: return Row.column08;
+      case 9: return Row.column09;
+      case 10: return Row.column10;
+      case 11: return Row.column11;
+      case 12: return Row.column12;
+      case 13: return Row.column13;
+      case 14: return Row.column14;
+      case 15: return Row.column15;
+      case 16: return Row.column16;
+      case 17: return Row.column17;
+      case 18: return Row.column18;
+      case 19: return Row.column19;
+      case 20: return Row.column20;
+      case 21: return Row.column21;
+      case 22: return Row.column22;
+      case 23: return Row.column23;
+      case 24: return Row.column24;
+      case 25: return Row.column25;
+      case 26: return Row.column26;
+      case 27: return Row.column27;
+      case 28: return Row.column28;
+      case 29: return Row.column29;
+      case 30: return Row.column30;
+      case 31: return Row.column31;
+      case 32: return Row.column32;
+      case 33: return Row.column33;
+      case 34: return Row.column34;
+      case 35: return Row.column35;
+      case 36: return Row.column36;
+      case 37: return Row.column37;
+      case 38: return Row.column38;
+      case 39: return Row.column39;
+      case 40: return Row.column40;
+      default:
+
+        errors.Add(attribute.AttributeName, string.Format(
+          "Invalid column index = {0} specified for the attribute in this file format attribute",
+          attribute.ColumnIndex.ToString()));
+
+        return null;
+    }
+  }
+
+  public string ExtractText(string Text, FileFormatAttribute attribute, ProcessErrors errors)
+  {
+
+    string EvaluatedText = Text.Trim();
+
+    Match m = new Regex(attribute.ExtractRegex, RegexOptions.IgnoreCase).Match(EvaluatedText);
+    String value = (m != null) ? m.Value.Trim() : (string)null;
+
+    if(value == null && !string.IsNullOrWhiteSpace(EvaluatedText))
+    {
+
+
+      errors.Add(attribute.AttributeName, string.Format(
+        "The regex pattern \"{0}\" applied to the source value {1} did not return a match.",
+        attribute.ExtractRegex, EvaluatedText));
+
+    }
+
+    if (value == null || value.Length == 0)
+    {
+      return null;
+    }
+    else
+    {
+      return value;
+    }
+  }
+
+  /// <summary>
+  /// loads the class level translate list
+  /// </summary>
+  public void LoadAttributeList()
+  {
+    using (SqlConnection connection = new SqlConnection(this.Variables.ADOFileManagerConnectionString))
+    {
+
+      connection.Open();
+
+      string sql = @"dbo.get_attribute_detail";
+        
+      using (SqlCommand command = new SqlCommand(sql, connection))
+      {
+        // add the file format parameter
+        command.CommandType = CommandType.StoredProcedure;
+
+        SqlParameter FileFormatCodeParam = new SqlParameter("@file_format_code", SqlDbType.VarChar, 20);
+        FileFormatCodeParam.Value = this.Variables.fileformatcode;
+        command.Parameters.Add(FileFormatCodeParam);
+        
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          FileFormatAttribute attribute = new FileFormatAttribute
+          {
+            AttributeName = reader["attribute_name"].ToString(),
+            ColumnIndex = (int)reader["column_index"],
+            ExtractRegex = reader["extract_regex"].ToString(),
+            AttributeDataType = reader["attribute_data_type"].ToString(),
+            AttributeMaxLength = (reader["attribute_max_length"] == DBNull.Value) ? (int?)null : (int?)reader["attribute_max_length"],
+            RequiredFlag = (bool)reader["required_ind"],
+            TransformDefaultFlag = (bool)reader["transform_default_ind"]
+          };
+
+          this.AttributeList.Add(attribute);
+
+        }
+      }
+      connection.Close();
+    }
+  }
+
+  /// <summary>
+  /// loads the class level translate list
+  /// </summary>
+  public void LoadTranslateList()
+  {
+    using (SqlConnection connection = new SqlConnection(this.Variables.ADOFileManagerConnectionString))
+    {
+
+      connection.Open();
+      string sql = @"dbo.get_translate_detail";
+      
+      using (SqlCommand command = new SqlCommand(sql, connection))
+      {
+
+        command.CommandType = CommandType.StoredProcedure;
+
+        // add the file format parameter
+        SqlParameter FileFormatCodeParam = new SqlParameter("@file_format_code", SqlDbType.VarChar, 20);
+        FileFormatCodeParam.Value = this.Variables.fileformatcode;
+        command.Parameters.Add(FileFormatCodeParam);
+
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          FileFormatTranslate attribute = new FileFormatTranslate
+          {
+            AttributeName = reader["attribute_name"].ToString(),
+            AttributeValue = reader["attribute_value"].ToString(),
+            TranslateValue = reader["translated_value"].ToString()
+          };
+
+          this.TranslateList.Add(attribute);
+
+        }
+      }
+      connection.Close();
+    }
+  }
+}
+
+
+
+public class ProcessErrors
+{
+  private StringBuilder _ErrorMessages = new StringBuilder();
+
+  public int ErrorCount { get; private set; }
+  public int CriticalErrorCount { get; private set; }
+
+  public int Length { get { return _ErrorMessages.Length; } }
+
+  public void Add(string AttributeName, string ErrorMessage)
+  {
+    Add(ErrorMessage, AttributeName, false);
+  }
+
+  public void Add(string AttributeName, string ErrorMessage, bool Critical)
+  {
+    this.ErrorCount++;
+    if (Critical) CriticalErrorCount++;
+
+    string Message = null;
+    if (Critical)
+    {
+      Message = string.Format("CRITICAL > {0}: {1}", AttributeName, ErrorMessage);
+    }
+    else
+    {
+      Message = string.Format("{0}: {1}", AttributeName, ErrorMessage);
+    }
+
+
+    this._ErrorMessages.AppendLine(Message);
+  }
+
+  public override string ToString()
+  {
+    
+    if (this.ErrorCount == 0) return null;
+
+    string Declaration = string.Format("Encountered {0} critical and {1} non-critical error(s).",
+      this.CriticalErrorCount.ToString(), (this.ErrorCount - this.CriticalErrorCount).ToString());
+
+    return new StringBuilder(Declaration).AppendLine(this._ErrorMessages.ToString()).ToString();
+  }
+
+}
+
+public class FileFormatTranslate
+{
+  public string AttributeName { get; set; }
+  public string AttributeValue { get; set; }
+  public string TranslateValue { get; set; }
+}
+
+public class FileFormatAttribute
+{
+  public string AttributeName { get; set; }
+  public int ColumnIndex { get; set; }
+  public string ExtractRegex { get; set; }
+  public string AttributeDataType { get; set; }
+  public int? AttributeMaxLength { get; set; }
+  public bool RequiredFlag { get; set; }
+  public bool TransformDefaultFlag { get; set; }
+}

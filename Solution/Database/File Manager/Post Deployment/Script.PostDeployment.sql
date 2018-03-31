@@ -12,7 +12,9 @@ Post-Deployment Script Template
 
 :r .\DML_Insert_agency.sql
 
-:r .\DML_Insert_file_format_rule_translate.sql
+:r .\DML_Insert_file_format_translate.sql
+
+:r .\DML_Insert_agency_filter.sql
 
 :r .\DML_Insert_attribute.sql
 

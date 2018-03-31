@@ -1,6 +1,8 @@
 ﻿IF NOT EXISTS (SELECT 1 FROM dbo.config WHERE config_key = 0)
 BEGIN
 
+SET IDENTITY_INSERT dbo.config ON
+
 INSERT INTO dbo.config (
   config_key
 , received_folder_path
@@ -20,10 +22,11 @@ SELECT
 , 0
 ;
 
+SET IDENTITY_INSERT dbo.config OFF
+
 END
 
-SET IDENTITY_INSERT dbo.config OFF
-GO
+
 
 
 

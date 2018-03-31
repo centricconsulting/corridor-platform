@@ -29,7 +29,8 @@
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
-          <SSIS:Package SSIS:Name="Manage Source Files.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Process Agency Medical Records.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Process Source Files.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Audit.conmgr" />
@@ -185,16 +186,33 @@
             </SSIS:Parameter>
           </SSIS:ProjectConnectionParameters>
           <SSIS:PackageInfo>
-            <SSIS:PackageMetaData SSIS:Name="Manage Source Files.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="Process Agency Medical Records.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{AC914BB2-A4D8-47F3-A651-2282E3CF193C}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Manage Source Files</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{74C46EEF-EE10-49D2-9164-A3A4FC9E5A6D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Process Agency Medical Records</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">465</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">564</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{232FD9B3-B988-405F-92BC-703DE2B337AE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{44662D65-9B8D-4D5A-ACDF-3D188E818BAD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">0</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Process Source Files.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{319D24FF-509C-4F34-8FE9-D8B57D1E1C1C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Process Source Files</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">481</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C70784E9-13BD-47B7-89A0-CEF7367750B9}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -218,7 +236,7 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
-        <TargetServerVersion>SQLServer2017</TargetServerVersion>
+        <TargetServerVersion>SQLServer2016</TargetServerVersion>
         <ParameterConfigurationValues>
           <ConfigurationSetting>
             <Id>LastModifiedTime</Id>

@@ -1,7 +1,7 @@
-﻿IF NOT EXISTS (SELECT 1 FROM [dbo].[file_format_rule_translate])
+﻿IF NOT EXISTS (SELECT 1 FROM [dbo].[file_format_translate])
 BEGIN
 
-INSERT INTO [dbo].[file_format_rule_translate] (
+INSERT INTO [dbo].[file_format_translate] (
  [file_format_code]
 ,[attribute_name]
 ,[attribute_value]

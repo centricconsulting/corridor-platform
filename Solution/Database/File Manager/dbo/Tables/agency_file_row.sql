@@ -49,7 +49,7 @@
   -- PROCESS = loading ODS visit table
   [process_dtm]				DATETIME		NULL,
   [process_success_ind]  BIT NULL,
-  [process_error_message] VARCHAR(100) NULL,
+  [process_error_message] VARCHAR(2000) NULL,
 
 	[create_timestamp]		DATETIME			NULL,
 	[modify_timestamp]		DATETIME			NULL,

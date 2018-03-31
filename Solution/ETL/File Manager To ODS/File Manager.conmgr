@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="File Manager"
-  DTS:DTSID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+  DTS:DTSID="{AF289848-147C-4243-B5A2-F4100357A478}"
   DTS:CreationName="OLEDB">
   <DTS:PropertyExpression
     DTS:Name="ConnectionString">@[$Project::FileManagerConnectionString]</DTS:PropertyExpression>

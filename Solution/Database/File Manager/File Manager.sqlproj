@@ -63,26 +63,33 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="Post Deployment" />
     <Folder Include="dbo\Stored Procedures" />
-    <Folder Include="dbo\Views" />
+    <Folder Include="ods" />
+    <Folder Include="sfc" />
+    <Folder Include="sfc\Tables" />
+    <Folder Include="ods\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\agency_file.sql" />
     <Build Include="dbo\Tables\agency.sql" />
-    <None Include="dbo\Stored Procedures\file_status_send_email_notification.sql" />
-    <None Include="dbo\Stored Procedures\get_file_status.sql" />
-    <Build Include="dbo\Views\MessageBody.sql" />
-    <Build Include="dbo\Views\MessageHeader.sql" />
     <Build Include="dbo\Tables\agency_file_row.sql" />
     <None Include="Post Deployment\DML_Insert_file_format_attribute.sql" />
     <Build Include="dbo\Tables\file_format.sql" />
     <None Include="Post Deployment\DML_Insert_file_format.sql" />
-    <Build Include="dbo\Tables\file_format_rule_translate.sql" />
     <Build Include="dbo\Tables\file_format_attribute.sql" />
-    <Build Include="dbo\Tables\file_format_rule_filter.sql" />
+    <Build Include="dbo\Tables\agency_filter.sql" />
     <Build Include="dbo\Tables\attribute.sql" />
     <Build Include="dbo\Tables\config.sql" />
     <None Include="Post Deployment\DML_Insert_attribute.sql" />
-    <None Include="Post Deployment\DML_Insert_file_format_rule_translate.sql" />
+    <None Include="Post Deployment\DML_Insert_file_format_translate.sql" />
+    <Build Include="sfc\Tables\agency_location.sql" />
+    <Build Include="sfc\Tables\product_rate.sql" />
+    <Build Include="ods\Tables\agency_medical_record.sql" />
+    <Build Include="Security\sfc.sql" />
+    <Build Include="Security\ods.sql" />
+    <Build Include="dbo\Tables\file_format_translate.sql" />
+    <None Include="Post Deployment\DML_Insert_agency_filter.sql" />
+    <Build Include="dbo\Stored Procedures\get_translate_detail.sql" />
+    <Build Include="dbo\Stored Procedures\get_attribute_detail.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />

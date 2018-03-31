@@ -1,27 +1,6 @@
 ﻿<?xml version="1.0"?>
 <SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
   <SSIS:Parameter
-    SSIS:Name="default_source_uid">
-    <SSIS:Properties>
-      <SSIS:Property
-        SSIS:Name="ID">{fd28da34-85bf-41a1-a7b2-916c8b50599d}</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="CreationName"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Description"></SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Required">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Sensitive">0</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="Value">AF</SSIS:Property>
-      <SSIS:Property
-        SSIS:Name="DataType">18</SSIS:Property>
-    </SSIS:Properties>
-  </SSIS:Parameter>
-  <SSIS:Parameter
     SSIS:Name="AuditConnectionString">
     <SSIS:Properties>
       <SSIS:Property
@@ -37,13 +16,13 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=SFDATASQL;Initial Catalog=audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="CorridorFileManagerConnectionString">
+    SSIS:Name="FileManagerConnectionString">
     <SSIS:Properties>
       <SSIS:Property
         SSIS:Name="ID">{cc54e2c7-8a2a-40e9-a41e-f03937e80d87}</SSIS:Property>
@@ -58,7 +37,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=SFDATASQL;Initial Catalog=corridor_file_manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;MultipleActiveResultSets=True;</SSIS:Property>
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=corridor_file_manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;MultipleActiveResultSets=True;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
@@ -100,16 +79,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">Data Source=SFDATASQL;Initial Catalog=corridor_ods;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;</SSIS:Property>
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=corridor_ods;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="RawFileDestination">
+    SSIS:Name="ADOODSConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{b1660685-db05-48dc-b167-84bcf68d9c92}</SSIS:Property>
+        SSIS:Name="ID">{69a965c3-fb72-4384-b888-c22c87227231}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -121,16 +100,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">F:\Temp</SSIS:Property>
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=corridor_ods;Integrated Security=True;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="SourceFileDirectory">
+    SSIS:Name="ADOFileManagerConnectionString">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{f00f6366-7766-45ec-be3f-2b5fb35516e6}</SSIS:Property>
+        SSIS:Name="ID">{1a2bcf87-e627-4944-b6ec-0222ab0e2002}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -142,16 +121,16 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">F:\Temp\Source</SSIS:Property>
+        SSIS:Name="Value">Data Source=localhost;Initial Catalog=corridor_file_manager;Integrated Security=True;</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>
   </SSIS:Parameter>
   <SSIS:Parameter
-    SSIS:Name="SalesforceConnectionString">
+    SSIS:Name="CacheFolderPath">
     <SSIS:Properties>
       <SSIS:Property
-        SSIS:Name="ID">{aed2701f-66b1-4b71-90fb-733b952348d3}</SSIS:Property>
+        SSIS:Name="ID">{6ea56f96-ff9f-4dfb-b59d-05ad7324d3be}</SSIS:Property>
       <SSIS:Property
         SSIS:Name="CreationName"></SSIS:Property>
       <SSIS:Property
@@ -163,7 +142,7 @@
       <SSIS:Property
         SSIS:Name="Sensitive">0</SSIS:Property>
       <SSIS:Property
-        SSIS:Name="Value">User ID=etl@corridorgroup.com;Provider=DBAmp.DBAmp.1;Persist Security Info=True;Location=https://test.salesforce.com;</SSIS:Property>
+        SSIS:Name="Value">C:\Temporary</SSIS:Property>
       <SSIS:Property
         SSIS:Name="DataType">18</SSIS:Property>
     </SSIS:Properties>

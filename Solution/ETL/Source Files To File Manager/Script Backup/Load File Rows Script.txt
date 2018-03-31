@@ -225,7 +225,6 @@ namespace ST_72b17f2e052b49cfaf9c51dba099cf86
       dr["column_header_ind"] = (CurrentRow == 1) ? 1 : 0;
 
       dr["process_batch_key"] = this.ProcessBatchKey;
-      dr["process_dtm"] = CurrentTime;
       dr["create_timestamp"] = CurrentTime;
       dr["modify_timestamp"] = CurrentTime;
 
