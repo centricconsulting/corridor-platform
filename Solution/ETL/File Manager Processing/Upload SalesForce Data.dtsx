@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/7/2018 5:35:46 PM"
@@ -12,8 +12,8 @@
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="544"
-  DTS:VersionGUID="{C9D06B53-2833-4C89-B6CE-ADC4FE2E1A43}">
+  DTS:VersionBuild="546"
+  DTS:VersionGUID="{79B36B09-A81C-41DC-8A01-0EB5B4957209}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.544</DTS:VariableValue>
+        DTS:DataType="8">1.0.546</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -468,8 +468,8 @@ AND a.process_dtm IS NULL</property>
               <connections>
                 <connection
                   refId="Package\Cache AMR Record To Consider\Source Query.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1363,8 +1363,8 @@ agency_medical_record_key = ?</property>
               <connections>
                 <connection
                   refId="Package\Update AMR\Update AMR Process Columns.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3010,7 +3010,7 @@ where [refTable].[agency_location] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\382:invalid};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\642:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3023,8 +3023,8 @@ where [refTable].[agency_location] = ?</property>
               <connections>
                 <connection
                   refId="Package\Upload To SalesForce\Lookup Agency from SFC.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3181,7 +3181,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\383:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\643:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3194,8 +3194,8 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
               <connections>
                 <connection
                   refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3465,8 +3465,8 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
               <connections>
                 <connection
                   refId="Package\Upload To SalesForce\Target Insert.Connections[OleDbConnection]"
-                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
+                  connectionManagerRefId="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4482,7 +4482,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
-              Expression="@[User::completed_ind]" />
+              Expression="@[User::completed_ind] = 1" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -4615,7 +4615,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="227.2,41.6"
           Id="Package\Cache AMR Record To Consider"
@@ -4633,7 +4633,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="434.057148900324,204.941178761387">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,70.3529427465683"
               Start="0,0"
               End="0,62.8529427465683">
@@ -4655,7 +4655,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="433.800005653926,96.658824301591">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,66.6823544597956"
               Start="0,0"
               End="0,59.1823544597956">
@@ -4679,33 +4679,35 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="190.4,41.6"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
-          TopLeft="NaN,NaN" />
+          TopLeft="20.000000340598,137.035296039515" />
         <NodeLayout
           Size="208.8,41.6"
           Id="Package.EventHandlers[OnError]\Turn On Package Error Flag"
-          TopLeft="NaN,NaN" />
+          TopLeft="5.14285723043946,52.6117654437425" />
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="NaN,NaN">
+          TopLeft="112.371428785519,94.2117654437425">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
+              EndConnector="0,42.8235305957729"
               Start="0,0"
-              End="0,0">
+              End="0,35.3235305957729">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.3235305957729" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4715,7 +4717,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="207.2,41.6"
           Id="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
@@ -4723,7 +4725,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         <NodeLayout
           Size="189.6,41.6"
           Id="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
-          TopLeft="36.8000000000001,168" />
+          TopLeft="37.6000000000001,168" />
         <NodeLayout
           Size="130.4,41.6"
           Id="Package.EventHandlers[OnPostExecute]\Entry Point"
@@ -4733,7 +4735,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="124.4,63.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,36"
               Start="0,0"
               End="0,28.5">
@@ -4754,10 +4756,10 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         </EdgeLayout>
         <EdgeLayout
           Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
-          TopLeft="129.2,140.8">
+          TopLeft="129.6,140.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,27.2"
               Start="0,0"
               End="0,19.7">
@@ -4771,9 +4773,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4783,32 +4783,36 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="130.4,41.6"
           Id="Package.EventHandlers[OnPreExecute]\Entry Point"
-          TopLeft="NaN,NaN" />
+          TopLeft="72.8,50.4" />
         <NodeLayout
           Size="180,41.6"
           Id="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
-          TopLeft="NaN,NaN" />
+          TopLeft="44.8,147.2" />
         <EdgeLayout
           Id="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
-          TopLeft="NaN,NaN">
+          TopLeft="136.4,92">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
+              EndConnector="0,55.2"
               Start="0,0"
-              End="0,0">
+              End="0,47.7">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.7" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,16,16"
+              BoundingBox="-8,15.85,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5420,6 +5424,29 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Upload To SalesForce\Lookup Product Rate from SFC">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Upload To SalesForce\Lookup Agency from SFC">
     <Properties>
       <Property>
@@ -5452,29 +5479,6 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Upload To SalesForce\Lookup Product Rate from SFC">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

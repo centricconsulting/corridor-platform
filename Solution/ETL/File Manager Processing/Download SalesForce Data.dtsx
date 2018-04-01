@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/7/2018 5:35:46 PM"
@@ -12,8 +12,8 @@
   DTS:ObjectName="Download SalesForce Data"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="502"
-  DTS:VersionGUID="{AD393402-FB94-4BAF-BA05-685F649C99FC}">
+  DTS:VersionBuild="505"
+  DTS:VersionGUID="{4013E6CB-8CF7-453B-9C12-C22867B940D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -218,7 +218,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.502</DTS:VariableValue>
+        DTS:DataType="8">1.0.505</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -451,8 +451,8 @@
               <connections>
                 <connection
                   refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -678,8 +678,8 @@ WHERE Status__c = 'Active'</property>
               <connections>
                 <connection
                   refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Connections[OleDbConnection]"
-                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
+                  connectionManagerRefId="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1083,8 +1083,8 @@ WHERE Status__c = 'Active'</property>
               <connections>
                 <connection
                   refId="Package\Load DM_Agency__c\Insert Target.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1278,8 +1278,8 @@ ORDER BY id</property>
               <connections>
                 <connection
                   refId="Package\Load DM_Agency__c\Source Query.Connections[OleDbConnection]"
-                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
+                  connectionManagerRefId="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1625,13 +1625,13 @@ ORDER BY id</property>
                 SQLTask:ParameterName="0"
                 SQLTask:DtsVariableName="User::completed_ind"
                 SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
+                SQLTask:DataType="17"
                 SQLTask:ParameterSize="0" />
               <SQLTask:ParameterBinding
                 SQLTask:ParameterName="1"
                 SQLTask:DtsVariableName="User::process_batch_key"
                 SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="131"
+                SQLTask:DataType="3"
                 SQLTask:ParameterSize="0" />
             </SQLTask:SqlTaskData>
           </DTS:ObjectData>
@@ -1648,7 +1648,7 @@ ORDER BY id</property>
           <DTS:Variables />
           <DTS:ObjectData>
             <ExpressionTask
-              Expression="@[User::completed_ind]" />
+              Expression="@[User::completed_ind] = 1" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -1778,7 +1778,7 @@ ORDER BY id</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="176,41.6"
           Id="Package\Load DM_Agency__c"
@@ -1800,7 +1800,7 @@ ORDER BY id</property>
           TopLeft="215.657144949388,96.0470595871289">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,61.7882367440986"
               Start="0,0"
               End="0,54.2882367440986">
@@ -1822,7 +1822,7 @@ ORDER BY id</property>
           TopLeft="500.628577788022,94.8235301582046">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,61.1764720296365"
               Start="0,0"
               End="0,53.6764720296365">
@@ -1846,33 +1846,35 @@ ORDER BY id</property>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="190.4,41.6"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
-          TopLeft="NaN,NaN" />
+          TopLeft="38.2857149377161,170.07059062047" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="208.8,41.6"
           Id="Package.EventHandlers[OnError]\Turn On Package Error Flag"
-          TopLeft="NaN,NaN" />
+          TopLeft="28.5714290579971,75.247059878841" />
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="NaN,NaN">
+          TopLeft="133.228571997857,116.847059878841">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
+              EndConnector="0,53.2235307416289"
               Start="0,0"
-              End="0,0">
+              End="0,45.7235307416289">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.7235307416289" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1882,57 +1884,63 @@ ORDER BY id</property>
     design-time-name="Package.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="207.2,41.6"
           Id="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
-          TopLeft="NaN,NaN" />
+          TopLeft="22.4,152.8" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="189.6,41.6"
           Id="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
-          TopLeft="NaN,NaN" />
+          TopLeft="31.2,239.2" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="130.4,41.6"
           Id="Package.EventHandlers[OnPostExecute]\Entry Point"
-          TopLeft="NaN,NaN" />
+          TopLeft="64,73.6" />
         <EdgeLayout
           Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
-          TopLeft="NaN,NaN">
+          TopLeft="127.6,115.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
+              EndConnector="0,37.6"
               Start="0,0"
-              End="0,0">
+              End="0,30.1">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.1" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-8,7.05000000000001,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
-          TopLeft="NaN,NaN">
+          TopLeft="126,194.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
+              EndConnector="0,44.8"
               Start="0,0"
-              End="0,0">
+              End="0,37.3">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.3" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1942,32 +1950,36 @@ ORDER BY id</property>
     design-time-name="Package.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="130.4,41.6"
           Id="Package.EventHandlers[OnPreExecute]\Entry Point"
-          TopLeft="NaN,NaN" />
+          TopLeft="56,25.6" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="180,41.6"
           Id="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
-          TopLeft="NaN,NaN" />
+          TopLeft="34.4,109.6" />
         <EdgeLayout
           Id="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
-          TopLeft="NaN,NaN">
+          TopLeft="122.8,67.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
+              EndConnector="0,42.4"
               Start="0,0"
-              End="0,0">
+              End="0,34.9">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-8,9.45000000000001,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1978,11 +1990,7 @@ ORDER BY id</property>
     design-time-name="Package\Load DM_Agency__c">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\Load DM_Agency__c\Source Query"
-          TopLeft="46.2857150739551,26.2379088647088" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="140,41.6"
           Id="Package\Load DM_Agency__c\Insert Target"
@@ -1991,34 +1999,16 @@ ORDER BY id</property>
           Size="151.2,41.6"
           Id="Package\Load DM_Agency__c\Inject Variables"
           TopLeft="43.4285721681556,124.256210892973" />
-        <EdgeLayout
-          Id="Package\Load DM_Agency__c.Paths[Derived Column Output]"
-          TopLeft="118.228572202216,165.856210892973">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57.3699360285388"
-              Start="0,0"
-              End="0,49.8699360285388">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.8699360285388" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Load DM_Agency__c\Source Query"
+          TopLeft="46.2857150739551,26.2379088647088" />
         <EdgeLayout
           Id="Package\Load DM_Agency__c.Paths[OLE DB Source Output]"
           TopLeft="118.257143621055,67.8379088647088">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,56.4183020282646"
               Start="0,0"
               End="0,48.9183020282646">
@@ -2032,7 +2022,33 @@ ORDER BY id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DM_Agency__c.Paths[Derived Column Output]"
+          TopLeft="118.228572202216,165.856210892973">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,57.3699360285388"
+              Start="0,0"
+              End="0,49.8699360285388">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.8699360285388" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2063,11 +2079,7 @@ ORDER BY id</property>
     design-time-name="Package\Load DM_Agency_Product_Rate__c">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="142.4,41.6"
-          Id="Package\Load DM_Agency_Product_Rate__c\Source Query"
-          TopLeft="27.6571429057995,20.8" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="140,41.6"
           Id="Package\Load DM_Agency_Product_Rate__c\Insert Target"
@@ -2076,34 +2088,16 @@ ORDER BY id</property>
           Size="151.2,41.6"
           Id="Package\Load DM_Agency_Product_Rate__c\Inject Variables"
           TopLeft="22.4,111.294119174258" />
-        <EdgeLayout
-          Id="Package\Load DM_Agency_Product_Rate__c.Paths[Derived Column Output]"
-          TopLeft="98.4000000340599,152.894119174258">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64.894118882545"
-              Start="0,0"
-              End="0,57.394118882545">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.394118882545" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Load DM_Agency_Product_Rate__c\Source Query"
+          TopLeft="27.6571429057995,20.8" />
         <EdgeLayout
           Id="Package\Load DM_Agency_Product_Rate__c.Paths[OLE DB Source Output]"
           TopLeft="98.4285714528997,62.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,48.894119174258"
               Start="0,0"
               End="0,41.394119174258">
@@ -2117,7 +2111,33 @@ ORDER BY id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DM_Agency_Product_Rate__c.Paths[Derived Column Output]"
+          TopLeft="98.4000000340599,152.894119174258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,64.894118882545"
+              Start="0,0"
+              End="0,57.394118882545">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.394118882545" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
