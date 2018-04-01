@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SalesForce"
+  DTS:DTSID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="User ID=etl@corridorgroup.com;Provider=DBAmp.DBAmp.1;Persist Security Info=True;Location=https://test.salesforce.com;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="kV/4gjSiPg=="
+        p4:IV="3kt2xaImoMw=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">woPyg1m8VOX/vI469uKDi+K5i6aZvcxASHz/vkBI2W5koXsrw5G8Co9/a62Dm8XMfAf4YnV7pr74BbRkRnKVeAEG5QmUQb7bWbcPn8h/bNrwuNwKYuavBXRzDDp0gcQEfUDB8qIjbKeGURDV+Jhp1r4QyRLDvsbvCYCVPsUCv8d0cGw/6rR4iOzvYqb/dFne+i8tY88W/ec=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

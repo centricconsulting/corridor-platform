@@ -41,7 +41,8 @@
 
   [create_timestamp]			DATETIME		NOT NULL,
   [modify_timestamp]			DATETIME		NOT NULL,
-  [process_batch_key]			INT NOT NULL,
+  [create_process_batch_key]			INT NOT NULL,
+  [modify_process_batch_key]			INT NOT NULL,
 
   CONSTRAINT dbo_agency_medical_record_pk PRIMARY KEY ([agency_medical_record_key])
 )

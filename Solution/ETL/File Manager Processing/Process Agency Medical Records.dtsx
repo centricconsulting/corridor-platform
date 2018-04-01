@@ -12,8 +12,8 @@
   DTS:ObjectName="Process Agency Medical Records"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="609"
-  DTS:VersionGUID="{9C287DD3-5C38-421D-A45B-E7D152EE6FA2}">
+  DTS:VersionBuild="611"
+  DTS:VersionGUID="{5BF9DC55-4F2C-4315-9911-342325A5C709}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -104,7 +104,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.609</DTS:VariableValue>
+        DTS:DataType="8">1.0.611</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1053,12 +1053,6 @@
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
                       lineageId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[create_timestamp]" />
                     <inputColumn
-                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[process_batch_key]"
-                      cachedDataType="i4"
-                      cachedName="process_batch_key"
-                      externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
-                      lineageId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[process_batch_key]" />
-                    <inputColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[stage]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1122,6 +1116,18 @@
                       cachedName="resumption_of_care_date"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[resumption_of_care_date]"
                       lineageId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[resumption_of_care_date]" />
+                    <inputColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[process_batch_key]"
+                      cachedDataType="i4"
+                      cachedName="process_batch_key"
+                      externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[modify_process_batch_key]"
+                      lineageId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[process_batch_key]" />
+                    <inputColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[create_process_batch_key]"
+                      cachedDataType="i4"
+                      cachedName="create_process_batch_key"
+                      externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[create_process_batch_key]"
+                      lineageId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[create_process_batch_key]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1284,10 +1290,6 @@
                       dataType="i4"
                       name="modify_agency_file_row_key" />
                     <externalMetadataColumn
-                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
-                      dataType="i4"
-                      name="process_batch_key" />
-                    <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
                       dataType="dbTimeStamp"
                       name="create_timestamp" />
@@ -1313,6 +1315,14 @@
                       dataType="str"
                       length="2000"
                       name="process_error_message" />
+                    <externalMetadataColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[create_process_batch_key]"
+                      dataType="i4"
+                      name="create_process_batch_key" />
+                    <externalMetadataColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[modify_process_batch_key]"
+                      dataType="i4"
+                      name="modify_process_batch_key" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1714,6 +1724,28 @@
                           name="FriendlyExpression">resumption_of_care_date_TEXT == "" ? NULL(DT_DBTIMESTAMP) : (DT_DBTIMESTAMP)resumption_of_care_date_TEXT</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[create_process_batch_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[create_process_batch_key]"
+                      name="create_process_batch_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::process_batch_key]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::process_batch_key]</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1943,7 +1975,7 @@ agency_file_row_key = ?</property>
 , [episode_identifier] = ? -- {Param_24}
 , [modify_agency_file_row_key] = ? -- {Param_25}
 , [modify_timestamp] = ? -- {Param_26}
-, [process_batch_key] =? -- {Param_27}
+, [modify_process_batch_key] =? -- {Param_27}
 WHERE
 [agency_medical_record_key] = ? -- {Param_28}</property>
                 <property
@@ -10388,7 +10420,7 @@ AAA=]]></arrayElement>
     design-time-name="Package\Load Records">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Load Records\AMR Record Cache"
@@ -10406,23 +10438,23 @@ AAA=]]></arrayElement>
           Id="Package\Load Records\Prepare Columns"
           TopLeft="527.612242098453,192.620166628583" />
         <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Load Records\Update Agency File Row"
-          TopLeft="185.34285717935,199.470588396165" />
+          Size="224,41.6"
+          Id="Package\Load Records\Update Agency Medical Record"
+          TopLeft="345.714291601765,429.529417620398" />
         <NodeLayout
           Size="164.8,41.6"
           Id="Package\Load Records\AFR Record Cache"
           TopLeft="202.14285717935,95.1411769746497" />
         <NodeLayout
-          Size="224,41.6"
-          Id="Package\Load Records\Update Agency Medical Record"
-          TopLeft="345.714291601765,429.529417620398" />
+          Size="192.8,41.6"
+          Id="Package\Load Records\Update Agency File Row"
+          TopLeft="185.34285717935,199.470588396165" />
         <EdgeLayout
           Id="Package\Load Records.Paths[Update]"
           TopLeft="575.952380769918,322.164707169318">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-118.238089168153,107.36471045108"
               Start="0,0"
               End="-118.238089168153,99.8647104510801">
@@ -10458,7 +10490,7 @@ AAA=]]></arrayElement>
           TopLeft="604.148978058277,139.14117697465">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,53.4789896539335"
               Start="0,0"
               End="0,45.9789896539335">
@@ -10480,7 +10512,7 @@ AAA=]]></arrayElement>
           TopLeft="283.14285717935,136.74117697465">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,62.7294114215152"
               Start="0,0"
               End="0,55.2294114215152">
@@ -10502,7 +10534,7 @@ AAA=]]></arrayElement>
           TopLeft="638.619047436584,322.164707169318">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="105.323808635822,107.611764094574"
               Start="0,0"
               End="105.323808635822,100.111764094574">
@@ -10538,7 +10570,7 @@ AAA=]]></arrayElement>
           TopLeft="607.048978100852,234.220166628583">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,46.3445405407348"
               Start="0,0"
               End="0,38.8445405407348">

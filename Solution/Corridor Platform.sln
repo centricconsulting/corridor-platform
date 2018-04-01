@@ -11,7 +11,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Audit", "Database\Audit\Aud
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "File Manager", "Database\File Manager\File Manager.sqlproj", "{82A92FCE-E093-4379-9FE5-A1A60E983644}"
 EndProject
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Source Files To File Manager", "ETL\Source Files To File Manager\Source Files To File Manager.dtproj", "{8796B3A2-640A-47A9-83F3-4A6B5C455796}"
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "File Manager Processing", "ETL\File Manager Processing\File Manager Processing.dtproj", "{8796B3A2-640A-47A9-83F3-4A6B5C455796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
