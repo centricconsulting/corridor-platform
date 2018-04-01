@@ -1,0 +1,2148 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/7/2018 5:35:46 PM"
+  DTS:CreationName=""
+  DTS:CreatorComputerName="SFDATASQL"
+  DTS:CreatorName="SFDATASQL\jeff.faseun"
+  DTS:DTSID="{6693652D-A203-4A14-BD13-4686D4C4C7C0}"
+  DTS:ExecutableType=""
+  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Download SalesForce Data"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="502"
+  DTS:VersionGUID="{AD393402-FB94-4BAF-BA05-685F649C99FC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DFBD4EAF-8A0E-4A58-82F6-5B7ABD968E06}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="accepted_root_folder">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0E719D1C-15AC-44F8-ABDE-CED04B54058F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="agency_file_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9772D627-18A9-444F-9171-F3AD039ACA3C}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="agency_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{95039D04-9845-43BF-A953-AD3D33661638}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="archive_file_name">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2BF4B935-E24B-4A2A-9146-2710A790A223}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="archive_folder_path">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E8C7DD39-2BAE-4ED6-A3F1-70FE5AA87274}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="completed_ind">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F6C2F358-DCA2-4CFA-854D-85F44927785C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="error_message">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{46CC39BD-C633-4ED3-98BD-9EDC128640BB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_created_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">3/28/2018 8:48:37 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2D31AE40-18D7-41F6-AC92-67FB97F30213}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_format_code">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{478404BA-0B2D-47A0-89AE-75A1C88D23D6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_guid">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EA7F6766-0B1A-445B-B0E5-6186D7E3A149}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_hash">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B2DD7D20-BC96-4B82-BFFA-3AE45F506FB4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_modified_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">3/28/2018 8:48:53 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{455E2F3E-1F4E-438A-AF0F-12A29CDD5531}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_name">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7694F37F-2A09-4CFF-B19A-9D37ABF4B660}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_path">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C7CDC9FF-7ABE-4087-B707-ED316EDE6C4A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_process_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">3/29/2018 11:12:23 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{51F3E144-A829-4582-9BDA-F5CD422464EE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_process_error_message">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{926341F3-9412-4098-8979-99D2377B9EA4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_process_success_flag">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{43FBD139-D7AE-4F71-B2FE-F476AF9ABFF8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="folder_branch">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8DDBA0C0-E90D-4967-BA32-C0DDD511F71D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="folder_path">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{82B6DB4D-5C35-4079-8B4B-42660B385F0E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="package_error_flag">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{247B9812-61F5-4628-9BA4-E44F70D8DC62}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_STR, 8, 1252) @[System::VersionMajor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionMinor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionBuild]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="package_version">
+      <DTS:VariableValue
+        DTS:DataType="8">1.0.502</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A3A6DABF-D594-4730-8D18-88D1AF0B5B3A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="process_batch_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{466A46DD-CEF1-4ADE-A8F3-B44F94F79511}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ProjectName]  + &quot;::&quot; +   @[System::PackageName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="process_uid">
+      <DTS:VariableValue
+        DTS:DataType="8">Source Files To File Manager::Download SalesForce Data</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{98471D29-B57E-4729-B448-57DAB5B50281}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="received_root_folder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3B2037C4-C19F-4743-B3A3-CBF88D598327}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="rejected_root_folder">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load DM_Agency_Product_Rate__c"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{08da8c04-63fc-4355-9013-d9d73ab3d6f8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DM_Agency_Product_Rate__c"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Inject Variables"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      name="process_batch_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::process_batch_key]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::process_batch_key]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[create_timestamp]"
+                      name="create_timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[modify_timestamp]"
+                      name="modify_timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DM_Agency_Product_Rate__c\Insert Target"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Target"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[sfc].[DM_Agency_Product_Rate__c]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Connections[OleDbConnection]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Status__c]"
+                      cachedDataType="wstr"
+                      cachedLength="1300"
+                      cachedName="Status__c"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Status__c]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Status__c]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[process_batch_key]"
+                      cachedDataType="i4"
+                      cachedName="process_batch_key"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[create_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_timestamp"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[create_timestamp]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[modify_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modify_timestamp"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output].Columns[modify_timestamp]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Product__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Product__c"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Product__c]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Product__c]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Agency__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Agency__c"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Agency__c]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency__c]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Effective_Date__c]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Effective_Date__c"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Effective_Date__c]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Effective_Date__c]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Effective_Till__c]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Effective_Till__c"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Effective_Till__c]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Effective_Till__c]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Product_Name_for_IT__c]"
+                      cachedDataType="wstr"
+                      cachedLength="1300"
+                      cachedName="Product_Name_for_IT__c"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Product_Name_for_IT__c]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Product_Name_for_IT__c]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="200"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Status__c]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
+                      dataType="i4"
+                      name="process_batch_key" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Product__c]"
+                      dataType="wstr"
+                      length="200"
+                      name="Product__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Agency__c]"
+                      dataType="wstr"
+                      length="200"
+                      name="Agency__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Effective_Date__c]"
+                      dataType="dbTimeStamp"
+                      name="Effective_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Effective_Till__c]"
+                      dataType="dbTimeStamp"
+                      name="Effective_Till__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Product_Name_for_IT__c]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Product_Name_for_IT__c" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DM_Agency_Product_Rate__c\Source Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+id
+, Name
+, Product__c
+, Agency__c
+, Product_Name_for_IT__c
+, Status__c
+, Effective_Date__c
+, Effective_Till__c
+FROM DM_Agency_Product_Rate__c
+WHERE Status__c = 'Active'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Connections[OleDbConnection]"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      length="18"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="80"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Status__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Status__c]"
+                      length="1300"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Status__c]"
+                      name="Status__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Product__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Product__c]"
+                      length="18"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Product__c]"
+                      name="Product__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency__c]"
+                      length="18"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency__c]"
+                      name="Agency__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Product_Name_for_IT__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Product_Name_for_IT__c]"
+                      length="1300"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Product_Name_for_IT__c]"
+                      name="Product_Name_for_IT__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Effective_Date__c]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Effective_Date__c]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Effective_Date__c]"
+                      name="Effective_Date__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Effective_Till__c]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Effective_Till__c]"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].Columns[Effective_Till__c]"
+                      name="Effective_Till__c"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Status__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Product__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Product__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Agency__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Product_Name_for_IT__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Product_Name_for_IT__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Effective_Date__c]"
+                      dataType="dbTimeStamp"
+                      name="Effective_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Effective_Till__c]"
+                      dataType="dbTimeStamp"
+                      name="Effective_Till__c" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Product__c]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Product__c]"
+                      name="Product__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency__c]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency__c]"
+                      name="Agency__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Product_Name_for_IT__c]"
+                      dataType="wstr"
+                      length="1300"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Product_Name_for_IT__c]"
+                      name="Product_Name_for_IT__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Status__c]"
+                      dataType="wstr"
+                      length="1300"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Status__c]"
+                      name="Status__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Effective_Date__c]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Effective_Date__c]"
+                      name="Effective_Date__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Effective_Till__c]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Effective_Till__c]"
+                      name="Effective_Till__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load DM_Agency_Product_Rate__c.Paths[Derived Column Output]"
+              endId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DM_Agency_Product_Rate__c.Paths[OLE DB Source Output]"
+              endId="Package\Load DM_Agency_Product_Rate__c\Inject Variables.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load DM_Agency_Product_Rate__c\Source Query.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load DM_Agency__c"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{57CB935E-7771-46C0-8D0B-A37BAB087BC9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load DM_Agency__c"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load DM_Agency__c\Inject Variables"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Inject Variables"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load DM_Agency__c\Inject Variables.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load DM_Agency__c\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      name="process_batch_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::process_batch_key]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::process_batch_key]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[create_timestamp]"
+                      name="create_timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[modify_timestamp]"
+                      name="modify_timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load DM_Agency__c\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DM_Agency__c\Insert Target"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Target"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[sfc].[DM_Agency__c]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DM_Agency__c\Insert Target.Connections[OleDbConnection]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Name]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Unique_Name__c]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Unique_Name__c"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Unique_Name__c]"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Unique_Name__c]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Billing_Company__c]"
+                      cachedDataType="wstr"
+                      cachedLength="1300"
+                      cachedName="Billing_Company__c"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Billing_Company__c]"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Billing_Company__c]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Status__c]"
+                      cachedDataType="wstr"
+                      cachedLength="1300"
+                      cachedName="Status__c"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Status__c]"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Status__c]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].Columns[process_batch_key]"
+                      cachedDataType="i4"
+                      cachedName="process_batch_key"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
+                      lineageId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].Columns[create_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="create_timestamp"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      lineageId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[create_timestamp]" />
+                    <inputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].Columns[modify_timestamp]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="modify_timestamp"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      lineageId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output].Columns[modify_timestamp]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="200"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="200"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Unique_Name__c]"
+                      dataType="wstr"
+                      length="200"
+                      name="Unique_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Billing_Company__c]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Billing_Company__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Status__c]"
+                      dataType="wstr"
+                      length="2000"
+                      name="Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="create_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[process_batch_key]"
+                      dataType="i4"
+                      name="process_batch_key" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load DM_Agency__c\Insert Target.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load DM_Agency__c\Source Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+  id 
+, NAME 
+, Unique_Name__c
+, Billing_Company__c
+, Status__c
+FROM
+DM_Agency__c 
+WHERE
+Status__c = 'Active'
+ORDER BY id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load DM_Agency__c\Source Query.Connections[OleDbConnection]"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      length="18"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      length="80"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Unique_Name__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Unique_Name__c]"
+                      length="30"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Unique_Name__c]"
+                      name="Unique_Name__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Billing_Company__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Billing_Company__c]"
+                      length="1300"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Billing_Company__c]"
+                      name="Billing_Company__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Status__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Status__c]"
+                      length="1300"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].Columns[Status__c]"
+                      name="Status__c"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      name="Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Unique_Name__c]"
+                      dataType="wstr"
+                      length="30"
+                      name="Unique_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Billing_Company__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Billing_Company__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Status__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Status__c" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Unique_Name__c]"
+                      dataType="wstr"
+                      length="30"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Unique_Name__c]"
+                      name="Unique_Name__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Billing_Company__c]"
+                      dataType="wstr"
+                      length="1300"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Billing_Company__c]"
+                      name="Billing_Company__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Status__c]"
+                      dataType="wstr"
+                      length="1300"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Status__c]"
+                      name="Status__c" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load DM_Agency__c.Paths[Derived Column Output]"
+              endId="Package\Load DM_Agency__c\Insert Target.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load DM_Agency__c\Inject Variables.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load DM_Agency__c.Paths[OLE DB Source Output]"
+              endId="Package\Load DM_Agency__c\Inject Variables.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load DM_Agency__c\Source Query.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate DM_Agency_Product_Rate__c"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{637156ba-d1b4-410a-8cb5-18f1ee2e34b4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate DM_Agency_Product_Rate__c"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE sfc.DM_Agency_Product_Rate__c" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate DM_Agency__c"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{31CAD6A1-3D32-4F54-B75A-CA26E6BDA786}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate DM_Agency__c"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE sfc.DM_Agency__c" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{20B7CA4D-C972-48ED-94C0-CA0C1FCC91F4}"
+      DTS:From="Package\Truncate DM_Agency__c"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load DM_Agency__c" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{76DA4D4F-6EB5-461A-B57D-5501027B7AD6}"
+      DTS:From="Package\Truncate DM_Agency_Product_Rate__c"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load DM_Agency_Product_Rate__c" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{6CB2C0E4-8DCA-4CFA-B667-D05AC363335A}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{1D1B660E-0074-4C7C-817B-39289EA97556}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Log Process Batch Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{5FC3B687-91E8-4C92-AE49-61EC1C2E2A30}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Process Batch Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BE61CE8-DD91-4404-B6D0-31FDFE93C3B4}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_error_log &#xA;@process_batch_key = ?, &#xA;@error_scope = ?, &#xA;@error_number = ?, &#xA;@error_message = ?, &#xA;@error_type_cd = 'E'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::process_batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="0" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Turn On Package Error Flag"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:DTSID="{97CEA072-174A-4922-A3A0-6E6D360D35FA}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Turn On Package Error Flag"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::package_error_flag]=TRUE" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F4C85905-5F9A-482F-9EA1-1CB1AEC04721}"
+          DTS:From="Package.EventHandlers[OnError]\Turn On Package Error Flag"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Log Process Batch Error" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{A4FA60ED-73E5-4619-9306-B0E92FE28EB8}"
+      DTS:EventID="0"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{5CDE9C7F-3386-480C-896D-8569D0D7B0E9}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:DTSID="{B0C3EBE2-125B-4825-8613-98C509E083E1}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Assign Completed Indicator"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::completed_ind] =  @[User::package_error_flag] ? 0 : 1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{94BFEDCB-4EDB-4F41-947A-75BE09E19F64}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conclude Process Batch"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BE61CE8-DD91-4404-B6D0-31FDFE93C3B4}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_conclude&#xA;        @completed_ind = ?&#xA;      , @process_batch_key = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::completed_ind"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::process_batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="0" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Entry Point"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{334F4800-175A-4D9F-B162-078CFF8AAADB}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Entry Point"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::completed_ind]" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E31D0AE1-CF10-4980-B5C0-BAA7FDD9BCCE}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID] == @[System::PackageID]"
+          DTS:From="Package.EventHandlers[OnPostExecute]\Entry Point"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
+          DTS:CreationName=""
+          DTS:DTSID="{C377FB90-BAFE-4BBA-9AF5-9D1C36C46CDE}"
+          DTS:From="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint_EXP - assign completed indicator_To_SQL - conclude process batch"
+          DTS:To="Package.EventHandlers[OnPostExecute]\Conclude Process Batch" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{2AF965DE-EF62-4ABE-8021-96B5153596A4}"
+      DTS:EventID="1153914880"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{D81AEC44-FD22-40DF-84D0-ABCF3D04E14E}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\Entry Point"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{7D61C35D-C39C-40C5-94DA-D1C060384439}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Entry Point"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::completed_ind]" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{205A8848-C6A7-4D2E-B7D9-924F4D9B7301}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Initiate Process Batch"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BE61CE8-DD91-4404-B6D0-31FDFE93C3B4}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_initiate&#xA;@process_uid = ?, &#xA;@workflow_name = ?, &#xA;@workflow_guid = ?,&#xA;@workflow_version= ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="process_batch_key"
+                SQLTask:DtsVariableName="User::process_batch_key" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::process_uid"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::package_version"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{AC136383-6D9D-414E-9FEA-332275869566}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID] == @[System::PackageID]"
+          DTS:From="Package.EventHandlers[OnPreExecute]\Entry Point"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnPreExecute]\Initiate Process Batch" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Load DM_Agency__c"
+          TopLeft="126.857145017507,157.835296331228" />
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Load DM_Agency_Product_Rate__c"
+          TopLeft="376.571434984402,156.000002187841" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Truncate DM_Agency__c"
+          TopLeft="118.857144881268,54.4470595871289" />
+        <NodeLayout
+          Size="264,41.6"
+          Id="Package\Truncate DM_Agency_Product_Rate__c"
+          TopLeft="370.285720591643,53.2235301582046" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="215.657144949388,96.0470595871289">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.7882367440986"
+              Start="0,0"
+              End="0,54.2882367440986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.2882367440986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="500.628577788022,94.8235301582046">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.1764720296365"
+              Start="0,0"
+              End="0,53.6764720296365">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.6764720296365" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnError]\Log Process Batch Error"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnError]\Turn On Package Error Flag"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPostExecute]\Entry Point"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPreExecute]\Entry Point"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <assembly:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <TaskHost
+    design-time-name="Package\Load DM_Agency__c">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Load DM_Agency__c\Source Query"
+          TopLeft="46.2857150739551,26.2379088647088" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Load DM_Agency__c\Insert Target"
+          TopLeft="47.4285722362754,223.226146921512" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load DM_Agency__c\Inject Variables"
+          TopLeft="43.4285721681556,124.256210892973" />
+        <EdgeLayout
+          Id="Package\Load DM_Agency__c.Paths[Derived Column Output]"
+          TopLeft="118.228572202216,165.856210892973">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.3699360285388"
+              Start="0,0"
+              End="0,49.8699360285388">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.8699360285388" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DM_Agency__c.Paths[OLE DB Source Output]"
+          TopLeft="118.257143621055,67.8379088647088">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.4183020282646"
+              Start="0,0"
+              End="0,48.9183020282646">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.9183020282646" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DM_Agency__c\Insert Target">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DM_Agency__c\Source Query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load DM_Agency_Product_Rate__c">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Load DM_Agency_Product_Rate__c\Source Query"
+          TopLeft="27.6571429057995,20.8" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Load DM_Agency_Product_Rate__c\Insert Target"
+          TopLeft="28.8000000681198,217.788238056803" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Load DM_Agency_Product_Rate__c\Inject Variables"
+          TopLeft="22.4,111.294119174258" />
+        <EdgeLayout
+          Id="Package\Load DM_Agency_Product_Rate__c.Paths[Derived Column Output]"
+          TopLeft="98.4000000340599,152.894119174258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.894118882545"
+              Start="0,0"
+              End="0,57.394118882545">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.394118882545" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DM_Agency_Product_Rate__c.Paths[OLE DB Source Output]"
+          TopLeft="98.4285714528997,62.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.894119174258"
+              Start="0,0"
+              End="0,41.394119174258">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.394119174258" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DM_Agency_Product_Rate__c\Insert Target">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DM_Agency_Product_Rate__c\Source Query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

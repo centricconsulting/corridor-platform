@@ -63,10 +63,8 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="Post Deployment" />
     <Folder Include="dbo\Stored Procedures" />
-    <Folder Include="ods" />
     <Folder Include="sfc" />
     <Folder Include="sfc\Tables" />
-    <Folder Include="ods\Tables" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\agency_file.sql" />
@@ -81,15 +79,14 @@
     <Build Include="dbo\Tables\config.sql" />
     <None Include="Post Deployment\DML_Insert_attribute.sql" />
     <None Include="Post Deployment\DML_Insert_file_format_translate.sql" />
-    <Build Include="sfc\Tables\agency_location.sql" />
-    <Build Include="sfc\Tables\product_rate.sql" />
-    <Build Include="ods\Tables\agency_medical_record.sql" />
+    <Build Include="sfc\Tables\DM_Agency__c.sql" />
+    <Build Include="sfc\Tables\DM_Agency_Product_Rate__c.sql" />
     <Build Include="Security\sfc.sql" />
-    <Build Include="Security\ods.sql" />
     <Build Include="dbo\Tables\file_format_translate.sql" />
     <None Include="Post Deployment\DML_Insert_agency_filter.sql" />
     <Build Include="dbo\Stored Procedures\get_translate_detail.sql" />
     <Build Include="dbo\Stored Procedures\get_attribute_detail.sql" />
+    <Build Include="dbo\Tables\agency_medical_record.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />
@@ -111,5 +108,8 @@
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
     </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="File Manager.refactorlog" />
   </ItemGroup>
 </Project>

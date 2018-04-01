@@ -11,9 +11,9 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Process Agency Medical Records"
   DTS:PackageType="5"
-  DTS:ProtectionLevel="0"
-  DTS:VersionBuild="596"
-  DTS:VersionGUID="{BE30CCF5-F007-4C51-854E-1B56A82C2C39}">
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="609"
+  DTS:VersionGUID="{9C287DD3-5C38-421D-A45B-E7D152EE6FA2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -104,7 +104,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.596</DTS:VariableValue>
+        DTS:DataType="8">1.0.609</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -270,7 +270,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[task]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[task]"
                       name="task" />
                     <outputColumn
@@ -278,7 +278,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[event]"
-                      length="20"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[event]"
                       name="event" />
                     <outputColumn
@@ -286,7 +286,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]"
                       name="clinician_last_name" />
                     <outputColumn
@@ -294,7 +294,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]"
                       name="clinician_first_name" />
                     <outputColumn
@@ -302,7 +302,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_source]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[secondary_payor_source]"
                       name="secondary_payor_source" />
                     <outputColumn
@@ -310,7 +310,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_type]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[secondary_payor_type]"
                       name="secondary_payor_type" />
                     <outputColumn
@@ -318,7 +318,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[payor_source]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[payor_source]"
                       name="payor_source" />
                     <outputColumn
@@ -326,7 +326,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[payor_type]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[payor_type]"
                       name="payor_type" />
                     <outputColumn
@@ -334,7 +334,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[responsible_position]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[responsible_position]"
                       name="responsible_position" />
                     <outputColumn
@@ -342,7 +342,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[visit_type]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[visit_type]"
                       name="visit_type" />
                     <outputColumn
@@ -350,7 +350,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[oasis_visit_type]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[oasis_visit_type]"
                       name="oasis_visit_type" />
                     <outputColumn
@@ -358,7 +358,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[patient_first_name]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[patient_first_name]"
                       name="patient_first_name" />
                     <outputColumn
@@ -366,7 +366,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[patient_last_name]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[patient_last_name]"
                       name="patient_last_name" />
                     <outputColumn
@@ -374,7 +374,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[team]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[team]"
                       name="team" />
                     <outputColumn
@@ -382,7 +382,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[agency_location_alias]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_location_alias]"
                       name="agency_location_alias" />
                     <outputColumn
@@ -390,7 +390,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[agency_location]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_location]"
                       name="agency_location" />
                     <outputColumn
@@ -414,7 +414,7 @@
                       comparisonFlags="1"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[medical_record_number]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[medical_record_number]"
                       name="medical_record_number"
                       sortKeyPosition="2" />
@@ -423,7 +423,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[episode_identifier]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[episode_identifier]"
                       name="episode_identifier" />
                     <outputColumn
@@ -431,7 +431,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[stage]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[stage]"
                       name="stage" />
                     <outputColumn
@@ -439,7 +439,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[discharge_date_TEXT]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[discharge_date_TEXT]"
                       name="discharge_date_TEXT" />
                     <outputColumn
@@ -463,7 +463,7 @@
                       codePage="1252"
                       dataType="str"
                       externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[assessment_date_TEXT]"
-                      length="50"
+                      length="200"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[assessment_date_TEXT]"
                       name="assessment_date_TEXT"
                       sortKeyPosition="3" />
@@ -499,6 +499,12 @@
                       length="50"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[resumption_of_care_date_TEXT]"
                       name="resumption_of_care_date_TEXT" />
+                    <outputColumn
+                      refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_medical_record_key]"
+                      dataType="i4"
+                      externalMetadataColumnId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[agency_medical_record_key]"
+                      lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_medical_record_key]"
+                      name="agency_medical_record_key" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -510,97 +516,97 @@
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[task]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="task" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[event]"
                       codePage="1252"
                       dataType="str"
-                      length="20"
+                      length="200"
                       name="event" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="clinician_last_name" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="clinician_first_name" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_source]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="secondary_payor_source" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_type]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="secondary_payor_type" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[payor_source]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="payor_source" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[payor_type]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="payor_type" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[responsible_position]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="responsible_position" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[visit_type]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="visit_type" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[oasis_visit_type]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="oasis_visit_type" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[patient_first_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="patient_first_name" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[patient_last_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="patient_last_name" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[team]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="team" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[agency_location_alias]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="agency_location_alias" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[agency_location]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="agency_location" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[record_action]"
@@ -616,25 +622,25 @@
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[medical_record_number]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="medical_record_number" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[episode_identifier]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="episode_identifier" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[stage]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="stage" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[discharge_date_TEXT]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="discharge_date_TEXT" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[hospice_date_TEXT]"
@@ -652,7 +658,7 @@
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[assessment_date_TEXT]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="assessment_date_TEXT" />
                     <externalMetadataColumn
                       refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[start_of_care_date_TEXT]"
@@ -678,6 +684,10 @@
                       dataType="str"
                       length="50"
                       name="resumption_of_care_date_TEXT" />
+                    <externalMetadataColumn
+                      refId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].ExternalColumns[agency_medical_record_key]"
+                      dataType="i4"
+                      name="agency_medical_record_key" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -817,7 +827,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[ods].[agency_medical_record]</property>
+                  name="OpenRowset">[dbo].[agency_medical_record]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -877,7 +887,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[task]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="task"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[task]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[task]" />
@@ -885,7 +895,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[event]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="20"
+                      cachedLength="200"
                       cachedName="event"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[event]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[event]" />
@@ -893,7 +903,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[clinician_last_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="clinician_last_name"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[clinician_last_name]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]" />
@@ -901,7 +911,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[clinician_first_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="clinician_first_name"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[clinician_first_name]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]" />
@@ -909,7 +919,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[secondary_payor_source]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="secondary_payor_source"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[secondary_payor_source]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[secondary_payor_source]" />
@@ -917,7 +927,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[secondary_payor_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="secondary_payor_type"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[secondary_payor_type]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[secondary_payor_type]" />
@@ -925,7 +935,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[payor_source]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="payor_source"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[payor_source]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[payor_source]" />
@@ -933,7 +943,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[payor_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="payor_type"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[payor_type]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[payor_type]" />
@@ -941,7 +951,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[visit_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="visit_type"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[visit_type]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[visit_type]" />
@@ -949,7 +959,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[oasis_visit_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="oasis_visit_type"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[oasis_visit_type]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[oasis_visit_type]" />
@@ -957,7 +967,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[patient_first_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="patient_first_name"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[patient_first_name]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[patient_first_name]" />
@@ -965,7 +975,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[patient_last_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="patient_last_name"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[patient_last_name]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[patient_last_name]" />
@@ -973,7 +983,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[team]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="team"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[team]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[team]" />
@@ -981,7 +991,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[agency_location_alias]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="agency_location_alias"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[agency_location_alias]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_location_alias]" />
@@ -989,7 +999,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[agency_location]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="agency_location"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[agency_location]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_location]" />
@@ -1005,7 +1015,7 @@
                       cachedCodepage="1252"
                       cachedComparisonFlags="1"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="medical_record_number"
                       cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[medical_record_number]"
@@ -1014,7 +1024,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[episode_identifier]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="episode_identifier"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[episode_identifier]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[episode_identifier]" />
@@ -1052,7 +1062,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[stage]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="stage"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[stage]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[stage]" />
@@ -1072,7 +1082,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].Columns[responsible_position]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="responsible_position"
                       externalMetadataColumnId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[responsible_position]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[responsible_position]" />
@@ -1123,7 +1133,7 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[medical_record_number]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="medical_record_number" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[assessment_date]"
@@ -1133,49 +1143,49 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[visit_type]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="visit_type" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[agency_location]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="200"
                       name="agency_location" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[agency_location_alias]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="agency_location_alias" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[team]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="team" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[patient_last_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="patient_last_name" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[patient_first_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="patient_first_name" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[oasis_visit_type]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="oasis_visit_type" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[responsible_position]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="responsible_position" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[arrival_date]"
@@ -1209,55 +1219,55 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[payor_type]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="payor_type" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[payor_source]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="payor_source" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[secondary_payor_type]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="secondary_payor_type" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[secondary_payor_source]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="secondary_payor_source" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[clinician_first_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="clinician_first_name" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[clinician_last_name]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="clinician_last_name" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[event]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="event" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[stage]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="stage" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[task]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="task" />
                     <externalMetadataColumn
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[episode_identifier]"
@@ -1285,6 +1295,24 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[modify_timestamp]"
                       dataType="dbTimeStamp"
                       name="modify_timestamp" />
+                    <externalMetadataColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[agency_medical_record_key]"
+                      dataType="i4"
+                      name="agency_medical_record_key" />
+                    <externalMetadataColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[process_dtm]"
+                      dataType="dbTimeStamp"
+                      name="process_dtm" />
+                    <externalMetadataColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[process_success_ind]"
+                      dataType="bool"
+                      name="process_success_ind" />
+                    <externalMetadataColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[process_error_message]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="process_error_message" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1335,7 +1363,7 @@
                       refId="Package\Load Records\Prepare Columns.Inputs[Derived Column Input].Columns[discharge_date_TEXT]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="discharge_date_TEXT"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[discharge_date_TEXT]" />
                     <inputColumn
@@ -1356,7 +1384,7 @@
                       refId="Package\Load Records\Prepare Columns.Inputs[Derived Column Input].Columns[assessment_date_TEXT]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="assessment_date_TEXT"
                       cachedSortKeyPosition="3"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[assessment_date_TEXT]" />
@@ -1887,7 +1915,7 @@ agency_file_row_key = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [ods].[agency_medical_record] SET 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[agency_medical_record] SET 
   [visit_type] = ? -- {Param_00}
 , [agency_location] = ? -- {Param_01}
 , [agency_location_alias] = ? -- {Param_02}
@@ -1917,9 +1945,7 @@ agency_file_row_key = ?</property>
 , [modify_timestamp] = ? -- {Param_26}
 , [process_batch_key] =? -- {Param_27}
 WHERE
-[agency_key] = ? -- {Param_28}
-AND [medical_record_number] = ? -- {Param_29}
-AND [assessment_date] = ? -- {Param_30}</property>
+[agency_medical_record_key] = ? -- {Param_28}</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1945,7 +1971,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[visit_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="visit_type"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[visit_type]" />
@@ -1953,7 +1979,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[agency_location]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="agency_location"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_location]" />
@@ -1961,7 +1987,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[agency_location_alias]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="agency_location_alias"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_location_alias]" />
@@ -1969,7 +1995,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[team]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="team"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[team]" />
@@ -1977,7 +2003,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[patient_last_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="patient_last_name"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[patient_last_name]" />
@@ -1985,7 +2011,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[patient_first_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="patient_first_name"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[patient_first_name]" />
@@ -1993,7 +2019,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[oasis_visit_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="oasis_visit_type"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[oasis_visit_type]" />
@@ -2001,7 +2027,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[responsible_position]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="responsible_position"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[responsible_position]" />
@@ -2051,7 +2077,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[payor_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="payor_type"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[payor_type]" />
@@ -2059,7 +2085,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[payor_source]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="payor_source"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[payor_source]" />
@@ -2067,7 +2093,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[secondary_payor_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="secondary_payor_type"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[secondary_payor_type]" />
@@ -2075,7 +2101,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[secondary_payor_source]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="secondary_payor_source"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[secondary_payor_source]" />
@@ -2083,7 +2109,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[clinician_first_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="clinician_first_name"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]" />
@@ -2091,7 +2117,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[clinician_last_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="clinician_last_name"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]" />
@@ -2099,7 +2125,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[event]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="20"
+                      cachedLength="200"
                       cachedName="event"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[event]" />
@@ -2107,7 +2133,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[task]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="task"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[task]" />
@@ -2115,7 +2141,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[episode_identifier]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="episode_identifier"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[episode_identifier]" />
@@ -2138,36 +2164,19 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
                       lineageId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[process_batch_key]" />
                     <inputColumn
-                      refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[agency_key]"
-                      cachedDataType="i4"
-                      cachedName="agency_key"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
-                      lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_key]" />
-                    <inputColumn
-                      refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[medical_record_number]"
-                      cachedCodepage="1252"
-                      cachedComparisonFlags="1"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="medical_record_number"
-                      cachedSortKeyPosition="2"
-                      externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
-                      lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[medical_record_number]" />
-                    <inputColumn
-                      refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[assessment_date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="assessment_date"
-                      externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
-                      lineageId="Package\Load Records\Prepare Columns.Outputs[Derived Column Output].Columns[assessment_date]" />
-                    <inputColumn
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[stage]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="200"
                       cachedName="stage"
                       externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
                       lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[stage]" />
+                    <inputColumn
+                      refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].Columns[agency_medical_record_key]"
+                      cachedDataType="i4"
+                      cachedName="agency_medical_record_key"
+                      externalMetadataColumnId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
+                      lineageId="Package\Load Records\AMR Record Cache.Outputs[Raw File Source Output].Columns[agency_medical_record_key]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2175,7 +2184,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_0">
                       <properties>
                         <property
@@ -2188,7 +2197,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="200"
                       name="Param_1">
                       <properties>
                         <property
@@ -2201,7 +2210,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_2">
                       <properties>
                         <property
@@ -2214,7 +2223,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_3">
                       <properties>
                         <property
@@ -2227,7 +2236,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_4">
                       <properties>
                         <property
@@ -2240,7 +2249,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_5">
                       <properties>
                         <property
@@ -2253,7 +2262,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_6">
                       <properties>
                         <property
@@ -2266,7 +2275,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_7">
                       <properties>
                         <property
@@ -2356,7 +2365,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_15">
                       <properties>
                         <property
@@ -2369,7 +2378,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_16">
                       <properties>
                         <property
@@ -2382,7 +2391,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_17">
                       <properties>
                         <property
@@ -2395,7 +2404,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_18">
                       <properties>
                         <property
@@ -2408,7 +2417,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_19">
                       <properties>
                         <property
@@ -2421,7 +2430,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_20">
                       <properties>
                         <property
@@ -2434,7 +2443,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_21">
                       <properties>
                         <property
@@ -2447,7 +2456,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_22">
                       <properties>
                         <property
@@ -2460,7 +2469,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="200"
                       name="Param_23">
                       <properties>
                         <property
@@ -2524,30 +2533,6 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
                           name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Param_29">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Load Records\Update Agency Medical Record.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
-                      dataType="dbTimeStamp"
-                      name="Param_30">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -2754,63 +2739,63 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[task]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="task"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[task]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[event]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="20"
+                          cachedLength="200"
                           cachedName="event"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[event]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[clinician_last_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="clinician_last_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[clinician_last_name]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[clinician_first_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="clinician_first_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[clinician_first_name]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[secondary_payor_source]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="secondary_payor_source"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[secondary_payor_source]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[secondary_payor_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="secondary_payor_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[secondary_payor_type]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[payor_source]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="payor_source"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[payor_source]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[payor_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="payor_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[payor_type]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[discharge_date_TEXT]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="discharge_date"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[discharge_date]"
                           name="discharge_date_TEXT" />
@@ -2834,14 +2819,14 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[responsible_position]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="responsible_position"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[responsible_position]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[assessment_date_TEXT]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="assessment_date"
                           cachedSortKeyPosition="3"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[assessment_date]"
@@ -2850,49 +2835,49 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[visit_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="visit_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[visit_type]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[oasis_visit_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="oasis_visit_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[oasis_visit_type]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[patient_first_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="patient_first_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[patient_first_name]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[patient_last_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="patient_last_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[patient_last_name]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[team]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="team"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[team]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[agency_location_alias]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="agency_location_alias"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_location_alias]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[agency_location]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="agency_location"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_location]" />
                         <inputColumn
@@ -2913,7 +2898,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           cachedCodepage="1252"
                           cachedComparisonFlags="1"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="medical_record_number"
                           cachedSortKeyPosition="2"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[medical_record_number]" />
@@ -2937,7 +2922,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[episode_identifier]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="episode_identifier"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[episode_identifier]" />
                         <inputColumn
@@ -2960,9 +2945,14 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[stage]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="stage"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[stage]" />
+                        <inputColumn
+                          refId="Package\Loop Through File Formats\Prepare Records\AMR Record Cache.Inputs[Raw File Destination Input].Columns[agency_medical_record_key]"
+                          cachedDataType="i4"
+                          cachedName="agency_medical_record_key"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_medical_record_key]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -2982,10 +2972,10 @@ AND [assessment_date] = ? -- {Param_30}</property>
                       name="Derived Column Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Loop Through File Formats\Prepare Records\Derive Record Action.Inputs[Derived Column Input].Columns[target_agency_key]"
+                          refId="Package\Loop Through File Formats\Prepare Records\Derive Record Action.Inputs[Derived Column Input].Columns[agency_medical_record_key]"
                           cachedDataType="i4"
-                          cachedName="target_agency_key"
-                          lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[target_agency_key]" />
+                          cachedName="agency_medical_record_key"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_medical_record_key]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3013,13 +3003,13 @@ AND [assessment_date] = ? -- {Param_30}</property>
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">(DT_STR,20,1252)([ISNULL](#{Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[target_agency_key]}) ? "Insert" : "Update")</property>
+                              name="Expression">(DT_STR,20,1252)([ISNULL](#{Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_medical_record_key]}) ? "Insert" : "Update")</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">(DT_STR,20,1252)(ISNULL(target_agency_key) ? "Insert" : "Update")</property>
+                              name="FriendlyExpression">(DT_STR,20,1252)(ISNULL(agency_medical_record_key) ? "Insert" : "Update")</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3181,7 +3171,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[assessment_date]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="assessment_date"
                           cachedSortKeyPosition="3"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[assessment_date]" />
@@ -3190,7 +3180,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           cachedCodepage="1252"
                           cachedComparisonFlags="1"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="medical_record_number"
                           cachedSortKeyPosition="2"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[medical_record_number]" />
@@ -3198,14 +3188,14 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[visit_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="visit_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[visit_type]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[agency_location_alias]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="agency_location_alias"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[agency_location_alias]" />
                         <inputColumn
@@ -3219,35 +3209,35 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[clinician_first_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="clinician_first_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[clinician_first_name]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[clinician_last_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="clinician_last_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[clinician_last_name]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[agency_location]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="agency_location"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[agency_location]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[team]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="team"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[team]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[event_desc]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="20"
+                          cachedLength="200"
                           cachedName="event_desc"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[event_desc]" />
                         <inputColumn
@@ -3261,42 +3251,42 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[oasis_visit_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="oasis_visit_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[oasis_visit_type]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[patient_first_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="patient_first_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[patient_first_name]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[patient_last_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="patient_last_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[patient_last_name]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[payor_source]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="payor_source"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[payor_source]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[payor_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="payor_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[payor_type]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[episode_identifier]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="episode_identifier"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[episode_identifier]" />
                         <inputColumn
@@ -3317,14 +3307,14 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[secondary_payor_source]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="secondary_payor_source"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[secondary_payor_source]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[secondary_payor_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="secondary_payor_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[secondary_payor_type]" />
                         <inputColumn
@@ -3345,21 +3335,21 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[task]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="task"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[task]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[responsible_position]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="responsible_position"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[responsible_position]" />
                         <inputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[discharge_date]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="discharge_date"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[discharge_date]" />
                         <inputColumn
@@ -3371,7 +3361,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[stage]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="stage"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[stage]" />
                       </inputColumns>
@@ -3387,7 +3377,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           cachedCodepage="1252"
                           cachedComparisonFlags="1"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="medical_record_number"
                           cachedSortKeyPosition="2"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Target.Outputs[Sort Output].Columns[medical_record_number]" />
@@ -3404,6 +3394,11 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           cachedName="agency_key"
                           cachedSortKeyPosition="1"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Target.Outputs[Sort Output].Columns[agency_key]" />
+                        <inputColumn
+                          refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Right Input].Columns[agency_medical_record_key]"
+                          cachedDataType="i4"
+                          cachedName="agency_medical_record_key"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Sort Target.Outputs[Sort Output].Columns[agency_medical_record_key]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3418,7 +3413,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[assessment_date]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[assessment_date]"
                           name="assessment_date"
                           sortKeyPosition="3">
@@ -3435,7 +3430,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           codePage="1252"
                           comparisonFlags="1"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[medical_record_number]"
                           name="medical_record_number"
                           sortKeyPosition="2">
@@ -3465,7 +3460,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[visit_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[visit_type]"
                           name="visit_type">
                           <properties>
@@ -3480,7 +3475,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_location_alias]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_location_alias]"
                           name="agency_location_alias">
                           <properties>
@@ -3510,7 +3505,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[clinician_first_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[clinician_first_name]"
                           name="clinician_first_name">
                           <properties>
@@ -3525,7 +3520,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[clinician_last_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[clinician_last_name]"
                           name="clinician_last_name">
                           <properties>
@@ -3540,7 +3535,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_location]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_location]"
                           name="agency_location">
                           <properties>
@@ -3555,7 +3550,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[team]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[team]"
                           name="team">
                           <properties>
@@ -3570,7 +3565,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[event]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[event]"
                           name="event">
                           <properties>
@@ -3600,7 +3595,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[oasis_visit_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[oasis_visit_type]"
                           name="oasis_visit_type">
                           <properties>
@@ -3615,7 +3610,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[patient_first_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[patient_first_name]"
                           name="patient_first_name">
                           <properties>
@@ -3630,7 +3625,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[patient_last_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[patient_last_name]"
                           name="patient_last_name">
                           <properties>
@@ -3645,7 +3640,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[payor_source]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[payor_source]"
                           name="payor_source">
                           <properties>
@@ -3660,7 +3655,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[payor_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[payor_type]"
                           name="payor_type">
                           <properties>
@@ -3675,7 +3670,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[episode_identifier]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[episode_identifier]"
                           name="episode_identifier">
                           <properties>
@@ -3720,7 +3715,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[secondary_payor_source]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[secondary_payor_source]"
                           name="secondary_payor_source">
                           <properties>
@@ -3735,7 +3730,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[secondary_payor_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[secondary_payor_type]"
                           name="secondary_payor_type">
                           <properties>
@@ -3780,7 +3775,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[task]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[task]"
                           name="task">
                           <properties>
@@ -3795,7 +3790,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[responsible_position]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[responsible_position]"
                           name="responsible_position">
                           <properties>
@@ -3810,7 +3805,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[discharge_date]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[discharge_date]"
                           name="discharge_date">
                           <properties>
@@ -3835,23 +3830,10 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[target_agency_key]"
-                          dataType="i4"
-                          lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[target_agency_key]"
-                          name="target_agency_key">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Right Input].Columns[agency_key]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[stage]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[stage]"
                           name="stage">
                           <properties>
@@ -3860,6 +3842,19 @@ AND [assessment_date] = ? -- {Param_30}</property>
                               dataType="System.Int32"
                               description="The input column associated with this output column"
                               name="InputColumnID">#{Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Left Input].Columns[stage]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_medical_record_key]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Left Outer Join.Outputs[Merge Join Output].Columns[agency_medical_record_key]"
+                          name="agency_medical_record_key">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Loop Through File Formats\Prepare Records\Left Outer Join.Inputs[Merge Join Right Input].Columns[agency_medical_record_key]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3964,7 +3959,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[agency_location]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="agency_location"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[agency_location]">
                           <properties>
@@ -3982,7 +3977,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[agency_location_alias]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="agency_location_alias"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[agency_location_alias]">
                           <properties>
@@ -4018,7 +4013,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[assessment_date]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="assessment_date"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[assessment_date]">
                           <properties>
@@ -4036,7 +4031,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[clinician_first_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="clinician_first_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[clinician_first_name]">
                           <properties>
@@ -4054,7 +4049,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[clinician_last_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="clinician_last_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[clinician_last_name]">
                           <properties>
@@ -4072,7 +4067,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[discharge_date]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="discharge_date"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[discharge_date]">
                           <properties>
@@ -4090,7 +4085,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[episode_identifier]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="episode_identifier"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[episode_identifier]">
                           <properties>
@@ -4108,7 +4103,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[event_desc]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="20"
+                          cachedLength="200"
                           cachedName="event_desc"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[event_desc]">
                           <properties>
@@ -4144,7 +4139,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[medical_record_number]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="medical_record_number"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[medical_record_number]">
                           <properties>
@@ -4162,7 +4157,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[oasis_visit_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="oasis_visit_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[oasis_visit_type]">
                           <properties>
@@ -4180,7 +4175,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[patient_first_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="patient_first_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[patient_first_name]">
                           <properties>
@@ -4198,7 +4193,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[patient_last_name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="patient_last_name"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[patient_last_name]">
                           <properties>
@@ -4216,7 +4211,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[payor_source]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="payor_source"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[payor_source]">
                           <properties>
@@ -4234,7 +4229,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[payor_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="payor_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[payor_type]">
                           <properties>
@@ -4270,7 +4265,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[responsible_position]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="responsible_position"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[responsible_position]">
                           <properties>
@@ -4306,7 +4301,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[secondary_payor_source]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="secondary_payor_source"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[secondary_payor_source]">
                           <properties>
@@ -4324,7 +4319,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[secondary_payor_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="secondary_payor_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[secondary_payor_type]">
                           <properties>
@@ -4378,7 +4373,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[task]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="task"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[task]">
                           <properties>
@@ -4396,7 +4391,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[team]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="team"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[team]">
                           <properties>
@@ -4414,7 +4409,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[visit_type]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="visit_type"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[visit_type]">
                           <properties>
@@ -4432,7 +4427,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Inputs[Sort Input].Columns[stage]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="stage"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[stage]">
                           <properties>
@@ -4487,7 +4482,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[agency_location]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[agency_location]"
                           name="agency_location">
                           <properties>
@@ -4502,7 +4497,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[agency_location_alias]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[agency_location_alias]"
                           name="agency_location_alias">
                           <properties>
@@ -4532,7 +4527,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[assessment_date]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[assessment_date]"
                           name="assessment_date"
                           sortKeyPosition="3">
@@ -4548,7 +4543,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[clinician_first_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[clinician_first_name]"
                           name="clinician_first_name">
                           <properties>
@@ -4563,7 +4558,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[clinician_last_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[clinician_last_name]"
                           name="clinician_last_name">
                           <properties>
@@ -4578,7 +4573,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[discharge_date]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[discharge_date]"
                           name="discharge_date">
                           <properties>
@@ -4593,7 +4588,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[episode_identifier]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[episode_identifier]"
                           name="episode_identifier">
                           <properties>
@@ -4608,7 +4603,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[event_desc]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[event_desc]"
                           name="event_desc">
                           <properties>
@@ -4639,7 +4634,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           codePage="1252"
                           comparisonFlags="1"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[medical_record_number]"
                           name="medical_record_number"
                           sortKeyPosition="2">
@@ -4655,7 +4650,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[oasis_visit_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[oasis_visit_type]"
                           name="oasis_visit_type">
                           <properties>
@@ -4670,7 +4665,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[patient_first_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[patient_first_name]"
                           name="patient_first_name">
                           <properties>
@@ -4685,7 +4680,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[patient_last_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[patient_last_name]"
                           name="patient_last_name">
                           <properties>
@@ -4700,7 +4695,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[payor_source]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[payor_source]"
                           name="payor_source">
                           <properties>
@@ -4715,7 +4710,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[payor_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[payor_type]"
                           name="payor_type">
                           <properties>
@@ -4745,7 +4740,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[responsible_position]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[responsible_position]"
                           name="responsible_position">
                           <properties>
@@ -4775,7 +4770,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[secondary_payor_source]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[secondary_payor_source]"
                           name="secondary_payor_source">
                           <properties>
@@ -4790,7 +4785,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[secondary_payor_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[secondary_payor_type]"
                           name="secondary_payor_type">
                           <properties>
@@ -4835,7 +4830,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[task]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[task]"
                           name="task">
                           <properties>
@@ -4850,7 +4845,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[team]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[team]"
                           name="team">
                           <properties>
@@ -4865,7 +4860,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[visit_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[visit_type]"
                           name="visit_type">
                           <properties>
@@ -4880,7 +4875,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[stage]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Source.Outputs[Sort Output].Columns[stage]"
                           name="stage">
                           <properties>
@@ -4923,7 +4918,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           refId="Package\Loop Through File Formats\Prepare Records\Sort Target.Inputs[Sort Input].Columns[medical_record_number]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="200"
                           cachedName="medical_record_number"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[medical_record_number]">
                           <properties>
@@ -4970,6 +4965,22 @@ AND [assessment_date] = ? -- {Param_30}</property>
                               name="NewSortKeyPosition">1</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through File Formats\Prepare Records\Sort Target.Inputs[Sort Input].Columns[agency_medical_record_key]"
+                          cachedDataType="i4"
+                          cachedName="agency_medical_record_key"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[agency_medical_record_key]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -4985,7 +4996,7 @@ AND [assessment_date] = ? -- {Param_30}</property>
                           codePage="1252"
                           comparisonFlags="1"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Sort Target.Outputs[Sort Output].Columns[medical_record_number]"
                           name="medical_record_number"
                           sortKeyPosition="2">
@@ -5024,6 +5035,19 @@ AND [assessment_date] = ? -- {Param_30}</property>
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[agency_key]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through File Formats\Prepare Records\Sort Target.Outputs[Sort Output].Columns[agency_medical_record_key]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Sort Target.Outputs[Sort Output].Columns[agency_medical_record_key]"
+                          name="agency_medical_record_key">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[agency_medical_record_key]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -6191,12 +6215,12 @@ AND f.file_format_code = ?</property>
                       description="The SQL command to be executed."
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
-  a.[agency_key]
+  a.agency_medical_record_key
+, a.[agency_key]
 , a.[medical_record_number]
 , FORMAT(a.[assessment_date], 'yyyy-MM-dd hh:mm:ss tt') AS  assessment_date
-, a.assessment_date AS x
 FROM
-ods.agency_medical_record a
+dbo.agency_medical_record a
 ORDER BY
   a.agency_key
 , a.medical_record_number
@@ -6243,7 +6267,7 @@ ORDER BY
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].ExternalColumns[medical_record_number]"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[medical_record_number]"
                           name="medical_record_number"
                           truncationRowDisposition="FailComponent" />
@@ -6267,13 +6291,13 @@ ORDER BY
                           name="assessment_date"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[x]"
-                          dataType="dbTimeStamp"
+                          refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[agency_medical_record_key]"
+                          dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].ExternalColumns[x]"
-                          lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[x]"
-                          name="x"
+                          externalMetadataColumnId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].ExternalColumns[agency_medical_record_key]"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].Columns[agency_medical_record_key]"
+                          name="agency_medical_record_key"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -6282,7 +6306,7 @@ ORDER BY
                           refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].ExternalColumns[medical_record_number]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           name="medical_record_number" />
                         <externalMetadataColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].ExternalColumns[agency_key]"
@@ -6294,9 +6318,9 @@ ORDER BY
                           length="4000"
                           name="assessment_date" />
                         <externalMetadataColumn
-                          refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].ExternalColumns[x]"
-                          dataType="dbTimeStamp"
-                          name="x" />
+                          refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Output].ExternalColumns[agency_medical_record_key]"
+                          dataType="i4"
+                          name="agency_medical_record_key" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -6304,6 +6328,11 @@ ORDER BY
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[agency_medical_record_key]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[agency_medical_record_key]"
+                          name="agency_medical_record_key" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -6317,21 +6346,10 @@ ORDER BY
                           name="ErrorColumn"
                           specialFlags="2" />
                         <outputColumn
-                          refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[assessment_date]"
-                          dataType="wstr"
-                          length="4000"
-                          lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[assessment_date]"
-                          name="assessment_date" />
-                        <outputColumn
-                          refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[x]"
-                          dataType="dbTimeStamp"
-                          lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[x]"
-                          name="x" />
-                        <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[medical_record_number]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[medical_record_number]"
                           name="medical_record_number" />
                         <outputColumn
@@ -6339,6 +6357,12 @@ ORDER BY
                           dataType="i4"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[agency_key]"
                           name="agency_key" />
+                        <outputColumn
+                          refId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[assessment_date]"
+                          dataType="wstr"
+                          length="4000"
+                          lineageId="Package\Loop Through File Formats\Prepare Records\Target Query.Outputs[OLE DB Source Error Output].Columns[assessment_date]"
+                          name="assessment_date" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -8684,7 +8708,7 @@ namespace SC_fa4b5f410cb547d69db4132c95e85c50.Properties {
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDABOjv1oAAAAAAAAAAOAAIiALATAAAGQAAAAIAAAAAAAANoIA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGTgv1oAAAAAAAAAAOAAIiALATAAAGQAAAAIAAAAAAAANoIA
 AAAgAAAAoAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAADgAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAOSBAABPAAAAAKAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAMAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -9110,7 +9134,7 @@ YwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9JAG4AcAB1AHQAIAAwAAA9QQBEAE8ARgBp
 AGwAZQBNAGEAbgBhAGcAZQByAEMAbwBuAG4AZQBjAHQAaQBvAG4AUwB0AHIAaQBuAGcAACFmAGkA
 bABlAF8AZgBvAHIAbQBhAHQAXwBjAG8AZABlAABxUwBDAF8AZgBhADQAYgA1AGYANAAxADAAYwBi
 ADUANAA3AGQANgA5AGQAYgA0ADEAMwAyAGMAOQA1AGUAOAA1AGMANQAwAC4AUAByAG8AcABlAHIA
-dABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAAAHR9Kj+tBUSJUJ7dXVINfvAAQgAQEIAyAA
+dABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAAAAA1ZXftR/QRb3X5QJTc7/yAAQgAQEIAyAA
 AQUgAQEREQQgAQEOBiABARGAjRMHCRIMCBURPQESFBIUDg4OEkEOBhUSOQESFAggABURPQETAAYV
 ET0BEhQEIAATAAQAAQIOAyAADgQgABJBAgYOBgADDg4ODgMgAAIEAAARSQUgAg4ICAYHAhI0EhAH
 FRKAoQESEAUgAgEcGAYVEjkBEhALIAETABUSgKEBEwAEBwIOCQUAAgIODg4HBg4RSRFNCAIVEVEB
@@ -9537,70 +9561,70 @@ AAA=]]></arrayElement>
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[task]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[task]"
                           name="task" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[stage]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[stage]"
                           name="stage" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[event_desc]"
                           codePage="1252"
                           dataType="str"
-                          length="20"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[event_desc]"
                           name="event_desc" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[clinician_last_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[clinician_last_name]"
                           name="clinician_last_name" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[clinician_first_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[clinician_first_name]"
                           name="clinician_first_name" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[secondary_payor_source]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[secondary_payor_source]"
                           name="secondary_payor_source" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[secondary_payor_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[secondary_payor_type]"
                           name="secondary_payor_type" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[payor_source]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[payor_source]"
                           name="payor_source" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[payor_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[payor_type]"
                           name="payor_type" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[discharge_date]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[discharge_date]"
                           name="discharge_date" />
                         <outputColumn
@@ -9649,77 +9673,77 @@ AAA=]]></arrayElement>
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[responsible_position]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[responsible_position]"
                           name="responsible_position" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[episode_identifier]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[episode_identifier]"
                           name="episode_identifier" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[assessment_date]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[assessment_date]"
                           name="assessment_date" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[visit_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[visit_type]"
                           name="visit_type" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[oasis_visit_type]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[oasis_visit_type]"
                           name="oasis_visit_type" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[medical_record_number]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[medical_record_number]"
                           name="medical_record_number" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[patient_first_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[patient_first_name]"
                           name="patient_first_name" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[patient_last_name]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[patient_last_name]"
                           name="patient_last_name" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[team]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[team]"
                           name="team" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[agency_location_alias]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[agency_location_alias]"
                           name="agency_location_alias" />
                         <outputColumn
                           refId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[agency_location]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="200"
                           lineageId="Package\Loop Through File Formats\Prepare Records\Transform To AMR.Outputs[Output 0].Columns[agency_location]"
                           name="agency_location" />
                         <outputColumn
@@ -10364,7 +10388,7 @@ AAA=]]></arrayElement>
     design-time-name="Package\Load Records">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="167.2,41.6"
           Id="Package\Load Records\AMR Record Cache"
@@ -10378,49 +10402,27 @@ AAA=]]></arrayElement>
           Id="Package\Load Records\Insert Agency Medical Record"
           TopLeft="634.742856072406,429.776471263892" />
         <NodeLayout
-          Size="192.8,41.6"
-          Id="Package\Load Records\Update Agency File Row"
-          TopLeft="185.34285717935,199.470588396165" />
-        <NodeLayout
-          Size="224,41.6"
-          Id="Package\Load Records\Update Agency Medical Record"
-          TopLeft="345.714291601765,429.529417620398" />
-        <NodeLayout
           Size="158.4,41.6"
           Id="Package\Load Records\Prepare Columns"
           TopLeft="527.612242098453,192.620166628583" />
         <NodeLayout
+          Size="192.8,41.6"
+          Id="Package\Load Records\Update Agency File Row"
+          TopLeft="185.34285717935,199.470588396165" />
+        <NodeLayout
           Size="164.8,41.6"
           Id="Package\Load Records\AFR Record Cache"
           TopLeft="202.14285717935,95.1411769746497" />
-        <EdgeLayout
-          Id="Package\Load Records.Paths[Derived Column Output]"
-          TopLeft="607.048978100852,234.220166628583">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.3445405407348"
-              Start="0,0"
-              End="0,38.8445405407348">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.8445405407348" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="224,41.6"
+          Id="Package\Load Records\Update Agency Medical Record"
+          TopLeft="345.714291601765,429.529417620398" />
         <EdgeLayout
           Id="Package\Load Records.Paths[Update]"
           TopLeft="575.952380769918,322.164707169318">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-118.238089168153,107.36471045108"
               Start="0,0"
               End="-118.238089168153,99.8647104510801">
@@ -10456,7 +10458,7 @@ AAA=]]></arrayElement>
           TopLeft="604.148978058277,139.14117697465">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,53.4789896539335"
               Start="0,0"
               End="0,45.9789896539335">
@@ -10478,7 +10480,7 @@ AAA=]]></arrayElement>
           TopLeft="283.14285717935,136.74117697465">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,62.7294114215152"
               Start="0,0"
               End="0,55.2294114215152">
@@ -10500,7 +10502,7 @@ AAA=]]></arrayElement>
           TopLeft="638.619047436584,322.164707169318">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="105.323808635822,107.611764094574"
               Start="0,0"
               End="105.323808635822,100.111764094574">
@@ -10527,8 +10529,30 @@ AAA=]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="38.9089160366609,48.5675158277627,27.5059765625,9.40234375"
+              BoundingBox="38.908916036661,48.5675158277627,27.5059765625,9.40234375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Records.Paths[Derived Column Output]"
+          TopLeft="607.048978100852,234.220166628583">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,46.3445405407348"
+              Start="0,0"
+              End="0,38.8445405407348">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.8445405407348" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10551,7 +10575,7 @@ AAA=]]></arrayElement>
     design-time-name="Package\Loop Through File Formats\Prepare Records">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="142.4,41.6"
           Id="Package\Loop Through File Formats\Prepare Records\Source Query"
@@ -10575,7 +10599,7 @@ AAA=]]></arrayElement>
         <NodeLayout
           Size="140.8,41.6"
           Id="Package\Loop Through File Formats\Prepare Records\Target Query"
-          TopLeft="547.934703222447,221.801684611609" />
+          TopLeft="543.934703222447,330.601684611609" />
         <NodeLayout
           Size="186.4,41.6"
           Id="Package\Loop Through File Formats\Prepare Records\Exclude Failed Records"
@@ -10597,11 +10621,69 @@ AAA=]]></arrayElement>
           Id="Package\Loop Through File Formats\Prepare Records\Multicast"
           TopLeft="249.877555275798,222.551263208667" />
         <EdgeLayout
+          Id="Package\Loop Through File Formats\Prepare Records.Paths[Succeeded]"
+          TopLeft="328.151024623932,375.126052908301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,56.0201710407289"
+              Start="0,0"
+              End="0,48.5201710407289">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5201710407289" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.08365234375,19.3855738016144,48.1673046875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through File Formats\Prepare Records.Paths[Sort Output1]"
+          TopLeft="332.048984061316,472.74622394903">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="114.780954658093,90.850422059294"
+              Start="0,0"
+              End="114.780954658093,83.350422059294">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.9272558747681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.9272558747681"
+                    Point2="0,53.9272558747681"
+                    Point3="4,53.9272558747681" />
+                  <mssgle:LineSegment
+                    End="110.780954658093,53.9272558747681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.780954658093,53.9272558747681"
+                    Point2="114.780954658093,53.9272558747681"
+                    Point3="114.780954658093,57.9272558747681" />
+                  <mssgle:LineSegment
+                    End="114.780954658093,83.350422059294" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Loop Through File Formats\Prepare Records.Paths[Sort Output]"
           TopLeft="616.432662421413,470.433618616527">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-122.936057035338,93.163027391797"
               Start="0,0"
               End="-122.936057035338,85.663027391797">
@@ -10609,17 +10691,17 @@ AAA=]]></arrayElement>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.2999788261469" />
+                    End="0,51.2999788261468" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,51.2999788261469"
-                    Point2="0,55.2999788261469"
-                    Point3="-4,55.2999788261469" />
+                    Point1="0,51.2999788261468"
+                    Point2="0,55.2999788261468"
+                    Point3="-4,55.2999788261468" />
                   <mssgle:LineSegment
-                    End="-118.936057035338,55.2999788261469" />
+                    End="-118.936057035338,55.2999788261468" />
                   <mssgle:CubicBezierSegment
-                    Point1="-118.936057035338,55.2999788261469"
-                    Point2="-122.936057035338,55.2999788261469"
-                    Point3="-122.936057035338,59.2999788261469" />
+                    Point1="-118.936057035338,55.2999788261468"
+                    Point2="-122.936057035338,55.2999788261468"
+                    Point3="-122.936057035338,59.2999788261468" />
                   <mssgle:LineSegment
                     End="-122.936057035338,85.663027391797" />
                 </mssgle:SegmentCollection>
@@ -10635,7 +10717,7 @@ AAA=]]></arrayElement>
           TopLeft="310.783677542662,171.425211342195">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,51.126051866472"
               Start="0,0"
               End="0,43.626051866472">
@@ -10653,11 +10735,33 @@ AAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Loop Through File Formats\Prepare Records.Paths[OLE DB Source Output1]"
+          TopLeft="615.38368282193,372.201684611609">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,56.631934004918"
+              Start="0,0"
+              End="0,49.131934004918">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.131934004918" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Loop Through File Formats\Prepare Records.Paths[OLE DB Source Output]"
           TopLeft="309.648983550419,80.2722690331953">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,49.5529423089997"
               Start="0,0"
               End="0,42.0529423089997">
@@ -10679,7 +10783,7 @@ AAA=]]></arrayElement>
           TopLeft="291.210888609131,264.151263208668">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-170.85170428922,69.1092450898528"
               Start="0,0"
               End="-170.85170428922,61.6092450898528">
@@ -10713,7 +10817,7 @@ AAA=]]></arrayElement>
           TopLeft="326.398643564506,264.151263208667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,69.3747896996341"
               Start="0,0"
               End="0,61.8747896996341">
@@ -10735,7 +10839,7 @@ AAA=]]></arrayElement>
           TopLeft="471.812251550046,605.196646008324">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,61.2840335080369"
               Start="0,0"
               End="0,53.7840335080369">
@@ -10757,7 +10861,7 @@ AAA=]]></arrayElement>
           TopLeft="471.877557591863,708.080679516361">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,63.7243697552531"
               Start="0,0"
               End="0,56.2243697552531">
@@ -10766,88 +10870,6 @@ AAA=]]></arrayElement>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,56.2243697552531" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,20.1121848776265,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Loop Through File Formats\Prepare Records.Paths[Sort Output1]"
-          TopLeft="332.048984061316,472.74622394903">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="114.780954658093,90.850422059294"
-              Start="0,0"
-              End="114.780954658093,83.350422059294">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.9272558747681" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,49.9272558747681"
-                    Point2="0,53.9272558747681"
-                    Point3="4,53.9272558747681" />
-                  <mssgle:LineSegment
-                    End="110.780954658093,53.9272558747681" />
-                  <mssgle:CubicBezierSegment
-                    Point1="110.780954658093,53.9272558747681"
-                    Point2="114.780954658093,53.9272558747681"
-                    Point3="114.780954658093,57.9272558747681" />
-                  <mssgle:LineSegment
-                    End="114.780954658093,83.350422059294" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Loop Through File Formats\Prepare Records.Paths[Succeeded]"
-          TopLeft="328.151024623932,375.126052908301">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.0201710407289"
-              Start="0,0"
-              End="0,48.5201710407289">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5201710407289" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-24.08365234375,19.3855738016145,48.1673046875,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Loop Through File Formats\Prepare Records.Paths[OLE DB Source Output1]"
-          TopLeft="617.38368282193,263.401684611609">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,165.431934004918"
-              Start="0,0"
-              End="0,157.931934004918">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,157.931934004918" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
