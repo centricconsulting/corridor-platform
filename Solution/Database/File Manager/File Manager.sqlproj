@@ -12,8 +12,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>File_Staging</RootNamespace>
-    <AssemblyName>File_Staging</AssemblyName>
+    <RootNamespace>Corridor.Database.FileManager</RootNamespace>
+    <AssemblyName>Corridor.Database.FileManager</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>

@@ -13,6 +13,10 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "File Manager", "Database\Fi
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "File Manager Processing", "ETL\File Manager Processing\File Manager Processing.dtproj", "{8796B3A2-640A-47A9-83F3-4A6B5C455796}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{7EC6766C-E9A9-4E63-910E-8BA415BB78B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corridor.FileManager", "Library\File Manager\Corridor.FileManager.csproj", "{043554E7-4FF7-45AB-A6C5-111A255AF9CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +48,12 @@ Global
 		{8796B3A2-640A-47A9-83F3-4A6B5C455796}.Development|Any CPU.Build.0 = Development
 		{8796B3A2-640A-47A9-83F3-4A6B5C455796}.Release|Any CPU.ActiveCfg = Development
 		{8796B3A2-640A-47A9-83F3-4A6B5C455796}.Release|Any CPU.Build.0 = Development
+		{043554E7-4FF7-45AB-A6C5-111A255AF9CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{043554E7-4FF7-45AB-A6C5-111A255AF9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{043554E7-4FF7-45AB-A6C5-111A255AF9CA}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{043554E7-4FF7-45AB-A6C5-111A255AF9CA}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{043554E7-4FF7-45AB-A6C5-111A255AF9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{043554E7-4FF7-45AB-A6C5-111A255AF9CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +62,7 @@ Global
 		{35F915F3-ACEF-4765-9888-4ED3975F2DA2} = {25A99AD2-52D9-41ED-9217-99B7D543757E}
 		{82A92FCE-E093-4379-9FE5-A1A60E983644} = {25A99AD2-52D9-41ED-9217-99B7D543757E}
 		{8796B3A2-640A-47A9-83F3-4A6B5C455796} = {31503A62-EE0E-47E5-85F8-769E329F3976}
+		{043554E7-4FF7-45AB-A6C5-111A255AF9CA} = {7EC6766C-E9A9-4E63-910E-8BA415BB78B2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {937D581F-CA20-4EFF-8755-F8A0FAB2131F}
