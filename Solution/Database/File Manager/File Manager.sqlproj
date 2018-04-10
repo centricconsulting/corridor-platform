@@ -109,7 +109,4 @@
       <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
     </ArtifactReference>
   </ItemGroup>
-  <ItemGroup>
-    <RefactorLog Include="File Manager.refactorlog" />
-  </ItemGroup>
 </Project>

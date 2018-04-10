@@ -45,10 +45,12 @@ public class ScriptMain : UserComponent
 
         // get the raw value based on column position
         string ColumnValue = GetColumnValue(Row, attribute, errors);
-        ColumnValue = string.IsNullOrWhiteSpace(ColumnValue) ? null : ColumnValue.Trim();
+
+        // produce a clean version of the column value: null or trimmed
+        string CleanColumnValue = string.IsNullOrWhiteSpace(ColumnValue) ? null : ColumnValue.Trim();
 
         // assign a working value for transformation purposes
-        string WorkingValue = ColumnValue;
+        string WorkingValue = CleanColumnValue;
 
         // work through transformation logic
         // only if the column value is not null
@@ -61,18 +63,22 @@ public class ScriptMain : UserComponent
             WorkingValue = ExtractText(WorkingValue, attribute, errors);
           }
 
-          // assign translated value if applicable
-          string TranslatedValue = GetTranslatedValue(WorkingValue, attribute, errors);
-          if (!string.IsNullOrWhiteSpace(TranslatedValue)) WorkingValue = TranslatedValue;
+          // if any translations exist for the attribute
+          // perform translation even if resulting in null value
+          if (TranslateList.Exists(x =>
+            x.AttributeName.Equals(attribute.AttributeName,
+            StringComparison.CurrentCultureIgnoreCase)))
+          {
+            WorkingValue = GetTranslatedValue(WorkingValue, attribute, errors);
+          }
 
           // if after all the transformation, the final working value is null
           // use the original value providing transform default = true
-          if(string.IsNullOrWhiteSpace(WorkingValue) 
-            && attribute.TransformDefaultFlag 
-            && !string.IsNullOrWhiteSpace(ColumnValue))
+          if (string.IsNullOrWhiteSpace(WorkingValue)
+            && attribute.TransformDefaultFlag)
           {
             // reassign the working value to the original value
-            WorkingValue = ColumnValue;
+            WorkingValue = CleanColumnValue;
           }
 
         }
@@ -80,12 +86,13 @@ public class ScriptMain : UserComponent
         // turn on the critical flag if a required value is not present
         if (attribute.RequiredFlag && string.IsNullOrWhiteSpace(WorkingValue))
         {
-          errors.Add(attribute.AttributeName, "The attribute is missing but is required.", true);
+          errors.Add(attribute.AttributeName,
+            "The attribute is missing but is required.", true);
         }
 
         // assign values to individual output elements
         // only necessary if value is null
-        if(WorkingValue != null)
+        if (WorkingValue != null)
         {
           AssignOutputValue(Row, WorkingValue, attribute, errors);
         }
@@ -120,12 +127,28 @@ public class ScriptMain : UserComponent
   public string GetTranslatedValue(string Value, FileFormatAttribute attribute, ProcessErrors errors)
   {
 
+    string EvaluatedValue = Value.Trim();
+
+    // return null if the value is empty
+    if (string.IsNullOrWhiteSpace(EvaluatedValue)) return null;
+
     // get a matching translate object
     FileFormatTranslate t = TranslateList.Find(x =>
       x.AttributeName.Equals(attribute.AttributeName, StringComparison.CurrentCultureIgnoreCase)
-      && x.AttributeValue.Equals(Value, StringComparison.CurrentCultureIgnoreCase));
+      && x.AttributeValue.Equals(EvaluatedValue, StringComparison.CurrentCultureIgnoreCase));
 
-    return (t != null) ? t.TranslateValue : null;
+    if (t != null)
+    {
+      return t.TranslateValue;
+    }
+    else
+    {
+
+      errors.Add(attribute.AttributeName, string.Format(
+        "Expected but could not find a translation for \"{0}\"", EvaluatedValue));
+
+      return null;
+    }
 
   }
 
@@ -198,8 +221,8 @@ public class ScriptMain : UserComponent
         else
         {
           errors.Add(attribute.AttributeName, string.Format(
-            "The value provide \"{0}\" does not match the expected '{1}' format.",
-            Value, attribute.AttributeDataType.ToLower()));
+            "The value provided \"{0}\" does not match the expected '{1}' format.",
+            Value, attribute.AttributeDataType.ToLower()), true);
 
           return null;
         }
@@ -214,8 +237,8 @@ public class ScriptMain : UserComponent
         else
         {
           errors.Add(attribute.AttributeName, string.Format(
-            "The value provide \"{0}\" does not match the expected '{1}' format.",
-            Value, attribute.AttributeDataType.ToLower()));
+            "The value provided \"{0}\" does not match the expected '{1}' format.",
+            Value, attribute.AttributeDataType.ToLower()), true);
 
           return null;
         }
@@ -230,8 +253,8 @@ public class ScriptMain : UserComponent
         else
         {
           errors.Add(attribute.AttributeName, string.Format(
-            "The value provide \"{0}\" does not match the expected '{1}' format.",
-            Value, attribute.AttributeDataType.ToLower()));
+            "The value provided \"{0}\" does not match the expected '{1}' format.",
+            Value, attribute.AttributeDataType.ToLower()), true);
 
           return null;
         }
@@ -246,8 +269,8 @@ public class ScriptMain : UserComponent
         else
         {
           errors.Add(attribute.AttributeName, string.Format(
-            "The value provide \"{0}\" does not match the expected '{1}' format.",
-            Value, attribute.AttributeDataType.ToLower()));
+            "The value provided \"{0}\" does not match the expected '{1}' format.",
+            Value, attribute.AttributeDataType.ToLower()), true);
 
           return null;
         }
@@ -256,7 +279,7 @@ public class ScriptMain : UserComponent
 
         errors.Add(attribute.AttributeName, string.Format(
           "The attribute format '{0}' is invalid.",
-          attribute.AttributeDataType.ToLower()));
+          attribute.AttributeDataType.ToLower()), true);
           
         return null;
 
@@ -311,37 +334,36 @@ public class ScriptMain : UserComponent
 
         errors.Add(attribute.AttributeName, string.Format(
           "Invalid column index = {0} specified for the attribute in this file format attribute",
-          attribute.ColumnIndex.ToString()));
+          attribute.ColumnIndex.ToString()), true);
 
         return null;
     }
   }
 
-  public string ExtractText(string Text, FileFormatAttribute attribute, ProcessErrors errors)
+  public string ExtractText(string Value, FileFormatAttribute attribute, ProcessErrors errors)
   {
 
-    string EvaluatedText = Text.Trim();
+    string EvaluatedValue = Value.Trim();
 
-    Match m = new Regex(attribute.ExtractRegex, RegexOptions.IgnoreCase).Match(EvaluatedText);
-    String value = (m != null) ? m.Value.Trim() : (string)null;
+    // return null if the text is empty
+    if (string.IsNullOrWhiteSpace(EvaluatedValue)) return null;
 
-    if(value == null && !string.IsNullOrWhiteSpace(EvaluatedText))
+
+    Match m = new Regex(attribute.ExtractRegex, RegexOptions.IgnoreCase).Match(EvaluatedValue);
+    String MatchValue = (m != null  && !string.IsNullOrWhiteSpace(m.Value)) ? m.Value.Trim() : (string)null;
+
+    if (MatchValue != null)
     {
-
-
-      errors.Add(attribute.AttributeName, string.Format(
-        "The regex pattern \"{0}\" applied to the source value {1} did not return a match.",
-        attribute.ExtractRegex, EvaluatedText));
-
-    }
-
-    if (value == null || value.Length == 0)
-    {
-      return null;
+      return MatchValue;
     }
     else
     {
-      return value;
+
+      errors.Add(attribute.AttributeName, string.Format(
+        "The regex pattern \"{0}\" applied to the source value \"{1}\" did not return a match.",
+        attribute.ExtractRegex, EvaluatedValue));
+
+      return null;
     }
   }
 
@@ -362,8 +384,13 @@ public class ScriptMain : UserComponent
         // add the file format parameter
         command.CommandType = CommandType.StoredProcedure;
 
-        SqlParameter FileFormatCodeParam = new SqlParameter("@file_format_code", SqlDbType.VarChar, 20);
-        FileFormatCodeParam.Value = this.Variables.fileformatcode;
+        // add the file format parameter
+        SqlParameter FileFormatCodeParam = new SqlParameter(
+          "@file_format_code", SqlDbType.VarChar, 20)
+        {
+          Value = this.Variables.fileformatcode
+        };
+
         command.Parameters.Add(FileFormatCodeParam);
         
         SqlDataReader reader = command.ExecuteReader();
@@ -405,8 +432,12 @@ public class ScriptMain : UserComponent
         command.CommandType = CommandType.StoredProcedure;
 
         // add the file format parameter
-        SqlParameter FileFormatCodeParam = new SqlParameter("@file_format_code", SqlDbType.VarChar, 20);
-        FileFormatCodeParam.Value = this.Variables.fileformatcode;
+        SqlParameter FileFormatCodeParam = new SqlParameter(
+          "@file_format_code", SqlDbType.VarChar, 20)
+        {
+          Value = this.Variables.fileformatcode
+        };
+
         command.Parameters.Add(FileFormatCodeParam);
 
         SqlDataReader reader = command.ExecuteReader();
