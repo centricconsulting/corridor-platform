@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/7/2018 5:35:46 PM"
@@ -7,13 +7,13 @@
   DTS:CreatorName="SFDATASQL\jeff.faseun"
   DTS:DTSID="{85471CDF-A7C9-422D-8A3C-6FB126432E65}"
   DTS:ExecutableType=""
-  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
   DTS:LocaleID="1033"
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="546"
-  DTS:VersionGUID="{79B36B09-A81C-41DC-8A01-0EB5B4957209}">
+  DTS:VersionBuild="549"
+  DTS:VersionGUID="{9102EE5B-5973-4AF9-B0C6-A87D8CC91B3F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.546</DTS:VariableValue>
+        DTS:DataType="8">1.0.549</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -315,95 +315,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache"
-              componentClassID="Microsoft.RawDestination"
-              contactInfo="Writes raw data that will not require parsing or translation. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers.;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Writes raw data that will not require parsing or translation. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers."
-              name="DB_Sumission__c Source Cache"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the file."
-                  name="AccessMode"
-                  typeConverter="AccessMode">1</property>
-                <property
-                  dataType="System.Null"
-                  description="Output file name"
-                  name="FileName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.NonValidatingFileNameEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-                <property
-                  dataType="System.String"
-                  description="Name of the variable that contains the file name"
-                  name="FileNameVariable">User::dbs_cache_file_path</property>
-                <property
-                  dataType="System.Int32"
-                  description="Indicates what option is used to write to the file."
-                  name="WriteOption"
-                  typeConverter="WriteOption">0</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input]"
-                  hasSideEffects="true"
-                  name="Raw File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input].Columns[medical_record_number]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="medical_record_number"
-                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[medical_record_number]" />
-                    <inputColumn
-                      refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input].Columns[assessment_date]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="assessment_date"
-                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[assessment_date]" />
-                    <inputColumn
-                      refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input].Columns[oasis_visit_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="oasis_visit_type"
-                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[oasis_visit_type]" />
-                    <inputColumn
-                      refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input].Columns[patient_last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="patient_last_name"
-                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[patient_last_name]" />
-                    <inputColumn
-                      refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input].Columns[patient_first_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="patient_first_name"
-                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[patient_first_name]" />
-                    <inputColumn
-                      refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input].Columns[agency_location]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="agency_location"
-                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_location]" />
-                    <inputColumn
-                      refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input].Columns[agency_key]"
-                      cachedDataType="i4"
-                      cachedName="agency_key"
-                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_key]" />
-                    <inputColumn
-                      refId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input].Columns[agency_medical_record_key]"
-                      cachedDataType="i4"
-                      cachedName="agency_medical_record_key"
-                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_medical_record_key]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-            </component>
             <component
               refId="Package\Cache AMR Record To Consider\Source Query"
               componentClassID="Microsoft.OLEDBSource"
@@ -468,8 +379,8 @@ AND a.process_dtm IS NULL</property>
               <connections>
                 <connection
                   refId="Package\Cache AMR Record To Consider\Source Query.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
-                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -679,11 +590,100 @@ AND a.process_dtm IS NULL</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache"
+              componentClassID="Microsoft.RawDestination"
+              contactInfo="Writes raw data that will not require parsing or translation. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers.;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Writes raw data that will not require parsing or translation. For example, allow packages to run faster by reading from a local raw file instead of a slow source or manually distribute data for parallel processing on multiple computers."
+              name="Unprocessed AMR Source Cache"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the file."
+                  name="AccessMode"
+                  typeConverter="AccessMode">1</property>
+                <property
+                  dataType="System.Null"
+                  description="Output file name"
+                  name="FileName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.NonValidatingFileNameEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+                <property
+                  dataType="System.String"
+                  description="Name of the variable that contains the file name"
+                  name="FileNameVariable">User::dbs_cache_file_path</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates what option is used to write to the file."
+                  name="WriteOption"
+                  typeConverter="WriteOption">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input]"
+                  hasSideEffects="true"
+                  name="Raw File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[medical_record_number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="medical_record_number"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[medical_record_number]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[assessment_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="assessment_date"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[assessment_date]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[oasis_visit_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="oasis_visit_type"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[oasis_visit_type]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[patient_last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="patient_last_name"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[patient_last_name]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[patient_first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="patient_first_name"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[patient_first_name]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[agency_location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="agency_location"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_location]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[agency_key]"
+                      cachedDataType="i4"
+                      cachedName="agency_key"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_key]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[agency_medical_record_key]"
+                      cachedDataType="i4"
+                      cachedName="agency_medical_record_key"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_medical_record_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
           </components>
           <paths>
             <path
               refId="Package\Cache AMR Record To Consider.Paths[OLE DB Source Output]"
-              endId="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache.Inputs[Raw File Destination Input]"
+              endId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output]" />
           </paths>
@@ -1363,8 +1363,8 @@ agency_medical_record_key = ?</property>
               <connections>
                 <connection
                   refId="Package\Update AMR\Update AMR Process Columns.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
-                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1988,7 +1988,7 @@ agency_medical_record_key = ?</property>
               contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;9"
               description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
               name="Get Error Message"
-              version="9">
+              version="10">
               <properties>
                 <property
                   dataType="System.String"
@@ -2204,10 +2204,10 @@ public class ScriptMain : UserComponent
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=13.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
     <Compile Include="main.cs" />
     <Compile Include="BufferWrapper.cs" />
     <Compile Include="ComponentWrapper.cs" />
@@ -2243,7 +2243,7 @@ public class ScriptMain : UserComponent
         <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
         <Host Name="ScriptComponent" GeneratedNamespace="SC_a0afc1b0877e4a6e8f4e5ee955185c19" IconIndex="0"></Host>
         <ProjectClient>
-          <HostIdentifier>SSIS_SC120</HostIdentifier>
+          <HostIdentifier>SSIS_SC130</HostIdentifier>
         </ProjectClient>
       </FlavorProperties>
     </VisualStudio>
@@ -2500,7 +2500,7 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("1.0.0.0")]
 ]]></arrayElement>
                     <arrayElement
                       dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
@@ -2601,12 +2601,12 @@ namespace SC_a0afc1b0877e4a6e8f4e5ee955185c19.Properties {
                     <arrayElement
                       dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAO1RwVoAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAACjMA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGPcy1oAAAAAAAAAAOAAIiALATAAABQAAAAIAAAAAAAACjMA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAALgyAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAALgyAABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAEBMAAAAgAAAAFAAAAAIA
-AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
 LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADs
 MgAAAAAAAEgAAAACAAUA0CEAADAQAAABAAAAAAAAAAAyAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACipiAwIoEgAACgNvBgAABm8TAAAK
@@ -2641,9 +2641,9 @@ kQAeBQYA8QC/AFgA8QAUB18AoQAeBWUAwQAeBQYALgALAOoALgATAPMALgAbABIBLgAjABsBLgAr
 AEQBLgAzAEQBLgA7AEQBLgBDABsBLgBLAEoBLgBTAEQBLgBbAGEBQwBjAKkB4QB7AKkB4wBrAKkB
 6QBzABIBCQFzABIBAwABAAcABwAIAAkAAACLAM8AAAB0A9MAAAD9Bs8AAACoA9MAAACZANcAAACJ
 A9MAAADlBNsAAAAhAeAAAABSBuUAAgAGAAMAAgAHAAUAAgAIAAcAAgAJAAkAAQAKAAsAAQALAA0A
-AgAVAA8AAgAWABEAAQAXABEAAgAYABMABIAAAAEAAAAJGlZ8AAAAAAAAIwAAAAQAAAAAAAAAAAAA
-AG0AbgAAAAAADAAAAAAAAAAAAAAAdgCIBgAAAAAMAAAAAAAAAAAAAAB2AKUGAAAAAAQAAAAAAAAA
-AAAAAG0A1wMAAAAADAAAAAAAAAAAAAAAdgCUBAAAAAAAAAAAAQAAAG8FAAAAAAAAAElEVFNDb21w
+AgAVAA8AAgAWABEAAQAXABEAAgAYABMABIAAAAEAAAAAAAAAAAAAAAAAIwAAAAQAAAAAAAAAAAAA
+AG0AbgAAAAAADQAAAAAAAAAAAAAAdgCIBgAAAAANAAAAAAAAAAAAAAB2AKUGAAAAAAQAAAAAAAAA
+AAAAAG0A1wMAAAAADQAAAAAAAAAAAAAAdgCUBAAAAAAAAAAAAQAAAG8FAAAAAAAAAElEVFNDb21w
 b25lbnRNZXRhRGF0YTEwMABHZXRJbnQzMgBTQ19hMGFmYzFiMDg3N2U0YTZlOGY0ZTVlZTk1NTE4
 NWMxOQA8TW9kdWxlPgBJbnB1dElEAGdldF9Db21wb25lbnRNZXRhRGF0YQBtc2NvcmxpYgBkZWZh
 dWx0SW5zdGFuY2UAZ2V0X0Vycm9yQ29kZQBzZXRfcHJvY2Vzc2Vycm9ybWVzc2FnZQBSdW50aW1l
@@ -2680,8 +2680,8 @@ cwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAg
 AHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABvACAA
 dABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFT
 AEMAXwBhADAAYQBmAGMAMQBiADAAOAA3ADcAZQA0AGEANgBlADgAZgA0AGUANQBlAGUAOQA1ADUA
-MQA4ADUAYwAxADkALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAALaz
-+CB2x05JqBNl7qlwdWYABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkEIAASaQQgAQ4ICSADARI9
+MQA4ADUAYwAxADkALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAAAvS
+pFU6Pt9NkRE5wwqFK4cABCABAQgDIAABBSABARERBCABAQ4FIAEBEVkEIAASaQQgAQ4ICSADARI9
 HQgSQQMGEj0DBh0IBCABCAgEIAECCAUgAgEIHAMgAAIGIAICDhF1BSABHQgIBgABEnkRfQUgABKA
 gQcgAgEOEoCBCLd6XFYZNOCJCImEXc2AgMyRAwYSFAMGEhgDBhJFAwYSUQMGElUDBhIgBSABARIM
 AyAACAQgAQECCSAEAQgOEj0SQQUgAQESRQQAABJRBAAAElUFAAEBElUEAAASIAMAAAEDKAAIAygA
@@ -2699,25 +2699,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
-SAAAAFhAAAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
-AAAAvQTv/gAAAQAAAAEAVnwJGgAAAQBWfAkaPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+SAAAAFhAAADsAwAAAAAAAAAAAADsAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
+AAAAvQTv/gAAAQAAAAEAAAAAAAAAAQAAAAAAPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
 AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
-AAAAAAAAALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAA
+AAAAAAAAALAETAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAKAMAAAEAMAAwADAA
 MAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBu
 AHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAA
 AABTAEMAXwBhADAAYQBmAGMAMQBiADAAOAA3ADcAZQA0AGEANgBlADgAZgA0AGUANQBlAGUAOQA1
-ADUAMQA4ADUAYwAxADkAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
-NgA2ADYANQAuADMAMQA4ADMAMAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABT
-AEMAXwBhADAAYQBmAGMAMQBiADAAOAA3ADcAZQA0AGEANgBlADgAZgA0AGUANQBlAGUAOQA1ADUA
-MQA4ADUAYwAxADkALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAA
-AEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADEAOAAAACoAAQABAEwAZQBnAGEAbABUAHIA
-YQBkAGUAbQBhAHIAawBzAAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBh
-AG0AZQAAAFMAQwBfAGEAMABhAGYAYwAxAGIAMAA4ADcANwBlADQAYQA2AGUAOABmADQAZQA1AGUA
-ZQA5ADUANQAxADgANQBjADEAOQAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBl
-AAAAAABTAEMAXwBhADAAYQBmAGMAMQBiADAAOAA3ADcAZQA0AGEANgBlADgAZgA0AGUANQBlAGUA
-OQA1ADUAMQA4ADUAYwAxADkAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAx
-AC4AMAAuADYANgA2ADUALgAzADEAOAAzADAAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYA
-ZQByAHMAaQBvAG4AAAAxAC4AMAAuADYANgA2ADUALgAzADEAOAAzADAAAAAAAAAAAAAAAAAAAAAA
+ADUAMQA4ADUAYwAxADkAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4A
+MAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBfAGEAMABhAGYAYwAx
+AGIAMAA4ADcANwBlADQAYQA2AGUAOABmADQAZQA1AGUAZQA5ADUANQAxADgANQBjADEAOQAuAGQA
+bABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAAeQByAGkAZwBo
+AHQAIABAACAAIAAyADAAMQA4AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMA
+AAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBDAF8AYQAw
+AGEAZgBjADEAYgAwADgANwA3AGUANABhADYAZQA4AGYANABlADUAZQBlADkANQA1ADEAOAA1AGMA
+MQA5AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMAQwBfAGEAMABh
+AGYAYwAxAGIAMAA4ADcANwBlADQAYQA2AGUAOABmADQAZQA1AGUAZQA5ADUANQAxADgANQBjADEA
+OQAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -3010,7 +3010,7 @@ where [refTable].[agency_location] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\642:invalid};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\618:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3023,8 +3023,8 @@ where [refTable].[agency_location] = ?</property>
               <connections>
                 <connection
                   refId="Package\Upload To SalesForce\Lookup Agency from SFC.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
-                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3181,7 +3181,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\643:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\619:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3194,8 +3194,8 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
               <connections>
                 <connection
                   refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
-                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3465,8 +3465,8 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
               <connections>
                 <connection
                   refId="Package\Upload To SalesForce\Target Insert.Connections[OleDbConnection]"
-                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
-                  connectionManagerRefId="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4609,7 +4609,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
 <!--If you manually edit this section and make a mistake, you can delete it. -->
 <!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
-  Version="sql12">
+  Version="8">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
@@ -4617,15 +4617,15 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="227.2,41.6"
+          Size="228,42.6666666666667"
           Id="Package\Cache AMR Record To Consider"
           TopLeft="316.571433962608,55.058824301591" />
         <NodeLayout
-          Size="136.8,41.6"
+          Size="136.666666666667,41.3333333333334"
           Id="Package\Update AMR"
           TopLeft="362.285720455403,275.294121507955" />
         <NodeLayout
-          Size="180,41.6"
+          Size="180,41.3333333333334"
           Id="Package\Upload To SalesForce"
           TopLeft="347.428577345245,163.341178761387" />
         <EdgeLayout
@@ -4652,18 +4652,18 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="433.800005653926,96.658824301591">
+          TopLeft="434.000005653927,97.7254909682577">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,66.6823544597956"
+              EndConnector="0,65.6156877931293"
               Start="0,0"
-              End="0,59.1823544597956">
+              End="0,58.1156877931293">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.1823544597956" />
+                    End="0,58.1156877931293" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4679,7 +4679,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190.4,41.6"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
@@ -4707,7 +4707,9 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4773,7 +4775,9 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4823,29 +4827,29 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package\Cache AMR Record To Consider">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142.4,41.6"
+          Size="142.666666666667,41.3333333333334"
           Id="Package\Cache AMR Record To Consider\Source Query"
           TopLeft="289.6,47.2" />
         <NodeLayout
-          Size="228.8,41.6"
-          Id="Package\Cache AMR Record To Consider\DB_Sumission__c Source Cache"
+          Size="232,42.6666666666667"
+          Id="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache"
           TopLeft="240.8,148" />
         <EdgeLayout
           Id="Package\Cache AMR Record To Consider.Paths[OLE DB Source Output]"
-          TopLeft="358,88.8">
+          TopLeft="358.866666666667,88.5333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.2"
+              StartConnector="{x:Null}"
+              EndConnector="0,59.4666666666667"
               Start="0,0"
-              End="0,51.7">
+              End="0,51.9666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.7" />
+                    End="0,51.9666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4869,97 +4873,41 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package\Update AMR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Update AMR\Inject Common Variables"
-          TopLeft="262.285717117543,318.494119320114" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Update AMR\AMR Cache Source"
-          TopLeft="419.2,43.2" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Update AMR\DBS Cache Source"
-          TopLeft="156,47.2" />
-        <NodeLayout
-          Size="219.2,41.6"
-          Id="Package\Update AMR\Update AMR Process Columns"
-          TopLeft="246.85714283768,405.694118299121" />
-        <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Update AMR\Merge Join"
-          TopLeft="292,227.2" />
-        <NodeLayout
-          Size="120,41.6"
+          Size="120,41.3333333333334"
           Id="Package\Update AMR\DBS Sort"
           TopLeft="181.6,131.2" />
         <NodeLayout
-          Size="122.4,41.6"
+          Size="122.666666666667,41.3333333333334"
           Id="Package\Update AMR\AMR Sort"
           TopLeft="440.8,131.2" />
-        <EdgeLayout
-          Id="Package\Update AMR.Paths[Raw File Source Output]"
-          TopLeft="240,88.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.4"
-              Start="0,0"
-              End="0,34.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Update AMR.Paths[Sort Output]"
-          TopLeft="241.6,172.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94.9333333333333,54.4"
-              Start="0,0"
-              End="94.9333333333333,46.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.2419512195122" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.2419512195122"
-                    Point2="0,32.2419512195122"
-                    Point3="4,32.2419512195122" />
-                  <mssgle:LineSegment
-                    End="90.9333333333333,32.2419512195122" />
-                  <mssgle:CubicBezierSegment
-                    Point1="90.9333333333333,32.2419512195122"
-                    Point2="94.9333333333333,32.2419512195122"
-                    Point3="94.9333333333333,36.2419512195122" />
-                  <mssgle:LineSegment
-                    End="94.9333333333333,46.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="219.333333333334,41.3333333333334"
+          Id="Package\Update AMR\Update AMR Process Columns"
+          TopLeft="246.85714283768,405.694118299121" />
+        <NodeLayout
+          Size="164.666666666667,41.3333333333334"
+          Id="Package\Update AMR\DBS Cache Source"
+          TopLeft="156,47.2" />
+        <NodeLayout
+          Size="129.333333333334,41.3333333333334"
+          Id="Package\Update AMR\Merge Join"
+          TopLeft="292,227.2" />
+        <NodeLayout
+          Size="196.666666666667,41.3333333333334"
+          Id="Package\Update AMR\Inject Common Variables"
+          TopLeft="262.285717117543,318.494119320114" />
+        <NodeLayout
+          Size="167.333333333334,41.3333333333334"
+          Id="Package\Update AMR\AMR Cache Source"
+          TopLeft="419.2,43.2" />
         <EdgeLayout
           Id="Package\Update AMR.Paths[Sort Output1]"
           TopLeft="502,172.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-124.933333333333,54.4"
               Start="0,0"
               End="-124.933333333333,46.9">
@@ -4989,11 +4937,45 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Update AMR.Paths[Sort Output]"
+          TopLeft="241.6,172.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="94.9333333333333,54.4"
+              Start="0,0"
+              End="94.9333333333333,46.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.2419512195122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.2419512195122"
+                    Point2="0,32.2419512195122"
+                    Point3="4,32.2419512195122" />
+                  <mssgle:LineSegment
+                    End="90.9333333333333,32.2419512195122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.9333333333333,32.2419512195122"
+                    Point2="94.9333333333333,32.2419512195122"
+                    Point3="94.9333333333333,36.2419512195122" />
+                  <mssgle:LineSegment
+                    End="94.9333333333333,46.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Update AMR.Paths[Raw File Source Output1]"
           TopLeft="502.4,84.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,46.4"
               Start="0,0"
               End="0,38.9">
@@ -5011,11 +4993,33 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Update AMR.Paths[Raw File Source Output]"
+          TopLeft="240,88.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,42.4"
+              Start="0,0"
+              End="0,34.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Update AMR.Paths[Merge Join Output]"
           TopLeft="358.742858558772,268.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,49.694119320114"
               Start="0,0"
               End="0,42.194119320114">
@@ -5037,7 +5041,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="358.571429977612,360.094119320114">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,45.5999989790069"
               Start="0,0"
               End="0,38.0999989790069">
@@ -5061,87 +5065,69 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package\Upload To SalesForce">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Upload To SalesForce\Cache AMR Record"
-          TopLeft="410.768260745614,543.858823098278" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Upload To SalesForce\DBS Souce Cache"
-          TopLeft="91.0476201894331,31.8117646658434" />
-        <NodeLayout
-          Size="173.6,41.6"
-          Id="Package\Upload To SalesForce\Divert Error Records"
-          TopLeft="497.269849738296,212.666665220261" />
-        <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\Upload To SalesForce\Convert and Rename"
-          TopLeft="494.920643349083,141.207841976126" />
-        <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Upload To SalesForce\Inject Variables"
-          TopLeft="284.028575829584,140.023529647708" />
-        <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Upload To SalesForce\Lookup Agency from SFC"
-          TopLeft="325.714291261167,37.9660124150662" />
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Upload To SalesForce\Target Insert"
-          TopLeft="303.698417870366,284.346407985248" />
-        <NodeLayout
-          Size="164.8,41.6"
-          Id="Package\Upload To SalesForce\Get Error Message"
-          TopLeft="287.580957155812,360.282357960341" />
-        <NodeLayout
-          Size="129.6,41.6"
+          Size="129.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Row Count"
           TopLeft="306.158735372583,211.488886267531" />
         <NodeLayout
-          Size="223.2,41.6"
+          Size="164,41.3333333333334"
+          Id="Package\Upload To SalesForce\Set Error Message"
+          TopLeft="502.247620189433,357.458823098278" />
+        <NodeLayout
+          Size="161.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\DBS Souce Cache"
+          TopLeft="91.0476201894331,31.8117646658434" />
+        <NodeLayout
+          Size="164.666666666667,41.3333333333334"
+          Id="Package\Upload To SalesForce\Get Error Message"
+          TopLeft="287.580957155812,360.282357960341" />
+        <NodeLayout
+          Size="196.666666666667,41.3333333333334"
+          Id="Package\Upload To SalesForce\Lookup Agency from SFC"
+          TopLeft="325.714291261167,37.9660124150662" />
+        <NodeLayout
+          Size="173.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Divert Error Records"
+          TopLeft="497.269849738296,212.666665220261" />
+        <NodeLayout
+          Size="140,41.3333333333334"
+          Id="Package\Upload To SalesForce\Target Insert"
+          TopLeft="303.698417870366,284.346407985248" />
+        <NodeLayout
+          Size="177.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Convert and Rename"
+          TopLeft="494.920643349083,141.207841976126" />
+        <NodeLayout
+          Size="223.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Lookup Product Rate from SFC"
           TopLeft="572.571438322262,41.3647052731896" />
         <NodeLayout
-          Size="120,41.6"
+          Size="120,41.3333333333334"
           Id="Package\Upload To SalesForce\Union All"
           TopLeft="433.609530975868,460.420913796001" />
+        <NodeLayout
+          Size="151.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Inject Variables"
+          TopLeft="284.028575829584,140.023529647708" />
+        <NodeLayout
+          Size="167.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Cache AMR Record"
+          TopLeft="410.768260745614,543.858823098278" />
         <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Derived Column Output]"
-          TopLeft="435.228575829584,161.415685811917">
+          Id="Package\Upload To SalesForce.Paths[Union All Output 1]"
+          TopLeft="493.988895860741,502.020913796001">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="59.692067519499,0"
+              StartConnector="{x:Null}"
+              EndConnector="0,41.8379093022772"
               Start="0,0"
-              End="52.192067519499,0">
+              End="0,34.3379093022772">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.192067519499,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Data Conversion Output]"
-          TopLeft="583.89524654369,182.807841976126">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.8588232441344"
-              Start="0,0"
-              End="0,22.3588232441344">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.3588232441344" />
+                    End="0,34.3379093022772" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5155,7 +5141,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="372.328576621475,253.088886267531">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,31.257521717717"
               Start="0,0"
               End="0,23.757521717717">
@@ -5177,7 +5163,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="252.647620189433,55.6888885404548">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="73.0666710717335,0"
               Start="0,0"
               End="65.5666710717335,0">
@@ -5195,11 +5181,45 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Output 0]"
+          TopLeft="369.980957155812,401.882357960341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="104.961907153389,58.5385558356598"
+              Start="0,0"
+              End="104.961907153389,51.0385558356598">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6609870079565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.6609870079565"
+                    Point2="0,34.6609870079565"
+                    Point3="4,34.6609870079565" />
+                  <mssgle:LineSegment
+                    End="100.961907153389,34.6609870079565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100.961907153389,34.6609870079565"
+                    Point2="104.961907153389,34.6609870079565"
+                    Point3="104.961907153389,38.6609870079565" />
+                  <mssgle:LineSegment
+                    End="104.961907153389,51.0385558356598" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[OLE DB Destination Error Output]"
           TopLeft="371.839687513089,325.946407985248">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,34.335949975093"
               Start="0,0"
               End="0,26.835949975093">
@@ -5223,7 +5243,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="684.171438322262,82.9647052731896">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-324.542862492678,57.0588243745184"
               Start="0,0"
               End="-324.542862492678,49.5588243745184">
@@ -5259,7 +5279,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="522.514291261167,60.4653588441279">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="50.0571470610959,0"
               Start="0,0"
               End="42.5571470610959,0">
@@ -5283,7 +5303,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="497.269849738296,232.877775743896">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-61.5111143657129,0"
               Start="0,0"
               End="-54.0111143657129,0">
@@ -5302,16 +5322,12 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,41.6"
-          Id="Package\Upload To SalesForce\Set Error Message"
-          TopLeft="502.247620189433,357.458823098278" />
         <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Error]"
           TopLeft="584.158734963865,254.266665220261">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,103.192157878017"
               Start="0,0"
               End="0,95.6921578780171">
@@ -5331,45 +5347,11 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Output 0]"
-          TopLeft="369.980957155812,401.882357960341">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="104.961907153389,58.5385558356598"
-              Start="0,0"
-              End="104.961907153389,51.0385558356598">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.6609870079565" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.6609870079565"
-                    Point2="0,34.6609870079565"
-                    Point3="4,34.6609870079565" />
-                  <mssgle:LineSegment
-                    End="100.961907153389,34.6609870079565" />
-                  <mssgle:CubicBezierSegment
-                    Point1="100.961907153389,34.6609870079565"
-                    Point2="104.961907153389,34.6609870079565"
-                    Point3="104.961907153389,38.6609870079565" />
-                  <mssgle:LineSegment
-                    End="104.961907153389,51.0385558356598" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Derived Column Output1]"
           TopLeft="584.247620189433,399.058823098278">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-71.9714225468985,61.3620906977227"
               Start="0,0"
               End="-71.9714225468985,53.8620906977227">
@@ -5399,19 +5381,41 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Union All Output 1]"
-          TopLeft="493.988895860741,502.020913796001">
+          Id="Package\Upload To SalesForce.Paths[Derived Column Output]"
+          TopLeft="435.228575829584,161.415685811917">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.8379093022772"
+              StartConnector="{x:Null}"
+              EndConnector="59.692067519499,0"
               Start="0,0"
-              End="0,34.3379093022772">
+              End="52.192067519499,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.3379093022772" />
+                    End="52.192067519499,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Data Conversion Output]"
+          TopLeft="583.89524654369,182.807841976126">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,29.8588232441344"
+              Start="0,0"
+              End="0,22.3588232441344">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.3588232441344" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -3,6 +3,7 @@
 	[file_format_key]		INT IDENTITY(1,1)   NOT NULL,
 	[file_format_code]      VARCHAR(20)	NOT	NULL,
 	[file_format_desc]      VARCHAR(200)		NULL,
+	[file_format_header_row] INT NOT NULL DEFAULT(1),
 	[file_format_comment]	VARCHAR(2000)		NULL,
 	[create_timestamp]		DATETIME			NOT NULL,
 	[modify_timestamp]		DATETIME			NOT NULL,

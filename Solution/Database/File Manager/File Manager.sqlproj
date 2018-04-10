@@ -12,8 +12,8 @@
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>Corridor.Database.FileManager</RootNamespace>
-    <AssemblyName>Corridor.Database.FileManager</AssemblyName>
+    <RootNamespace>File_Staging</RootNamespace>
+    <AssemblyName>File_Staging</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -87,6 +87,7 @@
     <Build Include="dbo\Stored Procedures\get_translate_detail.sql" />
     <Build Include="dbo\Stored Procedures\get_attribute_detail.sql" />
     <Build Include="dbo\Tables\agency_medical_record.sql" />
+    <Build Include="dbo\Stored Procedures\sp_GetFileManagerNotification.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />
@@ -108,5 +109,8 @@
       <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
       <DatabaseVariableLiteralValue>msdb</DatabaseVariableLiteralValue>
     </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="File Manager.refactorlog" />
   </ItemGroup>
 </Project>
