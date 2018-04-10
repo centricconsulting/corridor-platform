@@ -87,7 +87,8 @@
     <Build Include="dbo\Stored Procedures\get_translate_detail.sql" />
     <Build Include="dbo\Stored Procedures\get_attribute_detail.sql" />
     <Build Include="dbo\Tables\agency_medical_record.sql" />
-    <Build Include="dbo\Stored Procedures\sp_GetFileManagerNotification.sql" />
+    <Build Include="dbo\Stored Procedures\get_File_Manager_notification.sql" />
+    <Build Include="dbo\Stored Procedures\send_File_Manager_notification.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />
