@@ -26,16 +26,16 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">SFDATASQL</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="IHOGi0+Z0Q==" SSIS:IV="lzHG2amz2Wg=">SHUNbqQfE14Oz42rProvBoGVip8Ttawq+r2uQeGBIGpuLiQURLBJZ2un0ml63yf8nXz2Z8cTYVjxRuQdGMdKIFqW7Cd+kb3hSOSjeeuQ+R6aoT22eRnW/ep87J5Mo4bG6/oMDas8OlVcVxOtbxCqLyTgj4jtsasqfUV7/mOP8QfMwjg0fiQcPA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="Ldz9a0Or6w==" SSIS:IV="wXjcIi43a9w=">LGXL+p0xa7YM9QE4e6iqmN2Fa82WnGQv+3+Zjt9pgRG9M5wXIzDenNipCfyw5m1C8QqmhR0xP1H6dWPVKeZc6SwiFIFRG+GMfBgS4AosYUWEzBoRAyVigu/NJ2MU22pD1N0RLVcKZI9I/ztpG6L7Y5WugHjk00ZL2QzdU9rnQHHcaPk/Y6XODQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Process Agency Medical Records.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Process Source Files.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Download SalesForce Data.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Upload SalesForce Data.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Controller.Daily.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Controller.Regular.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Process Source Files.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Audit.conmgr" />
@@ -129,7 +129,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">File Manager</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">corridor_file_manager</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -372,23 +372,6 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Process Source Files.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{319D24FF-509C-4F34-8FE9-D8B57D1E1C1C}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Process Source Files</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">492</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{3B23DD88-2745-4473-A522-8A6B18903202}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Download SalesForce Data.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{6693652D-A203-4A14-BD13-4686D4C4C7C0}</SSIS:Property>
@@ -450,6 +433,23 @@
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionGUID">{EE03CD66-446B-484F-9581-757990AA004E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Process Source Files.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{33226670-EFCF-4A29-80EF-FBE240FF38EB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Process Source Files</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">526</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{65E08975-9BC7-4B19-8AD0-1C892FDFB395}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
