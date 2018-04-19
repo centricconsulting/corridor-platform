@@ -1,7 +1,7 @@
-﻿CREATE PROCEDURE [dbo].[get_File_Manager_notification] (@agency_file_key as int, @process_success as bit)
+﻿CREATE PROCEDURE [dbo].[sp_GetFileManagerNotification] (@agency_file_key as int, @process_success as bit)
 AS
 /*
-get_File_Manager_notification
+sp_GetFileManagerNotification
 by Scott Stover
 Centric Consulting
 3/30/2018
@@ -16,7 +16,6 @@ DECLARE @crlf varchar(2) =  CHAR(13) + CHAR(10) -- CRLF - used for line breaks i
 DECLARE @notification_to as varchar(2000) -- Notification message destination
 DECLARE @notification_subject as varchar(78) -- Notification message subject (RFC recommends 78 chars)
 DECLARE @notification as varchar(2000) -- Notification message contents
-DECLARE @send_notification_flag as bit -- Flag that determines whether notification gets sent
 
 -- Retrieve important fields from agency and agency_file tables
 
@@ -59,14 +58,12 @@ SELECT @imported_file_rows = COUNT(*) FROM agency_file_row WHERE agency_file_key
 IF (@process_success = 1 AND @notify_on_accepted_ind = 0) OR (@process_success = 0 AND @notify_on_rejected_ind = 0)
 	-- If notification turned off, @notification_to will be blank
 	BEGIN
-		SET @send_notification_flag = 0
 		SET @notification_to = ''
 		SET @notification_subject = 'DO NOT SEND - Notification turned off'
 		SET @notification = ''
 	END
 ELSE -- If the notification is enabled
 	
-	SET @send_notification_flag = 1
 	SET @notification_to = @notify_email_address_list -- Populate the "to" address
 
 	IF @process_success = 1
@@ -99,4 +96,4 @@ SET @notification_to = 'scott.stover@centricconsulting.com'
 -- END TEST CODE --
 
 -- Return a result set that contains the "to" address, message subject and notification message
-SELECT @notification_to notification_to, @notification_subject notification_subject, @notification notification_message, @send_notification_flag send_notification
+SELECT @notification_to notification_to, @notification_subject notification_subject, @notification notification_message
