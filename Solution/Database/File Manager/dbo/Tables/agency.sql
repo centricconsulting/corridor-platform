@@ -9,6 +9,7 @@
 	[create_timestamp]			DATETIME	   NOT NULL,
 	[modify_timestamp]		    DATETIME	   NOT NULL,
 	[process_batch_key]					INT				NOT NULL,
+	[medical_record_sp_name]	VARCHAR(50)		NULL,
     CONSTRAINT [agency_pk] PRIMARY KEY CLUSTERED ([agency_key] ASC)
 )
 GO

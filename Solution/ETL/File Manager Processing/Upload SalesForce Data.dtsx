@@ -12,8 +12,8 @@
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="549"
-  DTS:VersionGUID="{9102EE5B-5973-4AF9-B0C6-A87D8CC91B3F}">
+  DTS:VersionBuild="552"
+  DTS:VersionGUID="{F25D64CB-8296-45CA-9219-D17BDAC297FA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.549</DTS:VariableValue>
+        DTS:DataType="8">1.0.552</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -351,8 +351,10 @@
 , a.agency_location
 FROM
 dbo.agency_medical_record a
+INNER JOIN dbo.agency ag ON ag.agency_key = a.agency_key
 WHERE
 a.create_process_batch_key &gt;= ?
+AND salesforce_send_ind = 1
 AND a.process_dtm IS NULL</property>
                 <property
                   dataType="System.String"
@@ -3010,7 +3012,7 @@ where [refTable].[agency_location] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\618:invalid};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\327:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3181,7 +3183,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\619:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\328:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4615,7 +4617,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="228,42.6666666666667"
           Id="Package\Cache AMR Record To Consider"
@@ -4633,7 +4635,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="434.057148900324,204.941178761387">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,70.3529427465683"
               Start="0,0"
               End="0,62.8529427465683">
@@ -4655,7 +4657,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="434.000005653927,97.7254909682577">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,65.6156877931293"
               Start="0,0"
               End="0,58.1156877931293">
@@ -4679,7 +4681,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190.4,41.6"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
@@ -4693,7 +4695,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="112.371428785519,94.2117654437425">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,42.8235305957729"
               Start="0,0"
               End="0,35.3235305957729">
@@ -4719,7 +4721,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="207.2,41.6"
           Id="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
@@ -4737,7 +4739,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="124.4,63.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,36"
               Start="0,0"
               End="0,28.5">
@@ -4761,7 +4763,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="129.6,140.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,27.2"
               Start="0,0"
               End="0,19.7">
@@ -4787,7 +4789,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="130.4,41.6"
           Id="Package.EventHandlers[OnPreExecute]\Entry Point"
@@ -4801,7 +4803,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="136.4,92">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,55.2"
               Start="0,0"
               End="0,47.7">
@@ -4827,21 +4829,21 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package\Cache AMR Record To Consider">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="142.666666666667,41.3333333333334"
-          Id="Package\Cache AMR Record To Consider\Source Query"
-          TopLeft="289.6,47.2" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="232,42.6666666666667"
           Id="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache"
           TopLeft="240.8,148" />
+        <NodeLayout
+          Size="142.666666666667,41.3333333333334"
+          Id="Package\Cache AMR Record To Consider\Source Query"
+          TopLeft="289.6,47.2" />
         <EdgeLayout
           Id="Package\Cache AMR Record To Consider.Paths[OLE DB Source Output]"
           TopLeft="358.866666666667,88.5333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,59.4666666666667"
               Start="0,0"
               End="0,51.9666666666667">
@@ -4873,7 +4875,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package\Update AMR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="120,41.3333333333334"
           Id="Package\Update AMR\DBS Sort"
@@ -4891,7 +4893,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           Id="Package\Update AMR\DBS Cache Source"
           TopLeft="156,47.2" />
         <NodeLayout
-          Size="129.333333333334,41.3333333333334"
+          Size="131.333333333334,42.6666666666667"
           Id="Package\Update AMR\Merge Join"
           TopLeft="292,227.2" />
         <NodeLayout
@@ -4904,30 +4906,30 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="419.2,43.2" />
         <EdgeLayout
           Id="Package\Update AMR.Paths[Sort Output1]"
-          TopLeft="502,172.8">
+          TopLeft="502.133333333333,172.533333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-124.933333333333,54.4"
+              StartConnector="{assembly:Null}"
+              EndConnector="-123.911111111111,54.6666666666667"
               Start="0,0"
-              End="-124.933333333333,46.9">
+              End="-123.911111111111,47.1666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.2419512195122" />
+                    End="0,28.4052156469408" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.2419512195122"
-                    Point2="0,32.2419512195122"
-                    Point3="-4,32.2419512195122" />
+                    Point1="0,28.4052156469408"
+                    Point2="0,32.4052156469408"
+                    Point3="-4,32.4052156469408" />
                   <mssgle:LineSegment
-                    End="-120.933333333333,32.2419512195122" />
+                    End="-119.911111111111,32.4052156469408" />
                   <mssgle:CubicBezierSegment
-                    Point1="-120.933333333333,32.2419512195122"
-                    Point2="-124.933333333333,32.2419512195122"
-                    Point3="-124.933333333333,36.2419512195122" />
+                    Point1="-119.911111111111,32.4052156469408"
+                    Point2="-123.911111111111,32.4052156469408"
+                    Point3="-123.911111111111,36.4052156469408" />
                   <mssgle:LineSegment
-                    End="-124.933333333333,46.9" />
+                    End="-123.911111111111,47.1666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4938,30 +4940,30 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Update AMR.Paths[Sort Output]"
-          TopLeft="241.6,172.8">
+          TopLeft="241.6,172.533333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="94.9333333333333,54.4"
+              StartConnector="{assembly:Null}"
+              EndConnector="95.5111111111111,54.6666666666667"
               Start="0,0"
-              End="94.9333333333333,46.9">
+              End="95.5111111111111,47.1666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.2419512195122" />
+                    End="0,28.4052156469408" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.2419512195122"
-                    Point2="0,32.2419512195122"
-                    Point3="4,32.2419512195122" />
+                    Point1="0,28.4052156469408"
+                    Point2="0,32.4052156469408"
+                    Point3="4,32.4052156469408" />
                   <mssgle:LineSegment
-                    End="90.9333333333333,32.2419512195122" />
+                    End="91.5111111111111,32.4052156469408" />
                   <mssgle:CubicBezierSegment
-                    Point1="90.9333333333333,32.2419512195122"
-                    Point2="94.9333333333333,32.2419512195122"
-                    Point3="94.9333333333333,36.2419512195122" />
+                    Point1="91.5111111111111,32.4052156469408"
+                    Point2="95.5111111111111,32.4052156469408"
+                    Point3="95.5111111111111,36.4052156469408" />
                   <mssgle:LineSegment
-                    End="94.9333333333333,46.9" />
+                    End="95.5111111111111,47.1666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4975,7 +4977,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="502.4,84.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,46.4"
               Start="0,0"
               End="0,38.9">
@@ -4997,7 +4999,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="240,88.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,42.4"
               Start="0,0"
               End="0,34.9">
@@ -5016,18 +5018,18 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Update AMR.Paths[Merge Join Output]"
-          TopLeft="358.742858558772,268.8">
+          TopLeft="359.142858558772,269.866666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,49.694119320114"
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.6274526534473"
               Start="0,0"
-              End="0,42.194119320114">
+              End="0,41.1274526534473">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.194119320114" />
+                    End="0,41.1274526534473" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5041,7 +5043,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="358.571429977612,360.094119320114">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,45.5999989790069"
               Start="0,0"
               End="0,38.0999989790069">
@@ -5065,7 +5067,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package\Upload To SalesForce">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="129.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Row Count"
@@ -5119,7 +5121,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="493.988895860741,502.020913796001">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,41.8379093022772"
               Start="0,0"
               End="0,34.3379093022772">
@@ -5141,7 +5143,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="372.328576621475,253.088886267531">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,31.257521717717"
               Start="0,0"
               End="0,23.757521717717">
@@ -5163,7 +5165,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="252.647620189433,55.6888885404548">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="73.0666710717335,0"
               Start="0,0"
               End="65.5666710717335,0">
@@ -5185,7 +5187,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="369.980957155812,401.882357960341">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="104.961907153389,58.5385558356598"
               Start="0,0"
               End="104.961907153389,51.0385558356598">
@@ -5219,7 +5221,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="371.839687513089,325.946407985248">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,34.335949975093"
               Start="0,0"
               End="0,26.835949975093">
@@ -5243,7 +5245,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="684.171438322262,82.9647052731896">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-324.542862492678,57.0588243745184"
               Start="0,0"
               End="-324.542862492678,49.5588243745184">
@@ -5279,7 +5281,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="522.514291261167,60.4653588441279">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="50.0571470610959,0"
               Start="0,0"
               End="42.5571470610959,0">
@@ -5303,7 +5305,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="497.269849738296,232.877775743896">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-61.5111143657129,0"
               Start="0,0"
               End="-54.0111143657129,0">
@@ -5327,7 +5329,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="584.158734963865,254.266665220261">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,103.192157878017"
               Start="0,0"
               End="0,95.6921578780171">
@@ -5351,7 +5353,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="584.247620189433,399.058823098278">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-71.9714225468985,61.3620906977227"
               Start="0,0"
               End="-71.9714225468985,53.8620906977227">
@@ -5385,7 +5387,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="435.228575829584,161.415685811917">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="59.692067519499,0"
               Start="0,0"
               End="52.192067519499,0">
@@ -5407,7 +5409,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           TopLeft="583.89524654369,182.807841976126">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,29.8588232441344"
               Start="0,0"
               End="0,22.3588232441344">

@@ -43,6 +43,7 @@
   [modify_timestamp]			DATETIME		NOT NULL,
   [create_process_batch_key]			INT NOT NULL,
   [modify_process_batch_key]			INT NOT NULL,
+  [salesforce_send_ind] [bit] DEFAULT(1) NOT NULL,
 
   CONSTRAINT dbo_agency_medical_record_pk PRIMARY KEY ([agency_medical_record_key])
 )

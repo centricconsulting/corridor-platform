@@ -7,13 +7,13 @@
   DTS:CreatorName="SFDATASQL\jeff.faseun"
   DTS:DTSID="{74C46EEF-EE10-49D2-9164-A3A4FC9E5A6D}"
   DTS:ExecutableType=""
-  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
   DTS:LocaleID="1033"
   DTS:ObjectName="Process Agency Medical Records"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="615"
-  DTS:VersionGUID="{2C8B33BD-6E16-4DD5-8703-5B360B638ACC}">
+  DTS:VersionBuild="617"
+  DTS:VersionGUID="{990EE25C-5446-4B26-9A6F-4DDBA7C4EF17}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -104,7 +104,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.615</DTS:VariableValue>
+        DTS:DataType="8">1.0.617</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -137,6 +137,29 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Flag Records to Exclude"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{38F614A2-B2D7-46C3-84A1-69A84DD79128}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Flag Records to Exclude"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+          SQLTask:SqlStatementSource="EXEC master_custom_processing ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::process_batch_key"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load Records"
       DTS:CreationName="Microsoft.Pipeline"
@@ -1323,6 +1346,10 @@
                       refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[modify_process_batch_key]"
                       dataType="i4"
                       name="modify_process_batch_key" />
+                    <externalMetadataColumn
+                      refId="Package\Load Records\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[salesforce_send_ind]"
+                      dataType="bool"
+                      name="salesforce_send_ind" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -9937,6 +9964,14 @@ AAA=]]></arrayElement>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Load Records" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{4D1E998E-988D-4E30-979B-F5A16AF84238}"
+      DTS:From="Package\Load Records"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Flag Records to Exclude" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -10234,22 +10269,22 @@ AAA=]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142,42"
+          Size="142.666666666667,42.6666666666667"
           Id="Package\Load Records"
-          TopLeft="384.000006539481,451.341182699501" />
+          TopLeft="386.500006502228,413.207850048045" />
         <NodeLayout
-          Size="155,42"
+          Size="154.666666666667,42"
           Id="Package\Loop Through File Formats\Prepare Records"
           TopLeft="96.9142920786019,35.1294147032769" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="370,132"
-          Size="370,175"
+          Size="370,174.666666666667"
           Id="Package\Loop Through File Formats"
           TopLeft="276.428576136122,209.529414703277" />
         <NodeLayout
-          Size="241,42"
+          Size="241.333333333334,42"
           Id="Package\Retrieve Unprocessed File Formats"
           TopLeft="335.000005705016,121.588236999347" />
         <EdgeLayout
@@ -10276,18 +10311,44 @@ AAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="458.014291337802,384.729414703277">
+          TopLeft="459.630957985842,384.196081369944">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.611767996224"
+              EndConnector="0,29.0117686781011"
               Start="0,0"
-              End="0,59.111767996224">
+              End="0,21.5117686781011">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.111767996224" />
+                    End="0,21.5117686781011" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42.6666666666667"
+          Id="Package\Flag Records to Exclude"
+          TopLeft="364.999994561076,500.13332846721" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="459.416667198319,455.874516714711">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.2588117524986"
+              Start="0,0"
+              End="0,36.7588117524986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.7588117524986" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10303,13 +10364,13 @@ AAA=]]></arrayElement>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="190.4,41.6"
+          Size="190.666666666667,41.3333333333334"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
           TopLeft="16.5714288536383,111.341178032106" />
         <NodeLayout
-          Size="208.8,41.6"
+          Size="208.666666666667,41.3333333333334"
           Id="Package.EventHandlers[OnError]\Turn On Package Error Flag"
           TopLeft="10.8571430420389,43.4352947268107" />
         <EdgeLayout
@@ -10331,9 +10392,7 @@ AAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10413,11 +10472,11 @@ AAA=]]></arrayElement>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130.4,41.6"
+          Size="130.666666666667,41.3333333333334"
           Id="Package.EventHandlers[OnPreExecute]\Entry Point"
           TopLeft="63.2,95.2" />
         <NodeLayout
-          Size="180,41.6"
+          Size="180,41.3333333333334"
           Id="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
           TopLeft="36,194.4" />
         <EdgeLayout
@@ -10453,11 +10512,11 @@ AAA=]]></arrayElement>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="167,42"
+          Size="166.666666666667,42"
           Id="Package\Load Records\AMR Record Cache"
           TopLeft="517.885714018102,97.5411769746497" />
         <NodeLayout
-          Size="196,42"
+          Size="196.666666666667,42.6666666666667"
           Id="Package\Load Records\Determine Record Action"
           TopLeft="509.285714103251,280.564707169318" />
         <NodeLayout
@@ -10469,11 +10528,11 @@ AAA=]]></arrayElement>
           Id="Package\Load Records\Update Agency Medical Record"
           TopLeft="345.714291601765,429.529417620398" />
         <NodeLayout
-          Size="193,42"
+          Size="193.333333333334,42"
           Id="Package\Load Records\Update Agency File Row"
           TopLeft="185.34285717935,199.470588396165" />
         <NodeLayout
-          Size="165,42"
+          Size="165.333333333334,42"
           Id="Package\Load Records\AFR Record Cache"
           TopLeft="202.14285717935,95.1411769746497" />
         <NodeLayout
@@ -10482,37 +10541,37 @@ AAA=]]></arrayElement>
           TopLeft="527.612242098453,192.620166628583" />
         <EdgeLayout
           Id="Package\Load Records.Paths[Update]"
-          TopLeft="575.952380769918,322.164707169318">
+          TopLeft="576.17460299214,323.231373835985">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-118.238089168153,107.36471045108"
+              EndConnector="-118.460311390375,106.298043784413"
               Start="0,0"
-              End="-118.238089168153,99.8647104510801">
+              End="-118.460311390375,98.7980437844133">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.467494109749" />
+                    End="0,39.0339087815849" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.467494109749"
-                    Point2="0,43.467494109749"
-                    Point3="-4,43.467494109749" />
+                    Point1="0,39.0339087815849"
+                    Point2="0,43.0339087815849"
+                    Point3="-4,43.0339087815849" />
                   <mssgle:LineSegment
-                    End="-114.238089168153,43.467494109749" />
+                    End="-114.460311390375,43.0339087815849" />
                   <mssgle:CubicBezierSegment
-                    Point1="-114.238089168153,43.467494109749"
-                    Point2="-118.238089168153,43.467494109749"
-                    Point3="-118.238089168153,47.467494109749" />
+                    Point1="-114.460311390375,43.0339087815849"
+                    Point2="-118.460311390375,43.0339087815849"
+                    Point3="-118.460311390375,47.0339087815849" />
                   <mssgle:LineSegment
-                    End="-118.238089168153,99.8647104510801" />
+                    End="-118.460311390375,98.7980437844133" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-75.3993375528265,48.467494109749,32.5605859375,11.609375"
+              BoundingBox="-75.5104486639374,48.0339087815849,32.5605859375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10562,54 +10621,54 @@ AAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Records.Paths[Insert]"
-          TopLeft="638.619047436584,322.164707169318">
+          TopLeft="639.063491881029,323.231373835985">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105.323808635822,107.611764094574"
+              EndConnector="104.679364191377,106.545097427907"
               Start="0,0"
-              End="105.323808635822,100.111764094574">
+              End="104.679364191377,99.0450974279073">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5675158277627" />
+                    End="0,39.1339264637527" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.5675158277627"
-                    Point2="0,43.5675158277627"
-                    Point3="4,43.5675158277627" />
+                    Point1="0,39.1339264637527"
+                    Point2="0,43.1339264637527"
+                    Point3="4,43.1339264637527" />
                   <mssgle:LineSegment
-                    End="101.323808635822,43.5675158277627" />
+                    End="100.679364191377,43.1339264637527" />
                   <mssgle:CubicBezierSegment
-                    Point1="101.323808635822,43.5675158277627"
-                    Point2="105.323808635822,43.5675158277627"
-                    Point3="105.323808635822,47.5675158277627" />
+                    Point1="100.679364191377,43.1339264637527"
+                    Point2="104.679364191377,43.1339264637527"
+                    Point3="104.679364191377,47.1339264637527" />
                   <mssgle:LineSegment
-                    End="105.323808635822,100.111764094574" />
+                    End="104.679364191377,99.0450974279073" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="38.908916036661,48.5675158277627,27.5059765625,9.40234375"
+              BoundingBox="38.5866938144386,48.1339264637527,27.5059765625,9.40234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Records.Paths[Derived Column Output]"
-          TopLeft="607.048978100852,234.220166628583">
+          TopLeft="607.115644767519,234.620166628583">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.3445405407348"
+              EndConnector="0,45.944540540735"
               Start="0,0"
-              End="0,38.8445405407348">
+              End="0,38.444540540735">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.8445405407348" />
+                    End="0,38.444540540735" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10640,7 +10699,7 @@ AAA=]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="177,42"
+          Size="177.333333333334,42"
           Id="Package\Loop Through File Formats\Prepare Records\Derive Record Action"
           TopLeft="385.061231047349,666.480679516361" />
         <NodeLayout
@@ -10648,7 +10707,7 @@ AAA=]]></arrayElement>
           Id="Package\Loop Through File Formats\Prepare Records\Source Query"
           TopLeft="236.408167291313,38.6722690331953" />
         <NodeLayout
-          Size="167,42"
+          Size="166.666666666667,42"
           Id="Package\Loop Through File Formats\Prepare Records\AMR Record Cache"
           TopLeft="386.693884136377,771.805049271614" />
         <NodeLayout
@@ -10664,7 +10723,7 @@ AAA=]]></arrayElement>
           Id="Package\Loop Through File Formats\Prepare Records\Exclude Failed Records"
           TopLeft="231.053065186548,333.526052908301" />
         <NodeLayout
-          Size="133,42"
+          Size="133.333333333334,42"
           Id="Package\Loop Through File Formats\Prepare Records\Sort Source"
           TopLeft="265.648984061316,431.14622394903" />
         <NodeLayout
@@ -10676,11 +10735,11 @@ AAA=]]></arrayElement>
           Id="Package\Loop Through File Formats\Prepare Records\Left Outer Join"
           TopLeft="396.163272052742,563.596646008324" />
         <NodeLayout
-          Size="165,42"
+          Size="165.333333333334,42"
           Id="Package\Loop Through File Formats\Prepare Records\AFR Record Cache"
           TopLeft="37.9591843199106,333.26050829852" />
         <NodeLayout
-          Size="141,42"
+          Size="141.333333333334,42"
           Id="Package\Loop Through File Formats\Prepare Records\Target Query"
           TopLeft="543.934703222447,330.601684611609" />
         <EdgeLayout

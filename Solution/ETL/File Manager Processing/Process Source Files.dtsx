@@ -5,21 +5,21 @@
   DTS:CreationName=""
   DTS:CreatorComputerName="SFDATASQL"
   DTS:CreatorName="SFDATASQL\jeff.faseun"
-  DTS:DTSID="{33226670-EFCF-4A29-80EF-FBE240FF38EB}"
+  DTS:DTSID="{696B6C41-C816-4EEE-89C0-FC1998C23947}"
   DTS:ExecutableType=""
   DTS:LastModifiedProductVersion="14.0.3002.92"
   DTS:LocaleID="1033"
   DTS:ObjectName="Process Source Files"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="547"
-  DTS:VersionGUID="{06E04025-BA62-4A03-9E9D-36CED3282980}">
+  DTS:VersionBuild="550"
+  DTS:VersionGUID="{4021E8CC-77EF-460E-B436-FFC6303D1E79}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{42A7EEA4-B18E-4508-A95F-082BEB272A78}"
+      DTS:DTSID="{548E0A27-73B0-48BE-B0DA-D416F4D4B6A0}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="accepted_root_folder">
@@ -29,7 +29,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C1FCAE5A-EC12-4A65-AC58-4960E3321D04}"
+      DTS:DTSID="{3E89398D-644B-4619-AA31-EEA9B209597F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="agency_file_key">
@@ -38,7 +38,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{3005CC3B-C484-485B-BD79-16016E17069A}"
+      DTS:DTSID="{B442574A-C985-4AA3-988B-70D839D7DE9B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="agency_key">
@@ -47,7 +47,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7CFAFE67-2B43-47F5-B5A4-4036D8165555}"
+      DTS:DTSID="{405EB4CC-7CDE-46C8-8315-41D0B1C62D33}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="archive_file_name">
@@ -57,7 +57,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{4869257F-A78C-4DDB-A28B-09E5C8C7A484}"
+      DTS:DTSID="{E51032F7-23E3-4853-9392-57024F9F4E22}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="archive_folder_path">
@@ -67,7 +67,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{74939340-38A4-4AE5-A298-8E9AF5B331EA}"
+      DTS:DTSID="{16885CD6-6688-441E-907D-6A3F1E38360D}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="completed_ind">
@@ -76,7 +76,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C1B65C6F-EEFF-4BB4-87E7-DE9A9D265DEE}"
+      DTS:DTSID="{33090834-5236-46F8-9C91-2C49C58AFDD5}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="error_message">
@@ -86,7 +86,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{112FD030-C069-4622-B67E-FAA0B22AFCCA}"
+      DTS:DTSID="{9068D3E8-57AE-4FA0-910A-AC40EA6C9115}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="file_created_dtm">
@@ -95,7 +95,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{59ABC77F-5A1A-475C-9E86-CA15ADACA1C8}"
+      DTS:DTSID="{37552026-35BA-4097-AB26-E0F5753E9EF2}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_format_code">
@@ -105,7 +105,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{26A39434-0FBF-49EE-9E86-FD121A2B3785}"
+      DTS:DTSID="{7C671D50-C231-4114-BE11-B319AF79F252}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_guid">
@@ -115,7 +115,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8E31FCBE-5607-46B3-B2EF-253481DE0B20}"
+      DTS:DTSID="{2FFF09D8-FC4F-49DC-BF39-8DF967BDF1D8}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_hash">
@@ -125,7 +125,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{16453026-DA09-46DD-A7A3-15C69CB96E31}"
+      DTS:DTSID="{02D9C4E7-1C61-4D0B-9363-E6283267B0F1}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="file_modified_dtm">
@@ -134,7 +134,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E642A177-93E4-4B4F-812B-279443440BF1}"
+      DTS:DTSID="{CD4B1D0D-B36A-45A9-867D-438FE0C1B43F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_name">
@@ -144,7 +144,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B19B81E0-7E44-4AEA-8470-73DA2E64DA4F}"
+      DTS:DTSID="{019FD328-6194-4F1A-A88C-3F80E5F93714}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_path">
@@ -154,7 +154,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{43005764-94DA-4217-932B-E9CB86F5E3B6}"
+      DTS:DTSID="{934DF531-2978-4E54-A7DA-37452F34754B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="file_process_dtm">
@@ -163,7 +163,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F774737B-D591-4E19-BCD8-1C18043CD75F}"
+      DTS:DTSID="{07BD7FD7-229B-42DD-AFC0-8633711B8F68}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_process_error_message">
@@ -173,7 +173,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{001A05F3-2DDF-43AA-9760-57CE0E229593}"
+      DTS:DTSID="{CBA86125-5443-4232-89A5-0D7C2F7D21F9}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="file_process_success_flag">
@@ -182,7 +182,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DD6126FB-271C-4EAD-9601-388FF5E28776}"
+      DTS:DTSID="{DDF7132E-2EE2-4432-85D1-71A331C8B8D9}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="folder_branch">
@@ -192,7 +192,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7ABD55E7-03B0-460A-AB49-ECB5A5FDCAFF}"
+      DTS:DTSID="{D9079F35-25E2-4341-AB38-EEF20D8C682C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="folder_path">
@@ -202,7 +202,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7C670442-7F3E-4CF1-B75D-E36B3C92A132}"
+      DTS:DTSID="{CE54C35F-867B-4371-BECC-5EEBD585C08F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="package_error_flag">
@@ -211,18 +211,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{51458F19-6B1C-4928-9583-CC22338C8B95}"
+      DTS:DTSID="{6AD4E419-EF53-4AA6-BB3E-7097B7E4BE5C}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="(DT_STR, 8, 1252) @[System::VersionMajor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionMinor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionBuild]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.547</DTS:VariableValue>
+        DTS:DataType="8">1.0.550</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5EB5D37E-3DE1-4A8A-A7B3-93E4C35E6F1F}"
+      DTS:DTSID="{8227D3F5-7441-4AA6-9E56-6EB80E730333}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="process_batch_key">
@@ -231,7 +231,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{915B17F5-A21D-45CC-AF4D-1A9C1C099A9F}"
+      DTS:DTSID="{6BD071B8-90BB-424A-A280-1CEEC1D4924B}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::ProjectName]  + &quot;::&quot; +   @[System::PackageName]"
       DTS:IncludeInDebugDump="2345"
@@ -242,7 +242,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{75F18656-144D-48F5-BEFB-701257901D2A}"
+      DTS:DTSID="{D32C189D-99D7-4E57-982E-BFC6C83C2B82}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="received_root_folder">
@@ -251,7 +251,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A5EF2025-8F07-4738-9D24-710DDB512FB2}"
+      DTS:DTSID="{AF0A0B6F-1B6C-48EA-AF10-571351C25848}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="rejected_root_folder">
@@ -265,7 +265,7 @@
       DTS:refId="Package\Read Configuration"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{AFC777E0-1BA4-4249-84E3-951A6EC74F77}"
+      DTS:DTSID="{B647555A-0DFE-4E62-931A-D15791C35A64}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Read Configuration"
@@ -293,14 +293,14 @@
       DTS:refId="Package\Recurse Through Received Folders"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{CAD54D9A-9A2B-4818-A0E3-F9846F5C22DD}"
+      DTS:DTSID="{126D1625-AF1F-455B-935B-B344491B289F}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Recurse Through Received Folders">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{DAD3A79F-C2F1-4897-8EA4-E623DDD85153}"
-        DTS:ObjectName="{DAD3A79F-C2F1-4897-8EA4-E623DDD85153}">
+        DTS:DTSID="{5DB7E178-9AF6-4ED5-9E4C-A830C7EDEBCA}"
+        DTS:ObjectName="{5DB7E178-9AF6-4ED5-9E4C-A830C7EDEBCA}">
         <DTS:PropertyExpression
           DTS:Name="Directory">@[User::received_root_folder]</DTS:PropertyExpression>
         <DTS:ObjectData>
@@ -319,7 +319,7 @@
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{B8DACEF5-8964-4D5A-AC02-B1A697FBE7AA}"
+          DTS:DTSID="{A6FDD232-4C64-41B9-BBDE-DB735EF62A15}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="file_format_header_row">
@@ -328,7 +328,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{174415F2-7647-49E6-91D3-FDB775A2BCAA}"
+          DTS:DTSID="{EED3CA5E-B98A-40C6-8982-CCABDC50BF56}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="notification_message">
@@ -338,7 +338,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{93D1BD48-A565-4298-B452-1EFBC0135635}"
+          DTS:DTSID="{95CB9CCD-2511-4FD1-A9A9-3DA2C8CFA3DA}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="notification_subject">
@@ -347,7 +347,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{29190A0A-19BE-401D-9C41-F6211778811B}"
+          DTS:DTSID="{0D347D80-8BEC-4B3A-8E06-D04E6A86E6C1}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="notification_to">
@@ -356,7 +356,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{15115539-4CFF-41BF-87ED-C86F77759555}"
+          DTS:DTSID="{A0CABE78-235A-4A5C-B080-5ED38192C997}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="send_notification_flag">
@@ -369,7 +369,7 @@
           DTS:refId="Package\Recurse Through Received Folders\Archive File"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{37D85380-8FC5-4C5E-8C16-9C7ABEDC4B4D}"
+          DTS:DTSID="{2CDCD70D-D25B-4DE6-A1D1-324298514A7C}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Archive File"
@@ -383,15 +383,6 @@
               Language="CSharp"
               ReadOnlyVariables="User::accepted_root_folder,User::archive_file_name,User::file_path,User::file_process_success_flag,User::folder_branch,User::rejected_root_folder"
               ReadWriteVariables="User::archive_folder_path">
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -512,91 +503,6 @@
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
-                Name="ScriptMain.cs"
-                Encoding="UTF8"><![CDATA[using System;
-using System.IO;
-using Microsoft.SqlServer.Dts.Runtime;
-
-namespace ST_6dcce2eeeaad4a6cafb8c4bfaf485614
-{
-    /// <summary>
-    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
-    /// or parent of this class.
-    /// </summary>
-	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
-    public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
-    {
-
-        public void Main()
-        {
-
-            // load values from variables
-            string FilePath = Dts.Variables["User::file_path"].Value.ToString();
-            string FolderBranch = Dts.Variables["User::folder_branch"].Value.ToString();
-            string ArchiveFileName = Dts.Variables["User::archive_file_name"].Value.ToString();
-            string RejectedRootFolderPath = Dts.Variables["User::rejected_root_folder"].Value.ToString();
-            string AcceptedRootFolderPath = Dts.Variables["User::accepted_root_folder"].Value.ToString();
-            bool FileProcessSuccessFlag = (bool)Dts.Variables["User::file_process_success_flag"].Value;
-
-            // determine where archive target file path
-            string ArchiveRootFolderPath = (FileProcessSuccessFlag) ? AcceptedRootFolderPath : RejectedRootFolderPath;
-            string ArchiveFilePath = Path.Combine(ArchiveRootFolderPath, FolderBranch, ArchiveFileName);
-
-            // get the folder path for the archvie target file
-            string ArchiveFolderPath = Path.GetDirectoryName(ArchiveFilePath);
-
-            // ensure the target director exists
-            if (!Directory.Exists(ArchiveFolderPath))
-            {
-                Directory.CreateDirectory(ArchiveFolderPath);
-            }
-
-            // move the file to the archive location
-            File.Move(FilePath, ArchiveFilePath);
-
-            Dts.Variables["User::archive_folder_path"].Value = ArchiveFolderPath;
-
-            Dts.TaskResult = (int)ScriptResults.Success;
-        }
-
-
-        #region ScriptResults declaration
-        /// <summary>
-        /// This enum provides a convenient shorthand within the scope of this class for setting the
-        /// result of the script.
-        /// 
-        /// This code was generated automatically.
-        /// </summary>
-        enum ScriptResults
-        {
-            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
-            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
-        };
-        #endregion
-
-    }
-}]]></ProjectItem>
-              <ProjectItem
-                Name="Project"
-                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
-<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
-	<msb:PropertyGroup>
-		<msb:Language>msBuild</msb:Language>
-		<msb:CodeName>ST_e18c647d7ef74762afa8f94a5e67748b</msb:CodeName>
-		<msb:DisplayName>ST_e18c647d7ef74762afa8f94a5e67748b</msb:DisplayName>
-		<msb:ProjectId>{38D03843-F478-4A7F-96B2-FE622668911B}</msb:ProjectId>
-	</msb:PropertyGroup>
-	<msb:ItemGroup>
-		<msb:Project Include="ST_e18c647d7ef74762afa8f94a5e67748b.csproj"/>
-		<msb:File Include="Properties\Settings.settings"/>
-		<msb:File Include="Properties\AssemblyInfo.cs"/>
-		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
-		<msb:File Include="Properties\Settings.Designer.cs"/>
-		<msb:File Include="ScriptMain.cs"/>
-	</msb:ItemGroup>
-</c:Project>]]></ProjectItem>
-              <ProjectItem
                 Name="ST_e18c647d7ef74762afa8f94a5e67748b.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -714,6 +620,91 @@ namespace ST_e18c647d7ef74762afa8f94a5e67748b.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
+                Name="ScriptMain.cs"
+                Encoding="UTF8"><![CDATA[using System;
+using System.IO;
+using Microsoft.SqlServer.Dts.Runtime;
+
+namespace ST_6dcce2eeeaad4a6cafb8c4bfaf485614
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+    public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+    {
+
+        public void Main()
+        {
+
+            // load values from variables
+            string FilePath = Dts.Variables["User::file_path"].Value.ToString();
+            string FolderBranch = Dts.Variables["User::folder_branch"].Value.ToString();
+            string ArchiveFileName = Dts.Variables["User::archive_file_name"].Value.ToString();
+            string RejectedRootFolderPath = Dts.Variables["User::rejected_root_folder"].Value.ToString();
+            string AcceptedRootFolderPath = Dts.Variables["User::accepted_root_folder"].Value.ToString();
+            bool FileProcessSuccessFlag = (bool)Dts.Variables["User::file_process_success_flag"].Value;
+
+            // determine where archive target file path
+            string ArchiveRootFolderPath = (FileProcessSuccessFlag) ? AcceptedRootFolderPath : RejectedRootFolderPath;
+            string ArchiveFilePath = Path.Combine(ArchiveRootFolderPath, FolderBranch, ArchiveFileName);
+
+            // get the folder path for the archvie target file
+            string ArchiveFolderPath = Path.GetDirectoryName(ArchiveFilePath);
+
+            // ensure the target director exists
+            if (!Directory.Exists(ArchiveFolderPath))
+            {
+                Directory.CreateDirectory(ArchiveFolderPath);
+            }
+
+            // move the file to the archive location
+            File.Move(FilePath, ArchiveFilePath);
+
+            Dts.Variables["User::archive_folder_path"].Value = ArchiveFolderPath;
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_e18c647d7ef74762afa8f94a5e67748b</msb:CodeName>
+		<msb:DisplayName>ST_e18c647d7ef74762afa8f94a5e67748b</msb:DisplayName>
+		<msb:ProjectId>{38D03843-F478-4A7F-96B2-FE622668911B}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_e18c647d7ef74762afa8f94a5e67748b.csproj"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -743,6 +734,15 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -945,7 +945,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Get Agency Info"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{56158583-FCAE-4116-ADEB-02B54639C5AB}"
+          DTS:DTSID="{DB209939-2570-4C0F-805F-BC60D875AEC9}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Agency Info"
@@ -979,7 +979,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Get File Info"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{222A687A-B5AD-4F10-8D38-552A4FF5674C}"
+          DTS:DTSID="{790BB88B-2FEC-4304-A1D9-0665D7C6B756}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get File Info"
@@ -993,15 +993,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
               Language="CSharp"
               ReadOnlyVariables="User::file_path,User::received_root_folder"
               ReadWriteVariables="User::archive_file_name,User::file_created_dtm,User::file_guid,User::file_hash,User::file_modified_dtm,User::file_name,User::folder_branch,User::folder_path">
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1121,6 +1112,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4242f97c69b349abbb57198bdf96ad91.Properties.Settings.get_Default():ST_4242f97c69b349abbb57198bdf96ad91.Properties.Sett" +
+    "ings")]
+
+namespace ST_4242f97c69b349abbb57198bdf96ad91.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[using System;
@@ -1391,35 +1411,6 @@ namespace ST_ac099c5252f547cab600b9011971c4d7
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4242f97c69b349abbb57198bdf96ad91.Properties.Settings.get_Default():ST_4242f97c69b349abbb57198bdf96ad91.Properties.Sett" +
-    "ings")]
-
-namespace ST_4242f97c69b349abbb57198bdf96ad91.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
-              <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -1449,6 +1440,15 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1520,7 +1520,7 @@ namespace ST_4242f97c69b349abbb57198bdf96ad91.Properties {
               <BinaryItem
                 Name="ST_4242f97c69b349abbb57198bdf96ad91.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAIgO0VoAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAAjjUA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDANnX2FoAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAAjjUA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAADw1AABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1565,7 +1565,7 @@ ADwFRwD5ABMHgADxABYBRwABAUEBiAABATABiAD5ADYEkgD5ACsEmgD5ANIDngBxAAwGBgChAAwG
 BgAxAeAAowAxAVkHrACpAAwGsgDJAAwGBgAIABQAzAAIABgA0QApAHMARAEuAAsAHAEuABMAJQEu
 ABsARAEuACMATQEuACsAdgEuADMAdgEuADsAdgEuAEMATQEuAEsAfAEuAFMAdgEuAFsAkwFDAGMA
 0QBJAHMARAFhAHsA0QBjAGsA0QAbAEwAXwCOAAMAAQAEAAMAAADnBQ0BAACeARIBAAAlBxcBAgAO
-AAMAAgAPAAUAAQAQAAUAAgARAAcABIAAAAEAAAAVGqRxAAAAAAAAAQAAAAQAAAAAAAAAAAAAALoA
+AAMAAgAPAAUAAQAQAAUAAgARAAcABIAAAAEAAAAbGsxhAAAAAAAAAQAAAAQAAAAAAAAAAAAAALoA
 hwAAAAAADQAAAAAAAAAAAAAAwwBBBAAAAAAEAAAAAAAAAAAAAAC6AO0EAAAAAA0AAAAAAAAAAAAA
 AMMAYAAAAAAAAAAAAAEAAABdBgAABQACAAAAAFNUXzQyNDJmOTdjNjliMzQ5YWJiYjU3MTk4YmRm
 OTZhZDkxAE1ENQBTVF9hYzA5OWM1MjUyZjU0N2NhYjYwMGI5MDExOTcxYzRkNwA8TW9kdWxlPgBT
@@ -1610,7 +1610,7 @@ ZABpAGYAaQBlAGQAXwBkAHQAbQAAI1UAcwBlAHIAOgA6AGYAbwBsAGQAZQByAF8AcABhAHQAaAAA
 L1UAcwBlAHIAOgA6AGEAcgBjAGgAaQB2AGUAXwBmAGkAbABlAF8AbgBhAG0AZQAAAy0AARV7ADAA
 fQBfAHsAMQB9AHsAMgB9AABxUwBUAF8ANAAyADQAMgBmADkANwBjADYAOQBiADMANAA5AGEAYgBi
 AGIANQA3ADEAOQA4AGIAZABmADkANgBhAGQAOQAxAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIA
-ZQBzAG8AdQByAGMAZQBzAAAAAAC7CjW85X4tRZNRgI6ma2VxAAQgAQEIAyAAAQUgAQEREQQgAQEO
+ZQBzAG8AdQByAGMAZQBzAAAAAAD0TXWz4QGUQIdySR8w6qPMAAQgAQEIAyAAAQUgAQEREQQgAQEO
 BSABARFdDgcKDg4ODg4ODg4RPRE9BCAAEm0EIAAScQUgARJ1HAMgABwDIAAOBCABARwEAAEODgQH
 ARFBBAAAEUECBg4FIAIODg4GBwISRR0FBQABEkUOBQAAEoCFByABHQUSgI0FAAEOHQUHAAQODhwc
 HAUAARE9DgMHAQ4HIAICDhGAlQMgAAgEIAEOCAgAARKAmRGAnQUgABKAoQcgAgEOEoChCLd6XFYZ
@@ -1628,14 +1628,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABI
 AAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAA
-AAC9BO/+AAABAAAAAQCkcRUaAAABAKRxFRo/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAA
+AAC9BO/+AAABAAAAAQDMYRsaAAABAMxhGxo/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAA
 AAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4A
 AAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAw
 ADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4A
 eQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAA
 AFMAVABfADQAMgA0ADIAZgA5ADcAYwA2ADkAYgAzADQAOQBhAGIAYgBiADUANwAxADkAOABiAGQA
 ZgA5ADYAYQBkADkAMQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA2
-ADYANwA3AC4AMgA5ADAAOQAyAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMA
+ADYAOAAzAC4AMgA1ADAAMwA2AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMA
 VABfADQAMgA0ADIAZgA5ADcAYwA2ADkAYgAzADQAOQBhAGIAYgBiADUANwAxADkAOABiAGQAZgA5
 ADYAYQBkADkAMQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAA
 QwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA4AAAAKgABAAEATABlAGcAYQBsAFQAcgBh
@@ -1644,8 +1644,8 @@ bQBlAAAAUwBUAF8ANAAyADQAMgBmADkANwBjADYAOQBiADMANAA5AGEAYgBiAGIANQA3ADEAOQA4
 AGIAZABmADkANgBhAGQAOQAxAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUA
 AAAAAFMAVABfADQAMgA0ADIAZgA5ADcAYwA2ADkAYgAzADQAOQBhAGIAYgBiADUANwAxADkAOABi
 AGQAZgA5ADYAYQBkADkAMQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEA
-LgAwAC4ANgA2ADcANwAuADIAOQAwADkAMgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBl
-AHIAcwBpAG8AbgAAADEALgAwAC4ANgA2ADcANwAuADIAOQAwADkAMgAAAAAAAAAAAAAAAAAAAAAA
+LgAwAC4ANgA2ADgAMwAuADIANQAwADMANgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBl
+AHIAcwBpAG8AbgAAADEALgAwAC4ANgA2ADgAMwAuADIANQAwADMANgAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1669,7 +1669,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Insert Agency File"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8911A73E-DD6B-4573-8280-ABBFBE5F526B}"
+          DTS:DTSID="{FEC2D659-7CF4-40C0-BDA8-295A26280AFA}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert Agency File"
@@ -1766,7 +1766,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:DelayValidation="True"
           DTS:Description="Script Task"
-          DTS:DTSID="{7B19AB37-71D3-43A1-9874-FAA23AED908B}"
+          DTS:DTSID="{45C1DFB4-870E-49E2-A351-FD8628190905}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Agency File Rows"
@@ -1782,6 +1782,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               Language="CSharp"
               ReadOnlyVariables="User::file_format_header_row,User::agency_file_key,User::file_path,User::process_batch_key,$Project::ADOFileManagerConnectionString"
               ReadWriteVariables="User::file_process_dtm,User::file_process_error_message,User::file_process_success_flag">
+              <ProjectItem
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_f1d78196e0f14581900eace0e979e6e9")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_f1d78196e0f14581900eace0e979e6e9")]
+[assembly: AssemblyCopyright("Copyright @  2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1901,35 +1931,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_f1d78196e0f14581900eace0e979e6e9.Properties.Settings.get_Default():ST_f1d78196e0f14581900eace0e979e6e9.Properties.Sett" +
-    "ings")]
-
-namespace ST_f1d78196e0f14581900eace0e979e6e9.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[using System;
@@ -2268,35 +2269,34 @@ namespace ST_f1d78196e0f14581900eace0e979e6e9.Properties {
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_f1d78196e0f14581900eace0e979e6e9")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_f1d78196e0f14581900eace0e979e6e9")]
-[assembly: AssemblyCopyright("Copyright @  2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_f1d78196e0f14581900eace0e979e6e9.Properties.Settings.get_Default():ST_f1d78196e0f14581900eace0e979e6e9.Properties.Sett" +
+    "ings")]
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+namespace ST_f1d78196e0f14581900eace0e979e6e9.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -2669,7 +2669,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Mark Notification Sent"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F87C9D7E-5C7F-4FB6-9491-194B4847FC66}"
+          DTS:DTSID="{C42AF16E-B78D-4CC2-B6F1-4F73AE2C9B6C}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Mark Notification Sent"
@@ -2693,7 +2693,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Reset File Format Code"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{A51BD36C-584E-44B8-AB20-C1CC509C5FBC}"
+          DTS:DTSID="{9CBF28CB-F4EB-4EFF-9385-2A2AD34800BF}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Reset File Format Code"
@@ -2709,7 +2709,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Reset File Header Row"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{1D92B4F6-1168-4BF5-BF10-FB037B6A5C6E}"
+          DTS:DTSID="{C07C87A8-D3CA-4987-9B66-D9EFDF5D79F6}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Reset File Header Row"
@@ -2724,7 +2724,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Retrieve Notification Info"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{03BC8754-D600-4CEC-9B43-E91B61ACE46F}"
+          DTS:DTSID="{9663F147-9FD2-4180-92D9-04B311D7773A}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Retrieve Notification Info"
@@ -2767,7 +2767,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Send Notification Email"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A1E5EF40-9B58-4396-8BFC-2E974A2C8047}"
+          DTS:DTSID="{E8F91F36-CC9A-496B-B7AE-9ADE7CD6ABEF}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Send Notification Email"
@@ -2802,7 +2802,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package\Recurse Through Received Folders\Update Agency File For Archive"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F36A268E-7E1C-4F33-8A51-5DD0F23CA876}"
+          DTS:DTSID="{1FA1A6F1-2A6B-4862-A74E-CD78A53C5276}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Agency File For Archive"
@@ -2853,7 +2853,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{CCFC9ADC-2BC0-448E-8305-33B48E1B80CB}"
+          DTS:DTSID="{9CF82D29-388F-416B-8EEA-E681BB034129}"
           DTS:From="Package\Recurse Through Received Folders\Insert Agency File"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -2861,7 +2861,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{343E79C9-B8EE-4613-B66F-321FFA46AC5F}"
+          DTS:DTSID="{C115221F-4F8B-4C30-B983-DE8601C4AA2D}"
           DTS:EvalOp="1"
           DTS:Expression="ISNULL(@[User::file_format_code]) == FALSE"
           DTS:From="Package\Recurse Through Received Folders\Get Agency Info"
@@ -2871,7 +2871,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 10]"
           DTS:CreationName=""
-          DTS:DTSID="{21A056DB-F269-4296-A5AF-850B67B22F23}"
+          DTS:DTSID="{578A08E6-2B76-473F-9FA0-0F54B8B13507}"
           DTS:From="Package\Recurse Through Received Folders\Reset File Header Row"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 10"
@@ -2879,7 +2879,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{EB72F60C-04F8-4C86-B1B0-9AC4C159BABE}"
+          DTS:DTSID="{42509E81-E256-4A34-B19B-4DDB643C6FDB}"
           DTS:From="Package\Recurse Through Received Folders\Reset File Format Code"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -2887,7 +2887,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{1CF25CBE-62D0-4C34-B5A3-7890317380B0}"
+          DTS:DTSID="{D73D99BA-07E8-415B-9613-AE33E174B1E8}"
           DTS:From="Package\Recurse Through Received Folders\Load Agency File Rows"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -2895,7 +2895,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{0714EC6D-3EF0-4B46-A6D2-8BDBB0AFC635}"
+          DTS:DTSID="{2E60E68A-5E71-43E0-951E-FCBAFBF8DEA9}"
           DTS:From="Package\Recurse Through Received Folders\Update Agency File For Archive"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -2903,7 +2903,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{A6CFD3CA-9D28-4C98-8C73-E43A8671F059}"
+          DTS:DTSID="{C6FCE809-C354-4135-BA7A-89BC77692247}"
           DTS:EvalOp="1"
           DTS:Expression="@[User::send_notification_flag] == 1"
           DTS:From="Package\Recurse Through Received Folders\Retrieve Notification Info"
@@ -2912,7 +2912,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 6]"
           DTS:CreationName=""
-          DTS:DTSID="{B47AC74D-08F6-483A-89B5-4C3E0145584E}"
+          DTS:DTSID="{2DADFD20-432F-45E2-BCBC-FF1B6E5AF9F5}"
           DTS:From="Package\Recurse Through Received Folders\Archive File"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 6"
@@ -2920,7 +2920,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 7]"
           DTS:CreationName=""
-          DTS:DTSID="{57C23844-BA4E-4834-AA8A-2899AC5E8EA9}"
+          DTS:DTSID="{5FA61350-4D20-4A60-A65B-AADEFBAA909D}"
           DTS:From="Package\Recurse Through Received Folders\Get File Info"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 7"
@@ -2928,14 +2928,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 8]"
           DTS:CreationName=""
-          DTS:DTSID="{26A345D6-088D-4299-8459-5398028E6C15}"
+          DTS:DTSID="{80EFEB6B-1C12-4B43-8021-4FC85DA7D280}"
           DTS:From="Package\Recurse Through Received Folders\Send Notification Email"
           DTS:ObjectName="Constraint 8"
           DTS:To="Package\Recurse Through Received Folders\Mark Notification Sent" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 9]"
           DTS:CreationName=""
-          DTS:DTSID="{7B7B9111-DCDD-48AF-A3A2-F3071FC90D85}"
+          DTS:DTSID="{4390DEAF-7924-42A1-BEBD-3A5ACCD6E252}"
           DTS:EvalOp="1"
           DTS:Expression="@[User::send_notification_flag] != 1"
           DTS:From="Package\Recurse Through Received Folders\Retrieve Notification Info"
@@ -2945,8 +2945,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{6C294CF1-C210-4018-8C29-418E981FA117}"
-          DTS:ObjectName="{6C294CF1-C210-4018-8C29-418E981FA117}"
+          DTS:DTSID="{BEE9A6B3-8BAD-485E-AC1D-511AB91D7A37}"
+          DTS:ObjectName="{BEE9A6B3-8BAD-485E-AC1D-511AB91D7A37}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::file_path" />
       </DTS:ForEachVariableMappings>
@@ -2956,7 +2956,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{4120D103-9F48-4F17-A11F-5906951E283B}"
+      DTS:DTSID="{FF8AAF0F-D68A-45B2-BCD3-0C9EF85782FA}"
       DTS:From="Package\Read Configuration"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2966,7 +2966,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{7148F4A2-DD52-4760-9BFA-27161C665A50}"
+      DTS:DTSID="{0792DC25-024B-4003-894A-8C863C221D2D}"
       DTS:EventID="0"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -2974,7 +2974,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{037382B5-AE4C-4F29-B7C9-5C7F0ACDC6C9}"
+          DTS:DTSID="{637D4F3E-7B96-414D-865C-1F92BC35A294}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -2986,7 +2986,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Log Process Batch Error"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{D7385AA2-9066-4DFF-BCB5-CBA5A0441474}"
+          DTS:DTSID="{A835984F-480B-408D-BCCD-1104579BC945}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Process Batch Error"
@@ -3026,7 +3026,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Turn On Package Error Flag"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{A467E5B0-6BF9-4A8A-B513-80617ABE16D3}"
+          DTS:DTSID="{A81A96C6-0C45-48E0-8BA0-53F5750F611C}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Turn On Package Error Flag"
@@ -3042,7 +3042,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{330D7D68-488B-4D43-9DC0-7BBDCBE25FAC}"
+          DTS:DTSID="{78B4C8B6-CD7D-4AFC-AB5A-78CBABA2899F}"
           DTS:From="Package.EventHandlers[OnError]\Turn On Package Error Flag"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -3052,7 +3052,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{B087BF4C-405F-4574-A1E0-61CF81BA39F2}"
+      DTS:DTSID="{28DD5A4F-7E4C-4975-B26F-55718109BFEB}"
       DTS:EventID="0"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -3060,7 +3060,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{12E53706-29DB-430C-B6D7-C6A4D80E90D0}"
+          DTS:DTSID="{09F1C66B-49FE-41B3-8427-D1F0C48DD0E0}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -3072,7 +3072,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{3D0624CB-CDC4-4F30-B170-DB40087FED42}"
+          DTS:DTSID="{EDC36DCC-9377-422E-A2BC-6FF994943C13}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign Completed Indicator"
@@ -3086,7 +3086,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{5E843D40-97F5-4B5E-87FC-0EBC41FB1D42}"
+          DTS:DTSID="{EF83CF21-29CF-4383-9A42-005C29926B0F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Conclude Process Batch"
@@ -3115,7 +3115,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package.EventHandlers[OnPostExecute]\Entry Point"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{866930F6-7481-49B6-8232-AEB7AB6205ED}"
+          DTS:DTSID="{0BA9E22B-46D6-4393-B428-B0E383DD034A}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Entry Point"
@@ -3131,7 +3131,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{6EF60E2B-955A-4EDB-9564-2DEEB07217D6}"
+          DTS:DTSID="{B904774B-0EB7-4ECD-AF26-A744DB935F69}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] == @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPostExecute]\Entry Point"
@@ -3141,7 +3141,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
           DTS:CreationName=""
-          DTS:DTSID="{65FD1D4F-6C00-424F-8034-8D730EAD2F1E}"
+          DTS:DTSID="{C06A42E8-A4F9-4605-B5BA-5D0DCE32EC2D}"
           DTS:From="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint_EXP - assign completed indicator_To_SQL - conclude process batch"
@@ -3151,7 +3151,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{C2884062-C6AC-42BF-9A3A-8B1221D05B26}"
+      DTS:DTSID="{58B5C410-5CC0-471E-8E72-932495EF982F}"
       DTS:EventID="1153914880"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
@@ -3159,7 +3159,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{3D3A775B-AE2C-4E91-9824-2250F24FA1C9}"
+          DTS:DTSID="{849EA255-C3C3-4F92-B689-3A51878EE4F6}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -3172,7 +3172,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:refId="Package.EventHandlers[OnPreExecute]\Entry Point"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{9D763949-EAE9-4665-BD20-7EFFA4A96A24}"
+          DTS:DTSID="{A62B6758-8831-49A4-BEDE-4A1D6BF6A1E5}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Entry Point"
@@ -3186,7 +3186,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{AE32D267-4A50-4748-ACA0-55FED3A71C3E}"
+          DTS:DTSID="{BB12F2C2-5A56-4C03-81CD-CC305BBDC0E0}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Initiate Process Batch"
@@ -3232,7 +3232,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{0D309536-7EA6-459C-A4DD-D898515FD31C}"
+          DTS:DTSID="{8801998F-C952-4617-AD10-D9C2958675BF}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] == @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPreExecute]\Entry Point"
