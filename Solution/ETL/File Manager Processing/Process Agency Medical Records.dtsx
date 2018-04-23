@@ -12,8 +12,8 @@
   DTS:ObjectName="Process Agency Medical Records"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="617"
-  DTS:VersionGUID="{990EE25C-5446-4B26-9A6F-4DDBA7C4EF17}">
+  DTS:VersionBuild="619"
+  DTS:VersionGUID="{965C9C8B-79C8-454D-AFFF-EA1283565526}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -104,7 +104,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.617</DTS:VariableValue>
+        DTS:DataType="8">1.0.619</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -10269,6 +10269,10 @@ AAA=]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="192,42.6666666666667"
+          Id="Package\Flag Records to Exclude"
+          TopLeft="364.999994561076,500.13332846721" />
+        <NodeLayout
           Size="142.666666666667,42.6666666666667"
           Id="Package\Load Records"
           TopLeft="386.500006502228,413.207850048045" />
@@ -10331,10 +10335,6 @@ AAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="192,42.6666666666667"
-          Id="Package\Flag Records to Exclude"
-          TopLeft="364.999994561076,500.13332846721" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="459.416667198319,455.874516714711">
@@ -10364,7 +10364,7 @@ AAA=]]></arrayElement>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190.666666666667,41.3333333333334"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
@@ -10392,7 +10392,9 @@ AAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10571,7 +10573,7 @@ AAA=]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-75.5104486639374,48.0339087815849,32.5605859375,11.609375"
+              BoundingBox="-75.5104486639375,48.0339087815849,32.5605859375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10651,7 +10653,7 @@ AAA=]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="38.5866938144386,48.1339264637527,27.5059765625,9.40234375"
+              BoundingBox="38.5866938144385,48.1339264637527,27.5059765625,9.40234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10731,7 +10733,7 @@ AAA=]]></arrayElement>
           Id="Package\Loop Through File Formats\Prepare Records\Sort Target"
           TopLeft="550.432662421413,428.833618616527" />
         <NodeLayout
-          Size="148,42"
+          Size="149.333333333334,42.6666666666667"
           Id="Package\Loop Through File Formats\Prepare Records\Left Outer Join"
           TopLeft="396.163272052742,563.596646008324" />
         <NodeLayout
@@ -10844,18 +10846,18 @@ AAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop Through File Formats\Prepare Records.Paths[Merge Join Output]"
-          TopLeft="471.812251550046,605.196646008324">
+          TopLeft="472.278918216712,606.263312674991">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61.2840335080369"
+              EndConnector="0,60.2173668413703"
               Start="0,0"
-              End="0,53.7840335080369">
+              End="0,52.7173668413703">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.7840335080369" />
+                    End="0,52.7173668413703" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10912,30 +10914,30 @@ AAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop Through File Formats\Prepare Records.Paths[Sort Output1]"
-          TopLeft="332.048984061316,472.74622394903">
+          TopLeft="332.315650727983,473.14622394903">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="114.780954658093,90.850422059294"
+              EndConnector="114.95873243587,90.450422059294"
               Start="0,0"
-              End="114.780954658093,83.350422059294">
+              End="114.95873243587,82.950422059294">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.9272558747681" />
+                    End="0,49.6949501977434" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,49.9272558747681"
-                    Point2="0,53.9272558747681"
-                    Point3="4,53.9272558747681" />
+                    Point1="0,49.6949501977434"
+                    Point2="0,53.6949501977434"
+                    Point3="4,53.6949501977434" />
                   <mssgle:LineSegment
-                    End="110.780954658093,53.9272558747681" />
+                    End="110.95873243587,53.6949501977434" />
                   <mssgle:CubicBezierSegment
-                    Point1="110.780954658093,53.9272558747681"
-                    Point2="114.780954658093,53.9272558747681"
-                    Point3="114.780954658093,57.9272558747681" />
+                    Point1="110.95873243587,53.6949501977434"
+                    Point2="114.95873243587,53.6949501977434"
+                    Point3="114.95873243587,57.6949501977434" />
                   <mssgle:LineSegment
-                    End="114.780954658093,83.350422059294" />
+                    End="114.95873243587,82.950422059294" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10946,30 +10948,30 @@ AAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loop Through File Formats\Prepare Records.Paths[Sort Output]"
-          TopLeft="616.432662421413,470.433618616527">
+          TopLeft="616.432662421413,470.833618616527">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-122.936057035338,93.163027391797"
+              EndConnector="-122.047168146449,92.763027391797"
               Start="0,0"
-              End="-122.936057035338,85.663027391797">
+              End="-122.047168146449,85.263027391797">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.2999788261468" />
+                    End="0,51.0678042467205" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,51.2999788261468"
-                    Point2="0,55.2999788261468"
-                    Point3="-4,55.2999788261468" />
+                    Point1="0,51.0678042467205"
+                    Point2="0,55.0678042467205"
+                    Point3="-4,55.0678042467205" />
                   <mssgle:LineSegment
-                    End="-118.936057035338,55.2999788261468" />
+                    End="-118.047168146449,55.0678042467205" />
                   <mssgle:CubicBezierSegment
-                    Point1="-118.936057035338,55.2999788261468"
-                    Point2="-122.936057035338,55.2999788261468"
-                    Point3="-122.936057035338,59.2999788261468" />
+                    Point1="-118.047168146449,55.0678042467205"
+                    Point2="-122.047168146449,55.0678042467205"
+                    Point3="-122.047168146449,59.0678042467205" />
                   <mssgle:LineSegment
-                    End="-122.936057035338,85.663027391797" />
+                    End="-122.047168146449,85.263027391797" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

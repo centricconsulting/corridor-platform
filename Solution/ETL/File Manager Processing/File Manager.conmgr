@@ -7,6 +7,6 @@
     DTS:Name="ConnectionString">@[$Project::FileManagerConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=localhost;Initial Catalog=File Manager;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;multipleactiveresultsets=True;" />
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=corridor_file_manager_TEST;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;multipleactiveresultsets=True;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

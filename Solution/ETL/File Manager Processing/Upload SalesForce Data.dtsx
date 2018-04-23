@@ -12,8 +12,8 @@
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="552"
-  DTS:VersionGUID="{F25D64CB-8296-45CA-9219-D17BDAC297FA}">
+  DTS:VersionBuild="556"
+  DTS:VersionGUID="{5287D81C-B714-49DE-849D-3D11268EE875}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.552</DTS:VariableValue>
+        DTS:DataType="8">1.0.556</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -345,10 +345,31 @@
 , a.agency_key
 , a.medical_record_number
 , a.assessment_date
-, a.oasis_visit_type
+, a.visit_type
+, a.agency_location
+, a.agency_location_alias
+, a.team
 , a.patient_last_name
 , a.patient_first_name
-, a.agency_location
+, a.oasis_visit_type
+, a.responsible_position
+, a.arrival_date
+, a.start_of_care_date
+, a.start_of_episode_date
+, a.recertification_date
+, a.resumption_of_care_date
+, a.hospice_date
+, a.discharge_date
+, a.payor_type
+, a.payor_source
+, a.secondary_payor_type
+, a.secondary_payor_source
+, a.clinician_first_name
+, a.clinician_last_name
+, a.event
+, a.stage
+, a.task
+, a.episode_identifier
 FROM
 dbo.agency_medical_record a
 INNER JOIN dbo.agency ag ON ag.agency_key = a.agency_key
@@ -473,6 +494,223 @@ AND a.process_dtm IS NULL</property>
                       lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_medical_record_key]"
                       name="agency_medical_record_key"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[visit_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[visit_type]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[visit_type]"
+                      name="visit_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_location_alias]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[agency_location_alias]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_location_alias]"
+                      name="agency_location_alias"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[team]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[team]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[team]"
+                      name="team"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[responsible_position]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[responsible_position]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[responsible_position]"
+                      name="responsible_position"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[arrival_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[arrival_date]"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[arrival_date]"
+                      name="arrival_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[start_of_care_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[start_of_care_date]"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[start_of_care_date]"
+                      name="start_of_care_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[start_of_episode_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[start_of_episode_date]"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[start_of_episode_date]"
+                      name="start_of_episode_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[recertification_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[recertification_date]"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[recertification_date]"
+                      name="recertification_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[resumption_of_care_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[resumption_of_care_date]"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[resumption_of_care_date]"
+                      name="resumption_of_care_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[hospice_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[hospice_date]"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[hospice_date]"
+                      name="hospice_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[discharge_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[discharge_date]"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[discharge_date]"
+                      name="discharge_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[payor_type]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[payor_type]"
+                      name="payor_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[payor_source]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[payor_source]"
+                      name="payor_source"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[secondary_payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[secondary_payor_type]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[secondary_payor_type]"
+                      name="secondary_payor_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[secondary_payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[secondary_payor_source]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[secondary_payor_source]"
+                      name="secondary_payor_source"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_first_name]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_first_name]"
+                      name="clinician_first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_last_name]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_last_name]"
+                      name="clinician_last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[event]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[event]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[event]"
+                      name="event"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[stage]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[stage]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[stage]"
+                      name="stage"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[task]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[task]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[task]"
+                      name="task"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[episode_identifier]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[episode_identifier]"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[episode_identifier]"
+                      name="episode_identifier"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -518,6 +756,118 @@ AND a.process_dtm IS NULL</property>
                       refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[agency_medical_record_key]"
                       dataType="i4"
                       name="agency_medical_record_key" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[visit_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="visit_type" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[agency_location_alias]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="agency_location_alias" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[team]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="team" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[responsible_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="responsible_position" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[arrival_date]"
+                      dataType="dbTimeStamp"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[start_of_care_date]"
+                      dataType="dbTimeStamp"
+                      name="start_of_care_date" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[start_of_episode_date]"
+                      dataType="dbTimeStamp"
+                      name="start_of_episode_date" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[recertification_date]"
+                      dataType="dbTimeStamp"
+                      name="recertification_date" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[resumption_of_care_date]"
+                      dataType="dbTimeStamp"
+                      name="resumption_of_care_date" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[hospice_date]"
+                      dataType="dbTimeStamp"
+                      name="hospice_date" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[discharge_date]"
+                      dataType="dbTimeStamp"
+                      name="discharge_date" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="payor_type" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="payor_source" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[secondary_payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="secondary_payor_type" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[secondary_payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="secondary_payor_source" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="clinician_first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="clinician_last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[event]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="event" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[stage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="stage" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[task]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="task" />
+                    <externalMetadataColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[episode_identifier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="episode_identifier" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -550,10 +900,31 @@ AND a.process_dtm IS NULL</property>
                       lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[medical_record_number]"
                       name="medical_record_number" />
                     <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[visit_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[visit_type]"
+                      name="visit_type" />
+                    <outputColumn
                       refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[assessment_date]"
                       dataType="dbTimeStamp"
                       lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[assessment_date]"
                       name="assessment_date" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[agency_location_alias]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[agency_location_alias]"
+                      name="agency_location_alias" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[team]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[team]"
+                      name="team" />
                     <outputColumn
                       refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[oasis_visit_type]"
                       codePage="1252"
@@ -575,6 +946,118 @@ AND a.process_dtm IS NULL</property>
                       length="200"
                       lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[patient_first_name]"
                       name="patient_first_name" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[responsible_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[responsible_position]"
+                      name="responsible_position" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[arrival_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[arrival_date]"
+                      name="arrival_date" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[start_of_care_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[start_of_care_date]"
+                      name="start_of_care_date" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[start_of_episode_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[start_of_episode_date]"
+                      name="start_of_episode_date" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[recertification_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[recertification_date]"
+                      name="recertification_date" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[resumption_of_care_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[resumption_of_care_date]"
+                      name="resumption_of_care_date" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[hospice_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[hospice_date]"
+                      name="hospice_date" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[discharge_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[discharge_date]"
+                      name="discharge_date" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[payor_type]"
+                      name="payor_type" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[payor_source]"
+                      name="payor_source" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[secondary_payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[secondary_payor_type]"
+                      name="secondary_payor_type" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[secondary_payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[secondary_payor_source]"
+                      name="secondary_payor_source" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_first_name]"
+                      name="clinician_first_name" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_last_name]"
+                      name="clinician_last_name" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[event]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[event]"
+                      name="event" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[stage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[stage]"
+                      name="stage" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[task]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[task]"
+                      name="task" />
+                    <outputColumn
+                      refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[episode_identifier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[episode_identifier]"
+                      name="episode_identifier" />
                     <outputColumn
                       refId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[agency_location]"
                       codePage="1252"
@@ -676,6 +1159,139 @@ AND a.process_dtm IS NULL</property>
                       cachedDataType="i4"
                       cachedName="agency_medical_record_key"
                       lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_medical_record_key]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[visit_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="visit_type"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[visit_type]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[agency_location_alias]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="agency_location_alias"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_location_alias]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[team]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="team"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[team]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[responsible_position]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="responsible_position"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[responsible_position]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[arrival_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="arrival_date"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[arrival_date]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[start_of_care_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="start_of_care_date"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[start_of_care_date]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[start_of_episode_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="start_of_episode_date"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[start_of_episode_date]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[recertification_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="recertification_date"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[recertification_date]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[resumption_of_care_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="resumption_of_care_date"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[resumption_of_care_date]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[hospice_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="hospice_date"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[hospice_date]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[discharge_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="discharge_date"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[discharge_date]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[payor_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="payor_type"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[payor_type]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[payor_source]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="payor_source"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[payor_source]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[secondary_payor_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="secondary_payor_type"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[secondary_payor_type]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[secondary_payor_source]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="secondary_payor_source"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[secondary_payor_source]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[clinician_first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="clinician_first_name"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_first_name]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[clinician_last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="clinician_last_name"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_last_name]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[event]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="event"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[event]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[stage]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="stage"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[stage]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[task]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="task"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[task]" />
+                    <inputColumn
+                      refId="Package\Cache AMR Record To Consider\Unprocessed AMR Source Cache.Inputs[Raw File Destination Input].Columns[episode_identifier]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="episode_identifier"
+                      lineageId="Package\Cache AMR Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[episode_identifier]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -952,6 +1568,160 @@ AND a.process_dtm IS NULL</property>
                       externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[agency_medical_record_key]"
                       lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[agency_medical_record_key]"
                       name="agency_medical_record_key" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[visit_type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[visit_type]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[visit_type]"
+                      name="visit_type" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[agency_location_alias]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[agency_location_alias]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[agency_location_alias]"
+                      name="agency_location_alias" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[team]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[team]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[team]"
+                      name="team" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[responsible_position]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[responsible_position]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[responsible_position]"
+                      name="responsible_position" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[arrival_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[arrival_date]"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[arrival_date]"
+                      name="arrival_date" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[start_of_care_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[start_of_care_date]"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[start_of_care_date]"
+                      name="start_of_care_date" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[start_of_episode_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[start_of_episode_date]"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[start_of_episode_date]"
+                      name="start_of_episode_date" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[recertification_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[recertification_date]"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[recertification_date]"
+                      name="recertification_date" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[resumption_of_care_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[resumption_of_care_date]"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[resumption_of_care_date]"
+                      name="resumption_of_care_date" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[hospice_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[hospice_date]"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[hospice_date]"
+                      name="hospice_date" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[discharge_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[discharge_date]"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[discharge_date]"
+                      name="discharge_date" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[payor_type]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[payor_type]"
+                      name="payor_type" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[payor_source]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[payor_source]"
+                      name="payor_source" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[secondary_payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_type]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[secondary_payor_type]"
+                      name="secondary_payor_type" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[secondary_payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_source]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[secondary_payor_source]"
+                      name="secondary_payor_source" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_first_name]"
+                      name="clinician_first_name" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_last_name]"
+                      name="clinician_last_name" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[event]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[event]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[event]"
+                      name="event" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[stage]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[stage]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[stage]"
+                      name="stage" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[task]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[task]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[task]"
+                      name="task" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[episode_identifier]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[episode_identifier]"
+                      length="200"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[episode_identifier]"
+                      name="episode_identifier" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -997,6 +1767,118 @@ AND a.process_dtm IS NULL</property>
                       refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[agency_medical_record_key]"
                       dataType="i4"
                       name="agency_medical_record_key" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[visit_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="visit_type" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[agency_location_alias]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="agency_location_alias" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[team]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="team" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[responsible_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="responsible_position" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[arrival_date]"
+                      dataType="dbTimeStamp"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[start_of_care_date]"
+                      dataType="dbTimeStamp"
+                      name="start_of_care_date" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[start_of_episode_date]"
+                      dataType="dbTimeStamp"
+                      name="start_of_episode_date" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[recertification_date]"
+                      dataType="dbTimeStamp"
+                      name="recertification_date" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[resumption_of_care_date]"
+                      dataType="dbTimeStamp"
+                      name="resumption_of_care_date" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[hospice_date]"
+                      dataType="dbTimeStamp"
+                      name="hospice_date" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[discharge_date]"
+                      dataType="dbTimeStamp"
+                      name="discharge_date" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="payor_type" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="payor_source" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="secondary_payor_type" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="secondary_payor_source" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="clinician_first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="clinician_last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[event]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="event" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[stage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="stage" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[task]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="task" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[episode_identifier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="episode_identifier" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -1844,6 +2726,160 @@ agency_medical_record_key = ?</property>
                       externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[agency_medical_record_key]"
                       lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[agency_medical_record_key]"
                       name="agency_medical_record_key" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[visit_type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[visit_type]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[visit_type]"
+                      name="visit_type" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[agency_location_alias]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[agency_location_alias]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[agency_location_alias]"
+                      name="agency_location_alias" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[team]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[team]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[team]"
+                      name="team" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[responsible_position]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[responsible_position]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[responsible_position]"
+                      name="responsible_position" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[arrival_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[arrival_date]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[arrival_date]"
+                      name="arrival_date" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[start_of_care_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[start_of_care_date]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[start_of_care_date]"
+                      name="start_of_care_date" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[start_of_episode_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[start_of_episode_date]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[start_of_episode_date]"
+                      name="start_of_episode_date" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[recertification_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[recertification_date]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[recertification_date]"
+                      name="recertification_date" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[resumption_of_care_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[resumption_of_care_date]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[resumption_of_care_date]"
+                      name="resumption_of_care_date" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[hospice_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[hospice_date]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[hospice_date]"
+                      name="hospice_date" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[discharge_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[discharge_date]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[discharge_date]"
+                      name="discharge_date" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[payor_type]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[payor_type]"
+                      name="payor_type" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[payor_source]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[payor_source]"
+                      name="payor_source" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[secondary_payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_type]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[secondary_payor_type]"
+                      name="secondary_payor_type" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[secondary_payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_source]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[secondary_payor_source]"
+                      name="secondary_payor_source" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]"
+                      name="clinician_first_name" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]"
+                      name="clinician_last_name" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[event]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[event]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[event]"
+                      name="event" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[stage]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[stage]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[stage]"
+                      name="stage" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[task]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[task]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[task]"
+                      name="task" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[episode_identifier]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[episode_identifier]"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[episode_identifier]"
+                      name="episode_identifier" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1889,6 +2925,118 @@ agency_medical_record_key = ?</property>
                       refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[agency_medical_record_key]"
                       dataType="i4"
                       name="agency_medical_record_key" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[visit_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="visit_type" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[agency_location_alias]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="agency_location_alias" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[team]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="team" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[responsible_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="responsible_position" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[arrival_date]"
+                      dataType="dbTimeStamp"
+                      name="arrival_date" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[start_of_care_date]"
+                      dataType="dbTimeStamp"
+                      name="start_of_care_date" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[start_of_episode_date]"
+                      dataType="dbTimeStamp"
+                      name="start_of_episode_date" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[recertification_date]"
+                      dataType="dbTimeStamp"
+                      name="recertification_date" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[resumption_of_care_date]"
+                      dataType="dbTimeStamp"
+                      name="resumption_of_care_date" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[hospice_date]"
+                      dataType="dbTimeStamp"
+                      name="hospice_date" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[discharge_date]"
+                      dataType="dbTimeStamp"
+                      name="discharge_date" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="payor_type" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="payor_source" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="secondary_payor_type" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[secondary_payor_source]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="secondary_payor_source" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="clinician_first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="clinician_last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[event]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="event" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[stage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="stage" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[task]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="task" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[episode_identifier]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="episode_identifier" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -2838,6 +3986,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedLength="18"
                       cachedName="Product_Rate__c"
                       lineageId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Match Output].Columns[Product_Rate__c]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Inject Variables.Inputs[Derived Column Input].Columns[clinician_first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="clinician_first_name"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Inject Variables.Inputs[Derived Column Input].Columns[clinician_last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="clinician_last_name"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2917,6 +4079,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_STR,20,1252)(ISNULL(Product_Rate__c) ? "Error" : "Insert")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Output].Columns[Clinician_Name___c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="121"
+                      lineageId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Output].Columns[Clinician_Name___c]"
+                      name="Clinician_Name___c"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_WSTR,60)#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]} + " " + (DT_WSTR,60)#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_WSTR,60)clinician_first_name + " " + (DT_WSTR,60)clinician_last_name</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -3012,7 +4197,7 @@ where [refTable].[agency_location] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\327:invalid};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[agency_location]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3183,7 +4368,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\328:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\617:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3534,6 +4719,13 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
                       cachedName="Ready_For_Coding_Date__c"
                       externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Ready_For_Coding_Date__c]"
                       lineageId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Output].Columns[Ready_For_Coding_Date__c]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[Clinician_Name___c]"
+                      cachedDataType="wstr"
+                      cachedLength="121"
+                      cachedName="Clinician_Name___c"
+                      externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Clinician_Import__c]"
+                      lineageId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Output].Columns[Clinician_Name___c]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5093,7 +6285,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           Id="Package\Upload To SalesForce\Divert Error Records"
           TopLeft="497.269849738296,212.666665220261" />
         <NodeLayout
-          Size="140,41.3333333333334"
+          Size="141.333333333334,42.6666666666667"
           Id="Package\Upload To SalesForce\Target Insert"
           TopLeft="303.698417870366,284.346407985248" />
         <NodeLayout
@@ -5109,7 +6301,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           Id="Package\Upload To SalesForce\Union All"
           TopLeft="433.609530975868,460.420913796001" />
         <NodeLayout
-          Size="151.333333333334,41.3333333333334"
+          Size="152,42.6666666666667"
           Id="Package\Upload To SalesForce\Inject Variables"
           TopLeft="284.028575829584,140.023529647708" />
         <NodeLayout
@@ -5140,18 +6332,18 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Row Count Output 1]"
-          TopLeft="372.328576621475,253.088886267531">
+          TopLeft="372.595243288141,252.822219600864">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.257521717717"
+              EndConnector="0,31.5241883843836"
               Start="0,0"
-              End="0,23.757521717717">
+              End="0,24.0241883843836">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.757521717717" />
+                    End="0,24.0241883843836" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5218,61 +6410,61 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[OLE DB Destination Error Output]"
-          TopLeft="371.839687513089,325.946407985248">
+          TopLeft="372.139687513089,327.013074651915">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.335949975093"
+              EndConnector="0,33.2692833084263"
               Start="0,0"
-              End="0,26.835949975093">
+              End="0,25.7692833084263">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.835949975093" />
+                    End="0,25.7692833084263" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,7.7011781125465,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,7.16784477921317,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Lookup Match Output1]"
-          TopLeft="684.171438322262,82.9647052731896">
+          TopLeft="684.238104988929,82.6980386065229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-324.542862492678,57.0588243745184"
+              EndConnector="-324.209529159345,57.325491041185"
               Start="0,0"
-              End="-324.542862492678,49.5588243745184">
+              End="-324.209529159345,49.825491041185">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5294121872592" />
+                    End="0,24.6627455205925" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.5294121872592"
-                    Point2="0,28.5294121872592"
-                    Point3="-4,28.5294121872592" />
+                    Point1="0,24.6627455205925"
+                    Point2="0,28.6627455205925"
+                    Point3="-4,28.6627455205925" />
                   <mssgle:LineSegment
-                    End="-320.542862492678,28.5294121872592" />
+                    End="-320.209529159345,28.6627455205925" />
                   <mssgle:CubicBezierSegment
-                    Point1="-320.542862492678,28.5294121872592"
-                    Point2="-324.542862492678,28.5294121872592"
-                    Point3="-324.542862492678,32.5294121872592" />
+                    Point1="-320.209529159345,28.6627455205925"
+                    Point2="-324.209529159345,28.6627455205925"
+                    Point3="-324.209529159345,32.6627455205925" />
                   <mssgle:LineSegment
-                    End="-324.542862492678,49.5588243745184" />
+                    End="-324.209529159345,49.825491041185" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-210.462817965089,33.5294121872592,96.3827734375,11.609375"
+              BoundingBox="-210.296151298422,33.6627455205925,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -5384,18 +6576,18 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Derived Column Output]"
-          TopLeft="435.228575829584,161.415685811917">
+          TopLeft="436.028575829584,161.615685811917">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="59.692067519499,0"
+              EndConnector="58.8920675194989,0"
               Start="0,0"
-              End="52.192067519499,0">
+              End="51.3920675194989,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="52.192067519499,0" />
+                    End="51.3920675194989,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5458,7 +6650,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -5468,7 +6660,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
