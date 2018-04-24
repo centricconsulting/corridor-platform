@@ -2,8 +2,7 @@
 AS
 EXEC msdb.dbo.sp_send_dbmail 
 @profile_name = 'FileNotificationEmail',
-@recipients = 'scott.stover@centricconsulting.com',
---@recipients = @notification_to,
+@recipients = @notification_to,
 @subject = @notification_subject,
 @body = @notification_message,
 @body_format = 'TEXT'

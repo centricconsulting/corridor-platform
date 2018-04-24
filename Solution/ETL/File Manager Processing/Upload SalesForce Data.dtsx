@@ -12,8 +12,8 @@
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="556"
-  DTS:VersionGUID="{5287D81C-B714-49DE-849D-3D11268EE875}">
+  DTS:VersionBuild="557"
+  DTS:VersionGUID="{1C42B086-E3EC-402A-9101-BCF480DF509B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.556</DTS:VariableValue>
+        DTS:DataType="8">1.0.557</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -4368,7 +4368,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\617:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
+                  name="ParameterMap">#{Package\Upload To SalesForce\375:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6261,45 +6261,45 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="129.333333333334,41.3333333333334"
-          Id="Package\Upload To SalesForce\Row Count"
-          TopLeft="306.158735372583,211.488886267531" />
-        <NodeLayout
-          Size="164,41.3333333333334"
-          Id="Package\Upload To SalesForce\Set Error Message"
-          TopLeft="502.247620189433,357.458823098278" />
+          Size="164.666666666667,41.3333333333334"
+          Id="Package\Upload To SalesForce\Get Error Message"
+          TopLeft="287.580957155812,360.282357960341" />
         <NodeLayout
           Size="161.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\DBS Souce Cache"
           TopLeft="91.0476201894331,31.8117646658434" />
         <NodeLayout
-          Size="164.666666666667,41.3333333333334"
-          Id="Package\Upload To SalesForce\Get Error Message"
-          TopLeft="287.580957155812,360.282357960341" />
+          Size="129.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Row Count"
+          TopLeft="306.158735372583,211.488886267531" />
         <NodeLayout
           Size="196.666666666667,41.3333333333334"
           Id="Package\Upload To SalesForce\Lookup Agency from SFC"
           TopLeft="325.714291261167,37.9660124150662" />
         <NodeLayout
-          Size="173.333333333334,41.3333333333334"
-          Id="Package\Upload To SalesForce\Divert Error Records"
-          TopLeft="497.269849738296,212.666665220261" />
-        <NodeLayout
           Size="141.333333333334,42.6666666666667"
           Id="Package\Upload To SalesForce\Target Insert"
           TopLeft="303.698417870366,284.346407985248" />
         <NodeLayout
-          Size="177.333333333334,41.3333333333334"
-          Id="Package\Upload To SalesForce\Convert and Rename"
-          TopLeft="494.920643349083,141.207841976126" />
+          Size="173.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Divert Error Records"
+          TopLeft="497.269849738296,212.666665220261" />
+        <NodeLayout
+          Size="120,41.3333333333334"
+          Id="Package\Upload To SalesForce\Union All"
+          TopLeft="433.609530975868,460.420913796001" />
         <NodeLayout
           Size="223.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Lookup Product Rate from SFC"
           TopLeft="572.571438322262,41.3647052731896" />
         <NodeLayout
-          Size="120,41.3333333333334"
-          Id="Package\Upload To SalesForce\Union All"
-          TopLeft="433.609530975868,460.420913796001" />
+          Size="164,41.3333333333334"
+          Id="Package\Upload To SalesForce\Set Error Message"
+          TopLeft="502.247620189433,357.458823098278" />
+        <NodeLayout
+          Size="177.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Convert and Rename"
+          TopLeft="494.920643349083,141.207841976126" />
         <NodeLayout
           Size="152,42.6666666666667"
           Id="Package\Upload To SalesForce\Inject Variables"
@@ -6308,130 +6308,6 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           Size="167.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Cache AMR Record"
           TopLeft="410.768260745614,543.858823098278" />
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Union All Output 1]"
-          TopLeft="493.988895860741,502.020913796001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.8379093022772"
-              Start="0,0"
-              End="0,34.3379093022772">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.3379093022772" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Row Count Output 1]"
-          TopLeft="372.595243288141,252.822219600864">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.5241883843836"
-              Start="0,0"
-              End="0,24.0241883843836">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.0241883843836" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Raw File Source Output]"
-          TopLeft="252.647620189433,55.6888885404548">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73.0666710717335,0"
-              Start="0,0"
-              End="65.5666710717335,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="65.5666710717335,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Output 0]"
-          TopLeft="369.980957155812,401.882357960341">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="104.961907153389,58.5385558356598"
-              Start="0,0"
-              End="104.961907153389,51.0385558356598">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.6609870079565" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.6609870079565"
-                    Point2="0,34.6609870079565"
-                    Point3="4,34.6609870079565" />
-                  <mssgle:LineSegment
-                    End="100.961907153389,34.6609870079565" />
-                  <mssgle:CubicBezierSegment
-                    Point1="100.961907153389,34.6609870079565"
-                    Point2="104.961907153389,34.6609870079565"
-                    Point3="104.961907153389,38.6609870079565" />
-                  <mssgle:LineSegment
-                    End="104.961907153389,51.0385558356598" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[OLE DB Destination Error Output]"
-          TopLeft="372.139687513089,327.013074651915">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.2692833084263"
-              Start="0,0"
-              End="0,25.7692833084263">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.7692833084263" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,7.16784477921317,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Lookup Match Output1]"
           TopLeft="684.238104988929,82.6980386065229">
@@ -6618,6 +6494,132 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Union All Output 1]"
+          TopLeft="493.988895860741,502.020913796001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.8379093022772"
+              Start="0,0"
+              End="0,34.3379093022772">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.3379093022772" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Row Count Output 1]"
+          TopLeft="372.595243288141,252.822219600864">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.5241883843836"
+              Start="0,0"
+              End="0,24.0241883843836">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0241883843836" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,4.0120941921918,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Raw File Source Output]"
+          TopLeft="252.647620189433,55.6888885404548">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.0666710717335,0"
+              Start="0,0"
+              End="65.5666710717335,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.5666710717335,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Output 0]"
+          TopLeft="369.980957155812,401.882357960341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104.961907153389,58.5385558356598"
+              Start="0,0"
+              End="104.961907153389,51.0385558356598">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6609870079565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.6609870079565"
+                    Point2="0,34.6609870079565"
+                    Point3="4,34.6609870079565" />
+                  <mssgle:LineSegment
+                    End="100.961907153389,34.6609870079565" />
+                  <mssgle:CubicBezierSegment
+                    Point1="100.961907153389,34.6609870079565"
+                    Point2="104.961907153389,34.6609870079565"
+                    Point3="104.961907153389,38.6609870079565" />
+                  <mssgle:LineSegment
+                    End="104.961907153389,51.0385558356598" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[OLE DB Destination Error Output]"
+          TopLeft="372.139687513089,327.013074651915">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.2692833084263"
+              Start="0,0"
+              End="0,25.7692833084263">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7692833084263" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.20890625,7.16784477921317,146.4178125,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -6645,29 +6647,6 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Upload To SalesForce\Lookup Agency from SFC">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Upload To SalesForce\Target Insert">
     <Properties>
       <Property>
@@ -6677,6 +6656,29 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Upload To SalesForce\Lookup Agency from SFC">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

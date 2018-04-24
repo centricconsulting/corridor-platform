@@ -94,9 +94,5 @@ ELSE -- If the notification is enabled
 			SET @notification = @notification + 'This is an automated message.  Please do not reply to it.'
 		END
 
--- TEST CODE --
-SET @notification_to = 'scott.stover@centricconsulting.com'
--- END TEST CODE --
-
 -- Return a result set that contains the "to" address, message subject and notification message
 SELECT @notification_to notification_to, @notification_subject notification_subject, @notification notification_message, @send_notification_flag send_notification
