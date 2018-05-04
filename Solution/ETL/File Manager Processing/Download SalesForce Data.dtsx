@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/7/2018 5:35:46 PM"
@@ -7,13 +7,13 @@
   DTS:CreatorName="SFDATASQL\jeff.faseun"
   DTS:DTSID="{6693652D-A203-4A14-BD13-4686D4C4C7C0}"
   DTS:ExecutableType=""
-  DTS:LastModifiedProductVersion="14.0.3002.68"
+  DTS:LastModifiedProductVersion="14.0.3002.92"
   DTS:LocaleID="1033"
   DTS:ObjectName="Download SalesForce Data"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="505"
-  DTS:VersionGUID="{4013E6CB-8CF7-453B-9C12-C22867B940D0}">
+  DTS:VersionBuild="509"
+  DTS:VersionGUID="{AF25DB1D-E9A2-4F2B-A208-B2BB69E8E569}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -218,7 +218,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.505</DTS:VariableValue>
+        DTS:DataType="8">1.0.509</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -451,8 +451,8 @@
               <connections>
                 <connection
                   refId="Package\Load DM_Agency_Product_Rate__c\Insert Target.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
-                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -678,8 +678,8 @@ WHERE Status__c = 'Active'</property>
               <connections>
                 <connection
                   refId="Package\Load DM_Agency_Product_Rate__c\Source Query.Connections[OleDbConnection]"
-                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
-                  connectionManagerRefId="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1083,8 +1083,8 @@ WHERE Status__c = 'Active'</property>
               <connections>
                 <connection
                   refId="Package\Load DM_Agency__c\Insert Target.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
-                  connectionManagerRefId="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:invalid"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1278,8 +1278,8 @@ ORDER BY id</property>
               <connections>
                 <connection
                   refId="Package\Load DM_Agency__c\Source Query.Connections[OleDbConnection]"
-                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
-                  connectionManagerRefId="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:invalid"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1772,7 +1772,7 @@ ORDER BY id</property>
 <!--If you manually edit this section and make a mistake, you can delete it. -->
 <!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
-  Version="sql12">
+  Version="8">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
@@ -1780,19 +1780,19 @@ ORDER BY id</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="176,41.6"
+          Size="176,41.3333333333334"
           Id="Package\Load DM_Agency__c"
           TopLeft="126.857145017507,157.835296331228" />
         <NodeLayout
-          Size="244.8,41.6"
+          Size="244.666666666667,41.3333333333334"
           Id="Package\Load DM_Agency_Product_Rate__c"
           TopLeft="376.571434984402,156.000002187841" />
         <NodeLayout
-          Size="195.2,41.6"
+          Size="195.333333333334,41.3333333333334"
           Id="Package\Truncate DM_Agency__c"
           TopLeft="118.857144881268,54.4470595871289" />
         <NodeLayout
-          Size="264,41.6"
+          Size="264,41.3333333333334"
           Id="Package\Truncate DM_Agency_Product_Rate__c"
           TopLeft="370.285720591643,53.2235301582046" />
         <EdgeLayout
@@ -1846,7 +1846,7 @@ ORDER BY id</property>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190.4,41.6"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
@@ -1874,7 +1874,9 @@ ORDER BY id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1940,7 +1942,9 @@ ORDER BY id</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

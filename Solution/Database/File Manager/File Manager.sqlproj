@@ -65,6 +65,8 @@
     <Folder Include="dbo\Stored Procedures" />
     <Folder Include="sfc" />
     <Folder Include="sfc\Tables" />
+    <Folder Include="tmp\" />
+    <Folder Include="tmp\Tables\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\agency_file.sql" />
@@ -89,9 +91,13 @@
     <Build Include="dbo\Tables\agency_medical_record.sql" />
     <Build Include="dbo\Stored Procedures\get_File_Manager_notification.sql" />
     <Build Include="dbo\Stored Procedures\send_File_Manager_notification.sql" />
-    <Build Include="dbo\Stored Procedures\sp_GetFileManagerNotification.sql" />
     <Build Include="dbo\Stored Procedures\master_custom_processing.sql" />
     <Build Include="dbo\Stored Procedures\custom_Trinity_processing.sql" />
+    <Build Include="tmp\Tables\FileImportStaging.sql" />
+    <Build Include="dbo\Stored Procedures\load_agency_file_rows.sql" />
+    <Build Include="dbo\Stored Procedures\get_file_info.sql" />
+    <Build Include="Security\tmp.sql" />
+    <Build Include="dbo\Stored Procedures\custom_Intrepid_processing.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />

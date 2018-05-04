@@ -12,8 +12,8 @@
   DTS:ObjectName="Controller Daily"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{94BB1A19-840A-4AB4-902A-27F332B1BB6C}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{BFD96F9D-2200-49C0-B451-9C70D59F7B19}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />

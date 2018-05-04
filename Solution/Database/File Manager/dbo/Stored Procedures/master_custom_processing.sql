@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE dbo.master_custom_processing (@modify_process_batch_key int)
+CREATE PROCEDURE [dbo].[master_custom_processing] (@modify_process_batch_key int)
 AS
 /*
 master_custom_processing
@@ -63,7 +63,7 @@ WHILE @@FETCH_STATUS = 0
 BEGIN
 	-- Build the custom call to the agency stored procedure.  They will always be sent
 	--  one argument - the batch_process_key
-	SET @proc_exec_sql = 'EXEC ' + @medical_record_sp_name + ' ' + CAST(@modify_process_batch_key as nvarchar(4))
+	SET @proc_exec_sql = 'EXEC ' + @medical_record_sp_name + ' ' + CAST(@modify_process_batch_key as nvarchar(20))
 	
 	-- Execute the stored procedure and add the results (records to exclude) to the
 	--  @amr_keys_to_exclude table variable.

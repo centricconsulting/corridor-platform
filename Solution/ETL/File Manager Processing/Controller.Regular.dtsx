@@ -12,8 +12,8 @@
   DTS:ObjectName="Controller Regular"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{EE03CD66-446B-484F-9581-757990AA004E}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{5BE05E46-ED81-4634-86CE-7D764F18F74A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -99,7 +99,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="272,42.6666666666667"
           Id="Package\Execute Process Agency Medical Records"
@@ -117,7 +117,7 @@
           TopLeft="263.124997892107,59.5666663644711">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,44.433331775864"
               Start="0,0"
               End="0,36.933331775864">
@@ -139,7 +139,7 @@
           TopLeft="263.583331104368,146.666664807002">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,43.9999984502792"
               Start="0,0"
               End="0,36.4999984502792">

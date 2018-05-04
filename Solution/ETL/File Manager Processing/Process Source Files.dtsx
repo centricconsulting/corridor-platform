@@ -5,21 +5,21 @@
   DTS:CreationName=""
   DTS:CreatorComputerName="SFDATASQL"
   DTS:CreatorName="SFDATASQL\jeff.faseun"
-  DTS:DTSID="{A5CB24D7-C506-4D33-98A4-DCFAB0CE1B0D}"
+  DTS:DTSID="{3C5D9C49-E405-4C94-B510-9F087F817B8C}"
   DTS:ExecutableType=""
   DTS:LastModifiedProductVersion="14.0.3002.92"
   DTS:LocaleID="1033"
   DTS:ObjectName="Process Source Files"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="552"
-  DTS:VersionGUID="{B734DEDC-ECF0-42DE-88EF-DD6EADE41AA8}">
+  DTS:VersionBuild="597"
+  DTS:VersionGUID="{A9EC5C15-191A-4A76-9C21-DABB9D02A37C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{333F9DD1-C6E1-4933-9769-83727D2B44B1}"
+      DTS:DTSID="{7E0A2B78-B060-4FEC-92DD-7B057B1EFCC0}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="accepted_root_folder">
@@ -29,7 +29,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{ED3F625D-83EA-439A-AE9E-0275ADF8A16B}"
+      DTS:DTSID="{107FA5DC-54A7-4447-ABA0-C51B33D980AE}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="agency_file_key">
@@ -38,7 +38,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{D5F1609C-4BDD-498B-ACCC-75000BA3F5B5}"
+      DTS:DTSID="{80449840-5841-4FE0-B35B-42188A2A1202}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="agency_key">
@@ -47,7 +47,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0E0E36C0-CDC9-4DCA-8F54-A446CFBCD480}"
+      DTS:DTSID="{9D8EB1DD-679C-45D8-B2EC-C3B8114E2E2A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="archive_file_name">
@@ -57,7 +57,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{BC712FBE-5027-4EF2-8E50-CFE715533484}"
+      DTS:DTSID="{827B93AE-B044-4254-8787-627FA4BAD12A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="archive_folder_path">
@@ -67,7 +67,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5D6CE51B-8A6C-4530-AE66-E10EB0770C74}"
+      DTS:DTSID="{AC56E918-13ED-4EF4-AE85-4B3042495B53}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="completed_ind">
@@ -76,7 +76,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{CA492482-52AB-4688-A84E-FECA8AE96D0D}"
+      DTS:DTSID="{41CB407B-B207-4E47-BF76-DFAD069206BD}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="error_message">
@@ -86,7 +86,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DB740CC3-9A69-4DE3-9DBA-DCB63749D9E5}"
+      DTS:DTSID="{17095622-C2EB-4185-BB07-B15C47EA3AE0}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="file_created_dtm">
@@ -95,7 +95,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{83F90854-28A9-41BB-A17F-B81124C2E325}"
+      DTS:DTSID="{F96D35F6-BE3E-46A3-AC70-49767F5E1D49}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_format_code">
@@ -105,7 +105,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5B0DAA79-2CEE-4180-97DD-ECF7686E13BD}"
+      DTS:DTSID="{76E96584-5767-4BC0-9EA3-9BD70F972E63}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_guid">
@@ -115,7 +115,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{CBB05A94-B2BB-46FB-B072-F12C93F68B5F}"
+      DTS:DTSID="{4609B55D-E684-4791-8A28-ED4BF27643FE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_hash">
@@ -125,7 +125,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{41ED35A2-63A4-416E-B0F9-E1D93F4E5BE3}"
+      DTS:DTSID="{E7730EB4-042F-4E5F-A132-48B6C428E2C4}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="file_modified_dtm">
@@ -134,7 +134,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B56CABD7-78D8-44B0-A6F9-BA4AC0438D17}"
+      DTS:DTSID="{C70F76C6-A772-481B-85F3-E95498C458AB}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_name">
@@ -144,7 +144,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F3E16625-48A7-4B6B-A3DE-4A3D5008DF62}"
+      DTS:DTSID="{53DC5793-AB49-4413-86FB-C8B211F3DF7F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_path">
@@ -154,7 +154,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{AE4CAD81-6A49-470D-84A9-F58AF04E2E01}"
+      DTS:DTSID="{D3F40118-4732-4DBD-AC32-EF1D77BA9043}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="file_process_dtm">
@@ -163,7 +163,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{76B10B94-34E5-49F6-8F68-ABA7D19BBE16}"
+      DTS:DTSID="{D683B389-32E4-4C4B-9A6E-8003D98895A0}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="file_process_error_message">
@@ -173,7 +173,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0EC21584-37F3-4F4E-97CA-78E49082EBA1}"
+      DTS:DTSID="{0B77A6BB-E2C7-41A7-ADEE-04D6119314F3}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="file_process_success_flag">
@@ -182,7 +182,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{37DC0F51-399F-479B-8F3B-BB3CC961CFD8}"
+      DTS:DTSID="{D8993539-0649-47A8-B32B-096C6B49D106}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="folder_branch">
@@ -192,7 +192,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{2FA69016-EE42-4DBD-B2E2-37DF84B4DBD1}"
+      DTS:DTSID="{C952FF54-9673-4E09-90E2-2E61D28105C5}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="folder_path">
@@ -202,7 +202,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F1DAFDD7-514A-46DF-8EFD-74CAE8BDAA92}"
+      DTS:DTSID="{A2A13AC2-1848-42C6-9068-EF195D48B655}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="package_error_flag">
@@ -211,18 +211,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{E2F1177B-00DF-48D5-A78A-DE918EB4B4E9}"
+      DTS:DTSID="{34E84F2A-A682-4104-95CA-B24211760488}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="(DT_STR, 8, 1252) @[System::VersionMajor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionMinor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionBuild]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.552</DTS:VariableValue>
+        DTS:DataType="8">1.0.597</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{160D3E36-CD7B-4EF9-A559-B8EECA4D20FB}"
+      DTS:DTSID="{EFD1AEEE-3EB8-404A-85CC-D36DFF1D6D2B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="process_batch_key">
@@ -231,7 +231,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B51F1CED-FAA7-4D8C-A177-AEE3EB98765A}"
+      DTS:DTSID="{4E7766BB-2D44-4807-A2E2-FAE254DBD372}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[$Project::ProjectName]  + &quot;::&quot; +   @[System::PackageName]"
       DTS:IncludeInDebugDump="2345"
@@ -242,7 +242,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B4D6A8AA-DED5-419A-AA3D-B349E83D18D8}"
+      DTS:DTSID="{4F51D0E0-C911-458D-A2C0-0C9A39B03060}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="received_root_folder">
@@ -251,7 +251,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0C5F6F80-D07C-4A7E-849E-72BBD962CDE9}"
+      DTS:DTSID="{E8B026B2-5D01-40B9-9BBA-B4495C8697E9}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="rejected_root_folder">
@@ -264,8 +264,8 @@
     <DTS:Executable
       DTS:refId="Package\Read Configuration"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{AF58A4E5-B7FE-4594-84C5-E0C5286A1596}"
+      DTS:Description="Reads path configurations from database"
+      DTS:DTSID="{58125CC8-3D23-4FAB-8323-F0675B0E3792}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Read Configuration"
@@ -292,15 +292,15 @@
     <DTS:Executable
       DTS:refId="Package\Recurse Through Received Folders"
       DTS:CreationName="STOCK:FOREACHLOOP"
-      DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{2EEE72CF-3700-4B90-8AE4-5E838E68807C}"
+      DTS:Description="Note that the folder path is from the dbo.config table and not the C:\ path you see in this task"
+      DTS:DTSID="{5BD11666-F4F4-4243-80B5-F51C83586515}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Recurse Through Received Folders">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{4B01557C-D37D-48C7-93C0-1B67D6CF7B7F}"
-        DTS:ObjectName="{4B01557C-D37D-48C7-93C0-1B67D6CF7B7F}">
+        DTS:DTSID="{9BD5AB73-4263-482A-BE66-787588853085}"
+        DTS:ObjectName="{9BD5AB73-4263-482A-BE66-787588853085}">
         <DTS:PropertyExpression
           DTS:Name="Directory">@[User::received_root_folder]</DTS:PropertyExpression>
         <DTS:ObjectData>
@@ -308,7 +308,7 @@
             <FEFEProperty
               Folder="C:\" />
             <FEFEProperty
-              FileSpec="*.xls*" />
+              FileSpec="*.*" />
             <FEFEProperty
               FileNameRetrievalType="0" />
             <FEFEProperty
@@ -319,7 +319,17 @@
       <DTS:Variables>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{C221BF0E-486C-40E7-AD5F-94DDCCE3BF80}"
+          DTS:DTSID="{4995A01E-F444-4739-A8EE-58BE8FF4EFBC}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="file_extension">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{EFB00398-F07A-488A-AD21-2C8397E4E04C}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="file_format_header_row">
@@ -328,7 +338,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{1B78842F-EE5A-4AEB-9CDB-942F2274C6DF}"
+          DTS:DTSID="{77CBDB99-98C9-4FFB-9E7A-527E7F3E9DFC}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="notification_message">
@@ -338,7 +348,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{C5A3992E-5EFF-476C-93DB-509D9D9BF5BA}"
+          DTS:DTSID="{8A39D249-643E-4511-94D3-878887A87472}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="notification_subject">
@@ -347,7 +357,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{B93C9233-E181-42CB-91D0-900A9012D967}"
+          DTS:DTSID="{DB4B2D0F-470A-4372-A4CC-338AACDA36D5}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="notification_to">
@@ -356,7 +366,7 @@
         </DTS:Variable>
         <DTS:Variable
           DTS:CreationName=""
-          DTS:DTSID="{EB2A3F40-FD5D-41AC-AA61-D7FD794A3D4C}"
+          DTS:DTSID="{BBCDCA39-3832-492E-8E2F-83E51E6181D2}"
           DTS:IncludeInDebugDump="2345"
           DTS:Namespace="User"
           DTS:ObjectName="send_notification_flag">
@@ -369,19 +379,594 @@
           DTS:refId="Package\Recurse Through Received Folders\Archive File"
           DTS:CreationName="Microsoft.ScriptTask"
           DTS:Description="Script Task"
-          DTS:DTSID="{3004ACD0-34DC-4378-A160-1A69CBE5050B}"
+          DTS:DTSID="{C1BB97F9-26DF-430D-BEC2-1ACD3ECDC71A}"
           DTS:ExecutableType="Microsoft.ScriptTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Archive File"
           DTS:ThreadHint="0">
           <DTS:Variables />
-          <DTS:ObjectData />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_22581d65c37046e1a927a00e4b0e6f12"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp"
+              ReadOnlyVariables="User::accepted_root_folder,User::archive_file_name,User::file_path,User::file_process_success_flag,User::folder_branch,User::rejected_root_folder"
+              ReadWriteVariables="User::archive_folder_path">
+              <ProjectItem
+                Name="Properties\Resources.resx"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_22581d65c37046e1a927a00e4b0e6f12.Properties.Settings.get_Default():ST_22581d65c37046e1a927a00e4b0e6f12.Properties.Sett" +
+    "ings")]
+
+namespace ST_22581d65c37046e1a927a00e4b0e6f12.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="ScriptMain.cs"
+                Encoding="UTF8"><![CDATA[using System;
+using System.IO;
+using Microsoft.SqlServer.Dts.Runtime;
+
+namespace ST_6dcce2eeeaad4a6cafb8c4bfaf485614
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+    public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+    {
+
+        public void Main()
+        {
+
+            // load values from variables
+            string FilePath = Dts.Variables["User::file_path"].Value.ToString();
+            string FolderBranch = Dts.Variables["User::folder_branch"].Value.ToString();
+            string ArchiveFileName = Dts.Variables["User::archive_file_name"].Value.ToString();
+            string RejectedRootFolderPath = Dts.Variables["User::rejected_root_folder"].Value.ToString();
+            string AcceptedRootFolderPath = Dts.Variables["User::accepted_root_folder"].Value.ToString();
+            bool FileProcessSuccessFlag = (bool)Dts.Variables["User::file_process_success_flag"].Value;
+
+            // determine where archive target file path
+            string ArchiveRootFolderPath = (FileProcessSuccessFlag) ? AcceptedRootFolderPath : RejectedRootFolderPath;
+            string ArchiveFilePath = Path.Combine(ArchiveRootFolderPath, FolderBranch, ArchiveFileName);
+
+            // get the folder path for the archvie target file
+            string ArchiveFolderPath = Path.GetDirectoryName(ArchiveFilePath);
+
+            // ensure the target director exists
+            if (!Directory.Exists(ArchiveFolderPath))
+            {
+                Directory.CreateDirectory(ArchiveFolderPath);
+            }
+
+            // move the file to the archive location
+            File.Move(FilePath, ArchiveFilePath);
+
+            Dts.Variables["User::archive_folder_path"].Value = ArchiveFolderPath;
+
+            Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="ST_22581d65c37046e1a927a00e4b0e6f12.csproj"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5de008c6-bb4e-45e6-b5e4-11b0abc3c891}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_22581d65c37046e1a927a00e4b0e6f12</RootNamespace>
+    <AssemblyName>ST_22581d65c37046e1a927a00e4b0e6f12</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+         <Generator>ResXFileCodeGenerator</Generator>
+         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+             <AutoGen>True</AutoGen>
+         <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+         <Generator>SettingsSingleFileGenerator</Generator>
+         <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+         <AutoGen>True</AutoGen>
+         <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+         <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask"
+                           HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}"
+                           ApplicationType="usd"
+                           Language="cs"
+                           TemplatesPath=""
+                           DebugInfoCommandLine=""
+                           DebugInfoWorkingDir=""
+                           IconImageList=""/>
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex="">
+        </Host>
+        <ProjectClient>
+            <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>ST_22581d65c37046e1a927a00e4b0e6f12</msb:CodeName>
+		<msb:DisplayName>ST_22581d65c37046e1a927a00e4b0e6f12</msb:DisplayName>
+		<msb:ProjectId>{9CE3EC13-0E7E-4A57-A3F9-717D78D6CD59}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_22581d65c37046e1a927a00e4b0e6f12.csproj"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ScriptMain.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_22581d65c37046e1a927a00e4b0e6f12")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_22581d65c37046e1a927a00e4b0e6f12")]
+[assembly: AssemblyCopyright("Copyright @  2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Resources.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_22581d65c37046e1a927a00e4b0e6f12.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_22581d65c37046e1a927a00e4b0e6f12.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_22581d65c37046e1a927a00e4b0e6f12.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_22581d65c37046e1a927a00e4b0e6f12.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_22581d65c37046e1a927a00e4b0e6f12.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <BinaryItem
+                Name="ST_22581d65c37046e1a927a00e4b0e6f12.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKIA6loAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAApjAA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFQwAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAArBAAAAAgAAAAEgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAUAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAACI
+MAAAAAAAAEgAAAACAAUA3CEAAMANAAABAAAAAAAAAJwvAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBAAXAQAAAQAAEQIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAAoCKBAAAApvEQAACnIhAABwbxIAAApvEwAACm8UAAAKCgIoEAAACm8RAAAKckkAAHBv
+EgAACm8TAAAKbxQAAAoLAigQAAAKbxEAAApyeQAAcG8SAAAKbxMAAApvFAAACgwCKBAAAApvEQAA
+CnKvAABwbxIAAApvEwAACm8UAAAKDQIoEAAACm8RAAAKcuUAAHBvEgAACm8TAAAKpRsAAAEtAwgr
+AQkGBygVAAAKEwQRBCgWAAAKEwURBSgXAAAKLQgRBSgYAAAKJhEEKBkAAAoCKBAAAApvEQAACnIl
+AQBwbxIAAAoRBW8aAAAKAigQAAAKFm8bAAAKKh4CKBwAAAoqHgIoHQAACiqufgEAAAQtHnJZAQBw
+0AMAAAIoHgAACm8fAAAKcyAAAAqAAQAABH4BAAAEKhp+AgAABCoeAoACAAAEKhp+AwAABCoeAigh
+AAAKKi5zCAAABoADAAAEKgAAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAAAE
+AAAjfgAAbAQAAOgFAAAjU3RyaW5ncwAAAABUCgAAzAEAACNVUwAgDAAAEAAAACNHVUlEAAAAMAwA
+AJABAAAjQmxvYgAAAAAAAAACAAABVx2iAQkDAAAA+gEzABYAAAEAAAAiAAAABQAAAAYAAAAJAAAA
+AQAAACEAAAACAAAAEAAAAAEAAAACAAAAAwAAAAQAAAABAAAABAAAAAEAAAABAAAAAADVAwEAAAAA
+AAYAcQK7BAYAAAO7BAYAvQGoBA8ALwUAAAYA6gFbBAYAVAJbBAYANQJbBAYA5wJbBAYAkQJbBAYA
+qgJbBAYAAQJbBAYAHAI9AwoAxQKEAwoAPAGEAwYADQQGBAYAoAGoBAYAqQUGBAYAiwTbBAYAbQRG
+BA4AcAG/Aw4A0QG/Aw4AWAExBAYAhQG7BAoArQOEAxIAcQXfABIAnADfAAYAHgQGBAYAYANSAAYA
+3gVSAAYAeQRSAAYAyQBSAAYABwEGBAYApQAGBAYAzwVbBAAAAABJAAAAAAABAAEAAQAQACYEJQA5
+AAEAAQAAABAA4gQ+BUUAAQADAAABEAB7BT4FWQADAAcAAwEAAJQFAAA9AAQACgARABIEkQARACwB
+lQARAIwAmQAGBnsAnQBWgIQFoABWgAwBoABQIAAAAACGACwEBgABAHMhAAAAAIYYmwQGAAEAeyEA
+AAAAgxibBAYAAQCDIQAAAACTCIcEpAABAK8hAAAAAJMIFAGpAAEAtiEAAAAAkwggAa4AAQC+IQAA
+AACWCLAFtAACAMUhAAAAAIYYmwQGAAIAzSEAAAAAkRihBLkAAgAAAAEAMgMJAJsEAQARAJsEBgAZ
+AJsECgApAJsEEAAxAJsEEAA5AJsEEABBAJsEEABJAJsEEABRAJsEEABZAJsEEABhAJsEEABpAJsE
+BgCBAJsEBgCpAJsEFQC5AJsEBgBxAIwFJADBAG0FKQDJAP0DLgDRAB4DNACJAFcDOADhAP8APADh
+AM4AQwDpAKIFSADpANgFTQD5ADgDUwDRACgDWQDBALwFAQBxAJsEBgCJAJsEBgABAbcAXgABAcsF
+ZwCRAJsEbQCxAJsEBgAIABQAhwAIABgAjAApAHMA9AAuAAsAzAAuABMA1QAuABsA9AAuACMA/QAu
+ACsAJgEuADMAJgEuADsAJgEuAEMA/QAuAEsALAEuAFMAJgEuAFsAQwFDAGMAjABJAHMA9ABhAHsA
+jABjAGsAjAAbAAMAAQAEAAMAAACLBL0AAAA0AcIAAAC0BccAAgAEAAMAAgAFAAUAAQAGAAUAAgAH
+AAcABIAAAAEAAAAoGnFkAAAAAAAAAQAAAAQAAAAAAAAAAAAAAHUAgwAAAAAADQAAAAAAAAAAAAAA
+fgBlAwAAAAAEAAAAAAAAAAAAAAB1AAYEAAAAAA0AAAAAAAAAAAAAAH4AXAAAAAAAAAAAAAEAAADs
+BAAABQACAAAAAAAAU1RfMjI1ODFkNjVjMzcwNDZlMWE5MjdhMDBlNGIwZTZmMTIAU1RfNmRjY2Uy
+ZWVlYWFkNGE2Y2FmYjhjNGJmYWY0ODU2MTQAPE1vZHVsZT4AU3lzdGVtLklPAE1pY3Jvc29mdC5T
+cWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAG1zY29ybGliAGRlZmF1bHRJbnN0YW5jZQBWYXJp
+YWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBGaWxlAEdldERpcmVjdG9y
+eU5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZQBDb21iaW5lAFR5cGUARmFpbHVy
+ZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQByZXNvdXJjZUN1bHR1cmUAVlNUQVJUU2NyaXB0T2Jq
+ZWN0TW9kZWxCYXNlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRl
+AENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUA
+RGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRs
+ZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRy
+aWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25B
+dHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RB
+dHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdFRhc2tFbnRyeVBv
+aW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0
+eUF0dHJpYnV0ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAHZhbHVlAE1vdmUAU3lzdGVtLlJ1bnRpbWUu
+VmVyc2lvbmluZwBUb1N0cmluZwBQYXRoAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBN
+aWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAFNjcmlwdE9iamVjdE1vZGVs
+AFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF8yMjU4MWQ2NWMzNzA0NmUxYTkyN2EwMGU0YjBlNmYx
+Mi5kbGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVzb3VyY2VNYW4AQm9vbGVhbgBTY3JpcHRNYWlu
+AFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0
+aW9uAEN1bHR1cmVJbmZvAERpcmVjdG9yeUluZm8AZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAu
+Y2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMA
+U3lzdGVtLlJlc291cmNlcwBTVF8yMjU4MWQ2NWMzNzA0NmUxYTkyN2EwMGU0YjBlNmYxMi5Qcm9w
+ZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1RfMjI1ODFkNjVjMzcw
+NDZlMWE5MjdhMDBlNGIwZTZmMTIuUHJvcGVydGllcwBnZXRfVmFyaWFibGVzAFNldHRpbmdzAFN1
+Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAEV4aXN0cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0
+X1Rhc2tSZXN1bHQAZ2V0X0Fzc2VtYmx5AENyZWF0ZURpcmVjdG9yeQAAH1UAcwBlAHIAOgA6AGYA
+aQBsAGUAXwBwAGEAdABoAAAnVQBzAGUAcgA6ADoAZgBvAGwAZABlAHIAXwBiAHIAYQBuAGMAaAAA
+L1UAcwBlAHIAOgA6AGEAcgBjAGgAaQB2AGUAXwBmAGkAbABlAF8AbgBhAG0AZQAANVUAcwBlAHIA
+OgA6AHIAZQBqAGUAYwB0AGUAZABfAHIAbwBvAHQAXwBmAG8AbABkAGUAcgAANVUAcwBlAHIAOgA6
+AGEAYwBjAGUAcAB0AGUAZABfAHIAbwBvAHQAXwBmAG8AbABkAGUAcgAAP1UAcwBlAHIAOgA6AGYA
+aQBsAGUAXwBwAHIAbwBjAGUAcwBzAF8AcwB1AGMAYwBlAHMAcwBfAGYAbABhAGcAADNVAHMAZQBy
+ADoAOgBhAHIAYwBoAGkAdgBlAF8AZgBvAGwAZABlAHIAXwBwAGEAdABoAABxUwBUAF8AMgAyADUA
+OAAxAGQANgA1AGMAMwA3ADAANAA2AGUAMQBhADkAMgA3AGEAMAAwAGUANABiADAAZQA2AGYAMQAy
+AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAkjAZNjtXV0iCH/js
+Z1ZIHwAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQgHBg4ODg4ODgQgABJhBCAAEmUFIAESaRwD
+IAAcAyAADgYAAw4ODg4EAAEODgQAAQIOBQABEnkOBQACAQ4OBCABARwIAAESgIERgIUFIAASgIkH
+IAIBDhKAiQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJJAwYSTQMGEhACBggDBhEUBAAA
+EkkEAAASTQUAAQESTQQAABIQAwAAAQQIABJJBAgAEk0ECAASEAgBAAgAAAAAAB4BAAEAVAIWV3Jh
+cE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfMjI1ODFkNjVjMzcwNDZlMWE5Mjdh
+MDBlNGIwZTZmMTIAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxOAAASQEAGi5ORVRGcmFtZXdv
+cmssVmVyc2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0
+LjUAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1z
+Y29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49
+Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAA
+AAAAAAAAAFBBRFBBRFC0AAAAfDAAAAAAAAAAAAAAljAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AIgwAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
+AEgAAABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
+AAAAAL0E7/4AAAEAAAABAHFkKBoAAAEAcWQoGj8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
+bgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAw
+ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
+bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
+AAAAUwBUAF8AMgAyADUAOAAxAGQANgA1AGMAMwA3ADAANAA2AGUAMQBhADkAMgA3AGEAMAAwAGUA
+NABiADAAZQA2AGYAMQAyAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
+ADYANgA5ADYALgAyADUANwAxADMAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
+UwBUAF8AMgAyADUAOAAxAGQANgA1AGMAMwA3ADAANAA2AGUAMQBhADkAMgA3AGEAMAAwAGUANABi
+ADAAZQA2AGYAMQAyAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
+AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAxADgAAAAqAAEAAQBMAGUAZwBhAGwAVABy
+AGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4A
+YQBtAGUAAABTAFQAXwAyADIANQA4ADEAZAA2ADUAYwAzADcAMAA0ADYAZQAxAGEAOQAyADcAYQAw
+ADAAZQA0AGIAMABlADYAZgAxADIALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
+ZQAAAAAAUwBUAF8AMgAyADUAOAAxAGQANgA1AGMAMwA3ADAANAA2AGUAMQBhADkAMgA3AGEAMAAw
+AGUANABiADAAZQA2AGYAMQAyAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
+MQAuADAALgA2ADYAOQA2AC4AMgA1ADcAMQAzAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA2ADYAOQA2AC4AMgA1ADcAMQAzAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAKgwAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
+            </ScriptProject>
+          </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Recurse Through Received Folders\Get Agency Info"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{D4132970-D23C-4488-8B97-40B1F3B5D84B}"
+          DTS:Description="Uses folder_branch to get Agency info"
+          DTS:DTSID="{EA3272F7-45B0-4938-A10D-219E32B5234F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Agency Info"
@@ -391,7 +976,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
-              SQLTask:SqlStatementSource="DECLARE&#xA;  @agency_key INT&#xA;, @file_format_code VARCHAR(20)&#xA;, @file_format_header_row INT&#xA;&#xA;SELECT&#xA;  @file_format_code  = agency.default_file_format_code&#xA;, @agency_key  = agency.agency_key&#xA;, @file_format_header_row = [file_format].file_format_header_row&#xA;FROM&#xA;dbo.agency&#xA;INNER JOIN dbo.[file_format] ON agency.default_file_format_code = [file_format].file_format_code&#xA;WHERE&#xA;agency.folder_branch = ?&#xA;&#xA;SELECT&#xA;  @file_format_code AS file_format_code&#xA;, @agency_key AS agency_key&#xA;, @file_format_header_row AS file_format_header_row&#xA;"
+              SQLTask:SqlStatementSource="/* using the folder_branch variable, we determine the agency,&#xA;  default file format, and the header row for that file format and&#xA;  return the values&#xA;*/&#xA;DECLARE @file_format_code as varchar(50)&#xA;DECLARE @agency_key as int&#xA;DECLARE @file_format_header_row as int&#xA;&#xA;SELECT&#xA;@file_format_code  = agency.default_file_format_code&#xA;,@agency_key = agency.agency_key&#xA;, @file_format_header_row = [file_format].file_format_header_row&#xA;FROM&#xA;dbo.agency INNER JOIN dbo.[file_format]&#xA;ON agency.default_file_format_code = [file_format].file_format_code&#xA;WHERE agency.folder_branch = ?&#xA;&#xA;SELECT @file_format_code file_format_code, @agency_key agency_key, @file_format_header_row file_format_header_row&#xA;"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="file_format_code"
@@ -412,22 +997,91 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Get File Extension"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Gets the extension for the current file"
+          DTS:DTSID="{50E5F500-9676-4EA5-BDED-B235BD450EAC}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get File Extension"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="-- Gets file extension out of the file path&#xA;&#xA;/* Since we're referencing the same parameter twice, it's best&#xA; to add it to a variable. */&#xA;DECLARE @file_path as varchar(1000)&#xA;SET @file_path = ?&#xA;&#xA;/* To find the extension, we reverse the file path and search for a&#xA;   period (.)  This gives us the location of the extension regardless&#xA;   of the number of characters - xlsx and xls and any other&#xA;  extension of any reasonable length is fine. */&#xA;&#xA;SELECT LOWER(REVERSE(LEFT(REVERSE(@file_path), CHARINDEX('.', REVERSE(@file_path))))) file_extension&#xA;&#xA;/*  When it returns the extension, it includes the period (.) and is&#xA;   returned in lowercase.  The SSIS expressions are case sensitive.&#xA;*/"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_extension"
+                SQLTask:DtsVariableName="User::file_extension" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::file_path"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Recurse Through Received Folders\Get File Info"
-          DTS:CreationName="Microsoft.ScriptTask"
-          DTS:Description="Script Task"
-          DTS:DTSID="{7082CDF2-A4A2-4FEC-99F5-0AECE37E59F9}"
-          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Pulls 8 values into the stream of variables"
+          DTS:DTSID="{78891EBB-CB35-4848-B950-EE5909C3406C}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get File Info"
           DTS:ThreadHint="0">
           <DTS:Variables />
-          <DTS:ObjectData />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="EXEC get_File_Info ?, ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_hash"
+                SQLTask:DtsVariableName="User::file_hash" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_guid"
+                SQLTask:DtsVariableName="User::file_guid" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_name"
+                SQLTask:DtsVariableName="User::file_name" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="folder_path"
+                SQLTask:DtsVariableName="User::folder_path" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="folder_branch"
+                SQLTask:DtsVariableName="User::folder_branch" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_created_dtm"
+                SQLTask:DtsVariableName="User::file_created_dtm" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_modified_dtm"
+                SQLTask:DtsVariableName="User::file_modified_dtm" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="archive_file_name"
+                SQLTask:DtsVariableName="User::archive_file_name" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::file_path"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::received_root_folder"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="1000" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Recurse Through Received Folders\Insert Agency File"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0E9D5486-6EC3-477A-B44B-43A7C23B58D7}"
+          DTS:Description="Inserts a record of the current file"
+          DTS:DTSID="{94188572-B47F-4B59-9077-274D66AA2EC1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Insert Agency File"
@@ -439,7 +1093,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
-              SQLTask:SqlStatementSource="INSERT INTO dbo.agency_file&#xA;(&#xA;  [agency_key]&#xA;, [file_format_code]&#xA;, [file_path]&#xA;, [file_name]&#xA;, [folder_path]&#xA;, [folder_branch]&#xA;, [file_guid]&#xA;, [file_hash]&#xA;, [archive_file_name]&#xA;, [file_created_dtm]&#xA;, [file_modified_dtm]&#xA;, [create_timestamp]&#xA;, [modify_timestamp]&#xA;, [process_batch_key]&#xA;)&#xA;OUTPUT Inserted.agency_file_key&#xA;VALUES &#xA;(&#xA;  ? -- {0} [agency_key]&#xA;, ? -- {1} [file_format_code]&#xA;, ? -- {2} [file_path]&#xA;, ? -- {3} [file_name]&#xA;, ? -- {4} [folder_path]&#xA;, ? -- {5} [folder_branch]&#xA;, ? -- {6} [file_guid]&#xA;, ? -- {7} [file_hash]&#xA;, ? -- {8} [archive_file_name]&#xA;, ? -- {9} [file_created_dtm]&#xA;, ? -- {10} [file_modified_dtm]&#xA;, CURRENT_TIMESTAMP -- [create_timestamp]&#xA;, CURRENT_TIMESTAMP -- [modify_timestamp]&#xA;, ? -- {11} [process_batch_key]&#xA;)"
+              SQLTask:SqlStatementSource="/* Inserts a record of the file we are currently processing into&#xA;  agency_file.  Most of these values come from variables&#xA;  already defined */&#xA;INSERT INTO dbo.agency_file&#xA;(&#xA;  [agency_key]&#xA;, [file_format_code]&#xA;, [file_path]&#xA;, [file_name]&#xA;, [folder_path]&#xA;, [folder_branch]&#xA;, [file_guid]&#xA;, [file_hash]&#xA;, [archive_file_name]&#xA;, [file_created_dtm]&#xA;, [file_modified_dtm]&#xA;, [create_timestamp]&#xA;, [modify_timestamp]&#xA;, [process_batch_key]&#xA;)&#xA;OUTPUT Inserted.agency_file_key&#xA;VALUES &#xA;(&#xA;  ? -- {0} [agency_key]&#xA;, ? -- {1} [file_format_code]&#xA;, ? -- {2} [file_path]&#xA;, ? -- {3} [file_name]&#xA;, ? -- {4} [folder_path]&#xA;, ? -- {5} [folder_branch]&#xA;, ? -- {6} [file_guid]&#xA;, ? -- {7} [file_hash]&#xA;, ? -- {8} [archive_file_name]&#xA;, ? -- {9} [file_created_dtm]&#xA;, ? -- {10} [file_modified_dtm]&#xA;, CURRENT_TIMESTAMP -- [create_timestamp]&#xA;, CURRENT_TIMESTAMP -- [modify_timestamp]&#xA;, ? -- {11} [process_batch_key]&#xA;)"
               SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
               <SQLTask:ResultBinding
                 SQLTask:ResultName="agency_file_key"
@@ -521,24 +1175,54 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Recurse Through Received Folders\Load Agency File Rows"
-          DTS:CreationName="Microsoft.ScriptTask"
-          DTS:DelayValidation="True"
-          DTS:Description="Script Task"
-          DTS:DTSID="{FC1502BA-CE7E-4136-934D-3DC7A3AC734E}"
-          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5FC43615-E04A-41D0-A16D-498335694D85}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Agency File Rows"
           DTS:ThreadHint="0">
           <DTS:Variables />
-          <DTS:LoggingOptions
-            DTS:FilterKind="0" />
-          <DTS:ObjectData />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="EXEC load_agency_file_rows ?, ?, ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_process_dtm"
+                SQLTask:DtsVariableName="User::file_process_dtm" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_process_error_message"
+                SQLTask:DtsVariableName="User::file_process_error_message" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_process_success_flag"
+                SQLTask:DtsVariableName="User::file_process_success_flag" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::file_format_header_row"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::agency_file_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::process_batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Recurse Through Received Folders\Mark Notification Sent"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{041B94F2-041B-49DA-BECB-DC3D48065848}"
+          DTS:DTSID="{00A6A980-7A76-404B-ADE6-DDB0C26EC961}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Mark Notification Sent"
@@ -559,10 +1243,42 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Prep Records for Load"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Adds columns to prepare rows for import"
+          DTS:DTSID="{C7A4576E-3A72-416C-8B95-AA5BBD968B23}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Prep Records for Load"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="/* In the get_file_info stored procedure, it generates a file hash&#xA;  to determine if a file is unique or not.  In this process, it stages&#xA;  all the rows for the file in tmp.FileImportStaging.  Subsequent&#xA;  steps will use this table to pull the rows into dbo.agency_file_row.&#xA;  Before we can do that, we need to add a couple fields.  row_index&#xA;  is used to provide a row ID - incremented integer and&#xA;  column_header_ind field flags a particular row as the header&#xA;  row containing column names.&#xA;&#xA;  Because the table is dropped and re-created for every file, these&#xA;  columns must be added every time we process a file.&#xA;*/&#xA;&#xA;ALTER TABLE tmp.FileImportStaging&#xA;ADD&#xA;row_index int IDENTITY(1, 1),&#xA;column_header_ind bit DEFAULT(0) NOT NULL" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Reset File Extension"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{1ddb279d-fb0a-42bf-a1e4-b4bab666b2be}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Reset File Extension"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::file_extension] =  NULL(DT_STR, 20, 1252)" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\Recurse Through Received Folders\Reset File Format Code"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{21BD8CF0-133A-4534-B331-A6D457E8C734}"
+          DTS:DTSID="{361C8880-DADA-4AA8-82A8-4CE45AAD3951}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Reset File Format Code"
@@ -578,7 +1294,7 @@
           DTS:refId="Package\Recurse Through Received Folders\Reset File Header Row"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{30FA1417-8A79-43F7-BECE-7B13CCDCBE73}"
+          DTS:DTSID="{E5FF3BD1-58D2-49BA-A8DD-0A17D70419CD}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Reset File Header Row"
@@ -593,7 +1309,7 @@
           DTS:refId="Package\Recurse Through Received Folders\Retrieve Notification Info"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{6D0276E3-DE2C-42BB-9714-82AFDB49601E}"
+          DTS:DTSID="{F5967C4B-E3B0-4DE1-A988-3359ACA135BC}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Retrieve Notification Info"
@@ -636,7 +1352,7 @@
           DTS:refId="Package\Recurse Through Received Folders\Send Notification Email"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{BB28FCE5-0789-49F5-914E-CB1B295DCE24}"
+          DTS:DTSID="{003CB079-FF5D-405F-BC2C-667693182235}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Send Notification Email"
@@ -671,7 +1387,7 @@
           DTS:refId="Package\Recurse Through Received Folders\Update Agency File For Archive"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{E54F9B3B-E96E-4BC4-A1CA-1A96F4047509}"
+          DTS:DTSID="{695CD14D-AE09-42AF-8B47-97B2FCF9E397}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Update Agency File For Archive"
@@ -722,17 +1438,17 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{EEAA17BC-D2D8-4ABA-A8A8-A2129AF0EF95}"
+          DTS:DTSID="{4DE55CD4-4292-4A28-BD96-1BCD22A57E4E}"
           DTS:From="Package\Recurse Through Received Folders\Insert Agency File"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Recurse Through Received Folders\Load Agency File Rows" />
+          DTS:To="Package\Recurse Through Received Folders\Prep Records for Load" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{B9B89DC2-E131-4DDE-9A38-E5CCA960556C}"
+          DTS:DTSID="{99508CAC-FABC-47C8-9DF0-C01BB1B9C6AF}"
           DTS:EvalOp="1"
-          DTS:Expression="ISNULL(@[User::file_format_code]) == FALSE"
+          DTS:Expression="(ISNULL(@[User::file_format_code]) == FALSE) &amp;&amp; (@[User::agency_key] &gt;0)"
           DTS:From="Package\Recurse Through Received Folders\Get Agency Info"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -740,15 +1456,41 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 10]"
           DTS:CreationName=""
-          DTS:DTSID="{230B6B7C-6375-4B33-BE91-F0DBA292156C}"
-          DTS:From="Package\Recurse Through Received Folders\Reset File Header Row"
+          DTS:DTSID="{BDAAD556-BB0C-4A7C-B7FC-B5F99BBFF32E}"
+          DTS:From="Package\Recurse Through Received Folders\Get File Info"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 10"
+          DTS:To="Package\Recurse Through Received Folders\Get Agency Info" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 11]"
+          DTS:CreationName=""
+          DTS:DTSID="{05554DCB-E2E7-4956-A4D1-28BAD48ADA16}"
+          DTS:From="Package\Recurse Through Received Folders\Prep Records for Load"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 11"
+          DTS:To="Package\Recurse Through Received Folders\Load Agency File Rows" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 12]"
+          DTS:CreationName=""
+          DTS:DTSID="{E800C2DC-2ECE-4D78-A142-1C8B1BFA37E4}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[User::file_extension] == (DT_STR, 40, 1252) &quot;.xlsx&quot; || @[User::file_extension] == (DT_STR, 40, 1252) &quot;.xls&quot;"
+          DTS:From="Package\Recurse Through Received Folders\Get File Extension"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 12"
           DTS:To="Package\Recurse Through Received Folders\Get File Info" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 13]"
+          DTS:CreationName=""
+          DTS:DTSID="{B525C3C0-0CCB-478B-8D7F-203B92FA9718}"
+          DTS:From="Package\Recurse Through Received Folders\Reset File Extension"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 13"
+          DTS:To="Package\Recurse Through Received Folders\Reset File Format Code" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{96041E2A-A393-4A76-BA9A-63C8E93A3C6F}"
+          DTS:DTSID="{6880F465-4DC7-4E19-9E2F-FDC6540A8680}"
           DTS:From="Package\Recurse Through Received Folders\Reset File Format Code"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -756,7 +1498,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{D8993251-BA2E-4CD7-BA57-EE0462ECB732}"
+          DTS:DTSID="{7B618343-AB62-4025-B627-F9477448956C}"
           DTS:From="Package\Recurse Through Received Folders\Load Agency File Rows"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
@@ -764,7 +1506,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{2857DF19-48AB-4A33-8E8C-FE2720D2D811}"
+          DTS:DTSID="{ABCCFC12-8428-4A41-A1C5-840FA3DBCC7E}"
           DTS:From="Package\Recurse Through Received Folders\Update Agency File For Archive"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
@@ -772,7 +1514,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 5]"
           DTS:CreationName=""
-          DTS:DTSID="{D675919B-0861-40C4-8215-BF75614434FD}"
+          DTS:DTSID="{B7B1DB31-18B4-4E99-8872-694C4E6A6256}"
           DTS:EvalOp="1"
           DTS:Expression="@[User::send_notification_flag] == 1"
           DTS:From="Package\Recurse Through Received Folders\Retrieve Notification Info"
@@ -781,7 +1523,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 6]"
           DTS:CreationName=""
-          DTS:DTSID="{56BEE209-09EC-4142-AE8C-2B378871CCBE}"
+          DTS:DTSID="{3FA1E839-44A4-453B-998F-07C5C800BC0D}"
           DTS:From="Package\Recurse Through Received Folders\Archive File"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 6"
@@ -789,22 +1531,22 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 7]"
           DTS:CreationName=""
-          DTS:DTSID="{FCBE409A-138D-45E5-AB15-18667D55B17A}"
-          DTS:From="Package\Recurse Through Received Folders\Get File Info"
+          DTS:DTSID="{BDA0EAAE-F3E6-4400-BF9B-06C06799E0FA}"
+          DTS:From="Package\Recurse Through Received Folders\Reset File Header Row"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 7"
-          DTS:To="Package\Recurse Through Received Folders\Get Agency Info" />
+          DTS:To="Package\Recurse Through Received Folders\Get File Extension" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 8]"
           DTS:CreationName=""
-          DTS:DTSID="{30EAEBDB-D25E-42E9-95B5-EBAC4850AD99}"
+          DTS:DTSID="{35279926-002C-433F-BC33-EF01C6771948}"
           DTS:From="Package\Recurse Through Received Folders\Send Notification Email"
           DTS:ObjectName="Constraint 8"
           DTS:To="Package\Recurse Through Received Folders\Mark Notification Sent" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 9]"
           DTS:CreationName=""
-          DTS:DTSID="{715427D3-0A7F-40B5-8255-CC989681CCA7}"
+          DTS:DTSID="{91EBBF73-10E9-4C9B-B63C-34ED3DDDDF31}"
           DTS:EvalOp="1"
           DTS:Expression="@[User::send_notification_flag] != 1"
           DTS:From="Package\Recurse Through Received Folders\Retrieve Notification Info"
@@ -814,8 +1556,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{ACD449E1-0BB1-49C1-B3D4-EB746FEFE650}"
-          DTS:ObjectName="{ACD449E1-0BB1-49C1-B3D4-EB746FEFE650}"
+          DTS:DTSID="{7B3D7C15-9D6D-4D85-9BE2-BA6FB31340C4}"
+          DTS:ObjectName="{7B3D7C15-9D6D-4D85-9BE2-BA6FB31340C4}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::file_path" />
       </DTS:ForEachVariableMappings>
@@ -825,7 +1567,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{BAE68642-41B9-4C43-A42A-49BD0B714142}"
+      DTS:DTSID="{EC53E4A6-9C12-476C-A598-46728C52FB84}"
       DTS:From="Package\Read Configuration"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -835,7 +1577,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{8EFE69AD-C01F-47A1-852C-79A29D03AAF4}"
+      DTS:DTSID="{D98571A2-5AE4-4857-BAD2-5ED8C2F0B770}"
       DTS:EventID="0"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -843,7 +1585,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{C511C32D-9C00-4C96-84E1-F3BCBB8D4857}"
+          DTS:DTSID="{EF9BB8ED-6828-41F4-A036-91D7CA973E72}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -855,7 +1597,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Log Process Batch Error"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{9D6A66EB-3C48-4B18-8C16-22A8A1C0B179}"
+          DTS:DTSID="{DE6B08BB-1155-436D-97AC-4D0C166B4E98}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log Process Batch Error"
@@ -895,7 +1637,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Turn On Package Error Flag"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{A6986A06-9875-427A-9B70-90712C21AF44}"
+          DTS:DTSID="{4C51BB7D-6C1F-4A71-B95B-638D9E529636}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Turn On Package Error Flag"
@@ -911,7 +1653,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{2BFE6B1D-8EB0-4773-B175-3A2C260BEE5A}"
+          DTS:DTSID="{16FD7B96-C065-4C4C-A65C-EB955F0B5ECC}"
           DTS:From="Package.EventHandlers[OnError]\Turn On Package Error Flag"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -921,7 +1663,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{F05583A0-E135-4965-B0E1-3AA8F62B96B0}"
+      DTS:DTSID="{8C126856-5421-41E0-A8C6-FFA2417C5E9F}"
       DTS:EventID="0"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -929,7 +1671,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{8A572715-F76F-4F23-9929-C3E18628169D}"
+          DTS:DTSID="{D6A615BC-249D-419D-92B7-0EAAFFFC910B}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -941,7 +1683,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:CreationName="Microsoft.ExpressionTask"
-          DTS:DTSID="{6A4C5F70-C15B-4B2B-9657-537ABFEFD379}"
+          DTS:DTSID="{EA1FA9F8-C2F4-4EF5-9E2C-8A4782E3BCB5}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Assign Completed Indicator"
@@ -955,7 +1697,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{2926613E-E2FA-40C5-AD22-0623FE1363E2}"
+          DTS:DTSID="{0385510D-4181-4FE3-B097-9D8E480A52C2}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Conclude Process Batch"
@@ -984,7 +1726,7 @@
           DTS:refId="Package.EventHandlers[OnPostExecute]\Entry Point"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{58F80AFC-344E-4B21-925C-43F60E9EC07F}"
+          DTS:DTSID="{291CDD16-EF28-423C-A239-8A3A0EBD357D}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Entry Point"
@@ -1000,7 +1742,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{E5664789-9BAC-46EA-8AD3-A3C025D8F6C7}"
+          DTS:DTSID="{3C0E6850-865E-49F9-8FF9-06E1AF163A7C}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] == @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPostExecute]\Entry Point"
@@ -1010,7 +1752,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
           DTS:CreationName=""
-          DTS:DTSID="{0ED2134E-A2E9-4A4B-B83C-E72C75E8B1FF}"
+          DTS:DTSID="{37C4E9FB-A189-4B6D-9C72-42F3E74DE3AF}"
           DTS:From="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint_EXP - assign completed indicator_To_SQL - conclude process batch"
@@ -1020,7 +1762,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{921A2BB1-61D1-4645-BF28-C6F24222B3BC}"
+      DTS:DTSID="{39DE1DD1-1C53-4C47-88D7-C5E817847DC0}"
       DTS:EventID="1153914880"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
@@ -1028,7 +1770,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="The propagate property of the event"
-          DTS:DTSID="{BBF70CF5-A8D3-44F1-81EC-8F21A7A2E0A3}"
+          DTS:DTSID="{D21078B4-B374-4079-8939-A2AC47C0860F}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -1041,7 +1783,7 @@
           DTS:refId="Package.EventHandlers[OnPreExecute]\Entry Point"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{1DFC40A5-7D09-4AFF-9905-7D1B5DF0C65E}"
+          DTS:DTSID="{A342213A-E333-43D1-9604-4C25D69EF9B6}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Entry Point"
@@ -1055,7 +1797,7 @@
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:DTSID="{B4B26E01-F2F5-412A-B8EA-41C463CD5459}"
+          DTS:DTSID="{2D3E0F2A-0ACE-4056-BA7A-60D98DEEDD2F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Initiate Process Batch"
@@ -1101,7 +1843,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{8D6A8E91-EB36-49DE-8AD6-A8D41781353A}"
+          DTS:DTSID="{06BE69CB-10E2-43DF-84FD-93B02BF98D65}"
           DTS:EvalOp="1"
           DTS:Expression="@[System::SourceID] == @[System::PackageID]"
           DTS:From="Package.EventHandlers[OnPreExecute]\Entry Point"
@@ -1122,81 +1864,81 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="168.666666666667,41.3333333333334"
           Id="Package\Read Configuration"
-          TopLeft="512.191663581771,67.2176471446215" />
+          TopLeft="95.8722253409696,57.1065362143111" />
         <NodeLayout
           Size="133.333333333334,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Archive File"
-          TopLeft="305.516333753838,286.895241081815" />
+          TopLeft="47.1830042699712,689.895233875614" />
         <NodeLayout
-          Size="154.666666666667,41.3333333333334"
+          Size="156,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Get Agency Info"
-          TopLeft="293.916333753838,163.755136079998" />
+          TopLeft="47.3885596496102,284.00513392976" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Recurse Through Received Folders\Get File Extension"
+          TopLeft="49.1249987116705,96.499997869134" />
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Get File Info"
-          TopLeft="70.3333304772774,160.399997954369" />
+          TopLeft="61.9027742128819,214.555548194382" />
         <NodeLayout
           Size="163.333333333334,41.3333333333334"
           Id="Package\Recurse Through Received Folders\Insert Agency File"
-          TopLeft="595.338518668576,158.123715485131" />
+          TopLeft="50.1996379028894,410.179266533583" />
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Load Agency File Rows"
-          TopLeft="31.0977942870532,287.218245340989" />
+          TopLeft="33.0833301978811,552.361102994448" />
         <NodeLayout
-          Size="183.333333333334,43.3333333333334"
+          Size="184,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Mark Notification Sent"
-          TopLeft="561.405286284086,419.68370244897" />
+          TopLeft="70.4330713779199,1040.07258024444" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\Recurse Through Received Folders\Prep Records for Load"
+          TopLeft="33.0833301978807,478.361105112401" />
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Recurse Through Received Folders\Reset File Extension"
+          TopLeft="62.1264220605107,23.4059334141989" />
         <NodeLayout
           Size="189.333333333334,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Reset File Format Code"
-          TopLeft="71.1619072271854,46.572552208422" />
+          TopLeft="277.064681936773,24.1836637198776" />
         <NodeLayout
           Size="185.333333333334,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Reset File Header Row"
-          TopLeft="321.66666187346,47.7999993956089" />
+          TopLeft="511.249992381782,27.5777775349881" />
         <NodeLayout
           Size="196.666666666667,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Retrieve Notification Info"
-          TopLeft="35.3903113477985,425.684602383667" />
+          TopLeft="17.3347560612917,851.795705875318" />
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Send Notification Email"
-          TopLeft="342.111103370786,388.777773619361" />
+          TopLeft="190.722216737767,915.999986414115" />
         <NodeLayout
-          Size="224.666666666667,41.3333333333334"
+          Size="168,41.3333333333334"
           Id="Package\Recurse Through Received Folders\Update Agency File For Archive"
-          TopLeft="564.538518668576,283.828895476346" />
+          TopLeft="33.9829710189139,764.828886875396" />
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint]"
-          TopLeft="677.005185335243,199.457048818464">
+          TopLeft="128.474817383718,451.512599866916">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-551.907391048189,87.7611965225246"
+              EndConnector="0,26.8485052454851"
               Start="0,0"
-              End="-551.907391048189,80.2611965225246">
+              End="0,19.3485052454851">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.8805982612623" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,39.8805982612623"
-                    Point2="0,43.8805982612623"
-                    Point3="-4,43.8805982612623" />
-                  <mssgle:LineSegment
-                    End="-547.907391048189,43.8805982612623" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-547.907391048189,43.8805982612623"
-                    Point2="-551.907391048189,43.8805982612623"
-                    Point3="-551.907391048189,47.8805982612623" />
-                  <mssgle:LineSegment
-                    End="-551.907391048189,80.2611965225246" />
+                    End="0,19.3485052454851" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1207,54 +1949,110 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 1]"
-          TopLeft="448.316333753838,181.739425782565">
+          TopLeft="128.627432109583,326.671800596427">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="147.022184914738,0"
+              EndConnector="0,83.5074659371563"
               Start="0,0"
-              End="139.522184914738,0">
+              End="0,76.0074659371563">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="139.522184914738,0" />
+                    End="0,76.0074659371563" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="61.761092457369,5,16,16"
+              BoundingBox="-8,30.0037329685782,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 10]"
-          TopLeft="414.333328540127,90.4666660622756">
+          TopLeft="127.979000264579,257.222214861049">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-275.333331396183,69.9333318920934"
+              EndConnector="0,26.7829190687114"
               Start="0,0"
-              End="-275.333331396183,62.4333318920934">
+              End="0,19.2829190687114">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.9666659460467" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.9666659460467"
-                    Point2="0,34.9666659460467"
-                    Point3="-4,34.9666659460467" />
+                    End="0,19.2829190687114" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 11]"
+          TopLeft="126.083330197881,521.027771779068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.3333312153807"
+              Start="0,0"
+              End="0,23.8333312153807">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-271.333331396183,34.9666659460467" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-271.333331396183,34.9666659460467"
-                    Point2="-275.333331396183,34.9666659460467"
-                    Point3="-275.333331396183,38.9666659460467" />
+                    End="0,23.8333312153807" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 12]"
+          TopLeft="130.84721979561,139.166664535801">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.3888836585813"
+              Start="0,0"
+              End="0,67.8888836585813">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-275.333331396183,62.4333318920934" />
+                    End="0,67.8888836585813" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,25.9444418292907,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 13]"
+          TopLeft="235.459755393844,45.1281319003716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.604926542929,0"
+              Start="0,0"
+              End="34.104926542929,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="34.104926542929,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1265,18 +2063,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 2]"
-          TopLeft="260.495240560519,68.5196091353488">
+          TopLeft="466.398015270106,47.2140539607662">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="61.1714213129411,0"
+              EndConnector="44.8519771116757,0"
               Start="0,0"
-              End="53.6714213129411,0">
+              End="37.3519771116757,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="53.6714213129411,0" />
+                    End="37.3519771116757,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1287,18 +2085,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 3]"
-          TopLeft="219.097794287053,308.390076544735">
+          TopLeft="127.083330197881,595.027769661115">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="86.4185394667848,0"
+              EndConnector="-13.2336592612432,94.8674642144991"
               Start="0,0"
-              End="78.9185394667848,0">
+              End="-13.2336592612432,87.3674642144991">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="78.9185394667848,0" />
+                    End="0,43.4337321072496" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,43.4337321072496"
+                    Point2="0,47.4337321072496"
+                    Point3="-4,47.4337321072496" />
+                  <mssgle:LineSegment
+                    End="-9.23365926124322,47.4337321072496" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.23365926124322,47.4337321072496"
+                    Point2="-13.2336592612432,47.4337321072496"
+                    Point3="-13.2336592612432,51.4337321072496" />
+                  <mssgle:LineSegment
+                    End="-13.2336592612432,87.3674642144991" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1309,30 +2119,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 4]"
-          TopLeft="676.871852001909,325.162228809679">
+          TopLeft="116.825530206769,806.162220208729">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-543.148207320778,100.522373573988"
+              EndConnector="0,45.6334856665893"
               Start="0,0"
-              End="-543.148207320778,93.0223735739877">
+              End="0,38.1334856665893">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.2611867869938" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,46.2611867869938"
-                    Point2="0,50.2611867869938"
-                    Point3="-4,50.2611867869938" />
-                  <mssgle:LineSegment
-                    End="-539.148207320778,50.2611867869938" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-539.148207320778,50.2611867869938"
-                    Point2="-543.148207320778,50.2611867869938"
-                    Point3="-543.148207320778,54.2611867869938" />
-                  <mssgle:LineSegment
-                    End="-543.148207320778,93.0223735739877" />
+                    End="0,38.1334856665893" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1343,54 +2141,48 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 5]"
-          TopLeft="232.056978014465,441.240157939223">
+          TopLeft="214.001422727958,873.129039208652">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="110.054125356321,-31.1290509865282"
+              EndConnector="70.7207940098089,42.870947205463"
               Start="0,0"
-              End="102.554125356321,-31.1290509865282">
+              End="70.7207940098089,35.370947205463">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="42.4083661141112,0" />
+                    End="66.7207940098089,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="42.4083661141112,0"
-                    Point2="46.4083661141112,0"
-                    Point3="46.4083661141112,-4" />
+                    Point1="66.7207940098089,0"
+                    Point2="70.7207940098089,0"
+                    Point3="70.7207940098089,4" />
                   <mssgle:LineSegment
-                    End="46.4083661141112,-27.1290509865282" />
-                  <mssgle:CubicBezierSegment
-                    Point1="46.4083661141112,-27.1290509865282"
-                    Point2="46.4083661141112,-31.1290509865282"
-                    Point3="50.4083661141112,-31.1290509865282" />
-                  <mssgle:LineSegment
-                    End="102.554125356321,-31.1290509865282" />
+                    End="70.7207940098089,35.370947205463" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="38.4083661141112,1,16,16"
+              BoundingBox="62.7207940098089,-22,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 6]"
-          TopLeft="438.849667087171,306.362068279081">
+          TopLeft="115.916320977776,732.561900542281">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.688851581405,0"
+              EndConnector="0,32.266986333115"
               Start="0,0"
-              End="118.188851581405,0">
+              End="0,24.766986333115">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="118.188851581405,0" />
+                    End="0,24.766986333115" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1401,18 +2193,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 7]"
-          TopLeft="207.666663810611,183.077567017184">
+          TopLeft="603.916659048449,70.2444442016548">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="86.2496699432272,0"
+              EndConnector="-472.791660336778,26.2555536674792"
               Start="0,0"
-              End="78.7496699432272,0">
+              End="-472.791660336778,18.7555536674792">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="78.7496699432272,0" />
+                    End="0,9.12777683373962" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.12777683373962"
+                    Point2="0,13.1277768337396"
+                    Point3="-4,13.1277768337396" />
+                  <mssgle:LineSegment
+                    End="-468.791660336778,13.1277768337396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-468.791660336778,13.1277768337396"
+                    Point2="-472.791660336778,13.1277768337396"
+                    Point3="-472.791660336778,17.1277768337396" />
+                  <mssgle:LineSegment
+                    End="-472.791660336778,18.7555536674792" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1423,30 +2227,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 8]"
-          TopLeft="530.111103370786,410.111106952694">
+          TopLeft="284.722216737767,958.666653080781">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.2941829133002,25.3503732740539"
+              EndConnector="-92.9558120265139,81.40592716366"
               Start="0,0"
-              End="23.7941829133002,25.3503732740539">
+              End="-92.9558120265139,73.90592716366">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="14.1079099943429,0" />
+                    End="0,44.4224911576943" />
                   <mssgle:CubicBezierSegment
-                    Point1="14.1079099943429,0"
-                    Point2="18.1079099943429,0"
-                    Point3="18.1079099943429,4" />
+                    Point1="0,44.4224911576943"
+                    Point2="0,48.4224911576943"
+                    Point3="-4,48.4224911576943" />
                   <mssgle:LineSegment
-                    End="18.1079099943429,21.3503732740539" />
+                    End="-88.9558120265139,48.4224911576943" />
                   <mssgle:CubicBezierSegment
-                    Point1="18.1079099943429,21.3503732740539"
-                    Point2="18.1079099943429,25.3503732740539"
-                    Point3="22.1079099943429,25.3503732740539" />
+                    Point1="-88.9558120265139,48.4224911576943"
+                    Point2="-92.9558120265139,48.4224911576943"
+                    Point3="-92.9558120265139,52.4224911576943" />
                   <mssgle:LineSegment
-                    End="23.7941829133002,25.3503732740539" />
+                    End="-92.9558120265139,73.90592716366" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1457,40 +2261,51 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 9]"
-          TopLeft="232.056978014465,450.017485749652">
+          TopLeft="115.668089394625,894.462372541985">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="329.348308269621,0"
+              EndConnector="17.4316486499616,145.610207702456"
               Start="0,0"
-              End="321.848308269621,0">
+              End="17.4316486499616,138.110207702456">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="321.848308269621,0" />
+                    End="0,82.612968374737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,82.612968374737"
+                    Point2="0,86.612968374737"
+                    Point3="4,86.612968374737" />
+                  <mssgle:LineSegment
+                    End="13.4316486499616,86.612968374737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.4316486499616,86.612968374737"
+                    Point2="17.4316486499616,86.612968374737"
+                    Point3="17.4316486499616,90.612968374737" />
+                  <mssgle:LineSegment
+                    End="17.4316486499616,138.110207702456" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="152.92415413481,5,16,16"
+              BoundingBox="0.715824324980801,91.612968374737,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="Only proceed if a non-null&#xA;File Format Code is retrieved"
+          Text="Only proceeds further if agency key is greater than zero and file format is not null"
           ParentId="Package\Recurse Through Received Folders"
-          Size="184.666666666667,50"
+          Size="678.666666666667,46"
           Id="320cb9e6-2eb2-4636-865c-58d2d0fd4a20"
-          TopLeft="355.733340644837,113.866670799256">
+          TopLeft="231.08056472453,342.450000045201">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo
               Family="Tahoma"
-              Size="10.800000190734863"
-              Color="#FF000000"
-              Weight="Bold">
+              Size="18"
+              Color="#FF000000">
               <mssge:FontInfo.TextDecorations>
                 <av:TextDecorationCollection />
               </mssge:FontInfo.TextDecorations>
@@ -1502,9 +2317,128 @@
           ParentId="Package\Recurse Through Received Folders"
           Size="574.666666666667,37.3333333333334"
           Id="a5721d6e-0702-4a5e-b2ba-3046cdb8355a"
-          TopLeft="113.333330551783,475.99999550581">
+          TopLeft="407.777770608663,968.555542253786">
           <AnnotationLayout.FontInfo>
             <mssge:FontInfo>
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Resets variables at the beginning of the loop in order to prevent conflicts"
+          ParentId="Package\Recurse Through Received Folders"
+          Size="609.333333333334,46"
+          Id="34cd5e85-0316-4dc1-82e6-307e1283e12b"
+          TopLeft="735.166653069357,26.3888861639632">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Gets information about the file including folder branch, created/modified times, hash, guid, and file name for archiving"
+          ParentId="Package\Recurse Through Received Folders"
+          Size="970.666666666667,46"
+          Id="bffbd717-c0aa-4367-8135-4a3bcbebbd2d"
+          TopLeft="233.654197282326,215.683707614706">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Using the folder branch, identifies the agency this file belongs to and returns the agency key and file header row"
+          ParentId="Package\Recurse Through Received Folders"
+          Size="924,46"
+          Id="edcc88dc-8795-41d0-a821-42a51ea0b9fa"
+          TopLeft="232.265308414133,280.76704010215">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Only proceeds further if the current file extension is .xls or .xlsx"
+          ParentId="Package\Recurse Through Received Folders"
+          Size="534,46"
+          Id="d7addaa8-36d4-466e-95b0-8fe595e4b8fe"
+          TopLeft="234.333329856396,155.944440893001">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Determines the file extension of the current file and loads into the @file_extension variable"
+          ParentId="Package\Recurse Through Received Folders"
+          Size="752,46"
+          Id="9540642b-b478-4797-b7f9-b9ce8ea730c9"
+          TopLeft="234.541663112119,93.8333308925232">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Inserts a record of the current file we are processing into the table dbo.agency_file."
+          ParentId="Package\Recurse Through Received Folders"
+          Size="694.666666666667,46"
+          Id="46f04ed5-4b60-40ae-b5fd-ae6891721553"
+          TopLeft="229.834752894795,407.155926731028">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="From the Get File Info step, rows are already staged in dbo.FileImportStaging.  This adds additional columns."
+          ParentId="Package\Recurse Through Received Folders"
+          Size="898.666666666667,46"
+          Id="d93382f5-45d6-4029-890f-fbee64ee0d65"
+          TopLeft="229.834752894795,473.239258882699">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
               <mssge:FontInfo.TextDecorations>
                 <av:TextDecorationCollection />
               </mssge:FontInfo.TextDecorations>
@@ -1514,36 +2448,36 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1012.66666666667,616"
-          Size="1012.66666666667,658.666666666667"
+          PanelSize="1425.33333333334,1187.33333333334"
+          Size="1425.33333333334,1230.66666666667"
           Id="Package\Recurse Through Received Folders"
-          TopLeft="177.391663581771,169.694117496913" />
+          TopLeft="37.113887894295,169.694117496913" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="596.524996915104,108.550980477955">
+          TopLeft="180.205558674303,98.4398695476444">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.2,61.1431370189582"
+              EndConnector="569.574995886659,71.2542479492686"
               Start="0,0"
-              End="87.2,53.6431370189582">
+              End="569.574995886659,63.7542479492686">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5715685094791" />
+                    End="0,31.6271239746343" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.5715685094791"
-                    Point2="0,30.5715685094791"
-                    Point3="4,30.5715685094791" />
+                    Point1="0,31.6271239746343"
+                    Point2="0,35.6271239746343"
+                    Point3="4,35.6271239746343" />
                   <mssgle:LineSegment
-                    End="83.2,30.5715685094791" />
+                    End="565.574995886659,35.6271239746343" />
                   <mssgle:CubicBezierSegment
-                    Point1="83.2,30.5715685094791"
-                    Point2="87.2,30.5715685094791"
-                    Point3="87.2,34.5715685094791" />
+                    Point1="565.574995886659,35.6271239746343"
+                    Point2="569.574995886659,35.6271239746343"
+                    Point3="569.574995886659,39.6271239746343" />
                   <mssgle:LineSegment
-                    End="87.2,53.6431370189582" />
+                    End="569.574995886659,63.7542479492686" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1552,6 +2486,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Reads the paths to search for dropped files and the paths to send rejected and accepted files from the dbo.config table"
+          ParentId="Package"
+          Size="977.333333333334,46"
+          Id="8590e15c-4a48-4c78-afde-55a8e8bb27e5"
+          TopLeft="272.569440382843,55.2777770674892">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="Processes each file found in the received folder path individually"
+          ParentId="Package"
+          Size="538.666666666667,46"
+          Id="1bfe431f-d062-47a9-98d0-457ba55117e8"
+          TopLeft="793.749988172204,116.999999457597">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1559,13 +2527,13 @@
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="192,42.6666666666667"
+          Size="NaN,NaN"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
           TopLeft="NaN,NaN" />
         <NodeLayout
-          Size="210.666666666667,42.6666666666667"
+          Size="NaN,NaN"
           Id="Package.EventHandlers[OnError]\Turn On Package Error Flag"
           TopLeft="NaN,NaN" />
         <EdgeLayout
@@ -1583,7 +2551,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1655,11 +2625,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="131.333333333334,42.6666666666667"
+          Size="NaN,NaN"
           Id="Package.EventHandlers[OnPreExecute]\Entry Point"
           TopLeft="NaN,NaN" />
         <NodeLayout
-          Size="181.333333333334,42.6666666666667"
+          Size="NaN,NaN"
           Id="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
           TopLeft="NaN,NaN" />
         <EdgeLayout
@@ -1678,7 +2648,7 @@
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,16,16"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
