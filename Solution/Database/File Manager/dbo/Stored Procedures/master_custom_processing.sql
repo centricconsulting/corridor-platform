@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE [dbo].[master_custom_processing] (@modify_process_batch_key int)
+CREATE PROCEDURE [dbo].[master_custom_processing] (@process_batch_key int)
 AS
 /*
 master_custom_processing
@@ -7,7 +7,7 @@ by Scott Stover
 Centric Consulting
 4/19/2018
 
-This procedure takes in the current modify_process_batch_key from the SSIS workflow
+This procedure takes in the current process_batch_key from the SSIS workflow
 immediately after inserting records into agency_medical record located in
 Process Agency Medical Records.dtsx.
 
@@ -22,7 +22,7 @@ All records by default have salesforce_send_ind set to 1.
 */
 
 -- Parameter validation
-If (@modify_process_batch_key IS NULL OR @modify_process_batch_key < 1)
+If (@process_batch_key IS NULL OR @process_batch_key < 1)
 	RAISERROR ('An invalid process_batch_key was received', 18 , 1)
 --   State 18 will force a failure of the stored procedure
 
@@ -49,7 +49,7 @@ DECLARE amr_exclude_procs CURSOR FOR
 		--  being processed.
 		SELECT DISTINCT agency_key
 		FROM agency_medical_record
-		WHERE modify_process_batch_key = @modify_process_batch_key
+		WHERE process_batch_key = @process_batch_key
 	)
 	-- If this value is NULL for an agency, then they do not have any custom processing and will
 	--  be skipped by design.
@@ -63,7 +63,7 @@ WHILE @@FETCH_STATUS = 0
 BEGIN
 	-- Build the custom call to the agency stored procedure.  They will always be sent
 	--  one argument - the batch_process_key
-	SET @proc_exec_sql = 'EXEC ' + @medical_record_sp_name + ' ' + CAST(@modify_process_batch_key as nvarchar(20))
+	SET @proc_exec_sql = 'EXEC ' + @medical_record_sp_name + ' ' + CAST(@process_batch_key as nvarchar(20))
 	
 	-- Execute the stored procedure and add the results (records to exclude) to the
 	--  @amr_keys_to_exclude table variable.
@@ -80,7 +80,7 @@ DEALLOCATE amr_exclude_procs
 -- Finally, we update the agency_medical_record salesforce_send_ind to 0
 --  for any records that the above procedures have indicated need to be excluded
 UPDATE agency_medical_record
-SET salesforce_send_ind = 0 WHERE
+SET salesforce_send_ind = 0, process_dtm = GETDATE() WHERE
 agency_medical_record_key IN
 (
 	SELECT agency_medical_record_key FROM @amr_keys_to_exclude
