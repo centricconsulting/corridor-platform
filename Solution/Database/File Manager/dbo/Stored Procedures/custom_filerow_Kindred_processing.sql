@@ -4,10 +4,13 @@ AS
 
 -- Get the header row index
 DECLARE @header_row_index int
-SELECT @header_row_index = row_index
-FROM agency_file_row
+SELECT @header_row_index = file_format_header_row
+FROM [file_format]
+INNER JOIN agency
+ON [file_format].file_format_code = agency.default_file_format_code
+INNER JOIN agency_file
+ON agency.agency_key = agency_file.agency_key
 WHERE agency_file_key = @agency_file_key
-AND column_header_ind = 1
 
 -- force process rows that occur before header row
 UPDATE agency_file_row
