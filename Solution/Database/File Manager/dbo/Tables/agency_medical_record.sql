@@ -30,6 +30,8 @@
     [task]                      VARCHAR (200)  NULL,
     [episode_identifier]        VARCHAR (200)  NULL,
     [salesforce_send_ind]       BIT            CONSTRAINT [DF_agency_medical_record_salesforce_send_ind] DEFAULT ((1)) NOT NULL,
+    [sfc_Agency__c]             NVARCHAR (18)  NULL,
+    [sfc_Product_Rate__c]       NVARCHAR (18)  NULL,
     [process_dtm]               DATETIME       NULL,
     [process_success_ind]       BIT            NULL,
     [process_error_message]     VARCHAR (2000) NULL,
@@ -37,6 +39,8 @@
     [process_batch_key]         INT            NOT NULL,
     CONSTRAINT [dbo_agency_medical_record_pk] PRIMARY KEY CLUSTERED ([agency_medical_record_key] ASC)
 );
+
+
 
 
 

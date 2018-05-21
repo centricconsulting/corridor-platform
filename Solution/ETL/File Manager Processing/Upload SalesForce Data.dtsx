@@ -12,8 +12,8 @@
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="567"
-  DTS:VersionGUID="{94DA5714-D373-4496-BAC1-37BC5B6B4302}">
+  DTS:VersionBuild="572"
+  DTS:VersionGUID="{FD428983-A0FA-4E22-9418-216BF7D22862}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.567</DTS:VariableValue>
+        DTS:DataType="8">1.0.572</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -371,6 +371,8 @@
 , a.stage
 , a.task
 , a.episode_identifier
+, a.sfc_Agency__c Agency__c
+, a.sfc_Product_Rate__c Product_Rate__c
 FROM
 dbo.agency_medical_record a
 INNER JOIN dbo.agency ag ON ag.agency_key = a.agency_key
@@ -720,6 +722,26 @@ AND salesforce_send_ind = 1</property>
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[agency_file_row_key]"
                       name="agency_file_row_key"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Agency__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency__c]"
+                      length="18"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Agency__c]"
+                      name="Agency__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Product_Rate__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Product_Rate__c]"
+                      length="18"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Product_Rate__c]"
+                      name="Product_Rate__c"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -881,6 +903,16 @@ AND salesforce_send_ind = 1</property>
                       refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[agency_file_row_key]"
                       dataType="i4"
                       name="agency_file_row_key" />
+                    <externalMetadataColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Agency__c" />
+                    <externalMetadataColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Product_Rate__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Product_Rate__c" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1076,6 +1108,18 @@ AND salesforce_send_ind = 1</property>
                       length="200"
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[episode_identifier]"
                       name="episode_identifier" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency__c]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency__c]"
+                      name="Agency__c" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[Product_Rate__c]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[Product_Rate__c]"
+                      name="Product_Rate__c" />
                     <outputColumn
                       refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[agency_location]"
                       codePage="1252"
@@ -1310,6 +1354,18 @@ AND salesforce_send_ind = 1</property>
                       cachedLength="200"
                       cachedName="episode_identifier"
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[episode_identifier]" />
+                    <inputColumn
+                      refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[Agency__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Agency__c"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Agency__c]" />
+                    <inputColumn
+                      refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[Product_Rate__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Product_Rate__c"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Product_Rate__c]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1740,6 +1796,20 @@ AND salesforce_send_ind = 1</property>
                       length="200"
                       lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[episode_identifier]"
                       name="episode_identifier" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[Agency__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[Agency__c]"
+                      length="18"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[Agency__c]"
+                      name="Agency__c" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[Product_Rate__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[Product_Rate__c]"
+                      length="18"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[Product_Rate__c]"
+                      name="Product_Rate__c" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1897,6 +1967,16 @@ AND salesforce_send_ind = 1</property>
                       dataType="str"
                       length="200"
                       name="episode_identifier" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[Agency__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Agency__c" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[Product_Rate__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Product_Rate__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -2818,6 +2898,20 @@ agency_medical_record_key = ?</property>
                       length="200"
                       lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[episode_identifier]"
                       name="episode_identifier" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Agency__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[Agency__c]"
+                      length="18"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Agency__c]"
+                      name="Agency__c" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Product_Rate__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[Product_Rate__c]"
+                      length="18"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Product_Rate__c]"
+                      name="Product_Rate__c" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2975,6 +3069,16 @@ agency_medical_record_key = ?</property>
                       dataType="str"
                       length="200"
                       name="episode_identifier" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[Agency__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Agency__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[Product_Rate__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Product_Rate__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -3923,7 +4027,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedDataType="wstr"
                       cachedLength="18"
                       cachedName="Product_Rate__c"
-                      lineageId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Match Output].Columns[Product_Rate__c]" />
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Product_Rate__c]" />
                     <inputColumn
                       refId="Package\Upload To SalesForce\Inject Variables.Inputs[Derived Column Input].Columns[clinician_first_name]"
                       cachedCodepage="1252"
@@ -4010,7 +4114,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,20,1252)([ISNULL](#{Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Match Output].Columns[Product_Rate__c]}) ? "Error" : "Insert")</property>
+                          name="Expression">(DT_STR,20,1252)([ISNULL](#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Product_Rate__c]}) ? "Error" : "Insert")</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -4063,363 +4167,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       refId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Upload To SalesForce\Lookup Agency from SFC"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup Agency from SFC"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
-  SUBSTRING([Id],1,18) AS Agency__c
-, CAST([Name] AS VARCHAR(200)) AS agency_location
-FROM
-sfc.DM_Agency__c</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT
-  SUBSTRING([Id],1,18) AS Agency__c
-, CAST([Name] AS VARCHAR(200)) AS agency_location
-FROM
-sfc.DM_Agency__c) [refTable]
-where [refTable].[agency_location] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Agency__c" dataType="DT_WSTR" length="18" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="agency_location" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[agency_location]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Upload To SalesForce\Lookup Agency from SFC.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Upload To SalesForce\Lookup Agency from SFC.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Upload To SalesForce\Lookup Agency from SFC.Inputs[Lookup Input].Columns[agency_location]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="agency_location"
-                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[agency_location]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">agency_location</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="IgnoreFailure"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Upload To SalesForce\Lookup Agency from SFC.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Copy Column"
-                      length="18"
-                      lineageId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]"
-                      name="Agency__c"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">Agency__c</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Upload To SalesForce\Lookup Agency from SFC.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Upload To SalesForce\Lookup Agency from SFC.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Upload To SalesForce\Lookup Product Rate from SFC"
-              componentClassID="Microsoft.Lookup"
-              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup Product Rate from SFC"
-              usesDispositions="true"
-              version="6">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the SQL statement that generates the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
-  CAST(Product_Name_for_IT__c  AS VARCHAR(200)) AS oasis_visit_type
-, Agency__c AS Agency__c
-, SUBSTRING([Id],1,18) AS Product_Rate__c
-FROM
-sfc.DM_Agency_Product_Rate__c</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                  expressionType="Notify"
-                  name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT
-  CAST(Product_Name_for_IT__c  AS VARCHAR(200)) AS oasis_visit_type
-, Agency__c AS Agency__c
-, SUBSTRING([Id],1,18) AS Product_Rate__c
-FROM
-sfc.DM_Agency_Product_Rate__c) [refTable]
-where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the type of connection used to access the reference dataset."
-                  name="ConnectionType"
-                  typeConverter="LookupConnectionType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the cache type of the lookup table."
-                  name="CacheType"
-                  typeConverter="CacheType">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                  name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                  name="NoMatchCachePercentage">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                  name="MaxMemoryUsage">25</property>
-                <property
-                  dataType="System.Int64"
-                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                  name="MaxMemoryUsage64">25</property>
-                <property
-                  dataType="System.String"
-                  description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="oasis_visit_type" dataType="DT_STR" length="200" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Agency__c" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Product_Rate__c" dataType="DT_WSTR" length="18" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                <property
-                  containsID="true"
-                  dataType="System.String"
-                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Upload To SalesForce\618:invalid};#{Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]};</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                  name="TreatDuplicateKeysAsError">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Connections[OleDbConnection]"
-                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
-                  description="Connection manager used to access lookup data."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Inputs[Lookup Input]"
-                  name="Lookup Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Inputs[Lookup Input].Columns[oasis_visit_type]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="oasis_visit_type"
-                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[oasis_visit_type]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">oasis_visit_type</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Inputs[Lookup Input].Columns[Agency__c]"
-                      cachedDataType="wstr"
-                      cachedLength="18"
-                      cachedName="Agency__c"
-                      lineageId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">Agency__c</property>
-                        <property
-                          dataType="System.Null"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Match Output]"
-                  errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="IgnoreFailure"
-                  exclusionGroup="1"
-                  name="Lookup Match Output"
-                  synchronousInputId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Match Output].Columns[Product_Rate__c]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Copy Column"
-                      length="18"
-                      lineageId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Match Output].Columns[Product_Rate__c]"
-                      name="Product_Rate__c"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">Product_Rate__c</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup No Match Output]"
-                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                  exclusionGroup="1"
-                  name="Lookup No Match Output"
-                  synchronousInputId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Inputs[Lookup Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Lookup Error Output"
-                  synchronousInputId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Inputs[Lookup Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -4609,14 +4356,14 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
                       cachedLength="18"
                       cachedName="Agency__c"
                       externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Agency__c]"
-                      lineageId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output].Columns[Agency__c]" />
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Agency__c]" />
                     <inputColumn
                       refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[Product_Rate__c]"
                       cachedDataType="wstr"
                       cachedLength="18"
                       cachedName="Product_Rate__c"
                       externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Product_Rate__c]"
-                      lineageId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Match Output].Columns[Product_Rate__c]" />
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Product_Rate__c]" />
                     <inputColumn
                       refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[assessment_date]"
                       cachedDataType="dbTimeStamp"
@@ -5390,16 +5137,6 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
               name="Insert"
               startId="Package\Upload To SalesForce\Divert Error Records.Outputs[Insert]" />
             <path
-              refId="Package\Upload To SalesForce.Paths[Lookup Match Output]"
-              endId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Upload To SalesForce\Lookup Agency from SFC.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Upload To SalesForce.Paths[Lookup Match Output1]"
-              endId="Package\Upload To SalesForce\Inject Variables.Inputs[Derived Column Input]"
-              name="Lookup Match Output"
-              startId="Package\Upload To SalesForce\Lookup Product Rate from SFC.Outputs[Lookup Match Output]" />
-            <path
               refId="Package\Upload To SalesForce.Paths[OLE DB Destination Error Output]"
               endId="Package\Upload To SalesForce\Get Error Message.Inputs[Input 0]"
               name="OLE DB Destination Error Output"
@@ -5411,7 +5148,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
               startId="Package\Upload To SalesForce\Get Error Message.Outputs[Output 0]" />
             <path
               refId="Package\Upload To SalesForce.Paths[Raw File Source Output]"
-              endId="Package\Upload To SalesForce\Lookup Agency from SFC.Inputs[Lookup Input]"
+              endId="Package\Upload To SalesForce\Inject Variables.Inputs[Derived Column Input]"
               name="Raw File Source Output"
               startId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output]" />
             <path
@@ -5811,7 +5548,7 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190.666666666667,41.3333333333334"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
@@ -5839,7 +5576,9 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6009,10 +5748,6 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           Id="Package\Update AMR\Merge Join"
           TopLeft="292,227.2" />
         <NodeLayout
-          Size="196.666666666667,41.3333333333334"
-          Id="Package\Update AMR\Inject Common Variables"
-          TopLeft="262.285717117543,318.494119320114" />
-        <NodeLayout
           Size="122.666666666667,41.3333333333334"
           Id="Package\Update AMR\AMR Sort"
           TopLeft="440.8,131.2" />
@@ -6032,6 +5767,10 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           Size="167.333333333334,41.3333333333334"
           Id="Package\Update AMR\AMR Cache Source"
           TopLeft="419.2,43.2" />
+        <NodeLayout
+          Size="196.666666666667,41.3333333333334"
+          Id="Package\Update AMR\Inject Common Variables"
+          TopLeft="262.285717117543,318.494119320114" />
         <EdgeLayout
           Id="Package\Update AMR.Paths[Sort Output1]"
           TopLeft="502.133333333333,172.533333333333">
@@ -6197,25 +5936,17 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="177.333333333334,41.3333333333334"
-          Id="Package\Upload To SalesForce\Convert and Rename"
-          TopLeft="494.920643349083,141.207841976126" />
-        <NodeLayout
           Size="164.666666666667,41.3333333333334"
           Id="Package\Upload To SalesForce\Get Error Message"
           TopLeft="287.580957155812,360.282357960341" />
         <NodeLayout
-          Size="167.333333333334,41.3333333333334"
-          Id="Package\Upload To SalesForce\Cache AMR Record"
-          TopLeft="410.768260745614,543.858823098278" />
+          Size="162.666666666667,42.6666666666667"
+          Id="Package\Upload To SalesForce\DBS Souce Cache"
+          TopLeft="271.047620189433,43.8117646658434" />
         <NodeLayout
           Size="129.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Row Count"
           TopLeft="306.158735372583,211.488886267531" />
-        <NodeLayout
-          Size="196.666666666667,41.3333333333334"
-          Id="Package\Upload To SalesForce\Lookup Agency from SFC"
-          TopLeft="325.714291261167,37.9660124150662" />
         <NodeLayout
           Size="141.333333333334,42.6666666666667"
           Id="Package\Upload To SalesForce\Target Insert"
@@ -6229,81 +5960,21 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           Id="Package\Upload To SalesForce\Union All"
           TopLeft="433.609530975868,460.420913796001" />
         <NodeLayout
-          Size="224,42.6666666666667"
-          Id="Package\Upload To SalesForce\Lookup Product Rate from SFC"
-          TopLeft="572.571438322262,41.3647052731896" />
-        <NodeLayout
           Size="164,41.3333333333334"
           Id="Package\Upload To SalesForce\Set Error Message"
           TopLeft="502.247620189433,357.458823098278" />
+        <NodeLayout
+          Size="177.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Convert and Rename"
+          TopLeft="494.920643349083,141.207841976126" />
         <NodeLayout
           Size="152,42.6666666666667"
           Id="Package\Upload To SalesForce\Inject Variables"
           TopLeft="284.028575829584,140.023529647708" />
         <NodeLayout
-          Size="162.666666666667,42.6666666666667"
-          Id="Package\Upload To SalesForce\DBS Souce Cache"
-          TopLeft="91.0476201894331,31.8117646658434" />
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Lookup Match Output1]"
-          TopLeft="684.571438322262,84.0313719398563">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-324.542862492678,55.9921577078517"
-              Start="0,0"
-              End="-324.542862492678,48.4921577078517">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.9960788539259" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.9960788539259"
-                    Point2="0,27.9960788539259"
-                    Point3="-4,27.9960788539259" />
-                  <mssgle:LineSegment
-                    End="-320.542862492678,27.9960788539259" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-320.542862492678,27.9960788539259"
-                    Point2="-324.542862492678,27.9960788539259"
-                    Point3="-324.542862492678,31.9960788539259" />
-                  <mssgle:LineSegment
-                    End="-324.542862492678,48.4921577078517" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-210.462817965089,32.9960788539259,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Lookup Match Output]"
-          TopLeft="522.380957927834,60.6653588441279">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="50.1904803944284,0"
-              Start="0,0"
-              End="42.6904803944284,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="42.6904803944284,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-26.8461465215358,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="167.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Cache AMR Record"
+          TopLeft="410.768260745614,543.858823098278" />
         <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Insert]"
           TopLeft="497.269849738296,232.877775743896">
@@ -6475,28 +6146,6 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Raw File Source Output]"
-          TopLeft="253.7142868561,55.8888885404548">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="72.0000044050672,0"
-              Start="0,0"
-              End="64.5000044050672,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="64.5000044050672,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Output 0]"
           TopLeft="369.980957155812,401.882357960341">
           <EdgeLayout.Curve>
@@ -6554,32 +6203,31 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Raw File Source Output]"
+          TopLeft="356.204764676175,86.4784313325101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.5450983151979"
+              Start="0,0"
+              End="0,46.0450983151979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.0450983151979" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Upload To SalesForce\Lookup Product Rate from SFC">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Upload To SalesForce\Target Insert">
     <Properties>
@@ -6590,29 +6238,6 @@ where [refTable].[oasis_visit_type] = ? and [refTable].[Agency__c] = ?</property
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Upload To SalesForce\Lookup Agency from SFC">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

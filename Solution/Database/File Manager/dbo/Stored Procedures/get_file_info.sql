@@ -86,12 +86,8 @@ if exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'FileImpor
 --  This will automatically pull all the columns from the named sheet
 DECLARE @StagingLoadSQL as varchar(MAX)
 
--- We always load the first 10 rows first to make sure the header row stays in order (which isn't always
---  row 1. If this were combined into one insert, it may insert the rows in a paginated/unexpected order.
-SET @StagingLoadSQL = 'SELECT TOP 10 * INTO tmp.FileImportStaging FROM ' + @linkedServerName + '...[' + @SheetName + ']'
-EXEC(@StagingLoadSQL)
-
-SET @StagingLoadSQL = 'INSERT INTO tmp.FileImportStaging SELECT * FROM ' + @linkedServerName + '...[' + @SheetName + '] EXCEPT SELECT TOP 10 * FROM ' + @linkedServerName + '...[' + @SheetName + ']'
+-- Load the rows into FileImportStaging
+SET @StagingLoadSQL = 'SELECT *, IDENTITY(INT,1,1) AS row_index, 0 as column_header_ind INTO tmp.FileImportStaging FROM ' + @linkedServerName + '...[' + @SheetName + ']'
 EXEC(@StagingLoadSQL)
 
 -- Remove the Linked Server now that it is no longer needed

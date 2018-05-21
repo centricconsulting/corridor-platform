@@ -1,8 +1,9 @@
 ﻿
-CREATE PROCEDURE [dbo].[master_custom_processing] (@process_batch_key int)
+
+CREATE PROCEDURE [dbo].[master_custom_amr_processing] (@process_batch_key int)
 AS
 /*
-master_custom_processing
+master_custom_amr_processing
 by Scott Stover
 Centric Consulting
 4/19/2018
@@ -37,7 +38,7 @@ In this section, we're going to loop through all of the agency custom processing
 procedures and add anything they return to the @amr_keys_to_exclude table variable.
 */
 DECLARE @medical_record_sp_name varchar(50) -- current stored procedure we're calling
-DECLARE @proc_exec_sql nvarchar(100) -- dynamically generated call to the stored procedure
+DECLARE @proc_exec_sql nvarchar(4000) -- dynamically generated call to the stored procedure
 
 -- Cursor through unknown list of stored procedures
 DECLARE amr_exclude_procs CURSOR FOR

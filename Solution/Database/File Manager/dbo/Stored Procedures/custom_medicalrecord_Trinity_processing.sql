@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE [dbo].[custom_Trinity_processing] (@process_batch_key int)
+CREATE PROCEDURE [dbo].[custom_medicalrecord_Trinity_processing] (@process_batch_key int)
 AS
 
 DECLARE @agency_key int

@@ -7,6 +7,6 @@
     DTS:Name="ConnectionString">@[$Project::AuditConnectionString]</DTS:PropertyExpression>
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=localhost;Initial Catalog=Audit;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=localhost;Initial Catalog=Audit_TEST;Provider=SQLNCLI11.1;Integrated Security=SSPI;Connect Timeout=60;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
