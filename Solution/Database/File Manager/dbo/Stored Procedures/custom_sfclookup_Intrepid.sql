@@ -1,7 +1,12 @@
-﻿
-
-CREATE PROCEDURE [dbo].[custom_sfclookup_Intrepid] (@agency_key as int, @process_batch_key as int)
+﻿CREATE PROCEDURE [dbo].[custom_sfclookup_Intrepid] (@agency_key as int, @process_batch_key as int)
 AS
+
+DECLARE @TrueParentAgencyID varchar(40)
+
+-- Get Salesforce Parent Agency ID
+SELECT @TrueParentAgencyID = agency_code_salesforce
+FROM agency
+WHERE agency_key = @agency_key
 
 -- Get agency code
 UPDATE agency_medical_record
@@ -12,10 +17,11 @@ ON agency_medical_record.agency_location = sfc.DM_Agency__c.[Name]
 WHERE agency_medical_record.process_batch_key = @process_batch_key
 AND agency_key = @agency_key
 AND salesforce_send_ind = 1
+AND sfc.GetTrueParentAgencyCode(sfc.DM_Agency__c.id) = @TrueParentAgencyID
 
 -- Agency error messages
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Agency Location "' + agency_location + '" in HHCP', salesforce_send_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Agency Location "' + agency_location + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
@@ -40,7 +46,7 @@ AND process_dtm IS NULL
 
 -- Product rate error messages
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Product Rate for "' + agency_location + '+' + oasis_visit_type + '" in HHCP', salesforce_send_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Product Rate for "' + agency_location + '+' + oasis_visit_type + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key

@@ -14,7 +14,7 @@ WHERE agency_file_key = @agency_file_key
 
 -- force process rows that occur before header row
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 1, create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 1, create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index <= @header_row_index
 
@@ -28,7 +28,7 @@ AND row_index = @header_row_index
 
 -- MRN
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', Invalid MRN#', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', Invalid MRN#', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND (
@@ -38,7 +38,7 @@ AND (
 
 -- Form
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Form', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Form', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND (
@@ -48,7 +48,7 @@ AND (
 
 -- Assessment Date
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Assessment Date', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Assessment Date', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND (
@@ -58,7 +58,7 @@ AND (
 
 -- Insurance
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Insurance for SOC', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Insurance for SOC', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND column06 LIKE '%Start of Care%'
@@ -69,7 +69,7 @@ AND (
 
 -- Agency
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Agency Name', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Agency Name', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND (

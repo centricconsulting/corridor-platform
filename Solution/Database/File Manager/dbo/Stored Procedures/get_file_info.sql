@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[get_file_info] (@file_path as nvarchar(1000), @received_root_folder varchar(1000))
+﻿
+CREATE PROCEDURE [dbo].[get_file_info] (@file_path as nvarchar(1000), @received_root_folder varchar(1000))
 AS
 
 /*
@@ -30,7 +31,7 @@ SET @file_path = REPLACE(@file_path, '\\', '\')
 -- Create a temporary linked server to the Excel file --
 --  A linked server allows us to pull the data without having an exact specification
 --  of source columns
-DECLARE @linkedServerName sysname = 'TempFileManagerExcelTEST'
+DECLARE @linkedServerName sysname = 'TempFileManagerExcel'
 
 -- Clean up old linked server if it's still there
 IF exists(SELECT null FROM sys.servers WHERE [name] = @linkedServerName)
@@ -51,7 +52,7 @@ contains field names.
 ImportMixedTypes=Text means it will treat any column being imported with mixed data types as text.
 
 IMEX =1 (Import Export mode) sets it to import mode.  By combining this setting with HDR=No and
-ImportMixedTypes=Text, we insure that all rows are pulled in as text.
+ImportMixedTypes=Text, we insure that all fields are pulled in as text.
 */
 
 -- Set the current user to use as a remote login for the linked server
@@ -63,10 +64,10 @@ EXEC sp_addlinkedsrvlogin @linkedServerName, 'false', @suser_sname, NULL, NULL
 
 -- Clean up temp table if it's still there
 if exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'SheetInfo' AND TABLE_SCHEMA = 'tmp')
-    drop table tmp.SheetInfo
+	drop table tmp.SheetInfo
 
 -- Pull the sheet info into the temp table from the linked server using OPENROWSET
-SELECT * INTO tmp.SheetInfo FROM OPENROWSET('SQLNCLI', 'Server=(local);Trusted_Connection=yes;','EXEC sp_tables_ex TempFileManagerExcelTEST');
+SELECT * INTO tmp.SheetInfo FROM OPENROWSET('SQLNCLI', 'Server=(local);Trusted_Connection=yes;','EXEC sp_tables_ex TempFileManagerExcel');
 
 -- We only pull the first sheet name - others will be disregarded
 DECLARE @SheetName as varchar(200)
@@ -87,6 +88,8 @@ if exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'FileImpor
 DECLARE @StagingLoadSQL as varchar(MAX)
 
 -- Load the rows into FileImportStaging
+-- Note: We add a row_index identity field and a column header indicator field in addition to all
+--  the Excel fields
 SET @StagingLoadSQL = 'SELECT *, IDENTITY(INT,1,1) AS row_index, 0 as column_header_ind INTO tmp.FileImportStaging FROM ' + @linkedServerName + '...[' + @SheetName + ']'
 EXEC(@StagingLoadSQL)
 

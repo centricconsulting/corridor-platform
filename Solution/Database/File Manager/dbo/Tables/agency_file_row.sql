@@ -47,12 +47,15 @@
     [process_success_ind]              BIT            NULL,
     [process_error_category]           VARCHAR (10)   NULL,
     [process_error_message]            VARCHAR (2000) NULL,
+    [notification_sent_ind]            BIT            CONSTRAINT [DF_agency_file_row_notification_sent_ind] DEFAULT ((1)) NOT NULL,
     [create_agency_medical_record_ind] BIT            CONSTRAINT [DF_agency_file_row_create_agency_medical_record_ind] DEFAULT ((1)) NOT NULL,
     [create_timestamp]                 DATETIME       NULL,
     [modify_timestamp]                 DATETIME       NULL,
     [process_batch_key]                INT            NULL,
     CONSTRAINT [dbo_agency_file_row_pk] PRIMARY KEY CLUSTERED ([agency_file_row_key] ASC)
 );
+
+
 
 
 

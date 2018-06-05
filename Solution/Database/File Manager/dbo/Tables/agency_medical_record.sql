@@ -35,10 +35,13 @@
     [process_dtm]               DATETIME       NULL,
     [process_success_ind]       BIT            NULL,
     [process_error_message]     VARCHAR (2000) NULL,
+    [notification_sent_ind]     BIT            CONSTRAINT [DF_agency_medical_record_notification_sent_ind] DEFAULT ((1)) NULL,
     [create_timestamp]          DATETIME       NOT NULL,
     [process_batch_key]         INT            NOT NULL,
     CONSTRAINT [dbo_agency_medical_record_pk] PRIMARY KEY CLUSTERED ([agency_medical_record_key] ASC)
 );
+
+
 
 
 

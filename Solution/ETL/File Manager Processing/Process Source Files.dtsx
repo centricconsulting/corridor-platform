@@ -12,8 +12,8 @@
   DTS:ObjectName="Process Source Files"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="605"
-  DTS:VersionGUID="{C646E748-B95D-4B06-A8DA-491D584B08A8}">
+  DTS:VersionBuild="608"
+  DTS:VersionGUID="{233AD660-1CE7-4539-B916-E13E67F0D891}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -91,7 +91,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="file_created_dtm">
       <DTS:VariableValue
-        DTS:DataType="7">3/28/2018 8:48:37 PM</DTS:VariableValue>
+        DTS:DataType="7">3/28/2018 8:48:00 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -218,7 +218,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.605</DTS:VariableValue>
+        DTS:DataType="8">1.0.608</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -275,7 +275,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
-          SQLTask:SqlStatementSource="SELECT received_folder_path, accepted_folder_path, rejected_folder_path FROM [dbo].[config] WHERE config_key = 0"
+          SQLTask:SqlStatementSource="SELECT received_folder_path, accepted_folder_path, rejected_folder_path FROM [dbo].[config] WHERE config_key = 0&#xA;-- There is only one row in dbo.config by design"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="received_folder_path"
@@ -387,42 +387,111 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <ScriptProject
-              Name="ST_72e34d651082476d932c076e29ff67c3"
+              Name="ST_52cfa1846e0f4888aac033bee4fa36a6"
               VSTAMajorVersion="14"
               VSTAMinorVersion="0"
               Language="CSharp"
               ReadOnlyVariables="User::accepted_root_folder,User::archive_file_name,User::file_path,User::file_process_success_flag,User::folder_branch,User::rejected_root_folder"
               ReadWriteVariables="User::archive_folder_path">
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
+                Name="ST_52cfa1846e0f4888aac033bee4fa36a6.csproj"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{956267b4-f387-4167-9ed0-7a8e63c65e81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_52cfa1846e0f4888aac033bee4fa36a6</RootNamespace>
+    <AssemblyName>ST_52cfa1846e0f4888aac033bee4fa36a6</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
 
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_72e34d651082476d932c076e29ff67c3")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_72e34d651082476d932c076e29ff67c3")]
-[assembly: AssemblyCopyright("Copyright @  2018")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
 
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+         <Generator>ResXFileCodeGenerator</Generator>
+         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+             <AutoGen>True</AutoGen>
+         <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+         <Generator>SettingsSingleFileGenerator</Generator>
+         <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+         <AutoGen>True</AutoGen>
+         <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+         <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask"
+                           HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}"
+                           ApplicationType="usd"
+                           Language="cs"
+                           TemplatesPath=""
+                           DebugInfoCommandLine=""
+                           DebugInfoWorkingDir=""
+                           IconImageList=""/>
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex="">
+        </Host>
+        <ProjectClient>
+            <HostIdentifier>SSIS_ST130</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -543,104 +612,34 @@ using System.Runtime.CompilerServices;
   </resheader>
 </root>]]></ProjectItem>
               <ProjectItem
-                Name="ST_72e34d651082476d932c076e29ff67c3.csproj"
-                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{11e327a8-6ce3-406a-a977-ecd5b0b1c946}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ST_72e34d651082476d932c076e29ff67c3</RootNamespace>
-    <AssemblyName>ST_72e34d651082476d932c076e29ff67c3</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
-  </PropertyGroup>
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>.\bin\Debug\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_52cfa1846e0f4888aac033bee4fa36a6.Properties.Settings.get_Default():ST_52cfa1846e0f4888aac033bee4fa36a6.Properties.Sett" +
+    "ings")]
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>false</DebugSymbols>
-    <Optimize>true</Optimize>
-    <OutputPath>.\bin\Release\</OutputPath>
-    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=13.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AppDesigner Include="Properties\" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-         <Generator>ResXFileCodeGenerator</Generator>
-         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-             <AutoGen>True</AutoGen>
-         <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-         <Generator>SettingsSingleFileGenerator</Generator>
-         <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-         <AutoGen>True</AutoGen>
-         <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="ScriptMain.cs">
-         <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-
-  <!-- Include the build rules for a C# project.-->
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
-        <ProjectProperties HostName="ScriptTask"
-                           HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}"
-                           ApplicationType="usd"
-                           Language="cs"
-                           TemplatesPath=""
-                           DebugInfoCommandLine=""
-                           DebugInfoWorkingDir=""
-                           IconImageList=""/>
-        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex="">
-        </Host>
-        <ProjectClient>
-            <HostIdentifier>SSIS_ST130</HostIdentifier>
-        </ProjectClient>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-</Project>]]></ProjectItem>
+namespace ST_52cfa1846e0f4888aac033bee4fa36a6.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
               <ProjectItem
                 Name="ScriptMain.cs"
                 Encoding="UTF8"><![CDATA[using System;
@@ -712,12 +711,12 @@ namespace ST_6dcce2eeeaad4a6cafb8c4bfaf485614
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
 	<msb:PropertyGroup>
 		<msb:Language>msBuild</msb:Language>
-		<msb:CodeName>ST_72e34d651082476d932c076e29ff67c3</msb:CodeName>
-		<msb:DisplayName>ST_72e34d651082476d932c076e29ff67c3</msb:DisplayName>
-		<msb:ProjectId>{7D068843-550E-4C85-8586-F62C63CD5C50}</msb:ProjectId>
+		<msb:CodeName>ST_52cfa1846e0f4888aac033bee4fa36a6</msb:CodeName>
+		<msb:DisplayName>ST_52cfa1846e0f4888aac033bee4fa36a6</msb:DisplayName>
+		<msb:ProjectId>{A6F84809-71DF-4654-B3C8-1FA152EC9D1B}</msb:ProjectId>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
-		<msb:Project Include="ST_72e34d651082476d932c076e29ff67c3.csproj"/>
+		<msb:Project Include="ST_52cfa1846e0f4888aac033bee4fa36a6.csproj"/>
 		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
@@ -727,34 +726,35 @@ namespace ST_6dcce2eeeaad4a6cafb8c4bfaf485614
 	</msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
 //
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_52cfa1846e0f4888aac033bee4fa36a6")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_52cfa1846e0f4888aac033bee4fa36a6")]
+[assembly: AssemblyCopyright("Copyright @  2018")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_72e34d651082476d932c076e29ff67c3.Properties.Settings.get_Default():ST_72e34d651082476d932c076e29ff67c3.Properties.Sett" +
-    "ings")]
-
-namespace ST_72e34d651082476d932c076e29ff67c3.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Settings.settings"
                 Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
@@ -775,14 +775,14 @@ namespace ST_72e34d651082476d932c076e29ff67c3.Properties {
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_72e34d651082476d932c076e29ff67c3.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_52cfa1846e0f4888aac033bee4fa36a6.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
     "rceManager")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_72e34d651082476d932c076e29ff67c3.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_52cfa1846e0f4888aac033bee4fa36a6.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
     "fo")]
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_72e34d651082476d932c076e29ff67c3.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_52cfa1846e0f4888aac033bee4fa36a6.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
     "):Void")]
 
-namespace ST_72e34d651082476d932c076e29ff67c3.Properties {
+namespace ST_52cfa1846e0f4888aac033bee4fa36a6.Properties {
     
     
     /// <summary>
@@ -810,7 +810,7 @@ namespace ST_72e34d651082476d932c076e29ff67c3.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if ((resourceMan == null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_72e34d651082476d932c076e29ff67c3.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_52cfa1846e0f4888aac033bee4fa36a6.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -833,9 +833,9 @@ namespace ST_72e34d651082476d932c076e29ff67c3.Properties {
     }
 }]]></ProjectItem>
               <BinaryItem
-                Name="ST_72e34d651082476d932c076e29ff67c3.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                Name="ST_52cfa1846e0f4888aac033bee4fa36a6.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAPtX9FoAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAApjAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKUcEFsAAAAAAAAAAOAAIiALATAAABIAAAAIAAAAAAAApjAA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAFQwAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -857,7 +857,7 @@ AQAAACEAAAACAAAAEAAAAAEAAAACAAAAAwAAAAQAAAABAAAABAAAAAEAAAABAAAAAADVAwEAAAAA
 AAYAcQK7BAYAAAO7BAYAvQGoBA8ALwUAAAYA6gFbBAYAVAJbBAYANQJbBAYA5wJbBAYAkQJbBAYA
 qgJbBAYAAQJbBAYAHAI9AwoAxQKEAwoAPAGEAwYADQQGBAYAoAGoBAYAqQUGBAYAiwTbBAYAbQRG
 BA4AcAG/Aw4A0QG/Aw4AWAExBAYAhQG7BAoArQOEAxIAcQXfABIAnADfAAYAHgQGBAYAYANSAAYA
-3gVSAAYAeQRSAAYAyQBSAAYABwEGBAYApQAGBAYAzwVbBAAAAABJAAAAAAABAAEAAQAQACYEJQA5
+3gVSAAYAeQRSAAYAyQBSAAYABwEGBAYApQAGBAYAzwVbBAAAAABJAAAAAAABAAEAAQAQACYEAQA5
 AAEAAQAAABAA4gQ+BUUAAQADAAABEAB7BT4FWQADAAcAAwEAAJQFAAA9AAQACgARABIEkQARACwB
 lQARAIwAmQAGBnsAnQBWgIQFoABWgAwBoABQIAAAAACGACwEBgABAHMhAAAAAIYYmwQGAAEAeyEA
 AAAAgxibBAYAAQCDIQAAAACTCIcEpAABAK8hAAAAAJMIFAGpAAEAtiEAAAAAkwggAa4AAQC+IQAA
@@ -868,10 +868,10 @@ AM4AQwDpAKIFSADpANgFTQD5ADgDUwDRACgDWQDBALwFAQBxAJsEBgCJAJsEBgABAbcAXgABAcsF
 ZwCRAJsEbQCxAJsEBgAIABQAhwAIABgAjAApAHMA9AAuAAsAzAAuABMA1QAuABsA9AAuACMA/QAu
 ACsAJgEuADMAJgEuADsAJgEuAEMA/QAuAEsALAEuAFMAJgEuAFsAQwFDAGMAjABJAHMA9ABhAHsA
 jABjAGsAjAAbAAMAAQAEAAMAAACLBL0AAAA0AcIAAAC0BccAAgAEAAMAAgAFAAUAAQAGAAUAAgAH
-AAcABIAAAAEAAAAwGh1KAAAAAAAAAQAAAAQAAAAAAAAAAAAAAHUAgwAAAAAADQAAAAAAAAAAAAAA
+AAcABIAAAAEAAABFGrJUAAAAAAAAJQAAAAQAAAAAAAAAAAAAAHUAgwAAAAAADQAAAAAAAAAAAAAA
 fgBlAwAAAAAEAAAAAAAAAAAAAAB1AAYEAAAAAA0AAAAAAAAAAAAAAH4AXAAAAAAAAAAAAAEAAADs
-BAAABQACAAAAAAAAU1RfNzJlMzRkNjUxMDgyNDc2ZDkzMmMwNzZlMjlmZjY3YzMAU1RfNmRjY2Uy
-ZWVlYWFkNGE2Y2FmYjhjNGJmYWY0ODU2MTQAPE1vZHVsZT4AU3lzdGVtLklPAE1pY3Jvc29mdC5T
+BAAABQACAAAAAAAAU1RfNmRjY2UyZWVlYWFkNGE2Y2FmYjhjNGJmYWY0ODU2MTQAU1RfNTJjZmEx
+ODQ2ZTBmNDg4OGFhYzAzM2JlZTRmYTM2YTYAPE1vZHVsZT4AU3lzdGVtLklPAE1pY3Jvc29mdC5T
 cWxTZXJ2ZXIuTWFuYWdlZERUUwB2YWx1ZV9fAG1zY29ybGliAGRlZmF1bHRJbnN0YW5jZQBWYXJp
 YWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBGaWxlAEdldERpcmVjdG9y
 eU5hbWUATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZQBDb21iaW5lAFR5cGUARmFpbHVy
@@ -887,14 +887,14 @@ aW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0
 eUF0dHJpYnV0ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAHZhbHVlAE1vdmUAU3lzdGVtLlJ1bnRpbWUu
 VmVyc2lvbmluZwBUb1N0cmluZwBQYXRoAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBN
 aWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAFNjcmlwdE9iamVjdE1vZGVs
-AFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF83MmUzNGQ2NTEwODI0NzZkOTMyYzA3NmUyOWZmNjdj
-My5kbGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVzb3VyY2VNYW4AQm9vbGVhbgBTY3JpcHRNYWlu
+AFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF81MmNmYTE4NDZlMGY0ODg4YWFjMDMzYmVlNGZhMzZh
+Ni5kbGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVzb3VyY2VNYW4AQm9vbGVhbgBTY3JpcHRNYWlu
 AFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZsZWN0
 aW9uAEN1bHR1cmVJbmZvAERpcmVjdG9yeUluZm8AZ2V0X1Jlc291cmNlTWFuYWdlcgAuY3RvcgAu
 Y2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMA
-U3lzdGVtLlJlc291cmNlcwBTVF83MmUzNGQ2NTEwODI0NzZkOTMyYzA3NmUyOWZmNjdjMy5Qcm9w
-ZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1RfNzJlMzRkNjUxMDgy
-NDc2ZDkzMmMwNzZlMjlmZjY3YzMuUHJvcGVydGllcwBnZXRfVmFyaWFibGVzAFNldHRpbmdzAFN1
+U3lzdGVtLlJlc291cmNlcwBTVF81MmNmYTE4NDZlMGY0ODg4YWFjMDMzYmVlNGZhMzZhNi5Qcm9w
+ZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU1RfNTJjZmExODQ2ZTBm
+NDg4OGFhYzAzM2JlZTRmYTM2YTYuUHJvcGVydGllcwBnZXRfVmFyaWFibGVzAFNldHRpbmdzAFN1
 Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAEV4aXN0cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0
 X1Rhc2tSZXN1bHQAZ2V0X0Fzc2VtYmx5AENyZWF0ZURpcmVjdG9yeQAAH1UAcwBlAHIAOgA6AGYA
 aQBsAGUAXwBwAGEAdABoAAAnVQBzAGUAcgA6ADoAZgBvAGwAZABlAHIAXwBiAHIAYQBuAGMAaAAA
@@ -902,15 +902,15 @@ L1UAcwBlAHIAOgA6AGEAcgBjAGgAaQB2AGUAXwBmAGkAbABlAF8AbgBhAG0AZQAANVUAcwBlAHIA
 OgA6AHIAZQBqAGUAYwB0AGUAZABfAHIAbwBvAHQAXwBmAG8AbABkAGUAcgAANVUAcwBlAHIAOgA6
 AGEAYwBjAGUAcAB0AGUAZABfAHIAbwBvAHQAXwBmAG8AbABkAGUAcgAAP1UAcwBlAHIAOgA6AGYA
 aQBsAGUAXwBwAHIAbwBjAGUAcwBzAF8AcwB1AGMAYwBlAHMAcwBfAGYAbABhAGcAADNVAHMAZQBy
-ADoAOgBhAHIAYwBoAGkAdgBlAF8AZgBvAGwAZABlAHIAXwBwAGEAdABoAABxUwBUAF8ANwAyAGUA
-MwA0AGQANgA1ADEAMAA4ADIANAA3ADYAZAA5ADMAMgBjADAANwA2AGUAMgA5AGYAZgA2ADcAYwAz
-AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAuLcUbpOeZ0itMdeR
-kcdUqQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQgHBg4ODg4ODgQgABJhBCAAEmUFIAESaRwD
+ADoAOgBhAHIAYwBoAGkAdgBlAF8AZgBvAGwAZABlAHIAXwBwAGEAdABoAABxUwBUAF8ANQAyAGMA
+ZgBhADEAOAA0ADYAZQAwAGYANAA4ADgAOABhAGEAYwAwADMAMwBiAGUAZQA0AGYAYQAzADYAYQA2
+AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAlvhNiJ2u5Ue/pWlz
+qOVIgAAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQgHBg4ODg4ODgQgABJhBCAAEmUFIAESaRwD
 IAAcAyAADgYAAw4ODg4EAAEODgQAAQIOBQABEnkOBQACAQ4OBCABARwIAAESgIERgIUFIAASgIkH
 IAIBDhKAiQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJJAwYSTQMGEhACBggDBhEUBAAA
 EkkEAAASTQUAAQESTQQAABIQAwAAAQQIABJJBAgAEk0ECAASEAgBAAgAAAAAAB4BAAEAVAIWV3Jh
-cE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfNzJlMzRkNjUxMDgyNDc2ZDkzMmMw
-NzZlMjlmZjY3YzMAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxOAAASQEAGi5ORVRGcmFtZXdv
+cE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfNTJjZmExODQ2ZTBmNDg4OGFhYzAz
+M2JlZTRmYTM2YTYAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxOAAASQEAGi5ORVRGcmFtZXdv
 cmssVmVyc2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0
 LjUAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1z
 Y29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49
@@ -925,24 +925,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAA
 AEgAAABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8A
-AAAAAL0E7/4AAAEAAAABAB1KMBoAAAEAHUowGj8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
+AAAAAL0E7/4AAAEAAAABALJURRoAAAEAslRFGj8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABE
 AAAAAQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8A
 bgAAAAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAw
 ADAAMAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEA
 bgB5AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAA
-AAAAUwBUAF8ANwAyAGUAMwA0AGQANgA1ADEAMAA4ADIANAA3ADYAZAA5ADMAMgBjADAANwA2AGUA
-MgA5AGYAZgA2ADcAYwAzAAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
-ADYANwAwADQALgAxADgAOQA3ADMAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
-UwBUAF8ANwAyAGUAMwA0AGQANgA1ADEAMAA4ADIANAA3ADYAZAA5ADMAMgBjADAANwA2AGUAMgA5
-AGYAZgA2ADcAYwAzAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
+AAAAUwBUAF8ANQAyAGMAZgBhADEAOAA0ADYAZQAwAGYANAA4ADgAOABhAGEAYwAwADMAMwBiAGUA
+ZQA0AGYAYQAzADYAYQA2AAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAu
+ADYANwAyADUALgAyADEANgA4ADIAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAA
+UwBUAF8ANQAyAGMAZgBhADEAOAA0ADYAZQAwAGYANAA4ADgAOABhAGEAYwAwADMAMwBiAGUAZQA0
+AGYAYQAzADYAYQA2AC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQA
 AABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAxADgAAAAqAAEAAQBMAGUAZwBhAGwAVABy
 AGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4A
-YQBtAGUAAABTAFQAXwA3ADIAZQAzADQAZAA2ADUAMQAwADgAMgA0ADcANgBkADkAMwAyAGMAMAA3
-ADYAZQAyADkAZgBmADYANwBjADMALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
-ZQAAAAAAUwBUAF8ANwAyAGUAMwA0AGQANgA1ADEAMAA4ADIANAA3ADYAZAA5ADMAMgBjADAANwA2
-AGUAMgA5AGYAZgA2ADcAYwAzAAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
-MQAuADAALgA2ADcAMAA0AC4AMQA4ADkANwAzAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
-AGUAcgBzAGkAbwBuAAAAMQAuADAALgA2ADcAMAA0AC4AMQA4ADkANwAzAAAAAAAAAAAAAAAAAAAA
+YQBtAGUAAABTAFQAXwA1ADIAYwBmAGEAMQA4ADQANgBlADAAZgA0ADgAOAA4AGEAYQBjADAAMwAz
+AGIAZQBlADQAZgBhADMANgBhADYALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0A
+ZQAAAAAAUwBUAF8ANQAyAGMAZgBhADEAOAA0ADYAZQAwAGYANAA4ADgAOABhAGEAYwAwADMAMwBi
+AGUAZQA0AGYAYQAzADYAYQA2AAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAA
+MQAuADAALgA2ADcAMgA1AC4AMgAxADYAOAAyAAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABW
+AGUAcgBzAGkAbwBuAAAAMQAuADAALgA2ADcAMgA1AC4AMgAxADYAOAAyAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1254,30 +1254,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Recurse Through Received Folders\Mark Notification Sent"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{00A6A980-7A76-404B-ADE6-DDB0C26EC961}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Mark Notification Sent"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
-              SQLTask:SqlStatementSource="UPDATE agency_file SET notification_sent_ind = 1 WHERE agency_file_key = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::agency_file_key"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\Recurse Through Received Folders\Reset File Extension"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
@@ -1322,84 +1298,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <DTS:ObjectData>
             <ExpressionTask
               Expression="@[User::file_format_header_row] = 1" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Recurse Through Received Folders\Retrieve Notification Info"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{F5967C4B-E3B0-4DE1-A988-3359ACA135BC}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Retrieve Notification Info"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
-              SQLTask:SqlStatementSource="get_File_Manager_notification ?, ?"
-              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="notification_to"
-                SQLTask:DtsVariableName="User::notification_to" />
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="notification_subject"
-                SQLTask:DtsVariableName="User::notification_subject" />
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="notification_message"
-                SQLTask:DtsVariableName="User::notification_message" />
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="send_notification"
-                SQLTask:DtsVariableName="User::send_notification_flag" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::agency_file_key"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="3"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::file_process_success_flag"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="17"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
-          DTS:refId="Package\Recurse Through Received Folders\Send Notification Email"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{003CB079-FF5D-405F-BC2C-667693182235}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Send Notification Email"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
-              SQLTask:SqlStatementSource="EXEC send_File_Manager_notification ?, ?, ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="0"
-                SQLTask:DtsVariableName="User::notification_message"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="1"
-                SQLTask:DtsVariableName="User::notification_to"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-              <SQLTask:ParameterBinding
-                SQLTask:ParameterName="2"
-                SQLTask:DtsVariableName="User::notification_subject"
-                SQLTask:ParameterDirection="Input"
-                SQLTask:DataType="129"
-                SQLTask:ParameterSize="-1" />
-            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -1523,23 +1421,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\Recurse Through Received Folders\Custom Row Processing" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 4]"
-          DTS:CreationName=""
-          DTS:DTSID="{ABCCFC12-8428-4A41-A1C5-840FA3DBCC7E}"
-          DTS:From="Package\Recurse Through Received Folders\Update Agency File For Archive"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 4"
-          DTS:To="Package\Recurse Through Received Folders\Retrieve Notification Info" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 5]"
-          DTS:CreationName=""
-          DTS:DTSID="{B7B1DB31-18B4-4E99-8872-694C4E6A6256}"
-          DTS:EvalOp="1"
-          DTS:Expression="@[User::send_notification_flag] == 1"
-          DTS:From="Package\Recurse Through Received Folders\Retrieve Notification Info"
-          DTS:ObjectName="Constraint 5"
-          DTS:To="Package\Recurse Through Received Folders\Send Notification Email" />
-        <DTS:PrecedenceConstraint
           DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 6]"
           DTS:CreationName=""
           DTS:DTSID="{3FA1E839-44A4-453B-998F-07C5C800BC0D}"
@@ -1555,22 +1436,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 7"
           DTS:To="Package\Recurse Through Received Folders\Get File Extension" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 8]"
-          DTS:CreationName=""
-          DTS:DTSID="{35279926-002C-433F-BC33-EF01C6771948}"
-          DTS:From="Package\Recurse Through Received Folders\Send Notification Email"
-          DTS:ObjectName="Constraint 8"
-          DTS:To="Package\Recurse Through Received Folders\Mark Notification Sent" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 9]"
-          DTS:CreationName=""
-          DTS:DTSID="{91EBBF73-10E9-4C9B-B63C-34ED3DDDDF31}"
-          DTS:EvalOp="1"
-          DTS:Expression="@[User::send_notification_flag] != 1"
-          DTS:From="Package\Recurse Through Received Folders\Retrieve Notification Info"
-          DTS:ObjectName="Constraint 9"
-          DTS:To="Package\Recurse Through Received Folders\Mark Notification Sent" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -1915,11 +1780,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Load Agency File Rows"
-          TopLeft="33.0833301978811,552.361102994448" />
-        <NodeLayout
-          Size="184,42.6666666666667"
-          Id="Package\Recurse Through Received Folders\Mark Notification Sent"
-          TopLeft="70.4330713779199,1040.07258024444" />
+          TopLeft="33.0833301978811,487.361104156739" />
         <NodeLayout
           Size="173.333333333334,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Reset File Extension"
@@ -1927,23 +1788,37 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="189.333333333334,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Reset File Format Code"
-          TopLeft="277.064681936773,24.1836637198776" />
+          TopLeft="277.064681936773,23.1003304059158" />
         <NodeLayout
           Size="185.333333333334,42.6666666666667"
           Id="Package\Recurse Through Received Folders\Reset File Header Row"
-          TopLeft="511.249992381782,27.5777775349881" />
-        <NodeLayout
-          Size="196.666666666667,42.6666666666667"
-          Id="Package\Recurse Through Received Folders\Retrieve Notification Info"
-          TopLeft="17.3347560612917,851.795705875318" />
-        <NodeLayout
-          Size="188,42.6666666666667"
-          Id="Package\Recurse Through Received Folders\Send Notification Email"
-          TopLeft="190.722216737767,915.999986414115" />
+          TopLeft="511.249992381782,26.4944442210263" />
         <NodeLayout
           Size="168,41.3333333333334"
           Id="Package\Recurse Through Received Folders\Update Agency File For Archive"
           TopLeft="34.8163043398296,788.228886456972" />
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint]"
+          TopLeft="129.474817383719,451.512599866916">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,35.8485042898226"
+              Start="0,0"
+              End="0,28.3485042898226">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3485042898226" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 1]"
           TopLeft="128.627432109583,326.671800596427">
@@ -2016,7 +1891,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 13]"
-          TopLeft="235.459755393844,45.1281319003716">
+          TopLeft="235.459755393844,44.5864652433907">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -2060,18 +1935,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 2]"
-          TopLeft="466.398015270106,47.2140539607662">
+          TopLeft="466.398015270106,46.1307206468043">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="44.8519771116757,0"
+              EndConnector="44.8519771116756,0"
               Start="0,0"
-              End="37.3519771116757,0">
+              End="37.3519771116756,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="37.3519771116757,0" />
+                    End="37.3519771116756,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2082,88 +1957,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 3]"
-          TopLeft="125.513886834805,595.027769661115">
+          TopLeft="125.513886834805,530.027770823406">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,39.0166698552179"
+              EndConnector="0,104.016668692926"
               Start="0,0"
-              End="0,31.5166698552179">
+              End="0,96.5166686929264">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5166698552179" />
+                    End="0,96.5166686929264" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 4]"
-          TopLeft="202.81630433983,808.895553123638">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="11.1851183881288,58.4557083072355"
-              Start="0,0"
-              End="18.6851183881288,58.4557083072355">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="29.6851183881288,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.6851183881288,0"
-                    Point2="33.6851183881288,0"
-                    Point3="33.6851183881288,4" />
-                  <mssgle:LineSegment
-                    End="33.6851183881288,54.4557083072355" />
-                  <mssgle:CubicBezierSegment
-                    Point1="33.6851183881288,54.4557083072355"
-                    Point2="33.6851183881288,58.4557083072355"
-                    Point3="29.6851183881288,58.4557083072355" />
-                  <mssgle:LineSegment
-                    End="18.6851183881288,58.4557083072355" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 5]"
-          TopLeft="214.001422727958,873.129039208652">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="70.7207940098089,42.870947205463"
-              Start="0,0"
-              End="70.7207940098089,35.370947205463">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="66.7207940098089,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="66.7207940098089,0"
-                    Point2="70.7207940098089,0"
-                    Point3="70.7207940098089,4" />
-                  <mssgle:LineSegment
-                    End="70.7207940098089,35.370947205463" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="62.7207940098089,-22,16,16"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -2190,112 +2001,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 7]"
-          TopLeft="603.916659048449,70.2444442016548">
+          TopLeft="603.916659048449,69.1611108876929">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-472.791660336778,26.2555536674792"
+              EndConnector="-472.791660336778,27.3388869814411"
               Start="0,0"
-              End="-472.791660336778,18.7555536674792">
+              End="-472.791660336778,19.8388869814411">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.12777683373962" />
+                    End="0,9.66944349072054" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.12777683373962"
-                    Point2="0,13.1277768337396"
-                    Point3="-4,13.1277768337396" />
+                    Point1="0,9.66944349072054"
+                    Point2="0,13.6694434907205"
+                    Point3="-4,13.6694434907205" />
                   <mssgle:LineSegment
-                    End="-468.791660336778,13.1277768337396" />
+                    End="-468.791660336778,13.6694434907205" />
                   <mssgle:CubicBezierSegment
-                    Point1="-468.791660336778,13.1277768337396"
-                    Point2="-472.791660336778,13.1277768337396"
-                    Point3="-472.791660336778,17.1277768337396" />
+                    Point1="-468.791660336778,13.6694434907205"
+                    Point2="-472.791660336778,13.6694434907205"
+                    Point3="-472.791660336778,17.6694434907205" />
                   <mssgle:LineSegment
-                    End="-472.791660336778,18.7555536674792" />
+                    End="-472.791660336778,19.8388869814411" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 8]"
-          TopLeft="284.722216737767,958.666653080781">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-92.9558120265139,81.40592716366"
-              Start="0,0"
-              End="-92.9558120265139,73.90592716366">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.4224911576943" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,44.4224911576943"
-                    Point2="0,48.4224911576943"
-                    Point3="-4,48.4224911576943" />
-                  <mssgle:LineSegment
-                    End="-88.9558120265139,48.4224911576943" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-88.9558120265139,48.4224911576943"
-                    Point2="-92.9558120265139,48.4224911576943"
-                    Point3="-92.9558120265139,52.4224911576943" />
-                  <mssgle:LineSegment
-                    End="-92.9558120265139,73.90592716366" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 9]"
-          TopLeft="115.668089394625,894.462372541985">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="17.4316486499616,145.610207702456"
-              Start="0,0"
-              End="17.4316486499616,138.110207702456">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,82.612968374737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,82.612968374737"
-                    Point2="0,86.612968374737"
-                    Point3="4,86.612968374737" />
-                  <mssgle:LineSegment
-                    End="13.4316486499616,86.612968374737" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.4316486499616,86.612968374737"
-                    Point2="17.4316486499616,86.612968374737"
-                    Point3="17.4316486499616,90.612968374737" />
-                  <mssgle:LineSegment
-                    End="17.4316486499616,138.110207702456" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0.715824324980801,91.612968374737,16,16"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
-          Text="Only proceeds further if agency key is greater than zero and file format is not null"
+          Text="Only proceeds further if we find an agency - agency key is greater than zero and file format is not null"
           ParentId="Package\Recurse Through Received Folders"
-          Size="678.666666666667,46"
+          Size="841.333333333334,46"
           Id="320cb9e6-2eb2-4636-865c-58d2d0fd4a20"
           TopLeft="231.08056472453,342.450000045201">
           <AnnotationLayout.FontInfo>
@@ -2303,20 +2044,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
               Family="Tahoma"
               Size="18"
               Color="#FF000000">
-              <mssge:FontInfo.TextDecorations>
-                <av:TextDecorationCollection />
-              </mssge:FontInfo.TextDecorations>
-            </mssge:FontInfo>
-          </AnnotationLayout.FontInfo>
-        </AnnotationLayout>
-        <AnnotationLayout
-          Text="If notifications are disabled for a particular file or situation, they are not sent, but they are still marked as &quot;Sent&quot;"
-          ParentId="Package\Recurse Through Received Folders"
-          Size="574.666666666667,37.3333333333334"
-          Id="a5721d6e-0702-4a5e-b2ba-3046cdb8355a"
-          TopLeft="407.777770608663,968.555542253786">
-          <AnnotationLayout.FontInfo>
-            <mssge:FontInfo>
               <mssge:FontInfo.TextDecorations>
                 <av:TextDecorationCollection />
               </mssge:FontInfo.TextDecorations>
@@ -2425,28 +2152,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
-        <EdgeLayout
-          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint]"
-          TopLeft="129.474817383719,451.512599866916">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,100.848503127532"
-              Start="0,0"
-              End="0,93.3485031275316">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,93.3485031275316" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <AnnotationLayout
+          Text="Inserts the contents of the current file into the table dbo.agency_file_rows.  All data gets brought in as text."
+          ParentId="Package\Recurse Through Received Folders"
+          Size="889.333333333334,46"
+          Id="5c676f0d-caa8-412c-ae6f-cc9ca9702a0a"
+          TopLeft="230.87641954594,480.822592080432">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="18"
+              Color="#FF000000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"

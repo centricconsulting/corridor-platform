@@ -14,7 +14,7 @@ AND salesforce_send_ind = 1
 
 -- Agency error messages
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Agency Location "' + agency_location + '" in HHCP', salesforce_send_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Agency Location "' + agency_location + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
@@ -39,7 +39,7 @@ AND process_dtm IS NULL
 
 -- Product rate error messages
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Product Rate for "' + agency_location + '+' + oasis_visit_type + '" in HHCP', salesforce_send_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Product Rate for "' + agency_location + '+' + oasis_visit_type + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key

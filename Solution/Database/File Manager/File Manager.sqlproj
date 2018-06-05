@@ -67,6 +67,7 @@
     <Folder Include="sfc\Tables" />
     <Folder Include="tmp\" />
     <Folder Include="tmp\Tables\" />
+    <Folder Include="sfc\Functions\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\agency_file.sql" />
@@ -100,14 +101,15 @@
     <Build Include="dbo\Stored Procedures\master_custom_afr_processing.sql" />
     <Build Include="dbo\Stored Procedures\custom_sfclookup_Trinity.sql" />
     <Build Include="dbo\Stored Procedures\custom_sfclookup_Kindred.sql" />
-    <Build Include="dbo\Stored Procedures\custom_medicalrecord_Trinity_processing.sql" />
-    <Build Include="dbo\Stored Procedures\custom_medicalrecord_Intrepid_processing.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_Trinity_processing.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_Kindred_processing.sql" />
     <Build Include="sfc\Tables\Payor_to_product_lookup__c.sql" />
     <Build Include="sfc\Tables\Form_to_product_lookup__c.sql" />
     <Build Include="dbo\Stored Procedures\custom_sfclookup_Intrepid.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_Intrepid_processing.sql" />
+    <Build Include="sfc\Functions\GetTrueParentNameCode.sql" />
+    <Build Include="sfc\Functions\GetTrueParentAgencyCode.sql" />
+    <Build Include="dbo\Stored Procedures\send_batch_file_notification_prototype.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />

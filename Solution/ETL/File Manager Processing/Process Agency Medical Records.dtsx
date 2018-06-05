@@ -12,8 +12,8 @@
   DTS:ObjectName="Process Agency Medical Records"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="661"
-  DTS:VersionGUID="{45F40B5C-31FC-4EE4-96A6-2C1D2061C53A}">
+  DTS:VersionBuild="662"
+  DTS:VersionGUID="{5E1BA027-9EE2-4C60-BFD1-D9D0A1822410}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -120,7 +120,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.661</DTS:VariableValue>
+        DTS:DataType="8">1.0.662</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -6474,7 +6474,7 @@ agency_file_row_key = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="192,42.6666666666667"
           Id="Package\Flag Records to Exclude"
@@ -6496,7 +6496,7 @@ agency_file_row_key = ?</property>
           TopLeft="207.291665825372,64.5333340152105">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,54.5833334301905"
               Start="0,0"
               End="0,47.0833334301905">
@@ -6529,15 +6529,15 @@ agency_file_row_key = ?</property>
           TopLeft="381.519841398791,536.349996989667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,63.6111110465395"
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.6111110465393"
               Start="0,0"
-              End="0,56.1111110465395">
+              End="0,56.1111110465393">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.1111110465395" />
+                    End="0,56.1111110465393" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6551,7 +6551,7 @@ agency_file_row_key = ?</property>
           TopLeft="379.297620004411,452.099996660351">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,41.583333662649"
               Start="0,0"
               End="0,34.083333662649">
@@ -6573,7 +6573,7 @@ agency_file_row_key = ?</property>
           TopLeft="375.854163430321,155.166665155689">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,31.5999981713293"
               Start="0,0"
               End="0,24.0999981713293">
@@ -6597,7 +6597,7 @@ agency_file_row_key = ?</property>
     design-time-name="Package.EventHandlers[OnError]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="NaN,NaN"
           Id="Package.EventHandlers[OnError]\Log Process Batch Error"
@@ -6611,12 +6611,12 @@ agency_file_row_key = ?</property>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -6633,7 +6633,7 @@ agency_file_row_key = ?</property>
     design-time-name="Package.EventHandlers[OnPostExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="NaN,NaN"
           Id="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
@@ -6651,12 +6651,12 @@ agency_file_row_key = ?</property>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -6671,12 +6671,12 @@ agency_file_row_key = ?</property>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -6693,7 +6693,7 @@ agency_file_row_key = ?</property>
     design-time-name="Package.EventHandlers[OnPreExecute]">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="NaN,NaN"
           Id="Package.EventHandlers[OnPreExecute]\Entry Point"
@@ -6707,12 +6707,12 @@ agency_file_row_key = ?</property>
           TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
+              EndConnector="{assembly:Null}"
               Start="0,0"
               End="0,0">
               <mssgle:Curve.Segments>
-                <x:Null />
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -6729,7 +6729,7 @@ agency_file_row_key = ?</property>
     design-time-name="Package\Loop Through Each File\Load AMR, Prepare AFR Update">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169.333333333334,42.6666666666667"
           Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Add Error Category"
@@ -6767,7 +6767,7 @@ agency_file_row_key = ?</property>
           TopLeft="443.239000797068,438.026051707268">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,37.0295011750192"
               Start="0,0"
               End="0,29.5295011750192">
@@ -6791,7 +6791,7 @@ agency_file_row_key = ?</property>
           TopLeft="312.489799809525,172.491878008862">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="12.8018632715498,32.1747853259054"
               Start="0,0"
               End="12.8018632715498,24.6747853259054">
@@ -6817,7 +6817,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6825,7 +6827,7 @@ agency_file_row_key = ?</property>
           TopLeft="310.115650217086,81.338935699862">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,48.486275642333"
               Start="0,0"
               End="0,40.986275642333">
@@ -6839,7 +6841,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6847,7 +6851,7 @@ agency_file_row_key = ?</property>
           TopLeft="286.002555353408,332.801261988262">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-159.126704459963,71.9592450317384"
               Start="0,0"
               End="-159.126704459963,64.4592450317384">
@@ -6873,7 +6877,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6881,7 +6887,7 @@ agency_file_row_key = ?</property>
           TopLeft="323.335888686742,332.801261988262">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="118.383843166473,62.5581230523392"
               Start="0,0"
               End="118.383843166473,55.0581230523392">
@@ -6907,7 +6913,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6915,7 +6923,7 @@ agency_file_row_key = ?</property>
           TopLeft="325.291663081075,247.333330001434">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-20.6224410609998,43.4679319868283"
               Start="0,0"
               End="-20.6224410609998,35.9679319868283">
@@ -6941,7 +6949,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6949,7 +6959,7 @@ agency_file_row_key = ?</property>
           TopLeft="444.758269740922,517.722219548954">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="12.8528361754788,76.5451959133501"
               Start="0,0"
               End="12.8528361754788,69.0451959133501">
@@ -6975,7 +6985,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7006,7 +7018,7 @@ agency_file_row_key = ?</property>
     design-time-name="Package\Loop Through Each File\Update AFR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="193.333333333334,42.6666666666667"
           Id="Package\Loop Through Each File\Update AFR\Update Agency File Row"
@@ -7020,7 +7032,7 @@ agency_file_row_key = ?</property>
           TopLeft="283.409523846017,137.14117697465">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,62.3294114215153"
               Start="0,0"
               End="0,54.8294114215153">
@@ -7034,7 +7046,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

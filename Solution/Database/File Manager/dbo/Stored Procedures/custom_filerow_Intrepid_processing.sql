@@ -16,7 +16,7 @@ WHERE agency_file_key = @agency_file_key
 
 -- MRN
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', Invalid MRN#', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', Invalid MRN#', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND (
@@ -26,7 +26,7 @@ AND (
 
 -- OASIS Visit Type
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Invalid OASIS Visit Type', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Invalid OASIS Visit Type', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND (
@@ -37,7 +37,7 @@ AND (
 
 -- Assessment Date / Schedule Date
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Invalid Assessment / Schedule Date', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Invalid Assessment / Schedule Date', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND (
@@ -47,18 +47,28 @@ AND (
 
 -- Status
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Invalid Status', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Invalid Status', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND (
 		(column06 IS NULL OR RTRIM(column06) = '')
 	)
 
+-- Agency Location
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Invalid Agency Location', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND row_index > @header_row_index
+AND (
+		(column10 IS NULL OR RTRIM(column10) = '')
+	)
+
+
 -- update new columns
 
 -- Custom OASIS Visit Type Validation
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Record rejected - Not RESUMPTION or START OF CARE', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Record rejected - Not RESUMPTION or START OF CARE', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND column04 NOT LIKE '%Resumption%'
@@ -66,7 +76,7 @@ AND column04 NOT LIKE '%Start of care%'
 
 -- Custom Status Validation
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Record Rejected - Not "Submitted with Signature" or "Submitted to Case Manager"', create_agency_medical_record_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Record Rejected - Not "Submitted with Signature" or "Submitted to Case Manager"', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND row_index > @header_row_index
 AND column06 != 'Submitted with Signature'
