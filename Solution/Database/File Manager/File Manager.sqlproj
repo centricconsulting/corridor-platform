@@ -110,6 +110,10 @@
     <Build Include="sfc\Functions\GetTrueParentNameCode.sql" />
     <Build Include="sfc\Functions\GetTrueParentAgencyCode.sql" />
     <Build Include="dbo\Stored Procedures\send_batch_file_notification_prototype.sql" />
+    <Build Include="sfc\Tables\Agency_ETL_variables__c.sql" />
+    <Build Include="dbo\Stored Procedures\custom_sfclookup_LHC.sql" />
+    <Build Include="dbo\Stored Procedures\custom_filerow_LHC_processing.sql" />
+    <Build Include="dbo\Stored Procedures\custom_filerow_AlternateSolutions_processing.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />

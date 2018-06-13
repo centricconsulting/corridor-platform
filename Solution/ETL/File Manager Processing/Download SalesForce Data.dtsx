@@ -12,8 +12,8 @@
   DTS:ObjectName="Download SalesForce Data"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="512"
-  DTS:VersionGUID="{0D6090CD-5F1B-4201-AACE-CCCE370B080A}">
+  DTS:VersionBuild="514"
+  DTS:VersionGUID="{650C7045-25CA-43EE-BD99-66C1D3701A9D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -218,7 +218,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.512</DTS:VariableValue>
+        DTS:DataType="8">1.0.514</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -261,6 +261,549 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Agency_ETL_variables__c"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{a1612ea8-5f87-46e8-8825-f0aeb5738812}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Agency_ETL_variables__c"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Agency_ETL_variables__c\Inject Variables"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Inject Variables"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Agency_ETL_variables__c\Inject Variables.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Load Agency_ETL_variables__c\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Output].Columns[process_batch_key]"
+                      name="process_batch_key"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::process_batch_key]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::process_batch_key]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Output].Columns[create_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Output].Columns[create_timestamp]"
+                      name="create_timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Output].Columns[modify_timestamp]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Output].Columns[modify_timestamp]"
+                      name="modify_timestamp"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Load Agency_ETL_variables__c\Inject Variables.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Agency_ETL_variables__c\Insert Target"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Target"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[sfc].[Agency_ETL_variables__c]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Agency_ETL_variables__c\Insert Target.Connections[OleDbConnection]"
+                  connectionManagerID="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[File Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Id]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Agency_Location__c]"
+                      cachedDataType="wstr"
+                      cachedLength="18"
+                      cachedName="Agency_Location__c"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Agency_Location__c]"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location__c]" />
+                    <inputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Agency_Location_ID__c]"
+                      cachedDataType="wstr"
+                      cachedLength="1300"
+                      cachedName="Agency_Location_ID__c"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Agency_Location_ID__c]"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location_ID__c]" />
+                    <inputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].Columns[Agency_Location_Name__c]"
+                      cachedDataType="wstr"
+                      cachedLength="1300"
+                      cachedName="Agency_Location_Name__c"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Agency_Location_Name__c]"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location_Name__c]" />
+                    <inputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].Columns[General_Product_Type__c]"
+                      cachedDataType="wstr"
+                      cachedLength="128"
+                      cachedName="General_Product_Type__c"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[General_Product_Type__c]"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[General_Product_Type__c]" />
+                    <inputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].Columns[ROC_RECERT_Process__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="ROC_RECERT_Process__c"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[ROC_RECERT_Process__c]"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[ROC_RECERT_Process__c]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Agency_Location__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Agency_Location__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Agency_Location_ID__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Agency_Location_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[Agency_Location_Name__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Agency_Location_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[General_Product_Type__c]"
+                      dataType="wstr"
+                      length="128"
+                      name="General_Product_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input].ExternalColumns[ROC_RECERT_Process__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="ROC_RECERT_Process__c" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Agency_ETL_variables__c\Insert Target.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Agency_ETL_variables__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Agency_ETL_variables__c\Insert Target.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Agency_ETL_variables__c\Source Query"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source Query"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+Agency_Location__c,
+Agency_Location_ID__c,
+Agency_Location_Name__c,
+General_Product_Type__c,
+Id,
+ROC_RECERT_Process__c
+FROM Agency_ETL_variables__c</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Agency_ETL_variables__c\Source Query.Connections[OleDbConnection]"
+                  connectionManagerID="{13085783-CC5A-4A52-B2C1-52C06D9DB05D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SalesForce]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      length="18"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency_Location__c]"
+                      length="18"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location__c]"
+                      name="Agency_Location__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location_ID__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency_Location_ID__c]"
+                      length="1300"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location_ID__c]"
+                      name="Agency_Location_ID__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location_Name__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency_Location_Name__c]"
+                      length="1300"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[Agency_Location_Name__c]"
+                      name="Agency_Location_Name__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[General_Product_Type__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[General_Product_Type__c]"
+                      length="128"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[General_Product_Type__c]"
+                      name="General_Product_Type__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[ROC_RECERT_Process__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[ROC_RECERT_Process__c]"
+                      length="255"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].Columns[ROC_RECERT_Process__c]"
+                      name="ROC_RECERT_Process__c"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency_Location__c]"
+                      dataType="wstr"
+                      length="18"
+                      name="Agency_Location__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency_Location_ID__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Agency_Location_ID__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Agency_Location_Name__c]"
+                      dataType="wstr"
+                      length="1300"
+                      name="Agency_Location_Name__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[General_Product_Type__c]"
+                      dataType="wstr"
+                      length="128"
+                      name="General_Product_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output].ExternalColumns[ROC_RECERT_Process__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="ROC_RECERT_Process__c" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency_Location__c]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency_Location__c]"
+                      name="Agency_Location__c" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency_Location_ID__c]"
+                      dataType="wstr"
+                      length="1300"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency_Location_ID__c]"
+                      name="Agency_Location_ID__c" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency_Location_Name__c]"
+                      dataType="wstr"
+                      length="1300"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Agency_Location_Name__c]"
+                      name="Agency_Location_Name__c" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[General_Product_Type__c]"
+                      dataType="wstr"
+                      length="128"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[General_Product_Type__c]"
+                      name="General_Product_Type__c" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="wstr"
+                      length="18"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ROC_RECERT_Process__c]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ROC_RECERT_Process__c]"
+                      name="ROC_RECERT_Process__c" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Agency_ETL_variables__c.Paths[Derived Column Output]"
+              endId="Package\Load Agency_ETL_variables__c\Insert Target.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Load Agency_ETL_variables__c\Inject Variables.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Load Agency_ETL_variables__c.Paths[OLE DB Source Output]"
+              endId="Package\Load Agency_ETL_variables__c\Inject Variables.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Agency_ETL_variables__c\Source Query.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load DM_Agency_Product_Rate__c"
       DTS:CreationName="Microsoft.Pipeline"
@@ -2861,6 +3404,22 @@ FROM Payor_to_product_lookup__c</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Truncate Agency_ETL_variables__c"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{87da1aa8-5ed2-41fd-ab1e-310af5e00027}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Agency_ETL_variables__c"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE sfc.Agency_ETL_variables__c" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Truncate DM_Agency_Product_Rate__c"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -2958,6 +3517,14 @@ FROM Payor_to_product_lookup__c</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Load Form_to_product_lookup__c" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{6F0B93F4-BECF-4A82-AAF4-E19A8E318A52}"
+      DTS:From="Package\Truncate Agency_ETL_variables__c"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Load Agency_ETL_variables__c" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -3260,6 +3827,10 @@ FROM Payor_to_product_lookup__c</property>
           Id="Package\Load DM_Agency_Product_Rate__c"
           TopLeft="376.571434984402,156.000002187841" />
         <NodeLayout
+          Size="240,42.6666666666667"
+          Id="Package\Load Form_to_product_lookup__c"
+          TopLeft="1027.19046467938,151.956870174482" />
+        <NodeLayout
           Size="242.666666666667,42.6666666666667"
           Id="Package\Load Payor_to_product_lookup__c"
           TopLeft="689.357136635604,156.290203430329" />
@@ -3271,6 +3842,10 @@ FROM Payor_to_product_lookup__c</property>
           Size="264,41.3333333333334"
           Id="Package\Truncate DM_Agency_Product_Rate__c"
           TopLeft="370.285720591643,53.2235301582046" />
+        <NodeLayout
+          Size="258.666666666667,42.6666666666667"
+          Id="Package\Truncate Form_to_product_lookup__c"
+          TopLeft="1014.39879794788,52.2519666978529" />
         <NodeLayout
           Size="228,42.6666666666667"
           Id="Package\Truncate Payor_to_product_lookup__c"
@@ -3341,14 +3916,6 @@ FROM Payor_to_product_lookup__c</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="240,42.6666666666667"
-          Id="Package\Load Form_to_product_lookup__c"
-          TopLeft="1027.19046467938,151.956870174482" />
-        <NodeLayout
-          Size="258.666666666667,42.6666666666667"
-          Id="Package\Truncate Form_to_product_lookup__c"
-          TopLeft="1014.39879794788,52.2519666978529" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="1145.46129798029,94.9186333645196">
@@ -3363,6 +3930,36 @@ FROM Payor_to_product_lookup__c</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,49.5382368099624" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="245.333333333334,42.6666666666667"
+          Id="Package\Truncate Agency_ETL_variables__c"
+          TopLeft="1329.96823794542,56.9464110583541" />
+        <NodeLayout
+          Size="226.666666666667,42.6666666666667"
+          Id="Package\Load Agency_ETL_variables__c"
+          TopLeft="1337.20434920415,146.540203604673" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="1451.58629357478,99.6130777250208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.9271258796521"
+              Start="0,0"
+              End="0,39.4271258796521">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.4271258796521" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3693,6 +4290,91 @@ FROM Payor_to_product_lookup__c</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Load Form_to_product_lookup__c">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142.666666666667,41.3333333333334"
+          Id="Package\Load Form_to_product_lookup__c\Source Query"
+          TopLeft="46.2857150739551,26.2379088647088" />
+        <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\Load Form_to_product_lookup__c\Insert Target"
+          TopLeft="47.4285722362754,223.226146921512" />
+        <NodeLayout
+          Size="151.333333333334,41.3333333333334"
+          Id="Package\Load Form_to_product_lookup__c\Inject Variables"
+          TopLeft="43.4285721681556,124.256210892973" />
+        <EdgeLayout
+          Id="Package\Load Form_to_product_lookup__c.Paths[OLE DB Source Output]"
+          TopLeft="118.257143621055,67.8379088647088">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.4183020282646"
+              Start="0,0"
+              End="0,48.9183020282646">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.9183020282646" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Form_to_product_lookup__c.Paths[Derived Column Output]"
+          TopLeft="118.595238868882,165.589544226306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.6366026952057"
+              Start="0,0"
+              End="0,50.1366026952057">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.1366026952057" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Form_to_product_lookup__c\Source Query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Form_to_product_lookup__c\Insert Target">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Load Payor_to_product_lookup__c">
     <LayoutInfo>
       <GraphLayout
@@ -3778,24 +4460,24 @@ FROM Payor_to_product_lookup__c</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Load Form_to_product_lookup__c">
+    design-time-name="Package\Load Agency_ETL_variables__c">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="142.666666666667,41.3333333333334"
-          Id="Package\Load Form_to_product_lookup__c\Source Query"
+          Id="Package\Load Agency_ETL_variables__c\Source Query"
           TopLeft="46.2857150739551,26.2379088647088" />
         <NodeLayout
           Size="141.333333333334,42.6666666666667"
-          Id="Package\Load Form_to_product_lookup__c\Insert Target"
+          Id="Package\Load Agency_ETL_variables__c\Insert Target"
           TopLeft="47.4285722362754,223.226146921512" />
         <NodeLayout
           Size="151.333333333334,41.3333333333334"
-          Id="Package\Load Form_to_product_lookup__c\Inject Variables"
+          Id="Package\Load Agency_ETL_variables__c\Inject Variables"
           TopLeft="43.4285721681556,124.256210892973" />
         <EdgeLayout
-          Id="Package\Load Form_to_product_lookup__c.Paths[OLE DB Source Output]"
+          Id="Package\Load Agency_ETL_variables__c.Paths[OLE DB Source Output]"
           TopLeft="118.257143621055,67.8379088647088">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3817,7 +4499,7 @@ FROM Payor_to_product_lookup__c</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Form_to_product_lookup__c.Paths[Derived Column Output]"
+          Id="Package\Load Agency_ETL_variables__c.Paths[Derived Column Output]"
           TopLeft="118.595238868882,165.589544226306">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3842,7 +4524,7 @@ FROM Payor_to_product_lookup__c</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Form_to_product_lookup__c\Source Query">
+    design-time-name="Package\Load Agency_ETL_variables__c\Source Query">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3850,7 +4532,7 @@ FROM Payor_to_product_lookup__c</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Form_to_product_lookup__c\Insert Target">
+    design-time-name="Package\Load Agency_ETL_variables__c\Insert Target">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

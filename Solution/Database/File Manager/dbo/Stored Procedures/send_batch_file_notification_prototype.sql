@@ -3,6 +3,7 @@ AS
 
 DECLARE @agency_key int
 DECLARE @agency_name varchar(100)
+DECLARE @notification_email_address varchar(400)
 
 DECLARE @message varchar(max)
 DECLARE @message_subject varchar(78)
@@ -11,13 +12,14 @@ SET @message = '<HTML>'
 
 DECLARE agency_cursor CURSOR FOR 
 
-	SELECT DISTINCT agency_medical_record.agency_key agency_key, agency_name
+	SELECT DISTINCT agency_medical_record.agency_key agency_key, agency_name, notify_email_address_list
 	FROM agency_medical_record
 	INNER JOIN agency
 	ON agency_medical_record.agency_key = agency.agency_key
 	WHERE notification_sent_ind = 0
 	UNION
-	SELECT DISTINCT agency_file.agency_key, agency_name FROM agency_file_row
+	SELECT DISTINCT agency_file.agency_key, agency_name, notify_email_address_list
+	FROM agency_file_row
 	INNER JOIN agency_file
 	ON agency_file_row.agency_file_key = agency_file.agency_file_key
 	INNER JOIN agency
@@ -25,7 +27,7 @@ DECLARE agency_cursor CURSOR FOR
 	WHERE agency_file_row.notification_sent_ind = 0
 
 OPEN agency_cursor  
-FETCH NEXT FROM agency_cursor INTO @agency_key, @agency_name
+FETCH NEXT FROM agency_cursor INTO @agency_key, @agency_name, @notification_email_address
 
 WHILE @@FETCH_STATUS = 0  
 BEGIN 
@@ -60,9 +62,9 @@ BEGIN
 	) c
 	ORDER BY process_error_category, process_dtm
 	SET @message = @message + '</table></HTML>'
-	EXEC send_File_Manager_notification @message, 'scott.stover@centricconsulting.com', @message_subject
+	EXEC send_File_Manager_notification @message, @notification_email_address, @message_subject
 	SET @message = '<HTML>'
-	FETCH NEXT FROM agency_cursor INTO @agency_key, @agency_name 
+	FETCH NEXT FROM agency_cursor INTO @agency_key, @agency_name, @notification_email_address
 END
 
 CLOSE agency_cursor  
