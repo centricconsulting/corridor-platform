@@ -12,8 +12,8 @@
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="573"
-  DTS:VersionGUID="{276BF2EC-E357-4EBB-A34B-A12905F33874}">
+  DTS:VersionBuild="575"
+  DTS:VersionGUID="{6682CE4D-B582-45F1-B66A-F8890C0E3216}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.573</DTS:VariableValue>
+        DTS:DataType="8">1.0.575</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -365,8 +365,7 @@
 , a.payor_source
 , a.secondary_payor_type
 , a.secondary_payor_source
-, a.clinician_first_name
-, a.clinician_last_name
+, a.clinician_name
 , a.event
 , a.stage
 , a.task
@@ -648,28 +647,6 @@ AND salesforce_send_ind = 1</property>
                       name="secondary_payor_source"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_first_name]"
-                      length="200"
-                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_first_name]"
-                      name="clinician_first_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_last_name]"
-                      length="200"
-                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_last_name]"
-                      name="clinician_last_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[event]"
                       codePage="1252"
                       dataType="str"
@@ -741,6 +718,17 @@ AND salesforce_send_ind = 1</property>
                       length="18"
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Product_Rate__c]"
                       name="Product_Rate__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_name]"
+                      length="400"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_name]"
+                      name="clinician_name"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -864,18 +852,6 @@ AND salesforce_send_ind = 1</property>
                       length="200"
                       name="secondary_payor_source" />
                     <externalMetadataColumn
-                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="clinician_first_name" />
-                    <externalMetadataColumn
-                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="clinician_last_name" />
-                    <externalMetadataColumn
                       refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[event]"
                       codePage="1252"
                       dataType="str"
@@ -913,6 +889,12 @@ AND salesforce_send_ind = 1</property>
                       dataType="wstr"
                       length="18"
                       name="Product_Rate__c" />
+                    <externalMetadataColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[clinician_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="400"
+                      name="clinician_name" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1067,19 +1049,12 @@ AND salesforce_send_ind = 1</property>
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[secondary_payor_source]"
                       name="secondary_payor_source" />
                     <outputColumn
-                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_first_name]"
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_name]"
                       codePage="1252"
                       dataType="str"
-                      length="200"
-                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_first_name]"
-                      name="clinician_first_name" />
-                    <outputColumn
-                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_last_name]"
-                      name="clinician_last_name" />
+                      length="400"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[clinician_name]"
+                      name="clinician_name" />
                     <outputColumn
                       refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[event]"
                       codePage="1252"
@@ -1313,20 +1288,6 @@ AND salesforce_send_ind = 1</property>
                       cachedName="secondary_payor_source"
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[secondary_payor_source]" />
                     <inputColumn
-                      refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[clinician_first_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="clinician_first_name"
-                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_first_name]" />
-                    <inputColumn
-                      refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[clinician_last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="clinician_last_name"
-                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_last_name]" />
-                    <inputColumn
                       refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[event]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1366,6 +1327,13 @@ AND salesforce_send_ind = 1</property>
                       cachedLength="18"
                       cachedName="Product_Rate__c"
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Product_Rate__c]" />
+                    <inputColumn
+                      refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[clinician_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="400"
+                      cachedName="clinician_name"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[clinician_name]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1765,22 +1733,6 @@ AND salesforce_send_ind = 1</property>
                       lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[secondary_payor_source]"
                       name="secondary_payor_source" />
                     <outputColumn
-                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
-                      length="200"
-                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_first_name]"
-                      name="clinician_first_name" />
-                    <outputColumn
-                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
-                      length="200"
-                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_last_name]"
-                      name="clinician_last_name" />
-                    <outputColumn
                       refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[event]"
                       codePage="1252"
                       dataType="str"
@@ -1826,6 +1778,14 @@ AND salesforce_send_ind = 1</property>
                       length="18"
                       lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[Product_Rate__c]"
                       name="Product_Rate__c" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_name]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_name]"
+                      length="400"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_name]"
+                      name="clinician_name" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1948,18 +1908,6 @@ AND salesforce_send_ind = 1</property>
                       length="200"
                       name="secondary_payor_source" />
                     <externalMetadataColumn
-                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="clinician_first_name" />
-                    <externalMetadataColumn
-                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="clinician_last_name" />
-                    <externalMetadataColumn
                       refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[event]"
                       codePage="1252"
                       dataType="str"
@@ -1993,6 +1941,12 @@ AND salesforce_send_ind = 1</property>
                       dataType="wstr"
                       length="18"
                       name="Product_Rate__c" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[clinician_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="400"
+                      name="clinician_name" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -2573,6 +2527,20 @@ agency_medical_record_key = ?</property>
                       cachedLength="200"
                       cachedName="patient_first_name"
                       lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[patient_first_name]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Convert and Rename.Inputs[Data Conversion Input].Columns[clinician_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="400"
+                      cachedName="clinician_name"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_name]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Convert and Rename.Inputs[Data Conversion Input].Columns[oasis_visit_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="oasis_visit_type"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[oasis_visit_type]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2641,6 +2609,48 @@ agency_medical_record_key = ?</property>
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[patient_first_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\Convert and Rename.Outputs[Data Conversion Output].Columns[Clinician_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="400"
+                      lineageId="Package\Upload To SalesForce\Convert and Rename.Outputs[Data Conversion Output].Columns[Clinician_Name]"
+                      name="Clinician_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\Convert and Rename.Outputs[Data Conversion Output].Columns[Form_Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Upload To SalesForce\Convert and Rename.Outputs[Data Conversion Output].Columns[Form_Type]"
+                      name="Form_Type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[oasis_visit_type]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -2867,22 +2877,6 @@ agency_medical_record_key = ?</property>
                       lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[secondary_payor_source]"
                       name="secondary_payor_source" />
                     <outputColumn
-                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
-                      length="200"
-                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]"
-                      name="clinician_first_name" />
-                    <outputColumn
-                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
-                      length="200"
-                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]"
-                      name="clinician_last_name" />
-                    <outputColumn
                       refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[event]"
                       codePage="1252"
                       dataType="str"
@@ -2928,6 +2922,14 @@ agency_medical_record_key = ?</property>
                       length="18"
                       lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Product_Rate__c]"
                       name="Product_Rate__c" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_name]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_name]"
+                      length="400"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_name]"
+                      name="clinician_name" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3050,18 +3052,6 @@ agency_medical_record_key = ?</property>
                       length="200"
                       name="secondary_payor_source" />
                     <externalMetadataColumn
-                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_first_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="clinician_first_name" />
-                    <externalMetadataColumn
-                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_last_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="200"
-                      name="clinician_last_name" />
-                    <externalMetadataColumn
                       refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[event]"
                       codePage="1252"
                       dataType="str"
@@ -3095,6 +3085,12 @@ agency_medical_record_key = ?</property>
                       dataType="wstr"
                       length="18"
                       name="Product_Rate__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[clinician_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="400"
+                      name="clinician_name" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -4044,20 +4040,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedLength="18"
                       cachedName="Product_Rate__c"
                       lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Product_Rate__c]" />
-                    <inputColumn
-                      refId="Package\Upload To SalesForce\Inject Variables.Inputs[Derived Column Input].Columns[clinician_first_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="clinician_first_name"
-                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]" />
-                    <inputColumn
-                      refId="Package\Upload To SalesForce\Inject Variables.Inputs[Derived Column Input].Columns[clinician_last_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="200"
-                      cachedName="clinician_last_name"
-                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -4137,29 +4119,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">(DT_STR,20,1252)(ISNULL(Product_Rate__c) ? "Error" : "Insert")</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Output].Columns[Clinician_Name___c]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="121"
-                      lineageId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Output].Columns[Clinician_Name___c]"
-                      name="Clinician_Name___c"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_WSTR,60)#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_first_name]} + " " + (DT_WSTR,60)#{Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[clinician_last_name]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_WSTR,60)clinician_first_name + " " + (DT_WSTR,60)clinician_last_name</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -4421,12 +4380,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Ready_For_Coding_Date__c]"
                       lineageId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Output].Columns[Ready_For_Coding_Date__c]" />
                     <inputColumn
-                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[Clinician_Name___c]"
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[Clinician_Name]"
                       cachedDataType="wstr"
-                      cachedLength="121"
-                      cachedName="Clinician_Name___c"
+                      cachedLength="400"
+                      cachedName="Clinician_Name"
                       externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Clinician_Import__c]"
-                      lineageId="Package\Upload To SalesForce\Inject Variables.Outputs[Derived Column Output].Columns[Clinician_Name___c]" />
+                      lineageId="Package\Upload To SalesForce\Convert and Rename.Outputs[Data Conversion Output].Columns[Clinician_Name]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[Form_Type]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Form_Type"
+                      externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Form_type__c]"
+                      lineageId="Package\Upload To SalesForce\Convert and Rename.Outputs[Data Conversion Output].Columns[Form_Type]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4987,6 +4953,61 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="decimal"
                       name="Weighted_value__c"
                       scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Affected_by_Clinician_Grad_Program__c]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Affected_by_Clinician_Grad_Program__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Clinician_Graduate__c]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Clinician_Graduate__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Days_to_Enter__c]"
+                      dataType="decimal"
+                      name="Days_to_Enter__c"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Duplicate_Check_Text__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="Duplicate_Check_Text__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[External_EMR_Completed__c]"
+                      dataType="dbTimeStamp"
+                      name="External_EMR_Completed__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Form_type__c]"
+                      dataType="wstr"
+                      length="128"
+                      name="Form_type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Problem_Resolve_Date__c]"
+                      dataType="dbTimeStamp"
+                      name="Problem_Resolve_Date__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[ProblemCount__c]"
+                      dataType="decimal"
+                      name="ProblemCount__c"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[TAT_Calc__c]"
+                      dataType="decimal"
+                      name="TAT_Calc__c"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[TAT_to_Completed__c]"
+                      dataType="decimal"
+                      name="TAT_to_Completed__c"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[TAT_without_Problems__c]"
+                      dataType="decimal"
+                      name="TAT_without_Problems__c"
+                      scale="2" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5514,6 +5535,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Cache DBS Record To Consider"
           TopLeft="316.571433962608,55.058824301591" />
         <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\Send Email Notification"
+          TopLeft="329.166661761701,366.888882328404" />
+        <NodeLayout
           Size="136.666666666667,41.3333333333334"
           Id="Package\Update AMR"
           TopLeft="362.285720455403,275.294121507955" />
@@ -5565,10 +5590,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188,42.6666666666667"
-          Id="Package\Send Email Notification"
-          TopLeft="329.166661761701,366.888882328404" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="426.892857775219,316.627454841288">
@@ -5792,7 +5813,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Update AMR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="131.333333333334,42.6666666666667"
           Id="Package\Update AMR\Merge Join"
@@ -5852,9 +5873,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5888,9 +5907,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5912,9 +5929,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5936,9 +5951,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5960,9 +5973,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5984,9 +5995,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6056,9 +6065,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6080,9 +6087,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6116,9 +6121,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6141,7 +6144,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-73.20890625,7.16784477921315,146.4178125,11.43359375"
+              BoundingBox="-73.20890625,7.16784477921317,146.4178125,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6224,9 +6227,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6248,9 +6249,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6272,9 +6271,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6296,9 +6293,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

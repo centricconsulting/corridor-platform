@@ -12,8 +12,8 @@
   DTS:ObjectName="Download SalesForce Data"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="514"
-  DTS:VersionGUID="{650C7045-25CA-43EE-BD99-66C1D3701A9D}">
+  DTS:VersionBuild="516"
+  DTS:VersionGUID="{0AE7DA66-1897-42D5-94FE-54E513462874}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -218,7 +218,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.514</DTS:VariableValue>
+        DTS:DataType="8">1.0.516</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1819,8 +1819,6 @@ WHERE Status__c = 'Active'</property>
 , Parent_ID__c
 FROM
 DM_Agency__c 
-WHERE
-Status__c = 'Active'
 ORDER BY id</property>
                 <property
                   dataType="System.String"
@@ -3411,7 +3409,7 @@ FROM Payor_to_product_lookup__c</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Agency_ETL_variables__c"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3427,7 +3425,7 @@ FROM Payor_to_product_lookup__c</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate DM_Agency_Product_Rate__c"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3443,7 +3441,7 @@ FROM Payor_to_product_lookup__c</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate DM_Agency__c"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3459,7 +3457,7 @@ FROM Payor_to_product_lookup__c</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Form_to_product_lookup__c"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3475,7 +3473,7 @@ FROM Payor_to_product_lookup__c</property>
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Payor_to_product_lookup__c"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -3819,6 +3817,10 @@ FROM Payor_to_product_lookup__c</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="226.666666666667,42.6666666666667"
+          Id="Package\Load Agency_ETL_variables__c"
+          TopLeft="1337.20434920415,146.540203604673" />
+        <NodeLayout
           Size="176,41.3333333333334"
           Id="Package\Load DM_Agency__c"
           TopLeft="126.857145017507,157.835296331228" />
@@ -3834,6 +3836,10 @@ FROM Payor_to_product_lookup__c</property>
           Size="242.666666666667,42.6666666666667"
           Id="Package\Load Payor_to_product_lookup__c"
           TopLeft="689.357136635604,156.290203430329" />
+        <NodeLayout
+          Size="245.333333333334,42.6666666666667"
+          Id="Package\Truncate Agency_ETL_variables__c"
+          TopLeft="1329.96823794542,56.9464110583541" />
         <NodeLayout
           Size="195.333333333334,41.3333333333334"
           Id="Package\Truncate DM_Agency__c"
@@ -3938,14 +3944,6 @@ FROM Payor_to_product_lookup__c</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="245.333333333334,42.6666666666667"
-          Id="Package\Truncate Agency_ETL_variables__c"
-          TopLeft="1329.96823794542,56.9464110583541" />
-        <NodeLayout
-          Size="226.666666666667,42.6666666666667"
-          Id="Package\Load Agency_ETL_variables__c"
-          TopLeft="1337.20434920415,146.540203604673" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="1451.58629357478,99.6130777250208">
@@ -4120,28 +4118,28 @@ FROM Payor_to_product_lookup__c</property>
     </LayoutInfo>
   </DtsEventHandler>
   <TaskHost
-    design-time-name="Package\Load DM_Agency__c">
+    design-time-name="Package\Load Agency_ETL_variables__c">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="140,41.3333333333334"
-          Id="Package\Load DM_Agency__c\Insert Target"
+          Size="142.666666666667,41.3333333333334"
+          Id="Package\Load Agency_ETL_variables__c\Source Query"
+          TopLeft="46.2857150739551,26.2379088647088" />
+        <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\Load Agency_ETL_variables__c\Insert Target"
           TopLeft="47.4285722362754,223.226146921512" />
         <NodeLayout
           Size="151.333333333334,41.3333333333334"
-          Id="Package\Load DM_Agency__c\Inject Variables"
+          Id="Package\Load Agency_ETL_variables__c\Inject Variables"
           TopLeft="43.4285721681556,124.256210892973" />
-        <NodeLayout
-          Size="142.666666666667,41.3333333333334"
-          Id="Package\Load DM_Agency__c\Source Query"
-          TopLeft="46.2857150739551,26.2379088647088" />
         <EdgeLayout
-          Id="Package\Load DM_Agency__c.Paths[OLE DB Source Output]"
+          Id="Package\Load Agency_ETL_variables__c.Paths[OLE DB Source Output]"
           TopLeft="118.257143621055,67.8379088647088">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,56.4183020282646"
               Start="0,0"
               End="0,48.9183020282646">
@@ -4155,15 +4153,82 @@ FROM Payor_to_product_lookup__c</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Agency_ETL_variables__c.Paths[Derived Column Output]"
+          TopLeft="118.595238868882,165.589544226306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.6366026952057"
+              Start="0,0"
+              End="0,50.1366026952057">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.1366026952057" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Agency_ETL_variables__c\Source Query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Agency_ETL_variables__c\Insert Target">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load DM_Agency__c">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142.666666666667,41.3333333333334"
+          Id="Package\Load DM_Agency__c\Source Query"
+          TopLeft="46.2857150739551,26.2379088647088" />
+        <NodeLayout
+          Size="140,41.3333333333334"
+          Id="Package\Load DM_Agency__c\Insert Target"
+          TopLeft="47.4285722362754,223.226146921512" />
+        <NodeLayout
+          Size="151.333333333334,41.3333333333334"
+          Id="Package\Load DM_Agency__c\Inject Variables"
+          TopLeft="43.4285721681556,124.256210892973" />
         <EdgeLayout
           Id="Package\Load DM_Agency__c.Paths[Derived Column Output]"
           TopLeft="118.228572202216,165.856210892973">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,57.3699360285388"
               Start="0,0"
               End="0,49.8699360285388">
@@ -4172,6 +4237,28 @@ FROM Payor_to_product_lookup__c</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,49.8699360285388" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load DM_Agency__c.Paths[OLE DB Source Output]"
+          TopLeft="118.257143621055,67.8379088647088">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.4183020282646"
+              Start="0,0"
+              End="0,48.9183020282646">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.9183020282646" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4208,7 +4295,7 @@ FROM Payor_to_product_lookup__c</property>
     design-time-name="Package\Load DM_Agency_Product_Rate__c">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="140,41.3333333333334"
           Id="Package\Load DM_Agency_Product_Rate__c\Insert Target"
@@ -4226,7 +4313,7 @@ FROM Payor_to_product_lookup__c</property>
           TopLeft="98.4285714528997,62.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,48.894119174258"
               Start="0,0"
               End="0,41.394119174258">
@@ -4240,7 +4327,9 @@ FROM Payor_to_product_lookup__c</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4248,7 +4337,7 @@ FROM Payor_to_product_lookup__c</property>
           TopLeft="98.4000000340599,152.894119174258">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,64.894118882545"
               Start="0,0"
               End="0,57.394118882545">
@@ -4262,7 +4351,9 @@ FROM Payor_to_product_lookup__c</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4293,7 +4384,7 @@ FROM Payor_to_product_lookup__c</property>
     design-time-name="Package\Load Form_to_product_lookup__c">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="142.666666666667,41.3333333333334"
           Id="Package\Load Form_to_product_lookup__c\Source Query"
@@ -4325,7 +4416,9 @@ FROM Payor_to_product_lookup__c</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4347,7 +4440,9 @@ FROM Payor_to_product_lookup__c</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4378,7 +4473,11 @@ FROM Payor_to_product_lookup__c</property>
     design-time-name="Package\Load Payor_to_product_lookup__c">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="142.666666666667,41.3333333333334"
+          Id="Package\Load Payor_to_product_lookup__c\Source Query"
+          TopLeft="46.2857150739551,26.2379088647088" />
         <NodeLayout
           Size="141.333333333334,42.6666666666667"
           Id="Package\Load Payor_to_product_lookup__c\Insert Target"
@@ -4387,38 +4486,12 @@ FROM Payor_to_product_lookup__c</property>
           Size="151.333333333334,41.3333333333334"
           Id="Package\Load Payor_to_product_lookup__c\Inject Variables"
           TopLeft="43.4285721681556,124.256210892973" />
-        <NodeLayout
-          Size="142.666666666667,41.3333333333334"
-          Id="Package\Load Payor_to_product_lookup__c\Source Query"
-          TopLeft="46.2857150739551,26.2379088647088" />
-        <EdgeLayout
-          Id="Package\Load Payor_to_product_lookup__c.Paths[Derived Column Output]"
-          TopLeft="118.595238868882,165.589544226306">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,57.6366026952057"
-              Start="0,0"
-              End="0,50.1366026952057">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.1366026952057" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Payor_to_product_lookup__c.Paths[OLE DB Source Output]"
           TopLeft="118.257143621055,67.8379088647088">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,56.4183020282646"
               Start="0,0"
               End="0,48.9183020282646">
@@ -4432,7 +4505,33 @@ FROM Payor_to_product_lookup__c</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Payor_to_product_lookup__c.Paths[Derived Column Output]"
+          TopLeft="118.595238868882,165.589544226306">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.6366026952057"
+              Start="0,0"
+              End="0,50.1366026952057">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.1366026952057" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4448,91 +4547,6 @@ FROM Payor_to_product_lookup__c</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Payor_to_product_lookup__c\Insert Target">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Agency_ETL_variables__c">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="142.666666666667,41.3333333333334"
-          Id="Package\Load Agency_ETL_variables__c\Source Query"
-          TopLeft="46.2857150739551,26.2379088647088" />
-        <NodeLayout
-          Size="141.333333333334,42.6666666666667"
-          Id="Package\Load Agency_ETL_variables__c\Insert Target"
-          TopLeft="47.4285722362754,223.226146921512" />
-        <NodeLayout
-          Size="151.333333333334,41.3333333333334"
-          Id="Package\Load Agency_ETL_variables__c\Inject Variables"
-          TopLeft="43.4285721681556,124.256210892973" />
-        <EdgeLayout
-          Id="Package\Load Agency_ETL_variables__c.Paths[OLE DB Source Output]"
-          TopLeft="118.257143621055,67.8379088647088">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.4183020282646"
-              Start="0,0"
-              End="0,48.9183020282646">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.9183020282646" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Agency_ETL_variables__c.Paths[Derived Column Output]"
-          TopLeft="118.595238868882,165.589544226306">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57.6366026952057"
-              Start="0,0"
-              End="0,50.1366026952057">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,50.1366026952057" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Agency_ETL_variables__c\Source Query">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Agency_ETL_variables__c\Insert Target">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

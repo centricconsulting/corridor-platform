@@ -114,6 +114,9 @@
     <Build Include="dbo\Stored Procedures\custom_sfclookup_LHC.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_LHC_processing.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_AlternateSolutions_processing.sql" />
+    <Build Include="dbo\Stored Procedures\custom_sfclookup_LifeCare.sql" />
+    <Build Include="dbo\Stored Procedures\custom_sfclookup_AlternateSolutions.sql" />
+    <Build Include="dbo\Stored Procedures\custom_filerow_LifeCare_processing.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />

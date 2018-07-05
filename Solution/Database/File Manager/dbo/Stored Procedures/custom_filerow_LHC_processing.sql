@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[custom_filerow_LHC_processing] (@agency_file_key as int, @file_name as varchar(200))
+﻿
+CREATE PROCEDURE [dbo].[custom_filerow_LHC_processing] (@agency_file_key as int, @file_name as varchar(200))
 AS
 
 -- Get the header row index and agency info
@@ -54,15 +55,15 @@ AND (
 		OR LEN(column02) < 3
 	)
 
--- Assessment Date / SOE Date
+-- Assessment Date / Visit Date
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Invalid Assessment Date / SOE Date', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Invalid Assessment Date / Visit Date', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND (
-		(column07 IS NULL OR RTRIM(column07) = '')
-		OR ISDATE(column07) = 0
+		(column17 IS NULL OR RTRIM(column17) = '')
+		OR ISDATE(column17) = 0
 	)
 
 -- Create new columns in agency file row
@@ -71,7 +72,6 @@ AND (
 UPDATE agency_file_row
 SET column40 = 'Product_Suffix'
 WHERE agency_file_key = @agency_file_key
-AND process_dtm IS NULL
 AND row_index = @header_row_index
 
 -- ROC/RECERT Clone success ind - this column is used to generate numerous error messages
@@ -79,7 +79,6 @@ AND row_index = @header_row_index
 UPDATE agency_file_row
 SET column39 = 'ROC_RECERT_Clone_ind'
 WHERE agency_file_key = @agency_file_key
-AND process_dtm IS NULL
 AND row_index = @header_row_index
 
 -- update new columns
@@ -104,6 +103,28 @@ ON agency_file_row.column16 = Product_Suffix_Lookup.Visit_Type
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
+
+-- SOC/RECERT custom product handling - SOCs
+UPDATE agency_file_row
+SET column40 = 'SOC'
+FROM agency_file_row
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND column16 = 'SOC/RECERT'
+-- If SOE and SOC date match, they are a SOC
+AND column07 = column08
+
+-- SOC/RECERT custom product handling - RECERTs
+UPDATE agency_file_row
+SET column40 = 'RECERT'
+FROM agency_file_row
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND column16 = 'SOC/RECERT'
+-- If SOE and SOC date do not match, they are a RECERT
+AND column07 != column08
 
 -- Product Suffix errors
 UPDATE agency_file_row
@@ -142,6 +163,7 @@ WHERE agency_file_row.agency_file_key = @agency_file_key
 AND column16 = 'ROC/RECERT'
 AND agency_file_row.process_dtm IS NULL
 AND ROC_RECERT_Process__c = 'ROC/RECERT Combo'
+AND Agency__c.Status__c = 'Active'
 
 -- Update clone success ind for ROC/Recert records
 UPDATE agency_file_row
@@ -160,6 +182,7 @@ WHERE agency_file_row.agency_file_key = @agency_file_key
 AND column16 = 'ROC/RECERT'
 AND agency_file_row.process_dtm IS NULL
 AND ROC_RECERT_Process__c = 'ROC/RECERT Combo'
+AND Agency__c.Status__c = 'Active'
 
 -- ROC/RECERT not allowed error
 UPDATE agency_file_row
@@ -179,6 +202,7 @@ AND column16 = 'ROC/RECERT'
 AND column39 = '0'
 AND agency_file_row.process_dtm IS NULL
 AND ROC_RECERT_Process__c != 'ROC/RECERT Combo'
+AND Agency__c.Status__c = 'Active'
 
 
 -- ETL Variables not found error
@@ -196,6 +220,7 @@ WHERE agency_file_row.agency_file_key = @agency_file_key
 AND column16 = 'ROC/RECERT'
 AND column39 = '0'
 AND agency_file_row.process_dtm IS NULL
+AND Agency__c.Status__c = 'Active'
 
 -- Agency not found error
 UPDATE agency_file_row

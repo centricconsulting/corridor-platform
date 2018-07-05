@@ -23,8 +23,7 @@
     [payor_source]              VARCHAR (200)  NULL,
     [secondary_payor_type]      VARCHAR (200)  NULL,
     [secondary_payor_source]    VARCHAR (200)  NULL,
-    [clinician_first_name]      VARCHAR (200)  NULL,
-    [clinician_last_name]       VARCHAR (200)  NULL,
+    [clinician_name]            VARCHAR (400)  NULL,
     [event]                     VARCHAR (200)  NULL,
     [stage]                     VARCHAR (200)  NULL,
     [task]                      VARCHAR (200)  NULL,
@@ -40,6 +39,8 @@
     [process_batch_key]         INT            NOT NULL,
     CONSTRAINT [dbo_agency_medical_record_pk] PRIMARY KEY CLUSTERED ([agency_medical_record_key] ASC)
 );
+
+
 
 
 

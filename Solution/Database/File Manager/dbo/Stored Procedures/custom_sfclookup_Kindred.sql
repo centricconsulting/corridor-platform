@@ -20,6 +20,21 @@ AND agency_key = @agency_key
 AND salesforce_send_ind = 1
 AND sfc.GetTrueParentAgencyCode(sfc.DM_Agency__c.id) = @TrueParentAgencyID
 
+-- Inactive Agency Error Message
+UPDATE agency_medical_record
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Record Rejected - Inactive Location in HHCP: "' + agency_location, salesforce_send_ind = 0, notification_sent_ind = 0
+FROM agency_medical_record
+INNER JOIN sfc.DM_Agency__c Agency__c
+ON agency_medical_record.sfc_Agency__c = Agency__c.Id
+INNER JOIN agency_file_row
+ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
+INNER JOIN agency_file
+ON agency_file_row.agency_file_key = agency_file.agency_file_key
+WHERE Agency__c.Status__c != 'Active'
+AND agency_medical_record.process_batch_key = @process_batch_key
+AND agency_medical_record.agency_key = @agency_key
+AND salesforce_send_ind = 1
+
 -- Agency error messages
 UPDATE agency_medical_record
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Agency Alias "' + agency_location + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0

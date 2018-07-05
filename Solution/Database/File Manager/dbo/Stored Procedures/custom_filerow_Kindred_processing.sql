@@ -30,8 +30,8 @@ AND row_index = @header_row_index
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', Invalid MRN#', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
-AND row_index > @header_row_index
 AND process_dtm IS NULL
+AND row_index > @header_row_index
 AND (
 		(column02 IS NULL OR RTRIM(column02) = '')
 		OR ISNUMERIC(column02) = 0
@@ -41,8 +41,8 @@ AND (
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Form', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
-AND row_index > @header_row_index
 AND process_dtm IS NULL
+AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 AND (
 		(column06 IS NULL OR RTRIM(column06) = '')
@@ -53,8 +53,8 @@ AND (
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Assessment Date', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
-AND row_index > @header_row_index
 AND process_dtm IS NULL
+AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 AND (
 		(column08 IS NULL OR RTRIM(column08) = '')
@@ -65,8 +65,8 @@ AND (
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Insurance for SOC', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
-AND row_index > @header_row_index
 AND process_dtm IS NULL
+AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 AND column06 LIKE '%Start of Care%'
 AND (
@@ -78,8 +78,8 @@ AND (
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Agency Name', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
-AND row_index > @header_row_index
 AND process_dtm IS NULL
+AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 AND (
 		(column05 IS NULL OR RTRIM(column05) = '')
@@ -90,8 +90,8 @@ AND (
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Coding in Process', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
-AND row_index > @header_row_index
 AND process_dtm IS NULL
+AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 AND (
 		(column15 IS NULL OR RTRIM(column15) = '')
@@ -104,8 +104,8 @@ AND (
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Coding in Process Date', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
-AND row_index > @header_row_index
 AND process_dtm IS NULL
+AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 AND ISDATE(LEFT(column15, 11)) = 0
 
@@ -115,6 +115,7 @@ AND ISDATE(LEFT(column15, 11)) = 0
 UPDATE agency_file_row
 SET column40 = RIGHT('000000000' + column02, 9)
 WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 
@@ -124,8 +125,8 @@ AND create_agency_medical_record_ind = 1
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Record Rejected - CIP not within the last 3 days', create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
-AND row_index > @header_row_index
 AND process_dtm IS NULL
+AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 -- Server time is 4 hours off from Eastern Time, hence the offset
 AND CONVERT(date, LEFT(column15, 11)) < CONVERT(date, DATEADD(day, -3,DATEADD(hh, -4, getdate())))
