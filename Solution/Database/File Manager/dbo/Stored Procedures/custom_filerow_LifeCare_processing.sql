@@ -78,6 +78,14 @@ AND row_index > @header_row_index
 AND process_dtm IS NULL
 AND column04 LIKE '%Transfer%'
 
+-- Reject death records
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Record Rejected - Death', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND row_index > @header_row_index
+AND process_dtm IS NULL
+AND column04 LIKE '%Death%'
+
 -- Non SOC charts with assessment date before 6/25/2018 should be rejected
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column03 + ', Record Rejected - Non-SOC before 6/25/2018', create_agency_medical_record_ind = 0, notification_sent_ind = 0

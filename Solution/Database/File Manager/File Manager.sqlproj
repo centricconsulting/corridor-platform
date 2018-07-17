@@ -117,6 +117,7 @@
     <Build Include="dbo\Stored Procedures\custom_sfclookup_LifeCare.sql" />
     <Build Include="dbo\Stored Procedures\custom_sfclookup_AlternateSolutions.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_LifeCare_processing.sql" />
+    <Build Include="dbo\Stored Procedures\set_sfc_default_fields.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />

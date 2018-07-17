@@ -31,7 +31,7 @@ SET @file_path = REPLACE(@file_path, '\\', '\')
 -- Create a temporary linked server to the Excel file --
 --  A linked server allows us to pull the data without having an exact specification
 --  of source columns
-DECLARE @linkedServerName sysname = 'TempFileManagerExcel'
+DECLARE @linkedServerName sysname = 'TempFileManagerExcelTEST'
 
 -- Clean up old linked server if it's still there
 IF exists(SELECT null FROM sys.servers WHERE [name] = @linkedServerName)
@@ -67,7 +67,7 @@ if exists (select * from INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'SheetInfo
 	drop table tmp.SheetInfo
 
 -- Pull the sheet info into the temp table from the linked server using OPENROWSET
-SELECT * INTO tmp.SheetInfo FROM OPENROWSET('SQLNCLI', 'Server=(local);Trusted_Connection=yes;','EXEC sp_tables_ex TempFileManagerExcel');
+SELECT * INTO tmp.SheetInfo FROM OPENROWSET('SQLNCLI', 'Server=(local);Trusted_Connection=yes;','EXEC sp_tables_ex TempFileManagerExcelTEST');
 
 -- We only pull the first sheet name - others will be disregarded
 DECLARE @SheetName as varchar(200)
