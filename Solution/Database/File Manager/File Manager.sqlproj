@@ -118,6 +118,13 @@
     <Build Include="dbo\Stored Procedures\custom_sfclookup_AlternateSolutions.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_LifeCare_processing.sql" />
     <Build Include="dbo\Stored Procedures\set_sfc_default_fields.sql" />
+    <Build Include="sfc\Tables\DM_Clinician__c.sql" />
+    <Build Include="dbo\Stored Procedures\custom_sfclookup_Pathways.sql" />
+    <Build Include="dbo\Stored Procedures\custom_sfclookup_LHC_Burst.sql" />
+    <Build Include="dbo\Stored Procedures\custom_sfclookup_Bayada.sql" />
+    <Build Include="dbo\Stored Procedures\custom_filerow_Pathways_processing.sql" />
+    <Build Include="dbo\Stored Procedures\custom_filerow_LHC_Burst_processing.sql" />
+    <Build Include="dbo\Stored Procedures\custom_filerow_Bayada_processing.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />

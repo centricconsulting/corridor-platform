@@ -42,6 +42,15 @@ BEGIN
 		process_error_message NOT LIKE 'No status is available%'
 		AND notification_sent_ind = 0
 		AND agency_key = @agency_key
+		AND agency_medical_record.process_error_category IS NULL
+		UNION ALL
+		SELECT process_error_category, process_dtm, process_error_message
+		FROM agency_medical_record
+		WHERE process_error_message IS NOT NULL AND
+		process_error_message NOT LIKE 'No status is available%'
+		AND notification_sent_ind = 0
+		AND agency_key = @agency_key
+		AND process_error_category IS NOT NULL
 		UNION ALL
 		SELECT process_error_category, process_dtm, process_error_message
 		FROM agency_file_row

@@ -12,8 +12,8 @@
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="576"
-  DTS:VersionGUID="{D7B36FEA-7591-488C-AFAC-2BF171589B35}">
+  DTS:VersionBuild="577"
+  DTS:VersionGUID="{05AB6B67-B898-4B65-8163-902C2732439C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.576</DTS:VariableValue>
+        DTS:DataType="8">1.0.577</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1860,6 +1860,19 @@ AND salesforce_send_ind = 1</property>
                       length="400"
                       lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[clinician_name]"
                       name="clinician_name" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[sfc_Status__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[sfc_Status__c]"
+                      length="10"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[sfc_Status__c]"
+                      name="sfc_Status__c" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[Ready_for_Coding_date]"
+                      dataType="dbTimeStamp"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[Ready_for_Coding_date]"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[Ready_for_Coding_date]"
+                      name="Ready_for_Coding_date" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2021,6 +2034,15 @@ AND salesforce_send_ind = 1</property>
                       dataType="str"
                       length="400"
                       name="clinician_name" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[sfc_Status__c]"
+                      dataType="wstr"
+                      length="10"
+                      name="sfc_Status__c" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[Ready_for_Coding_date]"
+                      dataType="dbTimeStamp"
+                      name="Ready_for_Coding_date" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -5836,13 +5858,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="229.333333333334,42.6666666666667"
-          Id="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache"
-          TopLeft="240.8,148" />
-        <NodeLayout
           Size="142.666666666667,42.6666666666667"
           Id="Package\Cache DBS Record To Consider\Source Query"
           TopLeft="289.6,47.2" />
+        <NodeLayout
+          Size="229.333333333334,42.6666666666667"
+          Id="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache"
+          TopLeft="240.8,148" />
         <EdgeLayout
           Id="Package\Cache DBS Record To Consider.Paths[OLE DB Source Output]"
           TopLeft="358.2,89.8666666666667">
@@ -6074,18 +6096,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="173.333333333334,41.3333333333334"
-          Id="Package\Upload To SalesForce\Divert Error Records"
-          TopLeft="497.269849738296,212.666665220261" />
-        <NodeLayout
-          Size="120,41.3333333333334"
-          Id="Package\Upload To SalesForce\Union All"
-          TopLeft="433.609530975868,460.420913796001" />
-        <NodeLayout
-          Size="167.333333333334,41.3333333333334"
-          Id="Package\Upload To SalesForce\Cache AMR Record"
-          TopLeft="410.768260745614,543.858823098278" />
-        <NodeLayout
           Size="141.333333333334,42.6666666666667"
           Id="Package\Upload To SalesForce\Target Insert"
           TopLeft="303.698417870366,284.346407985248" />
@@ -6093,6 +6103,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="164.666666666667,41.3333333333334"
           Id="Package\Upload To SalesForce\Get Error Message"
           TopLeft="287.580957155812,360.282357960341" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Upload To SalesForce\Inject Variables"
+          TopLeft="284.028575829584,140.023529647708" />
+        <NodeLayout
+          Size="167.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Cache AMR Record"
+          TopLeft="410.768260745614,543.858823098278" />
+        <NodeLayout
+          Size="164,41.3333333333334"
+          Id="Package\Upload To SalesForce\Set Error Message"
+          TopLeft="502.247620189433,357.458823098278" />
         <NodeLayout
           Size="177.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Convert and Rename"
@@ -6102,13 +6124,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Id="Package\Upload To SalesForce\Row Count"
           TopLeft="306.158735372583,211.488886267531" />
         <NodeLayout
-          Size="164,41.3333333333334"
-          Id="Package\Upload To SalesForce\Set Error Message"
-          TopLeft="502.247620189433,357.458823098278" />
+          Size="120,41.3333333333334"
+          Id="Package\Upload To SalesForce\Union All"
+          TopLeft="433.609530975868,460.420913796001" />
         <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Upload To SalesForce\Inject Variables"
-          TopLeft="284.028575829584,140.023529647708" />
+          Size="173.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Divert Error Records"
+          TopLeft="497.269849738296,212.666665220261" />
         <NodeLayout
           Size="162.666666666667,42.6666666666667"
           Id="Package\Upload To SalesForce\DBS Souce Cache"
