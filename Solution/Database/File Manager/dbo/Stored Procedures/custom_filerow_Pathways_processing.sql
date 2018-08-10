@@ -34,6 +34,12 @@ SET column38 = 'CALCULATED_FirstName'
 WHERE agency_file_key = @agency_file_key
 AND row_index = @header_row_index
 
+UPDATE agency_file_row
+SET column37 = 'ASSESSMENT_DATE'
+WHERE agency_file_key = @agency_file_key
+AND row_index = @header_row_index
+
+
 -- validate important columns
 
 -- MRN
@@ -72,24 +78,12 @@ AND (
 		OR CHARINDEX(',', column01) = 0
 	)
 
--- Assessment Date
-UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Assessment Date', create_agency_medical_record_ind = 0, notification_sent_ind = 0
-WHERE agency_file_key = @agency_file_key
-AND process_dtm IS NULL
-AND row_index > @header_row_index
-AND create_agency_medical_record_ind = 1
-AND (
-		(column11 IS NULL OR RTRIM(column11) = '')
-		OR ISDATE(column11) = 0
-	)
-
 
 -- update new columns
 
 -- MRN
 UPDATE agency_file_row
-SET column40 = RIGHT('0000000' + column02, 7)
+SET column40 = RIGHT('0000000000' + column02, 10)
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
@@ -111,6 +105,36 @@ AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
 
+-- Assessment Date for SOCs
+UPDATE agency_file_row
+SET column37 = column11
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND create_agency_medical_record_ind = 1
+AND column05 LIKE '%Start of Care%'
+
+-- Assessment Date for RECERTs
+UPDATE agency_file_row
+SET column37 = column12
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND create_agency_medical_record_ind = 1
+AND column05 LIKE '%Recertification%'
+
+-- Validate Assessment Date
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column02 + ', Invalid Assessment Date or Assessment Type', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND create_agency_medical_record_ind = 1
+AND (
+		(column37 IS NULL OR RTRIM(column37) = '')
+		OR ISDATE(column37) = 0
+	)
+
 
 -- custom logic
 
@@ -121,4 +145,4 @@ WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND create_agency_medical_record_ind = 1
-AND CAST(column11 as date) >= '7/5/2018'
+AND CAST(column37 as date) <= '7/5/2018'

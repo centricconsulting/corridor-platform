@@ -12,8 +12,8 @@
   DTS:ObjectName="Process Agency Medical Records"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="664"
-  DTS:VersionGUID="{0EB7F480-CAAA-4F36-B122-E3AE972DDB8E}">
+  DTS:VersionBuild="669"
+  DTS:VersionGUID="{8839BB10-EB16-4771-9BFB-66498D285FA7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -120,7 +120,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.664</DTS:VariableValue>
+        DTS:DataType="8">1.0.669</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -153,6 +153,29 @@
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Exclude Duplicates"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d6e6cd0f-4fca-42d8-9fa0-be954774223d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Exclude Duplicates"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+          SQLTask:SqlStatementSource="EXEC flag_duplicate_assessments ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::process_batch_key"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Flag Records to Exclude"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -6169,11 +6192,11 @@ agency_file_row_key = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{10E04D94-1A74-4CDC-AF3B-D6D31FDF8F6A}"
+      DTS:DTSID="{2671DBBB-860B-4DEA-9982-A2E0C1EBCE9E}"
       DTS:From="Package\Lookup Salesforce IDs"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Flag Records to Exclude" />
+      DTS:To="Package\Exclude Duplicates" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -6190,6 +6213,14 @@ agency_file_row_key = ?</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Set Default Salesforce Fields for AMRs" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{F17139FF-88A3-4359-9E1D-423D67E0CFA4}"
+      DTS:From="Package\Exclude Duplicates"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Flag Records to Exclude" />
   </DTS:PrecedenceConstraints>
   <DTS:EventHandlers>
     <DTS:EventHandler
@@ -6489,11 +6520,11 @@ agency_file_row_key = ?</property>
         <NodeLayout
           Size="192,42.6666666666667"
           Id="Package\Flag Records to Exclude"
-          TopLeft="286.845242647568,580.766662397185" />
+          TopLeft="286.845242647568,640.133328002293" />
         <NodeLayout
           Size="184,42.6666666666667"
           Id="Package\Lookup Salesforce IDs"
-          TopLeft="287.152773498869,494.877776581909" />
+          TopLeft="287.152773498869,486.211110070214" />
         <NodeLayout
           Size="228,42.6666666666667"
           Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update"
@@ -6535,6 +6566,32 @@ agency_file_row_key = ?</property>
           Size="237.333333333334,42.6666666666667"
           Id="Package\Retrieve List of Unprocessed Files"
           TopLeft="255.208329530434,112.499998489022" />
+        <NodeLayout
+          Size="258.666666666667,42.6666666666667"
+          Id="Package\Set Default Salesforce Fields for AMRs"
+          TopLeft="256.666662842036,717.366660336057" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="378.493052081206,452.099996660351">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.1111134098632"
+              Start="0,0"
+              End="0,26.6111134098632">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6111134098632" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="375.854163430321,155.166665155689">
@@ -6558,41 +6615,19 @@ agency_file_row_key = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="378.493052081206,452.099996660351">
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="384.422619411469,682.79999466896">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.7777799215576"
+              EndConnector="0,34.5666656670968"
               Start="0,0"
-              End="0,35.2777799215576">
+              End="0,27.0666656670968">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.2777799215576" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="380.999008073219,537.544443248576">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.2222191486096"
-              Start="0,0"
-              End="0,35.7222191486096">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.7222191486096" />
+                    End="0,27.0666656670968" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6602,23 +6637,45 @@ agency_file_row_key = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="258.666666666667,42.6666666666667"
-          Id="Package\Set Default Salesforce Fields for AMRs"
-          TopLeft="253.124996228144,664.49999461472" />
+          Size="192,42.6666666666667"
+          Id="Package\Exclude Duplicates"
+          TopLeft="287.499995715917,560.033331651886" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="382.651786104523,623.433329063852">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="381.326384607393,528.877776736881">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.0666655508686"
+              EndConnector="0,31.1555549150045"
               Start="0,0"
-              End="0,33.5666655508686">
+              End="0,23.6555549150045">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5666655508686" />
+                    End="0,23.6555549150045" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="383.172619181742,602.699998318552">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.433329683741"
+              Start="0,0"
+              End="0,29.933329683741">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.933329683741" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6768,13 +6825,17 @@ agency_file_row_key = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="169.333333333334,42.6666666666667"
-          Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Add Error Category"
-          TopLeft="240.624996414408,204.666663334767" />
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Source Query"
+          TopLeft="236.408167291313,38.6722690331953" />
         <NodeLayout
           Size="165.333333333334,42"
           Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\AFR Record Cache"
           TopLeft="44.2091842267783,404.76050702" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Multicast"
+          TopLeft="244.669222020075,290.801261988262" />
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Prepare Columns"
@@ -6788,17 +6849,13 @@ agency_file_row_key = ?</property>
           Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Transform To AMR"
           TopLeft="228.489799809525,129.825211342195" />
         <NodeLayout
-          Size="120,42"
-          Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Multicast"
-          TopLeft="244.669222020075,290.801261988262" />
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Add Error Category"
+          TopLeft="240.624996414408,204.666663334767" />
         <NodeLayout
           Size="218,42"
           Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record"
           TopLeft="348.611105916401,594.267415462304" />
-        <NodeLayout
-          Size="142.666666666667,42.6666666666667"
-          Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Source Query"
-          TopLeft="236.408167291313,38.6722690331953" />
         <EdgeLayout
           Id="Package\Loop Through Each File\Load AMR, Prepare AFR Update.Paths[Succeeded]"
           TopLeft="443.239000797068,438.026051707268">
@@ -6854,7 +6911,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6876,7 +6935,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6910,7 +6971,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6944,7 +7007,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6978,7 +7043,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7012,7 +7079,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7043,7 +7112,7 @@ agency_file_row_key = ?</property>
     design-time-name="Package\Loop Through Each File\Update AFR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="193.333333333334,42.6666666666667"
           Id="Package\Loop Through Each File\Update AFR\Update Agency File Row"
@@ -7071,7 +7140,9 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

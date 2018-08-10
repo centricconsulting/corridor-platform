@@ -2,19 +2,30 @@
 CREATE PROCEDURE [dbo].[custom_sfclookup_Trinity] (@agency_key as int, @process_batch_key as int)
 AS
 
+/*
+-- TEST CODE --
+DECLARE @agency_key int
+DECLARE @process_batch_key int
+SET @agency_key = 2
+SET @process_batch_key = 103873
+UPDATE agency_medical_record
+SET process_dtm = NULL, process_error_category = NULL, process_error_message = NULL, salesforce_send_ind = 1, process_success_ind = NULL
+WHERE process_batch_key = 0 OR process_batch_key = @process_batch_key
+-- END TEST CODE --
+*/
 -- Get agency code
 UPDATE agency_medical_record
 SET sfc_Agency__c = Id
 FROM agency_medical_record
 INNER JOIN sfc.DM_Agency__c
-ON agency_medical_record.agency_location = sfc.DM_Agency__c.[Name]
+ON agency_medical_record.agency_location = sfc.DM_Agency__c.Agency_Alias__c
 WHERE agency_medical_record.process_batch_key = @process_batch_key
 AND agency_key = @agency_key
 AND salesforce_send_ind = 1
 
 -- Inactive Agency Error Message
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Record Rejected - Inactive Location in HHCP: "' + agency_location, salesforce_send_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Record Rejected - Inactive Location in HHCP: "' + agency_location, salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN sfc.DM_Agency__c Agency__c
 ON agency_medical_record.sfc_Agency__c = Agency__c.Id
@@ -29,7 +40,7 @@ AND salesforce_send_ind = 1
 
 -- Agency error messages
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Agency Location "' + agency_location + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Agency Location "' + agency_location + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
@@ -39,6 +50,107 @@ WHERE agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key
 AND salesforce_send_ind = 1
 AND sfc_Agency__c IS NULL
+
+-- Get Hospice product rate codes
+UPDATE agency_medical_record
+SET sfc_Product_Rate__c = Id
+FROM agency_medical_record
+INNER JOIN sfc.DM_Agency_Product_Rate__c
+ON agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
+AND agency_medical_record.visit_type = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c
+WHERE agency_medical_record.process_batch_key = @process_batch_key
+AND agency_key = @agency_key
+AND salesforce_send_ind = 1
+AND process_dtm IS NULL
+AND visit_type = 'HOSPICE'
+
+-- Hospice Product rate error messages
+UPDATE agency_medical_record
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find HOSPICE Product Rate for location "' + agency_location + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
+FROM agency_medical_record
+INNER JOIN agency_file_row
+ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
+INNER JOIN agency_file
+ON agency_file_row.agency_file_key = agency_file.agency_file_key
+WHERE agency_medical_record.process_batch_key = @process_batch_key
+AND agency_medical_record.agency_key = @agency_key
+AND salesforce_send_ind = 1
+AND sfc_Product_Rate__c IS NULL
+AND visit_type = 'HOSPICE'
+
+-- Reject discharges for clinician graduates
+UPDATE agency_medical_record
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Record Rejected - Discharge for Graduated Clinician', salesforce_send_ind = 0, notification_sent_ind = 0
+FROM agency_medical_record
+INNER JOIN agency_file_row
+ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
+INNER JOIN agency_file
+ON agency_file_row.agency_file_key = agency_file.agency_file_key
+INNER JOIN sfc.DM_Clinician__c
+ON agency_medical_record.clinician_name = sfc.DM_Clinician__c.Full_Name__c
+WHERE agency_medical_record.process_batch_key = @process_batch_key
+AND agency_medical_record.agency_key = @agency_key
+AND salesforce_send_ind = 1
+AND sfc_Product_Rate__c IS NULL
+AND Clinician_Graduate__c = 'true'
+AND visit_type = 'DISCHARGE'
+
+-- Get product rate code for graduated clinicians
+UPDATE agency_medical_record
+SET sfc_Product_Rate__c = sfc.DM_Agency_Product_Rate__c.Id
+FROM agency_medical_record
+INNER JOIN sfc.DM_Agency_Product_Rate__c
+ON agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
+AND ('Coding Only ' + agency_medical_record.visit_type) = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c
+INNER JOIN sfc.DM_Clinician__c
+ON agency_medical_record.clinician_name = sfc.DM_Clinician__c.Full_Name__c
+WHERE agency_medical_record.process_batch_key = @process_batch_key
+AND agency_key = @agency_key
+AND salesforce_send_ind = 1
+AND process_dtm IS NULL
+AND Clinician_Graduate__c = 'true'
+
+-- Graduated Clinician product rate error messages
+UPDATE agency_medical_record
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Coding Only Product Rate for Location:"' + agency_location + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
+FROM agency_medical_record
+INNER JOIN agency_file_row
+ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
+INNER JOIN agency_file
+ON agency_file_row.agency_file_key = agency_file.agency_file_key
+INNER JOIN sfc.DM_Clinician__c
+ON agency_medical_record.clinician_name = sfc.DM_Clinician__c.Full_Name__c
+WHERE agency_medical_record.process_batch_key = @process_batch_key
+AND agency_medical_record.agency_key = @agency_key
+AND salesforce_send_ind = 1
+AND sfc_Product_Rate__c IS NULL
+AND Clinician_Graduate__c = 'true'
+
+
+SELECT * FROM agency_medical_record
+WHERE agency_key = 2
+
+SELECT * FROM SALESFORCE...Payor_to_product_lookup__c
+WHERE Category__c = 'Secondary Payor'
+
+SELECT * FROM sfc.Payor_to_product_lookup__c
+
+
+-- Graduated clinicians - always Coding Only (after discharges rejected)
+
+-- Rest of product lookups - payor source/payor type determines coding type
+
+-- Only do discharges for certain payors
+
+-- Primary and secondary review type factor in to product
+
+-- If Payor type = MRC (MCR?), then use secondary payor type
+
+--  Will need category of payor type in payor to product lookup
+
+-- If discharge and medicaid/medicare, always take it
+
+/*
 
 -- Get product rate code
 UPDATE agency_medical_record
@@ -64,3 +176,4 @@ WHERE agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key
 AND salesforce_send_ind = 1
 AND sfc_Product_Rate__c IS NULL
+*/

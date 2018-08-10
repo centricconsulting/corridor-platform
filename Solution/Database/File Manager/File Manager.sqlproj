@@ -125,6 +125,9 @@
     <Build Include="dbo\Stored Procedures\custom_filerow_Pathways_processing.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_LHC_Burst_processing.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_Bayada_processing.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Stored Procedures\flag_duplicate_assessments.sql" />
+    <Build Include="dbo\Stored Procedures\custom_filerow_MedStar_processing.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />

@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[custom_filerow_LHC_Burst_processing] (@agency_file_key as int, @file_name as varchar(200))
+﻿
+CREATE PROCEDURE [dbo].[custom_filerow_LHC_Burst_processing] (@agency_file_key as int, @file_name as varchar(200))
 AS
 
 -- Get the header row index and agency info
@@ -147,7 +148,8 @@ AND row_index > @header_row_index
 AND column38 = 'SOC'
 
 UPDATE agency_file_row
-SET column40 = column03
+--SET column40 = column03
+SET column40 = column09
 FROM agency_file_row
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
