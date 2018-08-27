@@ -84,7 +84,7 @@ INNER JOIN
 	INNER JOIN agency_file_row
 	ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
 	INNER JOIN sfc.Payor_to_product_lookup__c Payor_Lookup
-	ON agency_file_row.column13 = Payor_Lookup.Payor__c
+	ON agency_file_row.column14 = Payor_Lookup.Payor__c
 	WHERE General_Product_Type__c = 'Payor Dependent'
 	AND Payor_Lookup.Parent_Agency__c = @TrueParentAgencyID
 	AND agency_key = @agency_key
@@ -100,7 +100,7 @@ AND agency_medical_record.agency_key = @agency_key
 
 -- Payor Dependent Product lookup error
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Payor Dependent product "' + Product_Lookup.Calculated_Product + '" for location "' + agency_location + '" and payor "' + column13 + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find Payor Dependent product "' + Product_Lookup.Calculated_Product + '" for location "' + agency_location + '" and payor "' + column14 + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
@@ -119,7 +119,7 @@ INNER JOIN
 		SELECT * FROM sfc.Payor_to_product_lookup__c
 		WHERE Parent_Agency__c = @TrueParentAgencyID
 	) Payor_Lookup
-	ON agency_file_row.column13 = Payor_Lookup.Payor__c
+	ON agency_file_row.column14 = Payor_Lookup.Payor__c
 	WHERE General_Product_Type__c = 'Payor Dependent'
 	AND agency_key = @agency_key
 	AND agency_medical_record.process_batch_key = @process_batch_key
@@ -159,7 +159,7 @@ AND agency_medical_record.agency_key = @agency_key
 
 -- Non-payor dependent (Coding Only) Product lookup error
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find product "' + Product_Lookup.Calculated_Product + '" for location "' + agency_location + '" and visit type "' + column16 + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find product "' + Product_Lookup.Calculated_Product + '" for location "' + agency_location + '" and visit type "' + column17 + '" in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key

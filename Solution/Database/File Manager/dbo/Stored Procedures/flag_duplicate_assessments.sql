@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE dbo.flag_duplicate_assessments (@process_batch_key int)
+CREATE PROCEDURE [dbo].[flag_duplicate_assessments] (@process_batch_key int)
 AS
 
 UPDATE agency_medical_record
@@ -22,6 +22,16 @@ WHERE CountOfRecords > 1
 AND agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.salesforce_send_ind = 1
 AND agency_medical_record.process_dtm IS NULL
+AND agency_medical_record_key NOT IN
+(
+	SELECT FirstInstanceID FROM
+	(
+		SELECT MIN(agency_medical_record_key) FirstInstanceID, COUNT(agency_medical_record_key) CountOfRecords, medical_record_number, assessment_date, sfc_Agency__c FROM agency_medical_record
+		WHERE process_batch_key = @process_batch_key
+		GROUP BY medical_record_number, assessment_date, sfc_Agency__c
+	) IG
+	WHERE FirstInstanceID IS NOT NULL
+)
 
 
 UPDATE agency_medical_record

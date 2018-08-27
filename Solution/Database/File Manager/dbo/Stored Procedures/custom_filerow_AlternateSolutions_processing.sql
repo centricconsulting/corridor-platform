@@ -1,4 +1,5 @@
-﻿CREATE PROCEDURE [dbo].[custom_filerow_AlternateSolutions_processing] (@agency_file_key as int, @file_name as varchar(200))
+﻿
+CREATE PROCEDURE [dbo].[custom_filerow_AlternateSolutions_processing] (@agency_file_key as int, @file_name as varchar(200))
 AS
 
 -- Get the header row index and agency info
@@ -38,7 +39,7 @@ SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = '
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
-AND (column16 IS NULL OR RTRIM(column16) = '')
+AND (column17 IS NULL OR RTRIM(column17) = '')
 
 -- Visit Type Error
 UPDATE agency_file_row
@@ -46,7 +47,7 @@ SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = '
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
-AND LEN(column16) < 3
+AND LEN(column17) < 3
 
 
 -- Branch
@@ -67,8 +68,19 @@ WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND (
-		(column17 IS NULL OR RTRIM(column17) = '')
-		OR ISDATE(column17) = 0
+		(column18 IS NULL OR RTRIM(column18) = '')
+		OR ISDATE(column18) = 0
+	)
+
+-- Episode Status
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Invalid Episode Status', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND (
+		(column21 IS NULL OR RTRIM(column21) = '')
+		OR LEN(column21) < 3
 	)
 
 -- Create new columns in agency file row
@@ -95,7 +107,7 @@ INNER JOIN
 	UNION ALL
 	SELECT 'RESUMPTION OF CARE', 'ROC'
 ) Product_Suffix_Lookup
-ON agency_file_row.column16 = Product_Suffix_Lookup.Visit_Type
+ON agency_file_row.column17 = Product_Suffix_Lookup.Visit_Type
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
@@ -107,7 +119,7 @@ FROM agency_file_row
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
-AND column16 = 'SOC/RECERT'
+AND column17 = 'SOC/RECERT'
 -- If SOE and SOC date match, they are a SOC
 AND column07 = column08
 
@@ -118,13 +130,13 @@ FROM agency_file_row
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
-AND column16 = 'SOC/RECERT'
+AND column17 = 'SOC/RECERT'
 -- If SOE and SOC date do not match, they are a RECERT
 AND column07 != column08
 
 -- Product Suffix errors
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Invalid product:' + column16, create_agency_medical_record_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Invalid product:' + column17, create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
@@ -140,6 +152,16 @@ AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND 
 (
-	column13 LIKE 'WC %'
-	OR column13 LIKE 'INDIGENT%'
+	column14 LIKE 'WC %'
+	OR column14 LIKE 'INDIGENT%'
 )
+
+-- Episode Status
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Episode Status not CURRENT/PENDING/DISCHARGED', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND column21 != 'PENDING'
+AND column21 != 'CURRENT'
+AND column21 != 'DISCHARGED'

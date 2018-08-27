@@ -1,4 +1,5 @@
 ﻿
+
 CREATE PROCEDURE [dbo].[custom_filerow_Bayada_processing] (@agency_file_key as int, @file_name as varchar(200))
 AS
 
@@ -41,8 +42,8 @@ WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND (
-		(column16 IS NULL OR RTRIM(column16) = '')
-		OR LEN(column16) < 3
+		(column17 IS NULL OR RTRIM(column17) = '')
+		OR LEN(column17) < 3
 	)
 
 -- Branch
@@ -51,7 +52,7 @@ SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = '
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
-AND column16 NOT LIKE '%Discharge%'
+AND column17 NOT LIKE '%Discharge%'
 AND (
 		(column02 IS NULL OR RTRIM(column02) = '')
 		OR LEN(column02) < 3
@@ -64,8 +65,19 @@ WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND (
-		(column17 IS NULL OR RTRIM(column17) = '')
-		OR ISDATE(column17) = 0
+		(column18 IS NULL OR RTRIM(column18) = '')
+		OR ISDATE(column18) = 0
+	)
+
+-- Episode Status
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Invalid Episode Status', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND (
+		(column21 IS NULL OR RTRIM(column21) = '')
+		OR LEN(column21) < 3
 	)
 
 -- Create new columns in agency file row
@@ -90,7 +102,7 @@ INNER JOIN
 	UNION ALL
 	SELECT 'DISCHARGE', 'Discharge Review'
 ) Product_Suffix_Lookup
-ON agency_file_row.column16 = Product_Suffix_Lookup.Visit_Type
+ON agency_file_row.column17 = Product_Suffix_Lookup.Visit_Type
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
@@ -104,18 +116,28 @@ AND row_index > @header_row_index
 AND column40 IS NULL
 AND 
 (
-	column16 LIKE '%RESUMPTION%'
-	OR column16 LIKE '%DEATH%'
-	OR column16 LIKE '%TRANSFER%'
-	OR column16 = 'ROC/RECERT'
+	column17 LIKE '%RESUMPTION%'
+	OR column17 LIKE '%DEATH%'
+	OR column17 LIKE '%TRANSFER%'
+	OR column17 = 'ROC/RECERT'
 )
 
 -- Product Suffix errors
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Invalid product:' + column16, create_agency_medical_record_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Invalid product:' + column17, create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND column40 IS NULL
 
 -- custom logic
+
+-- Episode Status
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Episode Status not CURRENT/PENDING/DISCHARGED', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND column21 != 'PENDING'
+AND column21 != 'CURRENT'
+AND column21 != 'DISCHARGED'

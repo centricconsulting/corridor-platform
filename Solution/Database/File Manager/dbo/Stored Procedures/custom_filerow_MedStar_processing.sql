@@ -1,5 +1,11 @@
 ﻿
 
+
+
+
+
+
+
 CREATE PROCEDURE [dbo].[custom_filerow_MedStar_processing] (@agency_file_key as int, @file_name as varchar(200))
 AS
 
@@ -41,8 +47,8 @@ WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND (
-		(column16 IS NULL OR RTRIM(column16) = '')
-		OR LEN(column16) < 3
+		(column17 IS NULL OR RTRIM(column17) = '')
+		OR LEN(column17) < 3
 	)
 
 -- Branch
@@ -63,11 +69,35 @@ WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND (
-		(column17 IS NULL OR RTRIM(column17) = '')
-		OR ISDATE(column17) = 0
+		(column18 IS NULL OR RTRIM(column18) = '')
+		OR ISDATE(column18) = 0
 	)
 
--- Create new columns in agency file row
+
+--Team Color 
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Invalid Team Color', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND (
+	(column03 IS NULL OR RTRIM(column03) = '')
+	OR LEN(column03) < 3
+)
+
+
+	-- Episode Status
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Invalid Episode Status', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND (
+(column21 IS NULL OR RTRIM(column21) = '')
+OR LEN(column21) < 3
+)
+
+
 
 -- Product Suffix This add the header for one column, which is one row insert.
 UPDATE agency_file_row
@@ -80,10 +110,10 @@ AND row_index = @header_row_index
 -- update new columns
 
 -- Product Suffix
--- This Finds the Corresponding Lookup between Visit_Type (which is column 16) and Inserts the corresponding value 
+-- This Finds the Corresponding Lookup between Visit_Type (which is column 17) and Inserts the corresponding value 
 -- in Column 40
 UPDATE agency_file_row
-SET column40 = column16
+SET column40 = column17
 FROM agency_file_row
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
@@ -92,10 +122,27 @@ AND row_index > @header_row_index
 
 -- Product Suffix errors
 UPDATE agency_file_row
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Invalid product:' + column16, create_agency_medical_record_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Invalid product:' + column17, create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND column40 IS NULL
 
--- custom logic
+
+-- Episode Status
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Episode Status not CURRENT or PENDING', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND column21 != 'PENDING'
+AND column21 != 'CURRENT'
+
+
+--Custom Exclusion OPERATIONS DIRECTOR
+UPDATE agency_file_row
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected - Responsible Position OPERATIONS DIRECTOR not allowed', create_agency_medical_record_ind = 0, notification_sent_ind = 0
+WHERE agency_file_key = @agency_file_key
+AND process_dtm IS NULL
+AND row_index > @header_row_index
+AND column09 = 'OPERATIONS DIRECTOR'
