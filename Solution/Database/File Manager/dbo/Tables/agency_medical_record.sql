@@ -33,6 +33,9 @@
     [sfc_Product_Rate__c]           NVARCHAR (18)  NULL,
     [sfc_Status__c]                 NVARCHAR (10)  NULL,
     [sfc_Ready_for_Coding_send_ind] BIT            NULL,
+    [sfc_Special_Request__c]        VARCHAR (5)    CONSTRAINT [DF_agency_medical_record_sfc_Special_Request__c] DEFAULT ('false') NULL,
+    [sfc_Special_Request_Reason__c] NVARCHAR (255) NULL,
+    [sfc_Special_Request_Type__c]   NVARCHAR (255) NULL,
     [process_dtm]                   DATETIME       NULL,
     [process_success_ind]           BIT            NULL,
     [process_error_category]        VARCHAR (10)   NULL,
@@ -42,6 +45,8 @@
     [process_batch_key]             INT            NOT NULL,
     CONSTRAINT [dbo_agency_medical_record_pk] PRIMARY KEY CLUSTERED ([agency_medical_record_key] ASC)
 );
+
+
 
 
 

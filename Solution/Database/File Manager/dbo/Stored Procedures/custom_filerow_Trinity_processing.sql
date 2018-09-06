@@ -206,14 +206,19 @@ AND column21 != 'PENDING'
 AND column21 != 'CURRENT'
 AND column21 != 'DISCHARGED'
 
--- Arrived Date before 8/6 - Location FRH
+-- Arrived Date before 8/6 - Locations FRH, FRS
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected, Arrived Date before 8/6/2018 for location ' + column02, create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND CAST(column12 as date) < CAST('8/6/2018'as date)
-AND column02 = 'FRH'
+AND
+(
+	column02 = 'FRH'
+	OR
+	column02 = 'FRS'
+)
 
 -- Arrived Date before 8/20 - Locations MIH, GRH, MUH
 UPDATE agency_file_row
@@ -231,11 +236,16 @@ AND column02 IN
 	SELECT 'MUH'
 )
 
--- Arrived Date before 9/24 - Location LOH
+-- Arrived Date before 9/24 - Location LOH, LOS
 UPDATE agency_file_row
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + @file_name + ', MRN:' + column06 + ', Record Rejected, Arrived Date before 9/24/2018 for location ' + column02, create_agency_medical_record_ind = 0, notification_sent_ind = 0
 WHERE agency_file_key = @agency_file_key
 AND process_dtm IS NULL
 AND row_index > @header_row_index
 AND CAST(column12 as date) < CAST('9/24/2018'as date)
-AND column02 = 'LOH'
+AND
+(
+	column02 = 'LOH'
+	OR
+	column02 = 'LOS'
+)

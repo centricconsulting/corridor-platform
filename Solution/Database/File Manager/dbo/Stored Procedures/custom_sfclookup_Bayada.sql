@@ -53,26 +53,6 @@ AND Commercial_Payor__c = 'true'
 AND agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key
 AND salesforce_send_ind = 1
-/*
--- Set non-commercial insurance agency ID (parent branch ID)
-UPDATE agency_medical_record
-SET sfc_Agency__c = @TrueParentAgencyID
-FROM agency_medical_record
-INNER JOIN agency_file_row
-ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
-INNER JOIN agency_file
-ON agency_file_row.agency_file_key = agency_file.agency_file_key
-INNER JOIN sfc.Payor_to_product_lookup__c
-ON agency_medical_record.payor_source = sfc.Payor_to_product_lookup__c.Payor__c
-WHERE visit_type = 'Discharge Review'
-AND Parent_Agency__c = @TrueParentAgencyID
-AND Commercial_Payor__c != 'true'
-AND agency_medical_record.process_batch_key = @process_batch_key
-AND agency_medical_record.agency_key = @agency_key
-AND salesforce_send_ind = 1
-*/
-
--- **************************
 
 -- Discharge payor not found error
 UPDATE agency_medical_record
@@ -91,7 +71,7 @@ AND agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key
 AND salesforce_send_ind = 1
 
--- Get agency code for most records - NON-discharges
+-- Get agency code for most records
 UPDATE agency_medical_record
 SET sfc_Agency__c = Id
 FROM agency_medical_record
@@ -106,7 +86,6 @@ WHERE agency_medical_record.process_batch_key = @process_batch_key
 AND agency_key = @agency_key
 AND salesforce_send_ind = 1
 AND sfc_Agency__c IS NULL
---AND visit_type != 'Discharge Review'
 
 -- Inactive Agency Error Message
 UPDATE agency_medical_record
@@ -203,6 +182,28 @@ WHERE agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key
 AND salesforce_send_ind = 1
 AND visit_type = 'Discharge Review'
+AND sfc_Product_Rate__c IS NULL
+
+-- FNB - MY NEXUS Product Lookups
+UPDATE agency_medical_record
+SET sfc_Product_Rate__c = sfc.DM_Agency_Product_Rate__c.Id
+FROM agency_medical_record
+INNER JOIN sfc.DM_Agency_Product_Rate__c
+ON agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
+AND ('5 Star Review ' + agency_medical_record.visit_type) = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c
+WHERE agency_location = 'FNB'
+AND payor_source LIKE '%MY NEXUS%'
+
+-- FNB - MY NEXUS Product Lookup Errors
+UPDATE agency_medical_record
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', 5 Star Review Product Rate Not Found for Location "' + agency_location + '"', salesforce_send_ind = 0, notification_sent_ind = 0
+FROM agency_medical_record
+INNER JOIN agency_file_row
+ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
+INNER JOIN agency_file
+ON agency_file_row.agency_file_key = agency_file.agency_file_key
+WHERE agency_location = 'FNB'
+AND payor_source LIKE '%MY NEXUS%'
 AND sfc_Product_Rate__c IS NULL
 
 -- All other product lookups are payor dependent for Bayada

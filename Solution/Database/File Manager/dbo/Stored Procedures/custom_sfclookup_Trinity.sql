@@ -8,7 +8,7 @@ PRINT 'RESET CODE'
 DECLARE @agency_key as int
 DECLARE @process_batch_key as int
 SET @agency_key = 2
-SET @process_batch_key = 111752
+SET @process_batch_key = 111865
 
 UPDATE agency_medical_record
 SET process_dtm = NULL, process_error_category = NULL, process_error_message = NULL, process_success_ind = NULL, salesforce_send_ind = 1, notification_sent_ind = 1, sfc_Agency__c = NULL, sfc_Product_Rate__c = NULL
@@ -38,6 +38,8 @@ ON agency_medical_record.agency_location = sfc.DM_Agency__c.Agency_Alias__c
 WHERE agency_medical_record.process_batch_key = @process_batch_key
 AND agency_key = @agency_key
 AND salesforce_send_ind = 1
+AND sfc.GetTrueParentAgencyCode(sfc.DM_Agency__c.id) = @TrueParentAgencyID
+
 
 -- Inactive Agency Error Message
 PRINT 'Error for inactive agency'
@@ -251,8 +253,8 @@ AND agency_medical_record.process_dtm IS NULL
 AND sfc_Product_Rate__c IS NULL
 
 
--- Reject Discharges that are not Medicare or Medicaid
-PRINT 'Reject Discharges that are not Medicare or Medicaid'
+-- Reject Discharges that are not Medicare, Medicaid, or VA
+PRINT 'Reject Discharges that are not Medicare, Medicaid, or VA'
 UPDATE agency_medical_record
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Record Rejected - Discharge but not Medicare or Medicaid', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
@@ -265,20 +267,36 @@ AND agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key
 AND salesforce_send_ind = 1
 AND agency_medical_record.process_dtm IS NULL
-AND 
-(
-	payor_type NOT LIKE 'MEDIC%'
-	or payor_type = 'NON MEDICARE EPISODIC PAYORS'
-)
-AND
+AND -- Primary Payor Type Criteria
 (
 	(
+	payor_type NOT LIKE 'MEDIC%' -- NOT Medicare / Medicaid
+	AND NOT -- NOT VA
+		(
+			payor_type = 'OTHER'
+			AND
+			payor_source LIKE 'VETERANS ADMINISTRATION - THHS%'
+		)
+	) --  END VA
+	-- This payor type explicitly excluded from Medicare
+	or payor_type = 'NON MEDICARE EPISODIC PAYORS'
+	
+)
+AND -- Secondary payor type criteria
+(
+	( -- There's not secondary payor
 		secondary_payor_source IS NULL
 		OR secondary_payor_source = ''
 	)
 	OR
-	(
+	( -- 
 		secondary_payor_type NOT LIKE 'MEDIC%'
+		AND NOT -- NOT VA
+		(
+			secondary_payor_type = 'OTHER'
+			AND
+			secondary_payor_source LIKE 'VETERANS ADMINISTRATION - THHS%'
+		)
 		OR secondary_payor_type = 'NON MEDICARE EPISODIC PAYORS'
 	)
 )
@@ -297,24 +315,25 @@ INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
 INNER JOIN agency_file
 ON agency_file_row.agency_file_key = agency_file.agency_file_key
-INNER JOIN sfc.Payor_to_product_lookup__c
-ON agency_medical_record.payor_source = sfc.Payor_to_product_lookup__c.Payor__c
+--INNER JOIN sfc.Payor_to_product_lookup__c
+--ON agency_medical_record.payor_source = sfc.Payor_to_product_lookup__c.Payor__c
 INNER JOIN sfc.DM_Agency_Product_Rate__c
-ON sfc.Payor_to_product_lookup__c.Product_Name__c = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c
-WHERE Parent_Agency__c = @TrueParentAgencyID
-AND Category__c = 'Discharge Payor'
+ON agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
+WHERE  sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c = 'Extended OASIS Review Discharge'
+--AND Parent_Agency__c = @TrueParentAgencyID
+--AND Category__c = 'Discharge Payor'
 AND visit_type = 'DISCHARGE'
 AND agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key
 AND salesforce_send_ind = 1
 AND agency_medical_record.process_dtm IS NULL
 AND sfc_Product_Rate__c IS NULL
-AND Parent_Agency__c = @TrueParentAgencyID
+--AND Parent_Agency__c = @TrueParentAgencyID
 
 -- Discharge product rate lookup warnings
-PRINT 'Discharge product rate warnings'
+PRINT 'Discharge product rate errors'
 UPDATE agency_medical_record
-SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'WARNING', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Record Rejected - Discharge Review not allowed for payor type ' + payor_type + ' in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find product rate Extended OASIS Discharge Review for location ' + agency_location + ' in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
 FROM agency_medical_record
 INNER JOIN agency_file_row
 ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
@@ -326,6 +345,68 @@ AND agency_medical_record.agency_key = @agency_key
 AND salesforce_send_ind = 1
 AND agency_medical_record.process_dtm IS NULL
 AND sfc_Product_Rate__c IS NULL
+
+
+-- Product lookups for VA
+PRINT 'Product lookup for VA'
+UPDATE agency_medical_record
+SET sfc_Product_Rate__c = sfc.DM_Agency_Product_Rate__c.Id
+FROM agency_medical_record
+INNER JOIN agency_file_row
+ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
+INNER JOIN agency_file
+ON agency_file_row.agency_file_key = agency_file.agency_file_key
+INNER JOIN sfc.DM_Agency_Product_Rate__c
+ON ('Extended OASIS Review ' + agency_medical_record.visit_type) = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c
+AND agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
+WHERE sfc_Product_Rate__c IS NULL
+AND
+(
+	(
+		payor_type = 'OTHER'
+		AND payor_source LIKE 'VETERANS ADMINISTRATION - THHS%'
+	)
+	OR
+	(
+		secondary_payor_type = 'OTHER'
+		AND secondary_payor_source LIKE 'VETERANS ADMINISTRATION - THHS%'
+	)
+)
+AND agency_medical_record.process_batch_key = @process_batch_key
+AND agency_medical_record.agency_key = @agency_key
+AND salesforce_send_ind = 1
+AND agency_medical_record.process_dtm IS NULL
+
+
+-- Product Rate Errors - VA
+PRINT 'Product lookup errors for VA'
+UPDATE agency_medical_record
+SET process_dtm = GETDATE(), process_success_ind = 0, process_error_category = 'ERROR', process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Cannot find VA product rate Extended OASIS Review ' + visit_type + ' for location ' + agency_location + ' in HHCP', salesforce_send_ind = 0, notification_sent_ind = 0
+FROM agency_medical_record
+INNER JOIN agency_file_row
+ON agency_medical_record.agency_file_row_key = agency_file_row.agency_file_row_key
+INNER JOIN agency_file
+ON agency_file_row.agency_file_key = agency_file.agency_file_key
+INNER JOIN sfc.Payor_to_product_lookup__c
+ON agency_medical_record.payor_source = sfc.Payor_to_product_lookup__c.Payor__c
+WHERE Parent_Agency__c = @TrueParentAgencyID
+AND agency_medical_record.process_batch_key = @process_batch_key
+AND agency_medical_record.agency_key = @agency_key
+AND salesforce_send_ind = 1
+AND agency_medical_record.process_dtm IS NULL
+AND sfc_Product_Rate__c IS NULL
+AND
+(
+	(
+		payor_type = 'OTHER'
+		AND payor_source LIKE 'VETERANS ADMINISTRATION - THHS%'
+	)
+	OR
+	(
+		secondary_payor_type = 'OTHER'
+		AND secondary_payor_source LIKE 'VETERANS ADMINISTRATION - THHS%'
+	)
+)
 
 
 -------------------------------------------------------------------------
@@ -346,6 +427,7 @@ INNER JOIN sfc.Payor_to_product_lookup__c
 ON agency_medical_record.payor_type = sfc.Payor_to_product_lookup__c.Payor_Type__c
 INNER JOIN sfc.DM_Agency_Product_Rate__c
 ON (sfc.Payor_to_product_lookup__c.Product_Name__c + ' ' + agency_medical_record.visit_type) = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c
+AND agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
 WHERE Parent_Agency__c = @TrueParentAgencyID
 AND Category__c = 'Payor Type'
 AND sfc_Product_Rate__c IS NULL
@@ -391,6 +473,7 @@ INNER JOIN sfc.Payor_to_product_lookup__c
 ON agency_medical_record.secondary_payor_source = sfc.Payor_to_product_lookup__c.Payor__c
 INNER JOIN sfc.DM_Agency_Product_Rate__c
 ON (sfc.Payor_to_product_lookup__c.Product_Name__c + ' ' + agency_medical_record.visit_type) = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c
+AND agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
 WHERE Parent_Agency__c = @TrueParentAgencyID
 AND agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key
@@ -440,6 +523,7 @@ INNER JOIN sfc.Payor_to_product_lookup__c
 ON agency_medical_record.payor_type = sfc.Payor_to_product_lookup__c.Payor__c
 INNER JOIN sfc.DM_Agency_Product_Rate__c
 ON (sfc.Payor_to_product_lookup__c.Product_Name__c + ' ' + agency_medical_record.visit_type) = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c
+AND agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
 WHERE Parent_Agency__c = @TrueParentAgencyID
 AND agency_medical_record.process_batch_key = @process_batch_key
 AND agency_medical_record.agency_key = @agency_key

@@ -12,8 +12,8 @@
   DTS:ObjectName="Upload To SalesForce"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="578"
-  DTS:VersionGUID="{37C54764-1B8A-46B6-9121-EEB8E98D9668}">
+  DTS:VersionBuild="579"
+  DTS:VersionGUID="{33015C1D-1F41-4383-9D31-F833D29B5DFA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -54,7 +54,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="amr_cache_file_path">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Temporary\Source Files To File Manager.Upload To SalesForce.AMR.cache</DTS:VariableValue>
+        DTS:DataType="8">C:\Temporary_TEST\Source Files To File Manager.Upload To SalesForce.AMR.cache</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -103,7 +103,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="dbs_cache_file_path">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Temporary\Source Files To File Manager.Upload To SalesForce.DBS.cache</DTS:VariableValue>
+        DTS:DataType="8">C:\Temporary_TEST\Source Files To File Manager.Upload To SalesForce.DBS.cache</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -258,7 +258,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.578</DTS:VariableValue>
+        DTS:DataType="8">1.0.579</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -374,6 +374,9 @@
 , a.sfc_Product_Rate__c Product_Rate__c
 , a.sfc_Status__c
 , a.sfc_Ready_for_Coding_send_ind
+, a.sfc_Special_Request__c
+, a.sfc_Special_Request_Reason__c
+, a.sfc_Special_Request_Type__c
 ,
 CASE WHEN a.sfc_Ready_for_Coding_send_ind = 1
 THEN GETDATE()
@@ -764,6 +767,37 @@ AND salesforce_send_ind = 1</property>
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Ready_for_Coding_date]"
                       name="Ready_for_Coding_date"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request__c]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[sfc_Special_Request__c]"
+                      length="5"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request__c]"
+                      name="sfc_Special_Request__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request_Reason__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[sfc_Special_Request_Reason__c]"
+                      length="255"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request_Reason__c]"
+                      name="sfc_Special_Request_Reason__c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request_Type__c]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[sfc_Special_Request_Type__c]"
+                      length="255"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request_Type__c]"
+                      name="sfc_Special_Request_Type__c"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -942,6 +976,22 @@ AND salesforce_send_ind = 1</property>
                       refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[Ready_for_Coding_date]"
                       dataType="dbTimeStamp"
                       name="Ready_for_Coding_date" />
+                    <externalMetadataColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[sfc_Special_Request__c]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="sfc_Special_Request__c" />
+                    <externalMetadataColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[sfc_Special_Request_Reason__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="sfc_Special_Request_Reason__c" />
+                    <externalMetadataColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].ExternalColumns[sfc_Special_Request_Type__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="sfc_Special_Request_Type__c" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1153,6 +1203,25 @@ AND salesforce_send_ind = 1</property>
                       dataType="bool"
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[sfc_Ready_for_Coding_send_ind]"
                       name="sfc_Ready_for_Coding_send_ind" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[sfc_Special_Request__c]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[sfc_Special_Request__c]"
+                      name="sfc_Special_Request__c" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[sfc_Special_Request_Reason__c]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[sfc_Special_Request_Reason__c]"
+                      name="sfc_Special_Request_Reason__c" />
+                    <outputColumn
+                      refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[sfc_Special_Request_Type__c]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[sfc_Special_Request_Type__c]"
+                      name="sfc_Special_Request_Type__c" />
                     <outputColumn
                       refId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Error Output].Columns[Ready_for_Coding_date]"
                       dataType="dbTimeStamp"
@@ -1408,6 +1477,25 @@ AND salesforce_send_ind = 1</property>
                       cachedDataType="dbTimeStamp"
                       cachedName="Ready_for_Coding_date"
                       lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[Ready_for_Coding_date]" />
+                    <inputColumn
+                      refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[sfc_Special_Request__c]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="sfc_Special_Request__c"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request__c]" />
+                    <inputColumn
+                      refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[sfc_Special_Request_Reason__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="sfc_Special_Request_Reason__c"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request_Reason__c]" />
+                    <inputColumn
+                      refId="Package\Cache DBS Record To Consider\Unprocessed DBS Source Cache.Inputs[Raw File Destination Input].Columns[sfc_Special_Request_Type__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="sfc_Special_Request_Type__c"
+                      lineageId="Package\Cache DBS Record To Consider\Source Query.Outputs[OLE DB Source Output].Columns[sfc_Special_Request_Type__c]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1873,6 +1961,28 @@ AND salesforce_send_ind = 1</property>
                       externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[Ready_for_Coding_date]"
                       lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[Ready_for_Coding_date]"
                       name="Ready_for_Coding_date" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[sfc_Special_Request__c]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request__c]"
+                      length="5"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[sfc_Special_Request__c]"
+                      name="sfc_Special_Request__c" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Reason__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request_Reason__c]"
+                      length="255"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Reason__c]"
+                      name="sfc_Special_Request_Reason__c" />
+                    <outputColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Type__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request_Type__c]"
+                      length="255"
+                      lineageId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Type__c]"
+                      name="sfc_Special_Request_Type__c" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2043,6 +2153,22 @@ AND salesforce_send_ind = 1</property>
                       refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[Ready_for_Coding_date]"
                       dataType="dbTimeStamp"
                       name="Ready_for_Coding_date" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request__c]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="sfc_Special_Request__c" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request_Reason__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="sfc_Special_Request_Reason__c" />
+                    <externalMetadataColumn
+                      refId="Package\Update AMR\DBS Cache Source.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request_Type__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="sfc_Special_Request_Type__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -3067,6 +3193,28 @@ agency_medical_record_key = ?</property>
                       externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[Ready_for_Coding_date]"
                       lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[Ready_for_Coding_date]"
                       name="Ready_for_Coding_date" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request__c]"
+                      codePage="1252"
+                      dataType="str"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request__c]"
+                      length="5"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request__c]"
+                      name="sfc_Special_Request__c" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Reason__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request_Reason__c]"
+                      length="255"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Reason__c]"
+                      name="sfc_Special_Request_Reason__c" />
+                    <outputColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Type__c]"
+                      dataType="wstr"
+                      externalMetadataColumnId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request_Type__c]"
+                      length="255"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Type__c]"
+                      name="sfc_Special_Request_Type__c" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3237,6 +3385,22 @@ agency_medical_record_key = ?</property>
                       refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[Ready_for_Coding_date]"
                       dataType="dbTimeStamp"
                       name="Ready_for_Coding_date" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request__c]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="sfc_Special_Request__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request_Reason__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="sfc_Special_Request_Reason__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].ExternalColumns[sfc_Special_Request_Type__c]"
+                      dataType="wstr"
+                      length="255"
+                      name="sfc_Special_Request_Type__c" />
                   </externalMetadataColumns>
                 </output>
               </outputs>
@@ -4501,6 +4665,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       cachedName="Payor_Type"
                       externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Payor_Type__c]"
                       lineageId="Package\Upload To SalesForce\Convert and Rename.Outputs[Data Conversion Output].Columns[Payor_Type]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[sfc_Special_Request__c]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="sfc_Special_Request__c"
+                      externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Special_Request__c]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request__c]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[sfc_Special_Request_Reason__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="sfc_Special_Request_Reason__c"
+                      externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Special_Request_Reason__c]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Reason__c]" />
+                    <inputColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].Columns[sfc_Special_Request_Type__c]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="sfc_Special_Request_Type__c"
+                      externalMetadataColumnId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[Special_Request_Type__c]"
+                      lineageId="Package\Upload To SalesForce\DBS Souce Cache.Outputs[Raw File Source Output].Columns[sfc_Special_Request_Type__c]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -5132,6 +5318,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="wstr"
                       length="255"
                       name="Special_Request_Type__c" />
+                    <externalMetadataColumn
+                      refId="Package\Upload To SalesForce\Target Insert.Inputs[OLE DB Destination Input].ExternalColumns[TAT_with_QA__c]"
+                      dataType="decimal"
+                      name="TAT_with_QA__c"
+                      scale="2" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -5891,7 +6082,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Cache DBS Record To Consider">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="142.666666666667,42.6666666666667"
           Id="Package\Cache DBS Record To Consider\Source Query"
@@ -5919,9 +6110,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5939,7 +6128,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
     design-time-name="Package\Update AMR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="131.333333333334,42.6666666666667"
           Id="Package\Update AMR\Merge Join"
@@ -5999,9 +6188,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6035,9 +6222,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6059,9 +6244,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6083,9 +6266,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6107,9 +6288,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6131,9 +6310,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6145,37 +6322,29 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="141.333333333334,42.6666666666667"
-          Id="Package\Upload To SalesForce\Target Insert"
-          TopLeft="303.698417870366,284.346407985248" />
-        <NodeLayout
-          Size="164.666666666667,41.3333333333334"
-          Id="Package\Upload To SalesForce\Get Error Message"
-          TopLeft="287.580957155812,360.282357960341" />
-        <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Upload To SalesForce\Inject Variables"
-          TopLeft="284.028575829584,140.023529647708" />
+          Size="164,41.3333333333334"
+          Id="Package\Upload To SalesForce\Set Error Message"
+          TopLeft="502.247620189433,357.458823098278" />
         <NodeLayout
           Size="167.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Cache AMR Record"
           TopLeft="410.768260745614,543.858823098278" />
         <NodeLayout
-          Size="164,41.3333333333334"
-          Id="Package\Upload To SalesForce\Set Error Message"
-          TopLeft="502.247620189433,357.458823098278" />
-        <NodeLayout
-          Size="177.333333333334,41.3333333333334"
-          Id="Package\Upload To SalesForce\Convert and Rename"
-          TopLeft="494.920643349083,141.207841976126" />
+          Size="120,41.3333333333334"
+          Id="Package\Upload To SalesForce\Union All"
+          TopLeft="433.609530975868,460.420913796001" />
         <NodeLayout
           Size="129.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Row Count"
           TopLeft="306.158735372583,211.488886267531" />
         <NodeLayout
-          Size="120,41.3333333333334"
-          Id="Package\Upload To SalesForce\Union All"
-          TopLeft="433.609530975868,460.420913796001" />
+          Size="177.333333333334,41.3333333333334"
+          Id="Package\Upload To SalesForce\Convert and Rename"
+          TopLeft="494.920643349083,141.207841976126" />
+        <NodeLayout
+          Size="141.333333333334,42.6666666666667"
+          Id="Package\Upload To SalesForce\Target Insert"
+          TopLeft="303.698417870366,284.346407985248" />
         <NodeLayout
           Size="173.333333333334,41.3333333333334"
           Id="Package\Upload To SalesForce\Divert Error Records"
@@ -6184,72 +6353,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           Size="162.666666666667,42.6666666666667"
           Id="Package\Upload To SalesForce\DBS Souce Cache"
           TopLeft="271.047620189433,43.8117646658434" />
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Union All Output 1]"
-          TopLeft="493.988895860741,502.020913796001">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.8379093022772"
-              Start="0,0"
-              End="0,34.3379093022772">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.3379093022772" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Row Count Output 1]"
-          TopLeft="372.595243288141,252.822219600864">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.5241883843836"
-              Start="0,0"
-              End="0,24.0241883843836">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.0241883843836" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Upload To SalesForce.Paths[Raw File Source Output]"
-          TopLeft="356.204764676175,86.4784313325101">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.5450983151979"
-              Start="0,0"
-              End="0,46.0450983151979">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,46.0450983151979" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="164.666666666667,41.3333333333334"
+          Id="Package\Upload To SalesForce\Get Error Message"
+          TopLeft="287.580957155812,360.282357960341" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Upload To SalesForce\Inject Variables"
+          TopLeft="284.028575829584,140.023529647708" />
         <EdgeLayout
           Id="Package\Upload To SalesForce.Paths[Output 0]"
           TopLeft="369.980957155812,401.882357960341">
@@ -6426,6 +6537,72 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,22.3588232441344" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Union All Output 1]"
+          TopLeft="493.988895860741,502.020913796001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.8379093022772"
+              Start="0,0"
+              End="0,34.3379093022772">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.3379093022772" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Row Count Output 1]"
+          TopLeft="372.595243288141,252.822219600864">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.5241883843836"
+              Start="0,0"
+              End="0,24.0241883843836">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0241883843836" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Upload To SalesForce.Paths[Raw File Source Output]"
+          TopLeft="356.204764676175,86.4784313325101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.5450983151979"
+              Start="0,0"
+              End="0,46.0450983151979">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.0450983151979" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
