@@ -122,8 +122,8 @@ AND sfc.DM_Clinician__c.Agency__c = @TrueParentAgencyID
 -- Get product rate code for graduated clinicians
 PRINT 'Get product rates for graduated clinician assessments'
 UPDATE agency_medical_record
-SET sfc_Product_Rate__c = sfc.DM_Agency_Product_Rate__c.Id
-FROM agency_medical_record
+SET sfc_Product_Rate__c = sfc.DM_Agency_Product_Rate__c.Id,
+sfc_Clinician_Graduate__c = 'true'FROM agency_medical_record
 INNER JOIN sfc.DM_Agency_Product_Rate__c
 ON agency_medical_record.sfc_Agency__c = sfc.DM_Agency_Product_Rate__c.Agency__c
 AND ('Coding Only ' + agency_medical_record.visit_type) = sfc.DM_Agency_Product_Rate__c.Product_Name_for_IT__c

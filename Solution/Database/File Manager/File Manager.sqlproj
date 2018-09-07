@@ -131,6 +131,8 @@
     <Build Include="dbo\Stored Procedures\custom_sfclookup_MedStar.sql" />
     <Build Include="dbo\Stored Procedures\custom_sfclookup_HCR.sql" />
     <Build Include="dbo\Stored Procedures\custom_filerow_HCR_processing.sql" />
+    <Build Include="dbo\Stored Procedures\custom_sfclookup_Graham_1.sql" />
+    <Build Include="dbo\Stored Procedures\custom_filerow_Graham_processing_1.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Post Deployment\DML_Insert_agency.sql" />
