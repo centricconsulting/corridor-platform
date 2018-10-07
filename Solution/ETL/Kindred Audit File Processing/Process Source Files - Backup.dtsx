@@ -1,0 +1,1611 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/7/2018 5:35:46 PM"
+  DTS:CreationName=""
+  DTS:CreatorComputerName="SFDATASQL"
+  DTS:CreatorName="SFDATASQL\jeff.faseun"
+  DTS:DTSID="{319D24FF-509C-4F34-8FE9-D8B57D1E1C1C}"
+  DTS:ExecutableType=""
+  DTS:LastModifiedProductVersion="14.0.3002.92"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Process Source Files"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="503"
+  DTS:VersionGUID="{2FCAF740-A120-4A7B-B475-2873D61D697A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3FE9ACA6-4CB5-407B-8A6D-178351C45FC4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="accepted_root_folder">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7B10DB42-7F35-4525-B478-8BFF54ED1173}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="agency_file_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3AB17536-F944-466D-92AC-B0379B0AA807}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="agency_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{630E5122-90B0-4EA5-96B2-A88B9A13A493}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="archive_file_name">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F972D380-49D6-40C7-87A1-10C561DF598B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="archive_folder_path">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E23BBE5-70C4-4B14-B97C-8574DA70B7B7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="completed_ind">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{429304D2-BAA5-4CC0-B9F7-1B738FB6F2D9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="error_message">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A6A006F1-4232-4489-BE22-B0C9596A74A3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_created_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">3/28/2018 8:48:37 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2FEAFA9D-7E1E-4960-80ED-E620D5FF6D9F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_format_code">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0F4013E8-C962-4423-B450-3B3C0A0E878E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_guid">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{38E76C00-8CED-4FE6-AD8A-9F42EAD15D5B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_hash">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{84061516-7ABD-4A8A-8AB9-94DCDFB86609}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_modified_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">3/28/2018 8:48:53 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C3DF5D25-9E86-4A55-BB69-96D86E22F007}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_name">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B8C730B-4F48-4C90-9EFD-930A4CAB0C22}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_path">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{03CF99BC-BD45-49C4-8117-0763B533E9DE}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_process_dtm">
+      <DTS:VariableValue
+        DTS:DataType="7">3/29/2018 11:12:23 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ABB74E2D-05BD-4BB3-8A9E-83B72E430B5F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_process_error_message">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{732B1F8A-125A-46EE-ABE1-DB48F2877E1F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="file_process_success_flag">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2E5672CD-9499-448B-9547-E19A1E4055BA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="folder_branch">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A1463C5D-34E4-4E6F-844D-B8514D5A9B2E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="folder_path">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4C68856E-27D8-4E92-855C-7A38CA57D19A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="package_error_flag">
+      <DTS:VariableValue
+        DTS:DataType="11">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4FD6C4F4-1EAE-42CD-A460-E8E3329E93FC}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_STR, 8, 1252) @[System::VersionMajor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionMinor] + &quot;.&quot; + (DT_STR, 8, 1252) @[System::VersionBuild]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="package_version">
+      <DTS:VariableValue
+        DTS:DataType="8">1.0.503</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DA8DE5C6-D6CD-4A7B-B656-179EF8FB2FE5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="process_batch_key">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BB86844F-967E-4D46-9D8D-74FAE941CA96}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::ProjectName]  + &quot;::&quot; +   @[System::PackageName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="process_uid">
+      <DTS:VariableValue
+        DTS:DataType="8">Source Files To File Manager::Process Source Files</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1650D0A9-C49C-4990-A910-5C6F2726F879}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="received_root_folder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7066A875-348B-497C-AFFA-2ED38F2C218B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="rejected_root_folder">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Read Configuration"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{dca4212d-7c39-419a-b5aa-d134d66c656a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Read Configuration"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+          SQLTask:SqlStatementSource="SELECT received_folder_path, accepted_folder_path, rejected_folder_path FROM [dbo].[config] WHERE config_key = 0"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="received_folder_path"
+            SQLTask:DtsVariableName="User::received_root_folder" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="accepted_folder_path"
+            SQLTask:DtsVariableName="User::accepted_root_folder" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="rejected_folder_path"
+            SQLTask:DtsVariableName="User::rejected_root_folder" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Recurse Through Received Folders"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{3129F4EA-77E0-4796-B576-8FCD603CBA89}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Recurse Through Received Folders">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{15DC96E0-4460-4A8B-A89D-C6CE9A013D2D}"
+        DTS:ObjectName="{15DC96E0-4460-4A8B-A89D-C6CE9A013D2D}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::received_root_folder]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\" />
+            <FEFEProperty
+              FileSpec="*.xls*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="-1" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{2451542E-F215-4B8D-A5C6-BB94C4D2D18F}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="notification_message">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{8BCB3A3D-AE76-4A6E-9058-E2E892285485}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="notification_subject">
+          <DTS:VariableValue
+            DTS:DataType="8">File Import Notification</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{4FDEE34D-D875-4220-9662-1BFA8A1382B7}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="notification_to">
+          <DTS:VariableValue
+            DTS:DataType="8">notification@default.com</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{C3A79A45-3C50-46FA-B693-E24A9B8605D6}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="send_notification_flag">
+          <DTS:VariableValue
+            DTS:DataType="17">0</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Archive File"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{05064CE3-F324-44EB-9A53-65B2110FC152}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive File"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Get Agency Info"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a8c238c7-624d-45af-8a72-825fb08ab745}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get Agency Info"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="DECLARE&#xA;  @agency_key INT&#xA;, @file_format_code VARCHAR(20)&#xA;&#xA;SELECT&#xA;  @file_format_code  = a.default_file_format_code&#xA;, @agency_key  = a.agency_key&#xA;FROM&#xA;dbo.agency a&#xA;WHERE&#xA;a.folder_branch = ?&#xA;&#xA;SELECT&#xA;  @file_format_code AS file_format_code&#xA;, @agency_key AS agency_key"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="file_format_code"
+                SQLTask:DtsVariableName="User::file_format_code" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="agency_key"
+                SQLTask:DtsVariableName="User::agency_key" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::folder_branch"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Get File Info"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{dda8d331-9431-4ba7-8c0c-d5d58a36f01d}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get File Info"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Insert Agency File"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{120f3cdf-b655-45a5-ba0c-d8c30b2ea946}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert Agency File"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="INSERT INTO dbo.agency_file&#xA;(&#xA;  [agency_key]&#xA;, [file_format_code]&#xA;, [file_path]&#xA;, [file_name]&#xA;, [folder_path]&#xA;, [folder_branch]&#xA;, [file_guid]&#xA;, [file_hash]&#xA;, [archive_file_name]&#xA;, [file_created_dtm]&#xA;, [file_modified_dtm]&#xA;, [create_timestamp]&#xA;, [modify_timestamp]&#xA;, [process_batch_key]&#xA;)&#xA;OUTPUT Inserted.agency_file_key&#xA;VALUES &#xA;(&#xA;  ? -- {0} [agency_key]&#xA;, ? -- {1} [file_format_code]&#xA;, ? -- {2} [file_path]&#xA;, ? -- {3} [file_name]&#xA;, ? -- {4} [folder_path]&#xA;, ? -- {5} [folder_branch]&#xA;, ? -- {6} [file_guid]&#xA;, ? -- {7} [file_hash]&#xA;, ? -- {8} [archive_file_name]&#xA;, ? -- {9} [file_created_dtm]&#xA;, ? -- {10} [file_modified_dtm]&#xA;, CURRENT_TIMESTAMP -- [create_timestamp]&#xA;, CURRENT_TIMESTAMP -- [modify_timestamp]&#xA;, ? -- {11} [process_batch_key]&#xA;)"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="agency_file_key"
+                SQLTask:DtsVariableName="User::agency_file_key" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::file_name"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="200" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::folder_branch"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="200" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="7"
+                SQLTask:DtsVariableName="User::file_hash"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="32" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="9"
+                SQLTask:DtsVariableName="User::file_created_dtm"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="10"
+                SQLTask:DtsVariableName="User::file_modified_dtm"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::file_path"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="11"
+                SQLTask:DtsVariableName="User::process_batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::file_format_code"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="20" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::agency_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::folder_path"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::file_guid"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="8"
+                SQLTask:DtsVariableName="User::archive_file_name"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="200" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Load Agency File Rows"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:DelayValidation="True"
+          DTS:Description="Script Task"
+          DTS:DTSID="{d51637cf-19be-47a2-a58a-8f511b1e2139}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Agency File Rows"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData />
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Mark Notification Sent"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a3fb1f9a-f614-4e7f-9439-5b751a06ca66}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Mark Notification Sent"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="UPDATE agency_file SET notification_sent_ind = 1 WHERE agency_file_key = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::agency_file_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Reset"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{7CE3F9E6-266F-4F8B-B07F-DDCBDC663EDF}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Reset"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::file_format_code] =  NULL(DT_STR, 20, 1252)" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Retrieve Notification Info"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E4787B3E-D8ED-45AB-A638-FE166EF02AB5}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Retrieve Notification Info"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="get_File_Manager_notification ?, ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="notification_to"
+                SQLTask:DtsVariableName="User::notification_to" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="notification_subject"
+                SQLTask:DtsVariableName="User::notification_subject" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="notification_message"
+                SQLTask:DtsVariableName="User::notification_message" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="send_notification"
+                SQLTask:DtsVariableName="User::send_notification_flag" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::agency_file_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::file_process_success_flag"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="17"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Send Notification Email"
+          DTS:CreationName="Microsoft.SendMailTask"
+          DTS:Description="Send Mail Task"
+          DTS:DTSID="{ec5a81f4-1bf8-43f2-84b4-5719826338d6}"
+          DTS:ExecutableType="Microsoft.SendMailTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Send Notification Email"
+          DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Subject">@[User::notification_subject]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="ToLine">@[User::notification_to]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SendMailTask:SendMailTaskData
+              SendMailTask:SMTPServer="{B1233D83-077B-4661-B2C6-08391902266F}"
+              SendMailTask:From="scott.stover@centricconsulting.com"
+              SendMailTask:To="notification@default.com"
+              SendMailTask:Subject="File Import Notification"
+              SendMailTask:MessageSourceType="Variable"
+              SendMailTask:MessageSource="User::notification_message" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Recurse Through Received Folders\Update Agency File For Archive"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8c630934-44a4-46ca-a592-186c3f3cb832}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update Agency File For Archive"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BA76BA1-444B-46FE-A43F-A11FD096EA2A}"
+              SQLTask:SqlStatementSource="UPDATE dbo.[agency_file]  SET&#xA;  archive_folder_path = ?&#xA;, process_dtm = ?&#xA;, process_success_ind = CONVERT(BIT, ?)&#xA;, process_error_message = ?&#xA;WHERE &#xA;agency_file_key = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::agency_file_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="131"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::archive_folder_path"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::file_process_dtm"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::file_process_error_message"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="1000" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::file_process_success_flag"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="17"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{FB512C44-60A8-4A22-8FA9-B917112DD271}"
+          DTS:From="Package\Recurse Through Received Folders\Insert Agency File"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Recurse Through Received Folders\Load Agency File Rows" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{8327a60c-04b6-450b-97fe-19c6bc465021}"
+          DTS:EvalOp="1"
+          DTS:Expression="ISNULL(@[User::file_format_code]) == FALSE"
+          DTS:From="Package\Recurse Through Received Folders\Get Agency Info"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Recurse Through Received Folders\Insert Agency File" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{20b121ef-13b9-4591-9919-e7e8fe4b7875}"
+          DTS:From="Package\Recurse Through Received Folders\Get File Info"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Recurse Through Received Folders\Get Agency Info" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{E0576DF0-FAFC-41F9-A281-C1DFA21C9A34}"
+          DTS:From="Package\Recurse Through Received Folders\Load Agency File Rows"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Recurse Through Received Folders\Archive File" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{694B4D57-7D7F-43A7-BAEE-7556747EE846}"
+          DTS:From="Package\Recurse Through Received Folders\Update Agency File For Archive"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Recurse Through Received Folders\Retrieve Notification Info" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{04273809-09ED-40F1-8E99-4E1D29A3B2BD}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[User::send_notification_flag] == 1"
+          DTS:From="Package\Recurse Through Received Folders\Retrieve Notification Info"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Recurse Through Received Folders\Send Notification Email" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{A3B9BB26-59F4-4033-B545-1A514BCBC348}"
+          DTS:From="Package\Recurse Through Received Folders\Archive File"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Recurse Through Received Folders\Update Agency File For Archive" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{CB1B6A18-9A7A-493F-8255-0E15BCF79470}"
+          DTS:From="Package\Recurse Through Received Folders\Reset"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 7"
+          DTS:To="Package\Recurse Through Received Folders\Get File Info" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{77D88186-C1A2-4441-86F5-4D38AFB9045D}"
+          DTS:From="Package\Recurse Through Received Folders\Send Notification Email"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 8"
+          DTS:To="Package\Recurse Through Received Folders\Mark Notification Sent" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{4452EBF9-3853-4E5B-B8A4-28D1ADB4540B}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[User::send_notification_flag] != 1"
+          DTS:From="Package\Recurse Through Received Folders\Retrieve Notification Info"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 9"
+          DTS:To="Package\Recurse Through Received Folders\Mark Notification Sent" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{9BF3495F-F25E-4D38-A2E5-2795093A8DE0}"
+          DTS:ObjectName="{9BF3495F-F25E-4D38-A2E5-2795093A8DE0}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::file_path" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7E6AF717-B196-4C42-A30F-4BEBF5E43598}"
+      DTS:From="Package\Read Configuration"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Recurse Through Received Folders" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{B46E4254-84D8-4647-A452-2DD8DA865896}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{80B2F768-5750-462C-87E2-D505393CF4BB}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Log Process Batch Error"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{9027b746-8cd6-46bd-b73c-8c68c242c205}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Log Process Batch Error"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BE61CE8-DD91-4404-B6D0-31FDFE93C3B4}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_error_log &#xA;@process_batch_key = ?, &#xA;@error_scope = ?, &#xA;@error_number = ?, &#xA;@error_message = ?, &#xA;@error_type_cd = 'E'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::process_batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::SourceName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::ErrorCode"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="System::ErrorDescription"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="0" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Turn On Package Error Flag"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:DTSID="{3b56a78b-0536-43eb-b6c2-3c3ae7ee4c09}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Turn On Package Error Flag"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::package_error_flag]=TRUE" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{ff452a4b-9b12-452c-bdae-dcf83ce9cf44}"
+          DTS:From="Package.EventHandlers[OnError]\Turn On Package Error Flag"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnError]\Log Process Batch Error" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPostExecute]"
+      DTS:CreationName="OnPostExecute"
+      DTS:DTSID="{5F64C819-5CD6-4F7A-9328-B044B6D82336}"
+      DTS:EventID="0"
+      DTS:EventName="OnPostExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{7C3235D4-3408-4E0B-B324-554FB1A55812}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:DTSID="{213e0401-5d54-42cd-94ee-f23dc22c0046}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Assign Completed Indicator"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::completed_ind] =  @[User::package_error_flag] ? 0 : 1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{344b1975-2055-4ee8-9505-7ef496712e1f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Conclude Process Batch"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BE61CE8-DD91-4404-B6D0-31FDFE93C3B4}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_conclude&#xA;        @completed_ind = ?&#xA;      , @process_batch_key = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::completed_ind"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="17"
+                SQLTask:ParameterSize="0" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::process_batch_key"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="0" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPostExecute]\Entry Point"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{140C750A-617F-4924-B5A6-890ED00D6C2D}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Entry Point"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::completed_ind]" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{39963890-43A3-4623-A7CA-CB92CA967188}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID] == @[System::PackageID]"
+          DTS:From="Package.EventHandlers[OnPostExecute]\Entry Point"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
+          DTS:CreationName=""
+          DTS:DTSID="{59aa2108-21c9-4911-9dd5-50a696db6a5e}"
+          DTS:From="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint_EXP - assign completed indicator_To_SQL - conclude process batch"
+          DTS:To="Package.EventHandlers[OnPostExecute]\Conclude Process Batch" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnPreExecute]"
+      DTS:CreationName="OnPreExecute"
+      DTS:DTSID="{BB333459-F9C4-487F-996C-A113288883C1}"
+      DTS:EventID="1153914880"
+      DTS:EventName="OnPreExecute"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="The propagate property of the event"
+          DTS:DTSID="{5F71A77C-0560-4F68-8672-EAE812DED8E0}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\Entry Point"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{ba411cd6-e045-405c-bda1-e101d1d76e1b}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Entry Point"
+          DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="@[User::completed_ind]" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:DTSID="{b3003ec2-5123-4988-ab20-08ad36064a11}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Initiate Process Batch"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; Â© 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{5BE61CE8-DD91-4404-B6D0-31FDFE93C3B4}"
+              SQLTask:SqlStatementSource="EXEC cdm.process_batch_initiate&#xA;@process_uid = ?, &#xA;@workflow_name = ?, &#xA;@workflow_guid = ?,&#xA;@workflow_version= ?"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="process_batch_key"
+                SQLTask:DtsVariableName="User::process_batch_key" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::process_uid"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="System::PackageName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::package_version"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="System::PackageID"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6EF5AD3F-CFC6-4059-A399-F58A59344D5C}"
+          DTS:EvalOp="1"
+          DTS:Expression="@[System::SourceID] == @[System::PackageID]"
+          DTS:From="Package.EventHandlers[OnPreExecute]\Entry Point"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package.EventHandlers[OnPreExecute]\Initiate Process Batch" />
+      </DTS:PrecedenceConstraints>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="168.666666666667,41.3333333333334"
+          Id="Package\Read Configuration"
+          TopLeft="512.191663581771,67.2176471446215" />
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\Recurse Through Received Folders\Archive File"
+          TopLeft="305.516333753838,286.895241081815" />
+        <NodeLayout
+          Size="154.666666666667,41.3333333333334"
+          Id="Package\Recurse Through Received Folders\Get Agency Info"
+          TopLeft="293.916333753838,163.755136079998" />
+        <NodeLayout
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\Recurse Through Received Folders\Get File Info"
+          TopLeft="55.8977942870533,165.016808714421" />
+        <NodeLayout
+          Size="163.333333333334,41.3333333333334"
+          Id="Package\Recurse Through Received Folders\Insert Agency File"
+          TopLeft="595.338518668576,158.123715485131" />
+        <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\Recurse Through Received Folders\Load Agency File Rows"
+          TopLeft="31.0977942870532,287.218245340989" />
+        <NodeLayout
+          Size="183.333333333334,43.3333333333334"
+          Id="Package\Recurse Through Received Folders\Mark Notification Sent"
+          TopLeft="561.405286284086,419.68370244897" />
+        <NodeLayout
+          Size="104.666666666667,41.3333333333334"
+          Id="Package\Recurse Through Received Folders\Reset"
+          TopLeft="71.1619072271854,46.572552208422" />
+        <NodeLayout
+          Size="196.666666666667,42.6666666666667"
+          Id="Package\Recurse Through Received Folders\Retrieve Notification Info"
+          TopLeft="35.3903113477985,425.684602383667" />
+        <NodeLayout
+          Size="187.333333333334,41.3333333333334"
+          Id="Package\Recurse Through Received Folders\Send Notification Email"
+          TopLeft="311.042594679516,389.162742579901" />
+        <NodeLayout
+          Size="224.666666666667,41.3333333333334"
+          Id="Package\Recurse Through Received Folders\Update Agency File For Archive"
+          TopLeft="564.538518668576,283.828895476346" />
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint]"
+          TopLeft="677.005185335243,199.457048818464">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-551.907391048189,87.7611965225246"
+              Start="0,0"
+              End="-551.907391048189,80.2611965225246">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.8805982612623" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.8805982612623"
+                    Point2="0,43.8805982612623"
+                    Point3="-4,43.8805982612623" />
+                  <mssgle:LineSegment
+                    End="-547.907391048189,43.8805982612623" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-547.907391048189,43.8805982612623"
+                    Point2="-551.907391048189,43.8805982612623"
+                    Point3="-551.907391048189,47.8805982612623" />
+                  <mssgle:LineSegment
+                    End="-551.907391048189,80.2611965225246" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 1]"
+          TopLeft="448.316333753838,181.739425782565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="147.022184914738,0"
+              Start="0,0"
+              End="139.522184914738,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="139.522184914738,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="61.761092457369,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 2]"
+          TopLeft="193.231127620387,185.38597239721">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.685206133451,0"
+              Start="0,0"
+              End="93.1852061334513,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.1852061334513,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 3]"
+          TopLeft="219.097794287053,308.390076544735">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="86.4185394667848,0"
+              Start="0,0"
+              End="78.9185394667848,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="78.9185394667848,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 4]"
+          TopLeft="676.871852001909,325.162228809679">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-543.148207320778,100.522373573988"
+              Start="0,0"
+              End="-543.148207320778,93.0223735739875">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.2611867869938" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.2611867869938"
+                    Point2="0,50.2611867869938"
+                    Point3="-4,50.2611867869938" />
+                  <mssgle:LineSegment
+                    End="-539.148207320778,50.2611867869938" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-539.148207320778,50.2611867869938"
+                    Point2="-543.148207320778,50.2611867869938"
+                    Point3="-543.148207320778,54.2611867869938" />
+                  <mssgle:LineSegment
+                    End="-543.148207320778,93.0223735739875" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 5]"
+          TopLeft="232.056978014465,441.240157939222">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.9856166650508,-31.4107486926552"
+              Start="0,0"
+              End="71.4856166650508,-31.4107486926552">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.3071877503226,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.3071877503226,0"
+                    Point2="33.3071877503226,0"
+                    Point3="33.3071877503226,-4" />
+                  <mssgle:LineSegment
+                    End="33.3071877503226,-27.4107486926552" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.3071877503226,-27.4107486926552"
+                    Point2="33.3071877503226,-31.4107486926552"
+                    Point3="37.3071877503226,-31.4107486926552" />
+                  <mssgle:LineSegment
+                    End="71.4856166650508,-31.4107486926552" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.3071877503226,1,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 6]"
+          TopLeft="438.849667087171,306.362068279081">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.688851581405,0"
+              Start="0,0"
+              End="118.188851581405,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="118.188851581405,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 7]"
+          TopLeft="124.029850757119,87.9058855417553">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.1109231726657"
+              Start="0,0"
+              End="0,69.6109231726657">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.6109231726657" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 8]"
+          TopLeft="498.375928012849,409.829409246567">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.0293582712367,25.6320709801805"
+              Start="0,0"
+              End="55.5293582712367,25.6320709801805">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.4709936584307,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.4709936584307,0"
+                    Point2="36.4709936584307,0"
+                    Point3="36.4709936584307,4" />
+                  <mssgle:LineSegment
+                    End="36.4709936584307,21.6320709801805" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.4709936584307,21.6320709801805"
+                    Point2="36.4709936584307,25.6320709801805"
+                    Point3="40.4709936584307,25.6320709801805" />
+                  <mssgle:LineSegment
+                    End="55.5293582712367,25.6320709801805" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recurse Through Received Folders.PrecedenceConstraints[Constraint 9]"
+          TopLeft="232.056978014465,450.017485749652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="329.348308269621,0"
+              Start="0,0"
+              End="321.848308269621,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="321.848308269621,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="152.92415413481,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Only proceed if a non-null&#xA;File Format Code is retrieved"
+          ParentId="Package\Recurse Through Received Folders"
+          Size="184.666666666667,50"
+          Id="320cb9e6-2eb2-4636-865c-58d2d0fd4a20"
+          TopLeft="355.733340644837,113.866670799256">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="10.800000190734863"
+              Color="#FF000000"
+              Weight="Bold">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <AnnotationLayout
+          Text="If notifications are disabled for a particular file or situation, they are not sent, but they are still marked as &quot;Sent&quot;"
+          ParentId="Package\Recurse Through Received Folders"
+          Size="574.666666666667,37.3333333333334"
+          Id="a5721d6e-0702-4a5e-b2ba-3046cdb8355a"
+          TopLeft="113.333330551783,475.99999550581">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo>
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="1012.66666666667,613.333333333334"
+          Size="1012.66666666667,656.666666666667"
+          Id="Package\Recurse Through Received Folders"
+          TopLeft="177.391663581771,169.694117496913" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="596.524996915104,108.550980477955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="87.2000000000002,61.1431370189582"
+              Start="0,0"
+              End="87.2000000000002,53.6431370189582">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5715685094791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5715685094791"
+                    Point2="0,30.5715685094791"
+                    Point3="4,30.5715685094791" />
+                  <mssgle:LineSegment
+                    End="83.2000000000002,30.5715685094791" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.2000000000002,30.5715685094791"
+                    Point2="87.2000000000002,30.5715685094791"
+                    Point3="87.2000000000002,34.5715685094791" />
+                  <mssgle:LineSegment
+                    End="87.2000000000002,53.6431370189582" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnError]\Log Process Batch Error"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnError]\Turn On Package Error Flag"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="{x:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <x:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPostExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPostExecute]\Assign Completed Indicator"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPostExecute]\Conclude Process Batch"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPostExecute]\Entry Point"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="{x:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <x:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPostExecute].PrecedenceConstraints[Constraint_EXP - assign completed indicator_To_SQL - conclude process batch]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="{x:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <x:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnPreExecute]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPreExecute]\Entry Point"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package.EventHandlers[OnPreExecute]\Initiate Process Batch"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package.EventHandlers[OnPreExecute].PrecedenceConstraints[Constraint]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="{x:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <x:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

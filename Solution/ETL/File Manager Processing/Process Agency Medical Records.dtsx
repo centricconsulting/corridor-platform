@@ -12,8 +12,8 @@
   DTS:ObjectName="Process Agency Medical Records"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="669"
-  DTS:VersionGUID="{8839BB10-EB16-4771-9BFB-66498D285FA7}">
+  DTS:VersionBuild="670"
+  DTS:VersionGUID="{17C1B9C4-135A-4487-A5DB-55E3AD08A388}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -26,7 +26,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="afr_cache_file_path">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Temporary\Source Files To File Manager.Process Agency Medical Records.AFR.cache</DTS:VariableValue>
+        DTS:DataType="8">C:\Temporary_TEST\Source Files To File Manager.Process Agency Medical Records.AFR.cache</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -120,7 +120,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.669</DTS:VariableValue>
+        DTS:DataType="8">1.0.670</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -980,6 +980,57 @@
                           refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[notification_sent_ind]"
                           dataType="bool"
                           name="notification_sent_ind" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Status__c]"
+                          dataType="wstr"
+                          length="10"
+                          name="sfc_Status__c" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Ready_for_Coding_send_ind]"
+                          dataType="bool"
+                          name="sfc_Ready_for_Coding_send_ind" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Special_Request__c]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="sfc_Special_Request__c" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Special_Request_Reason__c]"
+                          dataType="wstr"
+                          length="255"
+                          name="sfc_Special_Request_Reason__c" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Special_Request_Type__c]"
+                          dataType="wstr"
+                          length="255"
+                          name="sfc_Special_Request_Type__c" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Clinician_Graduate__c]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="sfc_Clinician_Graduate__c" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Problem_Date__c]"
+                          dataType="dbTimeStamp2"
+                          name="sfc_Problem_Date__c"
+                          scale="7" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Problem_Details__c]"
+                          dataType="nText"
+                          name="sfc_Problem_Details__c" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[sfc_Problem_Reason_Category__c]"
+                          dataType="wstr"
+                          length="255"
+                          name="sfc_Problem_Reason_Category__c" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Each File\Load AMR, Prepare AFR Update\Insert Agency Medical Record.Inputs[OLE DB Destination Input].ExternalColumns[process_error_category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="process_error_category" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6519,6 +6570,10 @@ agency_file_row_key = ?</property>
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="192,42.6666666666667"
+          Id="Package\Exclude Duplicates"
+          TopLeft="287.499995715917,560.033331651886" />
+        <NodeLayout
+          Size="192,42.6666666666667"
           Id="Package\Flag Records to Exclude"
           TopLeft="286.845242647568,640.133328002293" />
         <NodeLayout
@@ -6593,6 +6648,28 @@ agency_file_row_key = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="381.326384607393,528.877776736881">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.1555549150045"
+              Start="0,0"
+              End="0,23.6555549150045">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.6555549150045" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="375.854163430321,155.166665155689">
           <EdgeLayout.Curve>
@@ -6628,32 +6705,6 @@ agency_file_row_key = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,27.0666656670968" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="192,42.6666666666667"
-          Id="Package\Exclude Duplicates"
-          TopLeft="287.499995715917,560.033331651886" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="381.326384607393,528.877776736881">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.1555549150045"
-              Start="0,0"
-              End="0,23.6555549150045">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.6555549150045" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6911,9 +6962,7 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6935,9 +6984,7 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6971,9 +7018,7 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7007,9 +7052,7 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7043,9 +7086,7 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7079,9 +7120,7 @@ agency_file_row_key = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

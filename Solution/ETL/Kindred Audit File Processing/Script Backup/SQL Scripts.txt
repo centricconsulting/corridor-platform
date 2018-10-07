@@ -1,0 +1,71 @@
+
+/* ################################################################## */
+Retrieve the unique File Formats
+/* ################################################################## */
+
+SELECT DISTINCT
+f.file_format_code
+FROM
+dbo.agency_file f
+WHERE
+EXISTS (
+  SELECT 1 FROM dbo.agency_file_row r WHERE
+  r.process_success_ind IS NULL
+  AND r.agency_file_key = f.agency_file_key
+)
+
+/* ################################################################## */
+Get unprocessed rows for each file format
+/* ################################################################## */
+
+SELECT
+  [agency_file_row_key]
+, [agency_name]
+, [column01]
+, [column02]
+, [column03]
+, [column04]
+, [column05]
+, [column06]
+, [column07]
+, [column08]
+, [column09]
+, [column10]
+, [column11]
+, [column12]
+, [column13]
+, [column14]
+, [column15]
+, [column16]
+, [column17]
+, [column18]
+, [column19]
+, [column20]
+, [column21]
+, [column22]
+, [column23]
+, [column24]
+, [column25]
+, [column26]
+, [column27]
+, [column28]
+, [column29]
+, [column30]
+, [column31]
+, [column32]
+, [column33]
+, [column34]
+, [column35]
+, [column36]
+, [column37]
+, [column38]
+, [column39]
+, [column40]
+FROM
+dbo.agency_file_row r
+INNER JOIN dbo.agency_file f ON f.agency_file_key = r.agency_file_key
+INNER JOIN dbo.agency a ON a.agency_key = f.agency_key
+WHERE
+r.process_dtm IS NULL
+AND r.column_header_ind = 0
+AND f.file_format_code = ?

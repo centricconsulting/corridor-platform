@@ -1,0 +1,270 @@
+using System;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Data.SqlClient;
+using System.Collections.Generic;
+using System.Data.Linq;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+
+  // create the class level lists
+  public List<FileFormatAttribute> AttributeList = new List<FileFormatAttribute>();
+  public List<FileFormatTranslate> TranslateList = new List<FileFormatTranslate>();
+
+  public override void PreExecute()
+  {
+    base.PreExecute();
+
+    // populate the lists needed for transformation
+    LoadAttributeList();
+    LoadTranslateList();
+
+  }
+
+  public override void PostExecute()
+  {
+    base.PostExecute();
+  }
+
+
+  public override void Input0_ProcessInputRow(Input0Buffer Row)
+  {
+    ProcessErrors errors = new ProcessErrors();
+
+    foreach (FileFormatAttribute attribute in this.AttributeList)
+    {
+      // get the raw value based on column position
+      string ColumnValue = GetColumnValue(Row, attribute.ColumnIndex, errors);
+      
+      // apply regex if applicable
+      if(!string.IsNullOrWhiteSpace(attribute.ExtractRegex))
+      {
+        ColumnValue = ExtractText(ColumnValue, attribute.ExtractRegex, errors);
+      }
+
+      
+      AssignOutputValue(Row, attribute, errors);
+
+    }
+
+    // write the results of processing
+    Row.processsuccessind = (errors.ErrorCount == 0);
+    Row.processdtm = DateTime.Now;
+
+    int ErrorLength = errors.Length;
+
+    if (ErrorLength > 2000)
+    {
+      Row.processerrormessage = errors.ToString().Substring(0, 2000);
+    }
+    else
+    {
+      Row.processerrormessage = (ErrorLength == 0) ? null : errors.ToString();
+    }
+  }
+
+  public void AssignOutputValue(Input0Buffer Row, FileFormatAttribute attribute, ProcessErrors errors)
+  {
+
+  }
+
+  public string GetColumnValue(Input0Buffer Row, int ColumnIndex, FileFormatAttribute attribute, ProcessErrors errors)
+  {
+    switch(ColumnIndex)
+    {
+      case 1: return Row.column01;
+      case 2: return Row.column02;
+      case 3: return Row.column03;
+      case 4: return Row.column04;
+      case 5: return Row.column05;
+      case 6: return Row.column06;
+      case 7: return Row.column07;
+      case 8: return Row.column08;
+      case 9: return Row.column09;
+      case 10: return Row.column10;
+      case 11: return Row.column11;
+      case 12: return Row.column12;
+      case 13: return Row.column13;
+      case 14: return Row.column14;
+      case 15: return Row.column15;
+      case 16: return Row.column16;
+      case 17: return Row.column17;
+      case 18: return Row.column18;
+      case 19: return Row.column19;
+      case 20: return Row.column20;
+      case 21: return Row.column21;
+      case 22: return Row.column22;
+      case 23: return Row.column23;
+      case 24: return Row.column24;
+      case 25: return Row.column25;
+      case 26: return Row.column26;
+      case 27: return Row.column27;
+      case 28: return Row.column28;
+      case 29: return Row.column29;
+      case 30: return Row.column30;
+      case 31: return Row.column31;
+      case 32: return Row.column32;
+      case 33: return Row.column33;
+      case 34: return Row.column34;
+      case 35: return Row.column35;
+      case 36: return Row.column36;
+      case 37: return Row.column37;
+      case 38: return Row.column38;
+      case 39: return Row.column39;
+      case 40: return Row.column40;
+      default:
+        errors.Add(string.Format(
+          "{0}: Invalid column index = {1} specified for the file format attributes",
+          attribute.AttributeName, ColumnIndex.ToString()));
+        return null;
+    }
+  }
+
+  public string ExtractText(string Text, string RegexPattern, FileFormatAttribute attribute, ProcessErrors errors)
+  {
+
+    string EvaluatedText = Text.Trim();
+
+    Match m = new Regex(RegexPattern, RegexOptions.IgnoreCase).Match(EvaluatedText);
+    String value = (m != null) ? m.Value.Trim() : (string)null;
+
+    if(value == null && !string.IsNullOrWhiteSpace(EvaluatedText))
+    {
+      errors.Add(string.Format(
+        "{0}: The regex pattern \"{1}\" applied to the source value {2} did not return a match.",
+        attribute.AttributeName, attribute.ExtractRegex, EvaluatedText));
+    }
+
+    if (value == null || value.Length == 0)
+    {
+      return null;
+    }
+    else
+    {
+      return value;
+    }
+  }
+
+  /// <summary>
+  /// loads the class level translate list
+  /// </summary>
+  public void LoadAttributeList()
+  {
+    using (SqlConnection connection = new SqlConnection(this.Variables.ADOFileManagerConnectionString))
+    {
+
+      connection.Open();
+
+      string sql = @"dbo.get_attribute_detail";
+        
+      using (SqlCommand command = new SqlCommand(sql, connection))
+      {
+        // add the file format parameter
+        command.CommandType = CommandType.StoredProcedure;
+
+        SqlParameter FileFormatCodeParam = new SqlParameter("@file_format_code", SqlDbType.VarChar, 20);
+        FileFormatCodeParam.Value = this.Variables.fileformatcode;
+        command.Parameters.Add(FileFormatCodeParam);
+        
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          FileFormatAttribute attribute = new FileFormatAttribute
+          {
+            AttributeName = reader["attribute_name"].ToString(),
+            ColumnIndex = (int)reader["column_index"],
+            ExtractRegex = reader["attribute_name"].ToString(),
+            AttributeDataType = reader["attribute_name"].ToString(),
+            AttributeMaxLength = (int?)reader["attribute_name"]
+          };
+
+          this.AttributeList.Add(attribute);
+
+        }
+      }
+      connection.Close();
+    }
+  }
+
+  /// <summary>
+  /// loads the class level translate list
+  /// </summary>
+  public void LoadTranslateList()
+  {
+    using (SqlConnection connection = new SqlConnection(this.Variables.ADOFileManagerConnectionString))
+    {
+
+      connection.Open();
+      string sql = @"dbo.get_translate_detail";
+      
+      using (SqlCommand command = new SqlCommand(sql, connection))
+      {
+
+        command.CommandType = CommandType.StoredProcedure;
+
+        // add the file format parameter
+        SqlParameter FileFormatCodeParam = new SqlParameter("@file_format_code", SqlDbType.VarChar, 20);
+        FileFormatCodeParam.Value = this.Variables.fileformatcode;
+        command.Parameters.Add(FileFormatCodeParam);
+
+        SqlDataReader reader = command.ExecuteReader();
+        while (reader.Read())
+        {
+          FileFormatTranslate attribute = new FileFormatTranslate
+          {
+            AttributeName = reader["attribute_name"].ToString(),
+            AttributeValue = reader["attribute_value"].ToString(),
+            TranslateValue = reader["translated_value"].ToString()
+          };
+
+          this.TranslateList.Add(attribute);
+
+        }
+      }
+      connection.Close();
+    }
+  }
+}
+
+public class ProcessErrors
+{
+  private StringBuilder _ErrorMessages = new StringBuilder();
+  
+  public int ErrorCount { get; private set; }
+
+  public int Length { get { return _ErrorMessages.Length; } }
+
+  public void Add(string ErrorMessage)
+  {
+    this.ErrorCount++;
+    this._ErrorMessages.AppendLine(string.Format("{0}",ErrorMessage));
+  }
+
+  public override string ToString()
+  {
+    return this._ErrorMessages.ToString();
+  }
+
+}
+
+public class FileFormatTranslate
+{
+  public string AttributeName { get; set; }
+  public string AttributeValue { get; set; }
+  public string TranslateValue { get; set; }
+}
+
+public class FileFormatAttribute
+{
+  public string AttributeName { get; set; }
+  public int ColumnIndex { get; set; }
+  public string ExtractRegex { get; set; }
+  public string AttributeDataType { get; set; }
+  public int? AttributeMaxLength { get; set; }
+}

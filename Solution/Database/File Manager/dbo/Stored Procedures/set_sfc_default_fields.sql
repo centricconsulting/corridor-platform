@@ -1,5 +1,5 @@
 ﻿
-CREATE PROCEDURE dbo.set_sfc_default_fields(@process_batch_key int)
+CREATE PROCEDURE [dbo].[set_sfc_default_fields](@process_batch_key int)
 AS
 
 UPDATE agency_medical_record
@@ -8,6 +8,7 @@ FROM agency_medical_record
 INNER JOIN agency
 ON agency_medical_record.agency_key = agency.agency_key
 WHERE agency_medical_record.process_batch_key = @process_batch_key
+AND agency_medical_record.sfc_Status__c IS NULL
 
 UPDATE agency_medical_record
 SET process_dtm = GETDATE(), process_success_ind = 0, process_error_message = 'FILE:' + [file_name] + ', MRN:' + medical_record_number + ', Invalid HHCP Default Status for Agency', salesforce_send_ind = 0, notification_sent_ind = 0
