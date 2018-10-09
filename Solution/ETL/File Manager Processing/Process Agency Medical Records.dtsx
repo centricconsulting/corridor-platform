@@ -12,8 +12,8 @@
   DTS:ObjectName="Process Agency Medical Records"
   DTS:PackageType="5"
   DTS:ProtectionLevel="2"
-  DTS:VersionBuild="670"
-  DTS:VersionGUID="{17C1B9C4-135A-4487-A5DB-55E3AD08A388}">
+  DTS:VersionBuild="671"
+  DTS:VersionGUID="{AAF83221-6A17-410B-A744-DB0E0974D514}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables>
@@ -120,7 +120,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="package_version">
       <DTS:VariableValue
-        DTS:DataType="8">1.0.670</DTS:VariableValue>
+        DTS:DataType="8">1.0.671</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -6697,14 +6697,14 @@ agency_file_row_key = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.5666656670968"
+              EndConnector="0,34.5666656670974"
               Start="0,0"
-              End="0,27.0666656670968">
+              End="0,27.0666656670974">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.0666656670968" />
+                    End="0,27.0666656670974" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
