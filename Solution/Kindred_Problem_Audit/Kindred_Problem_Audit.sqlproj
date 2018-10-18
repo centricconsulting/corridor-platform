@@ -75,5 +75,7 @@
     <Build Include="dbo\Stored Procedures\get_file_info.sql" />
     <Build Include="dbo\Stored Procedures\Create_Audit_List.sql" />
     <Build Include="Security\tmp.sql" />
+    <Build Include="dbo\Tables\Problem_Monitoring.sql" />
+    <Build Include="dbo\Stored Procedures\Queue_Problems_for_update.sql" />
   </ItemGroup>
 </Project>
